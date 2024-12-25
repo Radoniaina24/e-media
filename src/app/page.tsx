@@ -5,6 +5,7 @@ import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
 import Features from "@/components/Features";
+import Galerie from "@/components/galerie";
 import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import QuiSommesNous from "@/components/QuiSommesNous";
@@ -25,10 +26,10 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <QuiSommesNous />
-      <WhyUs />
+      {/* <WhyUs /> */}
       {/* <Features /> */}
       <Video />
-      {/* Galerie photo*/}
+      <Galerie />
       {/* Formation*/}
       {/* <Brands /> */}
       {/* <AboutSectionOne />

@@ -12,9 +12,15 @@ const Hero = () => {
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-4xl md:leading-tight">
-                  L’institution de référence en cinéma, audiovisuel, ingénierie
-                  du son et innovations technologiques pour Madagascar et
-                  l’Afrique, au cœur de l’Océan Indien.
+                  L’institution de référence en{" "}
+                  <span className="text-primary">cinéma</span> ,{" "}
+                  <span className="text-primary">audiovisuel</span>,
+                  <span className="text-primary">ingénierie du son </span>
+                  et{" "}
+                  <span className="text-primary">
+                    innovations technologiques
+                  </span>{" "}
+                  pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
                 </h1>
               </div>
             </div>

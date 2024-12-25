@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost"],
+    domains: ["flowbite.s3.amazonaws.com"],
     remotePatterns: [
       {
         protocol: "https",
