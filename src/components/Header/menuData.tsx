@@ -13,20 +13,45 @@ const menuData: Menu[] = [
     path: "/about",
     newTab: false,
   },
-  {
-    id: 33,
-    title: "Blog",
-    path: "/blog",
-    newTab: false,
-  },
+  // {
+  //   id: 33,
+  //   title: "Blog",
+  //   path: "/blog",
+  //   newTab: false,
+  // },
   {
     id: 3,
-    title: "Support",
+    title: "Formation",
+    newTab: false,
+    submenu: [
+      {
+        id: 31,
+        title: "CFP",
+        path: "/formation/cfp",
+        newTab: false,
+      },
+      {
+        id: 32,
+        title: "Université",
+        path: "/formation/université",
+        newTab: false,
+      },
+      {
+        id: 32,
+        title: "E-learning",
+        path: "/formation/elearning",
+        newTab: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Contact",
     path: "/contact",
     newTab: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "Pages",
     newTab: false,
     submenu: [
