@@ -26,14 +26,16 @@ export default function Home() {
       <Hero />
       <QuiSommesNous />
       <WhyUs />
-      <Features />
+      {/* <Features /> */}
       <Video />
-      <Brands />
-      <AboutSectionOne />
-      <AboutSectionTwo />
+      {/* Galerie photo*/}
+      {/* Formation*/}
+      {/* <Brands /> */}
+      {/* <AboutSectionOne />
+      <AboutSectionTwo /> */}
       <Testimonials />
-      <Pricing />
-      <Blog />
+      {/* <Pricing /> */}
+      {/* <Blog /> */}
       <Contact />
     </>
   );
