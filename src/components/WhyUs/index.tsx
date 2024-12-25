@@ -18,10 +18,10 @@ export default function WhyUs() {
         {/* Strategic Location Section */}
         <div className="mb-16 grid grid-cols-1 gap-10 md:grid-cols-2">
           <div className="flex flex-col justify-center">
-            <h3 className="text-yellow-400 mb-4 text-2xl font-semibold">
+            <h3 className="text-yellow-400 mb-4 text-2xl font-semibold ">
               Un Emplacement Stratégique
             </h3>
-            <p className="text-lg leading-relaxed text-gray-700">
+            <p className="text-lg leading-relaxed text-gray-700 dark:text-white">
               Située à Nanisana, au cœur d&apos;Antananarivo, E-Media est
               facilement accessible grâce à un réseau de transports bien
               desservi et proche des commodités essentielles, offrant un

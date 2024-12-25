@@ -5,6 +5,7 @@ import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 
 import ModalVideo from "react-modal-video";
+import Link from "next/link";
 
 const Video = () => {
   const [isOpen, setOpen] = useState(false);
@@ -18,8 +19,16 @@ const Video = () => {
 
 Ce projet visionnaire place Madagascar au cœur de l'économie numérique mondiale, en répondant aux besoins d'éducation, d'innovation et de créativité, tout en favorisant l'inclusion sociale et technologique."
           center
-          mb="80px"
+          mb="40px"
         />
+        <div className="mb-10 text-center">
+          <Link
+            href="https://nextjstemplates.com/templates/saas-starter-startup"
+            className="rounded-md bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+          >
+            En savoir plus
+          </Link>
+        </div>
 
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
