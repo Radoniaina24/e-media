@@ -13,8 +13,10 @@ const Video = () => {
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Un Village Numérique à Madagascar : "
-          paragraph="Le Complexe Universitaire Visionnaire."
+          title="Un Village Numérique à Madagascar : Le Complexe Universitaire Visionnaire"
+          paragraph="L'Université E-Media ambitionne de transformer Madagascar et l'Afrique avec un projet d'envergure : la création d'un village numérique, conçu comme un complexe universitaire multifonctionnel. Ce village numérique sera à la fois un pôle d'excellence académique, un centre technologique et culturel, et un moteur de développement durable pour la région.
+
+Ce projet visionnaire place Madagascar au cœur de l'économie numérique mondiale, en répondant aux besoins d'éducation, d'innovation et de créativité, tout en favorisant l'inclusion sociale et technologique."
           center
           mb="80px"
         />
