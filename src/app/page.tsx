@@ -7,8 +7,10 @@ import Contact from "@/components/Contact";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
+import QuiSommesNous from "@/components/QuiSommesNous";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
+import WhyUs from "@/components/WhyUs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +24,8 @@ export default function Home() {
     <>
       <ScrollUp />
       <Hero />
+      <QuiSommesNous />
+      <WhyUs />
       <Features />
       <Video />
       <Brands />
