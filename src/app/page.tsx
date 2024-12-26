@@ -39,7 +39,7 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       {/* <Banner /> */}
-      {/* <QuiSommesNous /> */}
+      <QuiSommesNous />
       {/* <WhyUs /> */}
       {/* <Features /> */}
       <Video />

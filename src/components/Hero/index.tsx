@@ -17,9 +17,9 @@ const Hero = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-              <div className="">
+              <div className="sm:text-center md:text-start lg:text-start">
                 <motion.h1
-                  initial={{ x: "-100%" }} // Départ de l'extérieur à gauche
+                  initial={{ x: "-150%" }} // Départ de l'extérieur à gauche
                   animate={{ x: 0 }} // Se déplace vers sa position d'origine
                   transition={{
                     type: "spring",
@@ -39,7 +39,7 @@ const Hero = () => {
                     </span>{" "}
                     pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
                   </span>
-                  <div className="mt-5">
+                  <div className="mt-7">
                     <Link
                       href="https://nextjstemplates.com/templates/saas-starter-startup"
                       className=" rounded-md bg-primary px-6 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
@@ -68,7 +68,7 @@ const Hero = () => {
                     width={1000}
                     height={1000}
                     alt="okok"
-                    className="rounded-lg "
+                    className="rounded-lg sm:hidden md:block lg:block"
                   />
                 </motion.div>
               </div>
