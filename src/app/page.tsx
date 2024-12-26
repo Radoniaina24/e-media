@@ -1,5 +1,6 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import Banner from "@/components/Banner";
 import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -21,15 +22,28 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  var settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 800,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    cssEase: "ease-in-out",
+    pauseOnHover: false,
+    pauseOnFocus: true,
+  };
   return (
     <>
       <ScrollUp />
-      <Hero />
-      <QuiSommesNous />
+      {/* <Hero /> */}
+      <Banner />
+      {/* <QuiSommesNous /> */}
       {/* <WhyUs /> */}
       {/* <Features /> */}
       <Video />
-      <Galerie />
+      {/* <Galerie /> */}
       {/* Formation*/}
       {/* <Brands /> */}
       {/* <AboutSectionOne />

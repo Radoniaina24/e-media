@@ -1,17 +1,21 @@
+"use client";
+import Image from "next/image";
 import Link from "next/link";
+import Banner from "../Banner";
 
 const Hero = () => {
   return (
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="relative flex min-h-[550px] items-center justify-center overflow-hidden bg-gray-100 duration-200 dark:bg-gray-dark dark:text-white sm:min-h-[650px] "
       >
+        <div className="-z[8] absolute -top-1/2 right-0 h-[700px] w-[700px] rotate-45 rounded-3xl bg-primary/40"></div>
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-4xl md:leading-tight">
+                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-5xl sm:leading-tight md:text-4xl md:leading-tight">
                   L’institution de référence en{" "}
                   <span className="text-primary">cinéma</span> ,{" "}
                   <span className="text-primary">audiovisuel</span>,
@@ -26,7 +30,15 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
+      </section>
+    </>
+  );
+};
+
+export default Hero;
+
+{
+  /* <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"
             height="556"
@@ -266,10 +278,26 @@ const Hero = () => {
               </radialGradient>
             </defs>
           </svg>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default Hero;
+        </div> */
+}
+{
+  /* <div className="container">
+          <div className="-mx-4 flex flex-wrap">
+            <div className="w-full px-4">
+              <div className="mx-auto max-w-[800px] text-center">
+                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-4xl md:leading-tight">
+                  L’institution de référence en{" "}
+                  <span className="text-primary">cinéma</span> ,{" "}
+                  <span className="text-primary">audiovisuel</span>,
+                  <span className="text-primary">ingénierie du son </span>
+                  et{" "}
+                  <span className="text-primary">
+                    innovations technologiques
+                  </span>{" "}
+                  pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div> */
+}
