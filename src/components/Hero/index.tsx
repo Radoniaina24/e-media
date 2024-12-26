@@ -41,7 +41,7 @@ const Hero = () => {
                   </span>
                   <div className="mt-7">
                     <Link
-                      href="https://nextjstemplates.com/templates/saas-starter-startup"
+                      href="#"
                       className=" rounded-md bg-primary px-6 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                     >
                       Commencer
