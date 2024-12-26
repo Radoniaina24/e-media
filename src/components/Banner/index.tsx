@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -43,8 +44,11 @@ const ImageList = [
 ];
 
 export default function Banner() {
+  const sentence =
+    "L’institution de référence en cinéma, audiovisuel, ingénierie du son et innovations technologiques pour Madagascar et l’Afrique, au cœur de l’Océan Indien.";
+  const words = sentence.split(" ");
   return (
-    <div className="">
+    <div className="banner relative">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         autoplay={{
@@ -62,11 +66,11 @@ export default function Banner() {
                 height={1000}
                 src={data.img}
                 alt=""
-                className=""
+                className="image-dim"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="mx-auto max-w-[800px] text-center">
-                  <h2 className="my-5 text-sm font-bold leading-tight text-white dark:text-white sm:text-4xl sm:leading-tight md:text-4xl md:leading-tight">
+                  {/* <h2 className="my-5 text-sm font-bold leading-tight text-white dark:text-white sm:text-4xl sm:leading-tight md:text-4xl md:leading-tight">
                     L’institution de référence en{" "}
                     <span className="text-primary">cinéma</span> ,{" "}
                     <span className="text-primary">audiovisuel</span>,
@@ -76,7 +80,38 @@ export default function Banner() {
                       innovations technologiques
                     </span>{" "}
                     pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
-                  </h2>
+                  </h2> */}
+                  <div className="relative flex h-screen items-center justify-center ">
+                    <motion.div
+                      className="text-center"
+                      initial="hidden"
+                      animate="visible"
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                          opacity: 1,
+                          transition: { staggerChildren: 0.1 },
+                        },
+                      }}
+                    >
+                      {words.map((word, index) => (
+                        <motion.span
+                          key={index}
+                          className={`mx-1 inline-block text-2xl font-bold sm:text-4xl md:text-5xl ${
+                            word === "cinéma," || word === "audiovisuel,"
+                              ? "text-primary" // Classe pour appliquer la couleur
+                              : "text-white"
+                          }`}
+                          variants={{
+                            hidden: { opacity: 0, y: 50 },
+                            visible: { opacity: 1, y: 0 },
+                          }}
+                        >
+                          {word}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </div>

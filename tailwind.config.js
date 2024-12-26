@@ -34,6 +34,11 @@ module.exports = {
       // => @media (min-width: 1400px) { ... }
     },
     extend: {
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"], // Exemple avec Roboto
+        serif: ["Merriweather", "serif"], // Exemple avec Merriweather
+        custom: ["'Cinzel', serif"], // Exemple de police cinématographique
+      },
       colors: {
         current: "currentColor",
         transparent: "transparent",

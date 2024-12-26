@@ -37,8 +37,8 @@ export default function Home() {
   return (
     <>
       <ScrollUp />
-      {/* <Hero /> */}
-      <Banner />
+      <Hero />
+      {/* <Banner /> */}
       {/* <QuiSommesNous /> */}
       {/* <WhyUs /> */}
       {/* <Features /> */}

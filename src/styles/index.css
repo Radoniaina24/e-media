@@ -32,4 +32,12 @@
   }
 }
 
-/* Swiper css */
+/* Banner css */
+.image-dim {
+  filter: brightness(0.5); /* Réduit la luminosité à 80% */
+  transition: filter 0.3s ease-in-out; /* Transition douce */
+}
+
+.cls-1 {
+  fill: #f3f6f9;
+}

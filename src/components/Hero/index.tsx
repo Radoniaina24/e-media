@@ -2,30 +2,75 @@
 import Image from "next/image";
 import Link from "next/link";
 import Banner from "../Banner";
-
+import { motion } from "framer-motion";
 const Hero = () => {
+  const sentence =
+    "L’institution de référence en cinéma, audiovisuel, ingénierie du son et innovations technologiques pour Madagascar et l’Afrique, au cœur de l’Océan Indien.";
+  const words = sentence.split(" ");
   return (
     <>
       <section
         id="home"
-        className="relative flex min-h-[550px] items-center justify-center overflow-hidden bg-gray-100 duration-200 dark:bg-gray-dark dark:text-white sm:min-h-[650px] "
+        className=" relative flex min-h-[550px] items-center justify-center overflow-hidden bg-gray-100  pt-20 duration-200 dark:bg-gray-dark dark:text-white sm:min-h-[650px] "
       >
         <div className="-z[8] absolute -top-1/2 right-0 h-[700px] w-[700px] rotate-45 rounded-3xl bg-primary/40"></div>
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-5xl sm:leading-tight md:text-4xl md:leading-tight">
-                  L’institution de référence en{" "}
-                  <span className="text-primary">cinéma</span> ,{" "}
-                  <span className="text-primary">audiovisuel</span>,
-                  <span className="text-primary">ingénierie du son </span>
-                  et{" "}
-                  <span className="text-primary">
-                    innovations technologiques
-                  </span>{" "}
-                  pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
-                </h1>
+            <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+              <div className="">
+                <motion.h1
+                  initial={{ x: "-100%" }} // Départ de l'extérieur à gauche
+                  animate={{ x: 0 }} // Se déplace vers sa position d'origine
+                  transition={{
+                    type: "spring",
+                    stiffness: 100, // Stiffness contrôlant la vitesse du mouvement
+                    damping: 25, // Damping pour rendre l'animation plus fluide
+                    duration: 1.5, // Durée totale de l'animation
+                  }}
+                >
+                  <span className="mb-5 text-2xl font-bold text-black dark:text-white   ">
+                    L’institution de référence en{" "}
+                    <span className="text-primary">cinéma</span> ,{" "}
+                    <span className="text-primary">audiovisuel</span>,
+                    <span className="text-primary">ingénierie du son </span>
+                    et{" "}
+                    <span className="text-primary">
+                      innovations technologiques
+                    </span>{" "}
+                    pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
+                  </span>
+                  <div className="mt-5">
+                    <Link
+                      href="https://nextjstemplates.com/templates/saas-starter-startup"
+                      className=" rounded-md bg-primary px-6 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    >
+                      Commencer
+                    </Link>
+                  </div>
+                </motion.h1>
+              </div>
+              <div>
+                {" "}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 3,
+                  }}
+                >
+                  <Image
+                    src={"/images/banniere/media.png"}
+                    width={1000}
+                    height={1000}
+                    alt="okok"
+                    className="rounded-lg "
+                  />
+                </motion.div>
               </div>
             </div>
           </div>
