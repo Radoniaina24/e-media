@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React from "react";
+import { motion } from "framer-motion";
+import SectionOne from "./SectionOne";
 
 export default function QuiSommesNous() {
   useEffect(() => {
@@ -13,8 +15,43 @@ export default function QuiSommesNous() {
   }, []);
   return (
     <div className="relative py-10 dark:bg-gray-dark">
-      <div className="container mx-auto max-w-5xl">
-        <h1 className="mb-8 text-center text-4xl font-bold sm:text-4xl md:text-[45px]">
+      <div className="container">
+        <div className="text-center">
+          <motion.h1
+            className="mb-8 text-3xl font-bold sm:text-3xl md:text-[40px]"
+            initial={{ y: "100%", opacity: 0 }} // Commence en bas et invisible
+            animate={{ y: 0, opacity: 1 }} // Monte vers la position finale et devient visible
+            transition={{
+              type: "spring",
+              stiffness: 80,
+              damping: 15,
+              duration: 1.2,
+            }}
+          >
+            Qui Sommes-Nous ?
+          </motion.h1>
+          <motion.hr
+            className="m-auto my-8 h-px w-48 border-2 border-red-600 bg-gray-200 dark:bg-gray-700"
+            initial={{ y: "100%", opacity: 0 }} // Ligne commence en bas
+            animate={{ y: 0, opacity: 1 }} // Ligne monte vers sa position finale
+            transition={{
+              delay: 0.3, // Ajouter un léger délai pour l'animation de la ligne
+              type: "spring",
+              stiffness: 80,
+              damping: 15,
+              duration: 1,
+            }}
+          />
+        </div>
+        <SectionOne />
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <div className="container mx-auto max-w-5xl">
+        <h1 className="mb-8 text-center text-3xl font-bold sm:text-3xl md:text-[45px]">
           Qui Sommes-Nous ?
         </h1>
         <hr className=" m-auto my-8 h-px w-48 border-2 border-primary bg-gray-200 dark:bg-gray-700"></hr>
@@ -269,10 +306,8 @@ export default function QuiSommesNous() {
           </svg>
         </div>
 
-        {/* <div className="bottom-50 absolute left-20 z-[-1]">
+        <div className="bottom-50 absolute left-20 z-[-1]">
           fdgdfgdfgdfgdfgdfgdf
-        </div> */}
-      </div>
-    </div>
-  );
+        </div>
+      </div> */
 }
