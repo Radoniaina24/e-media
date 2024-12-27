@@ -47,7 +47,7 @@ export default function SectionFour() {
                   }}
                 />
                 {/* Animation du paragraphe */}
-                <ul className="max-w-md list-inside space-y-1 text-gray-500 dark:text-gray-400">
+                <ul className="max-w-md list-inside space-y-1 text-base font-medium leading-relaxed text-gray-500 dark:text-gray-400  sm:text-lg sm:leading-relaxed">
                   <li className=" flex items-center">
                     <div className="mr-4">
                       <CheckIcon className=" h-6 w-6 text-green-500" />
