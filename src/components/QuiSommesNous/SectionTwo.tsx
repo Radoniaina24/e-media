@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/solid"; // Version pleine (solid)
 export default function SectionTwo() {
   return (
-    <section className="py-16 md:py-20 lg:py-28">
+    <section className="py-2 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 sm:my-10 sm:hidden md:block lg:w-1/2">
@@ -23,7 +23,7 @@ export default function SectionTwo() {
               whileTap={{ scale: 0.95 }} // Réduction légère quand cliqué
             >
               <Image
-                src="/images/banniere/p5.png"
+                src="/images/banniere/p7.png"
                 alt="about image"
                 className=" rotate-12 rounded-lg shadow-lg drop-shadow-three   dark:drop-shadow-none"
                 // width={500}
@@ -31,7 +31,7 @@ export default function SectionTwo() {
                 fill
               />
               <Image
-                src="/images/banniere/p6.png"
+                src="/images/banniere/p7.png"
                 alt="about image"
                 className=" rounded-lg drop-shadow-three dark:block dark:drop-shadow-none"
                 // width={500}
@@ -67,7 +67,7 @@ export default function SectionTwo() {
                   Une Offre Académique Diversifiée :
                 </motion.h3>
                 <motion.hr
-                  className=" my-8 h-px w-48 border-2 border-primary bg-gray-200 dark:bg-gray-700"
+                  className=" my-8 h-px w-24 border-2 border-primary bg-gray-200 dark:bg-gray-700"
                   initial={{ y: "100%", opacity: 0 }} // Ligne commence en bas
                   animate={{ y: 0, opacity: 1 }} // Ligne monte vers sa position finale
                   transition={{

@@ -2,7 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-export default function SectionOne() {
+import { CheckIcon } from "@heroicons/react/solid"; // Version pleine (solid)
+export default function SectionFour() {
   return (
     <section className="py-2 md:py-20 lg:py-28">
       <div className="container">
@@ -24,32 +25,54 @@ export default function SectionOne() {
               >
                 {/* Animation du titre */}
                 <motion.h3
-                  className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+                  className=" mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
                   variants={{
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0 },
                   }}
                   transition={{ type: "spring", stiffness: 80, damping: 20 }}
                 >
-                  E-Media : L&apos;Université de Référence pour les Industries
-                  Créatives à Madagascar et en Afrique
+                  Notre Engagement :
                 </motion.h3>
-
-                {/* Animation du paragraphe */}
-                <motion.p
-                  className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed"
-                  variants={{
-                    hidden: { opacity: 0, x: -50 }, // Glisse depuis la gauche
-                    visible: { opacity: 1, x: 0 },
+                <motion.hr
+                  className=" my-8 h-px w-24 border-2 border-primary bg-gray-200 dark:bg-gray-700"
+                  initial={{ y: "100%", opacity: 0 }} // Ligne commence en bas
+                  animate={{ y: 0, opacity: 1 }} // Ligne monte vers sa position finale
+                  transition={{
+                    delay: 0.3, // Ajouter un léger délai pour l'animation de la ligne
+                    type: "spring",
+                    stiffness: 80,
+                    damping: 15,
+                    duration: 1,
                   }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                >
-                  Fondée en 2011, E-Media forme des talents créatifs et
-                  innovants dans les domaines du cinéma, de l&apos;audiovisuel,
-                  de l&apos;ingénierie du son et de l&apos;innovation
-                  technologique, tout en contribuant au développement économique
-                  de Madagascar et de l&apos;Afrique.
-                </motion.p>
+                />
+                {/* Animation du paragraphe */}
+                <ul className="max-w-md list-inside space-y-1 text-gray-500 dark:text-gray-400">
+                  <li className=" flex items-center">
+                    <div className="mr-4">
+                      <CheckIcon className=" h-6 w-6 text-green-500" />
+                    </div>
+
+                    <div>
+                      Développer les talents locaux pour répondre aux besoins
+                      des industries créatives.
+                    </div>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-4">
+                      <CheckIcon className=" h-6 w-6 text-green-500" />
+                    </div>
+                    <div>Rendre la technologie accessible à tous.</div>
+                  </li>
+                  <li className="flex items-center ">
+                    <div className="mr-4">
+                      <CheckIcon className=" h-6 w-6 text-green-500" />
+                    </div>
+                    <div>
+                      Soutenir l&apos;entrepreneuriat et l&apos;innovation.
+                    </div>
+                  </li>
+                </ul>
               </motion.div>
             </div>
           </div>
@@ -68,7 +91,7 @@ export default function SectionOne() {
               whileTap={{ scale: 0.95 }} // Réduction légère quand cliqué
             >
               <Image
-                src="/images/banniere/p5.png"
+                src="/images/banniere/p2.png"
                 alt="about image"
                 className=" rotate-12 rounded-lg shadow-lg drop-shadow-three   dark:drop-shadow-none"
                 // width={500}
@@ -76,7 +99,7 @@ export default function SectionOne() {
                 fill
               />
               <Image
-                src="/images/banniere/p3.png"
+                src="/images/banniere/p6.png"
                 alt="about image"
                 className=" rounded-lg drop-shadow-three dark:block dark:drop-shadow-none"
                 // width={500}
