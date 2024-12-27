@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 export default function SectionOne() {
   return (
-    <section className="py-2 md:py-20 lg:py-28">
+    <section className="py-2 md:py-20 lg:py-5">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">

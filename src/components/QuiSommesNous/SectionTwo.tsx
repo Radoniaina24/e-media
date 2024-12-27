@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/solid"; // Version pleine (solid)
 export default function SectionTwo() {
   return (
-    <section className="py-2 md:py-20 lg:py-28">
+    <section className="py-2 md:py-20 lg:py-5">
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 sm:my-10 sm:hidden md:block lg:w-1/2">
@@ -23,7 +23,7 @@ export default function SectionTwo() {
               whileTap={{ scale: 0.95 }} // Réduction légère quand cliqué
             >
               <Image
-                src="/images/banniere/p7.png"
+                src="/images/banniere/p6.png"
                 alt="about image"
                 className=" rotate-12 rounded-lg shadow-lg drop-shadow-three   dark:drop-shadow-none"
                 // width={500}

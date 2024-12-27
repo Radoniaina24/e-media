@@ -244,7 +244,7 @@ export default function QuiSommesNous() {
               </defs>
             </svg>
           </div>
-          <div className="-z[8] absolute -bottom-1 -left-20 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40"></div>
+          <div className="-z[8] absolute -bottom-1 -left-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div>
         </div>
       </div>
       <div className="container">
