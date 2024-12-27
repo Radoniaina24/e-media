@@ -82,6 +82,9 @@ module.exports = {
         three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
       },
     },
+    transform: {
+      "rotate-y-6": "rotateY(6deg)",
+    },
   },
   plugins: [flowbite.plugin()],
 };

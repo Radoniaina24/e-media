@@ -13,7 +13,6 @@ export default function QuiSommesNous() {
   useEffect(() => {
     AOS.init({
       duration: 1200, // Durée de l'animation en millisecondes
-      once: true, // Exécute l'animation une seule fois
     });
   }, []);
   return (
@@ -254,8 +253,8 @@ export default function QuiSommesNous() {
       </div>
       <div className="relative py-10 dark:bg-gray-dark">
         <div className="container ">
-          <div className="-z[8] absolute -bottom-2 -right-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div>
-          <div className="-z[8] absolute -bottom-11 -right-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div>
+          {/* <div className="-z[8] absolute -bottom-2 -right-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div>
+          <div className="-z[8] absolute -bottom-11 -right-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div> */}
           <SectionTwo />
           <SectionFour />
           {/* <SectionThree /> */}
