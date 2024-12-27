@@ -7,7 +7,7 @@ export default function SectionOne() {
       <div className="container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">
-            <div className="max-w-[470px]">
+            <div className="max-w-[500px]">
               <div className="mb-9">
                 <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
                   E-Media : L&apos;Université de Référence pour les Industries
@@ -32,13 +32,13 @@ export default function SectionOne() {
                 src="/images/banniere/p3.png"
                 alt="about image"
                 fill
-                className=" rouded drop-shadow-three dark:hidden dark:drop-shadow-none"
+                className=" rounded-lg drop-shadow-three dark:hidden dark:drop-shadow-none"
               />
               <Image
                 src="/images/banniere/p3.png"
                 alt="about image"
                 fill
-                className=" rouded hidden drop-shadow-three dark:block dark:drop-shadow-none"
+                className="  rounded-lg drop-shadow-three dark:block dark:drop-shadow-none"
               />
             </div>
           </div>
