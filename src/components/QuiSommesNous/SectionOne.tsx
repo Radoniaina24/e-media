@@ -53,7 +53,7 @@ export default function SectionOne() {
               </motion.div>
             </div>
           </div>
-          <div className="w-full px-4 lg:w-1/2">
+          <div className="w-full px-4 sm:my-10 sm:hidden md:block lg:w-1/2">
             <motion.div
               className="relative mx-auto mb-12 aspect-[25/24] max-w-[500px] text-center lg:m-0"
               initial={{ scale: 0.8, opacity: 0 }} // Démarre petit et invisible
@@ -70,14 +70,18 @@ export default function SectionOne() {
               <Image
                 src="/images/banniere/p5.png"
                 alt="about image"
+                className=" rotate-12 rounded-lg shadow-lg drop-shadow-three   dark:drop-shadow-none"
+                // width={500}
+                // height={500}
                 fill
-                className=" rotate-12 rounded-lg shadow-lg drop-shadow-three dark:hidden dark:drop-shadow-none"
               />
               <Image
                 src="/images/banniere/p3.png"
                 alt="about image"
+                className=" rounded-lg drop-shadow-three dark:block dark:drop-shadow-none"
+                // width={500}
+                // height={500}
                 fill
-                className="  rounded-lg drop-shadow-three dark:block dark:drop-shadow-none"
               />
             </motion.div>
           </div>
