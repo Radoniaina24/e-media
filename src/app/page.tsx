@@ -43,7 +43,7 @@ export default function Home() {
       {/* <WhyUs /> */}
       {/* <Features /> */}
       <Video />
-      <Galerie />
+      {/* <Galerie /> */}
       {/* Formation*/}
       {/* <Brands /> */}
       {/* <AboutSectionOne />
