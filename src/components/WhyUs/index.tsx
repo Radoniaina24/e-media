@@ -33,8 +33,8 @@ export default function WhyUs() {
 
           {/* Sous-titre */}
           <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed md:text-xl">
-            Découvrez les raisons qui font d'E-Media un choix idéal pour votre
-            avenir dans les industries créatives.
+            Découvrez les raisons qui font d&apos;E-Media un choix idéal pour
+            votre avenir dans les industries créatives.
           </p>
         </div>
       </div>
