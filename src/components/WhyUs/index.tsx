@@ -13,7 +13,7 @@ export default function WhyUs() {
     });
   }, []);
   return (
-    <div className="relative  py-10 dark:bg-gray-dark">
+    <div className="relative  py-10 dark:bg-gray-dark ">
       <div
         className="relative bg-cover bg-fixed bg-center px-6 py-16 text-white"
         style={{
