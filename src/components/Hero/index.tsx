@@ -11,13 +11,13 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className=" relative flex min-h-[550px] items-center justify-center overflow-hidden bg-gray-100  pt-20 duration-200 dark:bg-gray-dark dark:text-white sm:min-h-[650px] "
+        className=" relative flex min-h-[550px] items-center justify-center overflow-hidden bg-gray-100  pt-40 duration-200 dark:bg-gray-dark dark:text-white sm:min-h-[650px] sm:pt-10 "
       >
         <div className="-z[8] absolute -top-1/2 right-0 h-[700px] w-[700px] rotate-45 rounded-3xl bg-primary/40"></div>
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-              <div className="sm:text-center md:text-start lg:text-start">
+              <div className="  text-center sm:text-center md:text-center lg:text-start">
                 <motion.h1
                   initial={{ x: "-150%" }} // Départ de l'extérieur à gauche
                   animate={{ x: 0 }} // Se déplace vers sa position d'origine
