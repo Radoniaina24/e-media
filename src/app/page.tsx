@@ -40,7 +40,7 @@ export default function Home() {
       <Hero />
       {/* <Banner /> */}
       <QuiSommesNous />
-      {/* <WhyUs /> */}
+      <WhyUs />
       {/* <Features /> */}
       <Video />
       <Galerie />
