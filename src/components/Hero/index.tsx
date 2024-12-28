@@ -1,348 +1,44 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import Banner from "../Banner";
-import { motion } from "framer-motion";
+
+import { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 const Hero = () => {
-  const sentence =
-    "L’institution de référence en cinéma, audiovisuel, ingénierie du son et innovations technologiques pour Madagascar et l’Afrique, au cœur de l’Océan Indien.";
-  const words = sentence.split(" ");
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Temps de transition
+    });
+  }, []);
   return (
-    <>
-      <section
-        id="home"
-        className=" relative flex min-h-[550px] items-center justify-center overflow-hidden bg-gray-100  pt-40 duration-200 dark:bg-gray-dark dark:text-white sm:min-h-[650px] sm:pt-10 "
-      >
-        <div className="-z[8] absolute -top-1/2 right-0 h-[700px] w-[700px] rotate-45 rounded-3xl bg-primary/40"></div>
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-              <div className="  text-center sm:text-center md:text-center lg:text-start">
-                <motion.h1
-                  initial={{ x: "-150%" }} // Départ de l'extérieur à gauche
-                  animate={{ x: 0 }} // Se déplace vers sa position d'origine
-                  transition={{
-                    type: "spring",
-                    stiffness: 100, // Stiffness contrôlant la vitesse du mouvement
-                    damping: 25, // Damping pour rendre l'animation plus fluide
-                    duration: 1.5, // Durée totale de l'animation
-                  }}
-                >
-                  <span className="mb-5 text-2xl font-bold text-black dark:text-white   ">
-                    L’institution de référence en{" "}
-                    <span className="text-primary">cinéma</span> ,{" "}
-                    <span className="text-primary">audiovisuel</span>,
-                    <span className="text-primary">ingénierie du son </span>
-                    et{" "}
-                    <span className="text-primary">
-                      innovations technologiques
-                    </span>{" "}
-                    pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
-                  </span>
-                  <div className="mt-7">
-                    <Link
-                      href="#"
-                      className=" rounded-md bg-primary px-6 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
-                    >
-                      Commencer
-                    </Link>
-                  </div>
-                </motion.h1>
-              </div>
-              <div>
-                {" "}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 1.5,
-                    ease: "easeOut",
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: 3,
-                  }}
-                >
-                  <Image
-                    src={"/images/banniere/media.png"}
-                    width={1000}
-                    height={1000}
-                    alt="okok"
-                    className="rounded-lg sm:hidden md:block lg:block"
-                  />
-                </motion.div>
-              </div>
-            </div>
-          </div>
+    <section
+      className="relative h-screen w-full bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/banniere/p3.png')" }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white">
+        <div className="max-w-4xl space-y-6">
+          <h1
+            className="text-shadow-lg text-4xl font-extrabold leading-tight transition duration-500 sm:text-2xl  md:text-3xl"
+            data-aos="fade-up"
+          >
+            L&apos;institution de référence en cinéma, audiovisuel, ingénierie
+            du son et innovations technologiques pour Madagascar et
+            l&apos;Afrique, au cœur de l&apos;Océan Indien.
+          </h1>
+          <p className="mx-auto mb-8 max-w-2xl text-xl font-light leading-relaxed text-gray-200 md:text-2xl">
+            Rejoignez une université innovante qui forme les leaders de demain
+            dans les secteurs créatifs et technologiques.
+          </p>
+          <a
+            href="#why"
+            className="mt-8 inline-block transform rounded bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
+          >
+            En savoir plus
+          </a>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
 export default Hero;
-
-{
-  /* <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
-          <svg
-            width="450"
-            height="556"
-            viewBox="0 0 450 556"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="277"
-              cy="63"
-              r="225"
-              fill="url(#paint0_linear_25:217)"
-            />
-            <circle
-              cx="17.9997"
-              cy="182"
-              r="18"
-              fill="url(#paint1_radial_25:217)"
-            />
-            <circle
-              cx="76.9997"
-              cy="288"
-              r="34"
-              fill="url(#paint2_radial_25:217)"
-            />
-            <circle
-              cx="325.486"
-              cy="302.87"
-              r="180"
-              transform="rotate(-37.6852 325.486 302.87)"
-              fill="url(#paint3_linear_25:217)"
-            />
-            <circle
-              opacity="0.8"
-              cx="184.521"
-              cy="315.521"
-              r="132.862"
-              transform="rotate(114.874 184.521 315.521)"
-              stroke="url(#paint4_linear_25:217)"
-            />
-            <circle
-              opacity="0.8"
-              cx="356"
-              cy="290"
-              r="179.5"
-              transform="rotate(-30 356 290)"
-              stroke="url(#paint5_linear_25:217)"
-            />
-            <circle
-              opacity="0.8"
-              cx="191.659"
-              cy="302.659"
-              r="133.362"
-              transform="rotate(133.319 191.659 302.659)"
-              fill="url(#paint6_linear_25:217)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_25:217"
-                x1="-54.5003"
-                y1="-178"
-                x2="222"
-                y2="288"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint1_radial_25:217"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(17.9997 182) rotate(90) scale(18)"
-              >
-                <stop offset="0.145833" stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.08" />
-              </radialGradient>
-              <radialGradient
-                id="paint2_radial_25:217"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(76.9997 288) rotate(90) scale(34)"
-              >
-                <stop offset="0.145833" stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.08" />
-              </radialGradient>
-              <linearGradient
-                id="paint3_linear_25:217"
-                x1="226.775"
-                y1="-66.1548"
-                x2="292.157"
-                y2="351.421"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_25:217"
-                x1="184.521"
-                y1="182.159"
-                x2="184.521"
-                y2="448.882"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="white" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint5_linear_25:217"
-                x1="356"
-                y1="110"
-                x2="356"
-                y2="470"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="white" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint6_linear_25:217"
-                x1="118.524"
-                y1="29.2497"
-                x2="166.965"
-                y2="338.63"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div className="absolute bottom-0 left-0 z-[-1] opacity-30 lg:opacity-100">
-          <svg
-            width="364"
-            height="201"
-            viewBox="0 0 364 201"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.88928 72.3303C33.6599 66.4798 101.397 64.9086 150.178 105.427C211.155 156.076 229.59 162.093 264.333 166.607C299.076 171.12 337.718 183.657 362.889 212.24"
-              stroke="url(#paint0_linear_25:218)"
-            />
-            <path
-              d="M-22.1107 72.3303C5.65989 66.4798 73.3965 64.9086 122.178 105.427C183.155 156.076 201.59 162.093 236.333 166.607C271.076 171.12 309.718 183.657 334.889 212.24"
-              stroke="url(#paint1_linear_25:218)"
-            />
-            <path
-              d="M-53.1107 72.3303C-25.3401 66.4798 42.3965 64.9086 91.1783 105.427C152.155 156.076 170.59 162.093 205.333 166.607C240.076 171.12 278.718 183.657 303.889 212.24"
-              stroke="url(#paint2_linear_25:218)"
-            />
-            <path
-              d="M-98.1618 65.0889C-68.1416 60.0601 4.73364 60.4882 56.0734 102.431C120.248 154.86 139.905 161.419 177.137 166.956C214.37 172.493 255.575 186.165 281.856 215.481"
-              stroke="url(#paint3_linear_25:218)"
-            />
-            <circle
-              opacity="0.8"
-              cx="214.505"
-              cy="60.5054"
-              r="49.7205"
-              transform="rotate(-13.421 214.505 60.5054)"
-              stroke="url(#paint4_linear_25:218)"
-            />
-            <circle cx="220" cy="63" r="43" fill="url(#paint5_radial_25:218)" />
-            <defs>
-              <linearGradient
-                id="paint0_linear_25:218"
-                x1="184.389"
-                y1="69.2405"
-                x2="184.389"
-                y2="212.24"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_25:218"
-                x1="156.389"
-                y1="69.2405"
-                x2="156.389"
-                y2="212.24"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_25:218"
-                x1="125.389"
-                y1="69.2405"
-                x2="125.389"
-                y2="212.24"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_25:218"
-                x1="93.8507"
-                y1="67.2674"
-                x2="89.9278"
-                y2="210.214"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_25:218"
-                x1="214.505"
-                y1="10.2849"
-                x2="212.684"
-                y2="99.5816"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <radialGradient
-                id="paint5_radial_25:218"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(220 63) rotate(90) scale(43)"
-              >
-                <stop offset="0.145833" stopColor="white" stopOpacity="0" />
-                <stop offset="1" stopColor="white" stopOpacity="0.08" />
-              </radialGradient>
-            </defs>
-          </svg>
-        </div> */
-}
-{
-  /* <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-4xl md:leading-tight">
-                  L’institution de référence en{" "}
-                  <span className="text-primary">cinéma</span> ,{" "}
-                  <span className="text-primary">audiovisuel</span>,
-                  <span className="text-primary">ingénierie du son </span>
-                  et{" "}
-                  <span className="text-primary">
-                    innovations technologiques
-                  </span>{" "}
-                  pour Madagascar et l’Afrique, au cœur de l’Océan Indien.
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div> */
-}

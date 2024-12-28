@@ -13,7 +13,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 px-6 py-20 dark:bg-gray-dark">
+    <div className="bg-gray-100 px-6 py-20 dark:bg-gray-dark" id="why">
       {/* Header Section */}
       <section
         className="relative rounded-lg bg-cover bg-center shadow-lg"
