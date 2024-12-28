@@ -55,7 +55,7 @@ export default function WhyUs() {
             </div>
           </div>
         </div>
-        <div className="bg-gray-50 px-6 py-12 dark:bg-gray-dark">
+        <div className=" px-6 py-12 dark:bg-gray-dark">
           {/*  <!-- Section 1: Une Formation en Ligne Accessible Partout -->*/}
           <div className="mx-auto max-w-7xl space-y-16">
             <div
@@ -63,14 +63,14 @@ export default function WhyUs() {
               data-aos="fade-up"
             >
               <div className="p-6 md:w-1/2" data-aos="fade-right">
-                <h2 className="mb-4 text-2xl font-bold text-blue-600 md:text-3xl">
+                <h2 className="mb-4 text-2xl font-bold text-black dark:text-white md:text-3xl">
                   Une Formation en Ligne Accessible Partout
                 </h2>
-                <p className=" mb-6 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <p className="mb-6 text-lg leading-relaxed text-gray-700">
                   E-Media propose des programmes en ligne de haute qualité,
                   accessibles à Madagascar et à l’international.
                 </p>
-                <ul className="list-inside list-disc space-y-3 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                <ul className="list-inside list-disc space-y-3 text-gray-700">
                   <li>
                     <span className="font-semibold">
                       Une communauté étudiante diversifiée
@@ -117,14 +117,14 @@ export default function WhyUs() {
               className="order-1 p-6 md:order-2 md:w-1/2"
               data-aos="fade-left"
             >
-              <h2 className="mb-4 text-2xl font-bold text-blue-600 md:text-3xl">
+              <h2 className="mb-4 text-2xl font-bold  text-black dark:text-white md:text-3xl">
                 Des Infrastructures Modernes
               </h2>
-              <p className="mb-6 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+              <p className="mb-6 text-lg leading-relaxed text-gray-700">
                 Avec des équipements de pointe, E-Media garantit une formation
                 pratique et immersive :
               </p>
-              <ul className="space-y-3text-base list-inside list-disc font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+              <ul className="list-inside list-disc space-y-3 text-gray-700">
                 <li>
                   Studios professionnels : Fond vert, plateau TV, sonorisation,
                   et régie vidéo.
@@ -152,7 +152,7 @@ export default function WhyUs() {
           >
             <div className="p-6 md:w-1/2">
               <h2
-                className="mb-4 text-2xl font-bold text-blue-600 md:text-3xl"
+                className="mb-4 text-2xl font-bold text-black dark:text-white md:text-3xl"
                 data-aos="fade-right"
               >
                 Un Engagement pour le Développement Durable
@@ -186,160 +186,36 @@ export default function WhyUs() {
               />
             </div>
           </div>
-          {/* <!-- Section 4: E-Media : L’Excellence et l’Impact --> */}
-          <div
-            className="relative bg-cover bg-fixed bg-center px-6 py-20 text-center text-white"
-            style={{
-              backgroundImage: "url('/images/banniere/p3.png')", // Remplacez par l'URL de votre image
-            }}
-          >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        </div>
+      </div>
+      {/* <!-- Section 4: E-Media : L’Excellence et l’Impact --> */}
+      <div
+        className="relative bg-cover bg-fixed bg-center px-6 py-20 text-center text-white"
+        style={{
+          backgroundImage: "url('/images/banniere/p3.png')", // Remplacez par l'URL de votre image
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-            {/* Contenu */}
-            <div className="relative z-10" data-aos="zoom-in">
-              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                E-Media : L’Excellence et l’Impact
-              </h2>
-              <p className="mx-auto mb-6 max-w-3xl text-lg leading-relaxed md:text-xl">
-                E-Media allie innovation technologique et engagement pour un
-                avenir durable, transformant créativité et savoir-faire en
-                leviers de développement.
-              </p>
-              <p className="text-lg font-semibold text-blue-300 md:text-xl">
-                E-Media : Construisons l’avenir ensemble.
-              </p>
-              <button className="mt-6 rounded-lg bg-blue-600 px-6 py-3 text-lg font-bold text-white shadow-lg transition hover:bg-blue-700">
-                En savoir plus
-              </button>
-            </div>
-          </div>
+        {/* Contenu */}
+        <div className="relative z-10" data-aos="zoom-in">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+            E-Media : L&apos;Excellence et l&apos;Impact
+          </h2>
+          <p className="mx-auto mb-6 max-w-3xl text-lg leading-relaxed md:text-xl">
+            E-Media allie innovation technologique et engagement pour un avenir
+            durable, transformant créativité et savoir-faire en leviers de
+            développement.
+          </p>
+          <p className="text-lg font-semibold text-blue-300 md:text-xl">
+            E-Media : Construisons l&apos;avenir ensemble.
+          </p>
+          <button className="mt-6 rounded-lg bg-blue-600 px-6 py-3 text-lg font-bold text-white shadow-lg transition hover:bg-blue-700">
+            En savoir plus
+          </button>
         </div>
       </div>
     </div>
   );
 }
-
-//   {/* Strategic Location Section */}
-//   <div className="mb-16 grid grid-cols-1 gap-10 md:grid-cols-2">
-//     <div className="flex flex-col justify-center">
-//       <h3 className="text-yellow-400 mb-4 text-2xl font-semibold ">
-//         Un Emplacement Stratégique
-//       </h3>
-//       <p className="text-lg leading-relaxed text-gray-700 dark:text-white">
-//         Située à Nanisana, au cœur d&apos;Antananarivo, E-Media est
-//         facilement accessible grâce à un réseau de transports bien
-//         desservi et proche des commodités essentielles, offrant un
-//         environnement pratique et accueillant.
-//       </p>
-//     </div>
-//     <div className="flex justify-center">
-//       {/* Add an image or illustration here if desired */}
-//     </div>
-//   </div>
-
-//   {/* Online Education Section */}
-//   <div className="mb-16 grid grid-cols-1 gap-10 md:grid-cols-2">
-//     <div className="flex flex-col justify-center">
-//       <h3 className="text-yellow-400 mb-4 text-2xl font-semibold">
-//         Une Formation en Ligne Accessible Partout
-//       </h3>
-//       <ul className="space-y-4 text-lg text-gray-700">
-//         <li>
-//           <span className="font-semibold">
-//             Une communauté étudiante diversifiée
-//           </span>
-//           , issue d&apos;Afrique, d&apos;Europe, des Amériques et de la
-//           diaspora malgache.
-//         </li>
-//         <li>
-//           <span className="font-semibold">Des formations flexibles</span>{" "}
-//           et un accompagnement personnalisé adaptés aux besoins des
-//           apprenants.
-//         </li>
-//       </ul>
-//     </div>
-//     <div className="flex justify-center">
-//       {/* Add an image or illustration here if desired */}
-//     </div>
-//   </div>
-
-//   {/* Modern Infrastructure Section */}
-//   <div className="mb-16 grid grid-cols-1 gap-10 md:grid-cols-2">
-//     <div className="flex flex-col justify-center">
-//       <h3 className="text-yellow-400 mb-4 text-2xl font-semibold">
-//         Des Infrastructures Modernes
-//       </h3>
-//       <ul className="space-y-4 text-lg text-gray-700">
-//         <li>
-//           <span className="font-semibold">Studios professionnels</span> :
-//           Fond vert, plateau TV, sonorisation, et régie vidéo.
-//         </li>
-//         <li>
-//           <span className="font-semibold">Parc informatique</span> :
-//           Ordinateurs performants (Core i7, 7ᵉ génération et plus).
-//         </li>
-//         <li>
-//           <span className="font-semibold">Laboratoires spécialisés</span>{" "}
-//           : Multimédia, informatique et techniques avancées.
-//         </li>
-//         <li>
-//           <span className="font-semibold">
-//             Cabines de son et studio radiophonique
-//           </span>{" "}
-//           pour une qualité optimale.
-//         </li>
-//       </ul>
-//     </div>
-//     <div className="flex justify-center">
-//       {/* Add an image or illustration here if desired */}
-//     </div>
-//   </div>
-
-//   {/* Sustainable Development Section */}
-//   <div className="mb-16 grid grid-cols-1 gap-10 md:grid-cols-2">
-//     <div className="flex flex-col justify-center">
-//       <h3 className="text-yellow-400 mb-4 text-2xl font-semibold">
-//         Un Engagement pour le Développement Durable
-//       </h3>
-//       <ul className="space-y-4 text-lg text-gray-700">
-//         <li>
-//           <span className="font-semibold">
-//             Création des opportunités professionnelles
-//           </span>{" "}
-//           pour les jeunes dans les industries créatives.
-//         </li>
-//         <li>
-//           <span className="font-semibold">
-//             Encouragement de l&apos;entrepreneuriat
-//           </span>{" "}
-//           et l&apos;innovation comme moteurs de croissance.
-//         </li>
-//         <li>
-//           <span className="font-semibold">
-//             Valorisation des ressources culturelles
-//           </span>{" "}
-//           et humaines locales pour un rayonnement international.
-//         </li>
-//       </ul>
-//     </div>
-//     <div className="flex justify-center">
-//       {/* Add an image or illustration here if desired */}
-//     </div>
-//   </div>
-
-//   {/* Excellence and Impact Section */}
-//   <div className="mb-16">
-//     <h3 className="text-yellow-400 mb-4 text-2xl font-semibold">
-//       E-Media : L&apos;Excellence et l&apos;Impact
-//     </h3>
-//     <p className="mb-4 text-lg leading-relaxed text-gray-700">
-//       E-Media allie innovation technologique et engagement pour un avenir
-//       durable, transformant créativité et savoir-faire en leviers de
-//       développement.
-//     </p>
-//     <h3 className="text-yellow-400 mb-4 text-2xl font-semibold">
-//       E-Media : Construisons l&apos;avenir ensemble.
-//     </h3>
-//   </div>
-// </div> */}
