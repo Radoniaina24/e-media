@@ -68,15 +68,15 @@ export default function WhyUs() {
                 </h2>
                 <p className="mb-6 text-lg leading-relaxed text-gray-700">
                   E-Media propose des programmes en ligne de haute qualité,
-                  accessibles à Madagascar et à l’international.
+                  accessibles à Madagascar et à l&apos;international.
                 </p>
                 <ul className="list-inside list-disc space-y-3 text-gray-700">
                   <li>
                     <span className="font-semibold">
                       Une communauté étudiante diversifiée
                     </span>
-                    , issue d’Afrique, d’Europe, des Amériques et de la diaspora
-                    malgache.
+                    , issue d&apos;Afrique, d&apos;Europe, des Amériques et de
+                    la diaspora malgache.
                   </li>
                   <li>
                     <span className="font-semibold">
@@ -159,7 +159,7 @@ export default function WhyUs() {
               </h2>
               <p className="mb-6 text-lg leading-relaxed text-gray-700">
                 E-Media contribue au développement socio-économique de
-                Madagascar et de l’Afrique en :
+                Madagascar et de l&apos;Afrique en :
               </p>
               <ul className="list-inside list-disc space-y-3 text-gray-700">
                 <li>
@@ -167,8 +167,8 @@ export default function WhyUs() {
                   les industries créatives.
                 </li>
                 <li>
-                  Encourageant l’entrepreneuriat et l’innovation comme moteurs
-                  de croissance.
+                  Encourageant l&apos;entrepreneuriat et l&apos;innovation comme
+                  moteurs de croissance.
                 </li>
                 <li>
                   Valorisant les ressources culturelles et humaines locales pour
@@ -188,7 +188,7 @@ export default function WhyUs() {
           </div>
         </div>
       </div>
-      {/* <!-- Section 4: E-Media : L’Excellence et l’Impact --> */}
+      {/* <!-- Section 4: E-Media : L&apos;Excellence et l&apos;Impact --> */}
       <div
         className="relative bg-cover bg-fixed bg-center px-6 py-20 text-center text-white"
         style={{
