@@ -73,7 +73,7 @@ const App = () => {
               </h3>
               <p className="mt-2 text-gray-600 dark:text-white">
                 Accessibles avec ou sans baccalauréat, pour des jeunes en
-                reconversion ou en quête d’emploi.
+                reconversion ou en quête d&apos;emploi.
               </p>
             </div>
             <div
@@ -254,7 +254,7 @@ const App = () => {
                   />
                 </svg>
                 <h3 className="text-2xl font-semibold">
-                  Soutenir l'entrepreneuriat
+                  Soutenir l&apos;entrepreneuriat
                 </h3>
                 <p className="mt-2 text-lg">
                   Encourager l&apos;innovation et soutenir
