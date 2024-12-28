@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 export default function WhyUs() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Durée de l'animation
+      duration: 1000, // Durée de l&apos;animation
       easing: "ease-in-out", // Style de transition
     });
   }, []);
@@ -45,7 +45,7 @@ export default function WhyUs() {
               <p className="text-lg leading-relaxed text-gray-700">
                 Située à{" "}
                 <span className="font-bold text-blue-600">Nanisana</span>, au
-                cœur d'
+                cœur d&apos;
                 <span className="font-bold text-blue-600">Antananarivo</span>,
                 <span className="font-bold">E-Media</span> est facilement
                 accessible grâce à un réseau de transports bien desservi et
@@ -192,7 +192,7 @@ export default function WhyUs() {
       <div
         className="relative bg-cover bg-fixed bg-center px-6 py-20 text-center text-white"
         style={{
-          backgroundImage: "url('/images/banniere/p3.png')", // Remplacez par l'URL de votre image
+          backgroundImage: "url(&apos;/images/banniere/p3.png&apos;)", // Remplacez par l&apos;URL de votre image
         }}
       >
         {/* Overlay */}
