@@ -13,7 +13,7 @@ export default function WhyUs() {
     });
   }, []);
   return (
-    <div className="relative  py-10 dark:bg-gray-dark ">
+    <div className="relative   dark:bg-gray-dark ">
       <div
         className="relative bg-cover bg-fixed bg-center px-6 py-16 text-white"
         style={{
@@ -283,9 +283,6 @@ export default function WhyUs() {
           <p className="text-lg font-semibold text-blue-300 md:text-xl">
             E-Media : Construisons l&apos;avenir ensemble.
           </p>
-          <button className="mt-6 rounded-lg bg-blue-600 px-6 py-3 text-lg font-bold text-white shadow-lg transition hover:bg-blue-700">
-            En savoir plus
-          </button>
         </div>
       </div>
     </div>

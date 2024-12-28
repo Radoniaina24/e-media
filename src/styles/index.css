@@ -31,19 +31,3 @@
     @apply opacity-100;
   }
 }
-@keyframes bubbleAnimation {
-  0% {
-    left: -50px; /* La bulle commence à gauche hors écran */
-  }
-  50% {
-    left: 50%; /* La bulle se déplace au centre de l'écran */
-    transform: translateX(-50%); /* Pour centrer la bulle */
-  }
-  100% {
-    left: 100%; /* La bulle termine à droite hors écran */
-  }
-}
-
-.animate-bubble {
-  animation: bubbleAnimation 10s ease-in-out infinite; /* Animation continue qui dure 10s */
-}

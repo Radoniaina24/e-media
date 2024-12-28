@@ -1,265 +1,272 @@
 "use client";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import React from "react";
-import { motion } from "framer-motion";
-import SectionOne from "./SectionOne";
-import SectionTwo from "./SectionTwo";
-import SectionThree from "./SectionThree";
-import SectionFour from "./SectionFour";
+import Image from "next/image";
+import React, { useEffect } from "react";
+import "aos/dist/aos.css"; // Importer les styles AOS
+import AOS from "aos"; // Importer la librairie AOS
 
-export default function QuiSommesNous() {
+const App = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Durée de l'animation en millisecondes
+      duration: 1000, // Durée de l'animation
+      easing: "ease-in-out", // Transition fluide
     });
   }, []);
+
   return (
-    <>
-      <div className="relative py-10 dark:bg-gray-dark">
-        <div className="container">
-          <div className="text-center">
-            <motion.h1
-              className="mb-8 text-3xl font-bold sm:text-3xl md:text-[40px]"
-              initial={{ y: "100%", opacity: 0 }} // Commence en bas et invisible
-              animate={{ y: 0, opacity: 1 }} // Monte vers la position finale et devient visible
-              transition={{
-                type: "spring",
-                stiffness: 80,
-                damping: 15,
-                duration: 1.2,
+    <div className="bg-gray-100 px-6 py-20 dark:bg-gray-dark">
+      {/* Header Section */}
+      <section
+        className="relative rounded-lg bg-cover bg-center shadow-lg"
+        style={{ backgroundImage: "url('/images/banniere/p3.png')" }}
+        data-aos="fade-up"
+      >
+        <div className="absolute inset-0 rounded-lg bg-black opacity-50"></div>
+        <div className="relative z-10 py-20 text-center text-white">
+          <h1 className="mb-4 text-4xl font-extrabold md:text-5xl">
+            Qui Sommes-Nous ?
+          </h1>
+          <p className="mx-auto max-w-3xl text-xl font-light md:text-2xl">
+            E-Media : L&apos;Université de Référence pour les Industries
+            Créatives à Madagascar et en Afrique
+          </p>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-16" data-aos="fade-up">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
+            Une Offre Académique Diversifiée
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div
+              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              data-aos="zoom-in"
+            >
+              <Image
+                src="/images/why/f-u.jpg"
+                alt="Formations universitaires"
+                className="h-48 w-full rounded-t-lg object-cover"
+                width={500}
+                height={500}
+              />
+              <h3 className="mt-4 text-xl font-semibold">
+                Formations universitaires
+              </h3>
+              <p className="mt-2 text-gray-600 dark:text-white">
+                Présentiel et en ligne pour des carrières durables.
+              </p>
+            </div>
+            <div
+              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              data-aos="zoom-in"
+            >
+              <Image
+                src="/images/why/f-c.jpg"
+                alt="Formations certifiantes"
+                className="h-48 w-full rounded-t-lg object-cover"
+                width={500}
+                height={500}
+              />
+              <h3 className="mt-4 text-xl font-semibold">
+                Formations certifiantes
+              </h3>
+              <p className="mt-2 text-gray-600 dark:text-white">
+                Accessibles avec ou sans baccalauréat, pour des jeunes en
+                reconversion ou en quête d’emploi.
+              </p>
+            </div>
+            <div
+              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              data-aos="zoom-in"
+            >
+              <Image
+                src="/images/why/m-s.jpg"
+                alt="Modules spécialisés"
+                className="h-48 w-full rounded-t-lg object-cover"
+                width={500}
+                height={500}
+              />
+              <h3 className="mt-4 text-xl font-semibold">
+                Modules spécialisés
+              </h3>
+              <p className="mt-2 text-gray-600 dark:text-white">
+                Apprentissage rapide et pratique.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Modern and Stimulating Environment */}
+      <section
+        className="bg-gray-200 py-16 dark:bg-gray-dark"
+        data-aos="fade-up"
+      >
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
+            Un Cadre Moderne et Stimulant
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div
+              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              data-aos="fade-left"
+            >
+              <Image
+                src="/images/why/s-p.jpg"
+                alt="Studios professionnels"
+                className="h-48 w-full rounded-t-lg object-cover"
+                width={500}
+                height={500}
+              />
+              <h3 className="mt-4 text-xl font-semibold">
+                Studios professionnels
+              </h3>
+            </div>
+            <div
+              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              data-aos="fade-left"
+            >
+              <Image
+                src="/images/why/p-f.jpg"
+                alt="Parc informatique performant"
+                className="h-48 w-full rounded-t-lg object-cover"
+                width={500}
+                height={500}
+              />
+              <h3 className="mt-4 text-xl font-semibold">
+                Parc informatique performant
+              </h3>
+            </div>
+            <div
+              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              data-aos="fade-left"
+            >
+              <Image
+                src="/images/why/l-i.jpg"
+                alt="Laboratoires spécialisés"
+                className="h-48 w-full rounded-t-lg object-cover"
+                width={500}
+                height={500}
+              />
+              <h3 className="mt-4 text-xl font-semibold">
+                Laboratoires spécialisés
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Commitment Section */}
+      <section className="py-16" data-aos="fade-up">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <h2 className="mb-12 text-4xl font-extrabold text-gray-800 dark:text-white">
+            Notre Engagement
+          </h2>
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+            {/* Premier Engagement */}
+            <div
+              className="relative h-72 rounded-lg bg-cover bg-center shadow-lg"
+              style={{
+                backgroundImage: "url('/images/why/t-l.png')",
               }}
+              data-aos="fade-right"
             >
-              Qui Sommes-Nous ?
-            </motion.h1>
-            <motion.hr
-              className="m-auto my-8 h-px w-48 border-2 border-red-600 bg-gray-200 dark:bg-gray-700"
-              initial={{ y: "100%", opacity: 0 }} // Ligne commence en bas
-              animate={{ y: 0, opacity: 1 }} // Ligne monte vers sa position finale
-              transition={{
-                delay: 0.3, // Ajouter un léger délai pour l'animation de la ligne
-                type: "spring",
-                stiffness: 80,
-                damping: 15,
-                duration: 1,
+              <div className="absolute inset-0 rounded-lg bg-black opacity-50"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center p-8 text-white">
+                <svg
+                  className="mb-4 h-12 w-12 text-indigo-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8 7a7 7 0 100-14 7 7 0 000 14zm-.5-3h1v-4h-1v4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <h3 className="text-2xl font-semibold">
+                  Développer les talents locaux
+                </h3>
+                <p className="mt-2 text-lg">
+                  Répondre aux besoins des industries créatives avec des talents
+                  locaux qualifiés.
+                </p>
+              </div>
+            </div>
+
+            {/* Deuxième Engagement */}
+            <div
+              className="relative h-72 rounded-lg bg-cover bg-center shadow-lg"
+              style={{
+                backgroundImage: "url('/images/why/t-a.jpg')",
               }}
-            />
-          </div>
-          <SectionOne />
-          <div className="absolute bottom-24 left-0 z-[-1]">
-            <svg
-              width="79"
-              height="94"
-              viewBox="0 0 79 94"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              data-aos="fade-right"
             >
-              <rect
-                opacity="0.3"
-                x="-41"
-                y="26.9426"
-                width="66.6675"
-                height="66.6675"
-                transform="rotate(-22.9007 -41 26.9426)"
-                fill="url(#paint0_linear_94:889)"
-              />
-              <rect
-                x="-41"
-                y="26.9426"
-                width="66.6675"
-                height="66.6675"
-                transform="rotate(-22.9007 -41 26.9426)"
-                stroke="url(#paint1_linear_94:889)"
-                strokeWidth="0.7"
-              />
-              <path
-                opacity="0.3"
-                d="M50.5215 7.42229L20.325 1.14771L46.2077 62.3249L77.1885 68.2073L50.5215 7.42229Z"
-                fill="url(#paint2_linear_94:889)"
-              />
-              <path
-                d="M50.5215 7.42229L20.325 1.14771L46.2077 62.3249L76.7963 68.2073L50.5215 7.42229Z"
-                stroke="url(#paint3_linear_94:889)"
-                strokeWidth="0.7"
-              />
-              <path
-                opacity="0.3"
-                d="M17.9721 93.3057L-14.9695 88.2076L46.2077 62.325L77.1885 68.2074L17.9721 93.3057Z"
-                fill="url(#paint4_linear_94:889)"
-              />
-              <path
-                d="M17.972 93.3057L-14.1852 88.2076L46.2077 62.325L77.1884 68.2074L17.972 93.3057Z"
-                stroke="url(#paint5_linear_94:889)"
-                strokeWidth="0.7"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_94:889"
-                  x1="-41"
-                  y1="21.8445"
-                  x2="36.9671"
-                  y2="59.8878"
-                  gradientUnits="userSpaceOnUse"
+              <div className="absolute inset-0 rounded-lg bg-black opacity-50"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center p-8 text-white">
+                <svg
+                  className="mb-4 h-12 w-12 text-green-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
                 >
-                  <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-                </linearGradient>
-                <linearGradient
-                  id="paint1_linear_94:889"
-                  x1="25.6675"
-                  y1="95.9631"
-                  x2="-42.9608"
-                  y2="20.668"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#4A6CF7" stopOpacity="0" />
-                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.51" />
-                </linearGradient>
-                <linearGradient
-                  id="paint2_linear_94:889"
-                  x1="20.325"
-                  y1="-3.98039"
-                  x2="90.6248"
-                  y2="25.1062"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-                </linearGradient>
-                <linearGradient
-                  id="paint3_linear_94:889"
-                  x1="18.3642"
-                  y1="-1.59742"
-                  x2="113.9"
-                  y2="80.6826"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#4A6CF7" stopOpacity="0" />
-                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.51" />
-                </linearGradient>
-                <linearGradient
-                  id="paint4_linear_94:889"
-                  x1="61.1098"
-                  y1="62.3249"
-                  x2="-8.82468"
-                  y2="58.2156"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#4A6CF7" stopOpacity="0.62" />
-                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-                </linearGradient>
-                <linearGradient
-                  id="paint5_linear_94:889"
-                  x1="65.4236"
-                  y1="65.0701"
-                  x2="24.0178"
-                  y2="41.6598"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#4A6CF7" stopOpacity="0" />
-                  <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.51" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div className="absolute right-0 top-14 z-[-1]">
-            <svg
-              width="55"
-              height="99"
-              viewBox="0 0 55 99"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+                  <path
+                    fillRule="evenodd"
+                    d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8 7a7 7 0 100-14 7 7 0 000 14zm-.5-3h1v-4h-1v4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <h3 className="text-2xl font-semibold">
+                  Rendre la technologie accessible
+                </h3>
+                <p className="mt-2 text-lg">
+                  Promouvoir l&apos;accès à la technologie pour tous, quel que
+                  soit leur parcours.
+                </p>
+              </div>
+            </div>
+
+            {/* Troisième Engagement */}
+            <div
+              className="relative h-72 rounded-lg bg-cover bg-center shadow-lg"
+              style={{
+                backgroundImage: "url('/images/why/s-a.jpg')",
+              }}
+              data-aos="fade-right"
             >
-              <circle
-                opacity="0.8"
-                cx="49.5"
-                cy="49.5"
-                r="49.5"
-                fill="#959CB1"
-              />
-              <mask
-                id="mask0_94:899"
-                style={{ maskType: "alpha" }}
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="0"
-                width="99"
-                height="99"
-              >
-                <circle
-                  opacity="0.8"
-                  cx="49.5"
-                  cy="49.5"
-                  r="49.5"
-                  fill="#4A6CF7"
-                />
-              </mask>
-              <g mask="url(#mask0_94:899)">
-                <circle
-                  opacity="0.8"
-                  cx="49.5"
-                  cy="49.5"
-                  r="49.5"
-                  fill="url(#paint0_radial_94:899)"
-                />
-                <g opacity="0.8" filter="url(#filter0_f_94:899)">
-                  <circle cx="53.8676" cy="26.2061" r="20.3824" fill="white" />
-                </g>
-              </g>
-              <defs>
-                <filter
-                  id="filter0_f_94:899"
-                  x="12.4852"
-                  y="-15.1763"
-                  width="82.7646"
-                  height="82.7646"
-                  filterUnits="userSpaceOnUse"
-                  colorInterpolationFilters="sRGB"
+              <div className="absolute inset-0 rounded-lg bg-black opacity-50"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center p-8 text-white">
+                <svg
+                  className="text-yellow-400 mb-4 h-12 w-12"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
                 >
-                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="BackgroundImageFix"
-                    result="shape"
+                  <path
+                    fillRule="evenodd"
+                    d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm8 7a7 7 0 100-14 7 7 0 000 14zm-.5-3h1v-4h-1v4z"
+                    clipRule="evenodd"
                   />
-                  <feGaussianBlur
-                    stdDeviation="10.5"
-                    result="effect1_foregroundBlur_94:899"
-                  />
-                </filter>
-                <radialGradient
-                  id="paint0_radial_94:899"
-                  cx="0"
-                  cy="0"
-                  r="1"
-                  gradientUnits="userSpaceOnUse"
-                  gradientTransform="translate(49.5 49.5) rotate(90) scale(53.1397)"
-                >
-                  <stop stopOpacity="0.47" />
-                  <stop offset="1" stopOpacity="0" />
-                </radialGradient>
-              </defs>
-            </svg>
+                </svg>
+                <h3 className="text-2xl font-semibold">
+                  Soutenir l'entrepreneuriat
+                </h3>
+                <p className="mt-2 text-lg">
+                  Encourager l&apos;innovation et soutenir
+                  l&apos;entrepreneuriat pour créer un impact durable.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="-z[8] absolute -bottom-1 -left-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div>
         </div>
-      </div>
-      <div className="relative py-10 dark:bg-gray-dark">
-        <div className="container">
-          <div className="-z[8] absolute -bottom-1 -left-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div>
-        </div>
-      </div>
-      <div className="relative py-10 dark:bg-gray-dark">
-        <div className="container ">
-          {/* <div className="-z[8] absolute -bottom-2 -right-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div>
-          <div className="-z[8] absolute -bottom-11 -right-72 h-[400px] w-[700px] rotate-45 rounded-2xl bg-primary/40 sm:hidden md:block"></div> */}
-          <SectionTwo />
-          <SectionFour />
-          {/* <SectionThree /> */}
-        </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
-}
+};
+
+export default App;
