@@ -15,8 +15,8 @@ const Contact = () => {
                 Contactez-nous
               </h2>
               <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
-                Si vous avez des questions ou des demandes, n'hésitez pas à nous
-                contacter via ce formulaire.
+                Si vous avez des questions ou des demandes, n&apos;hésitez pas à
+                nous contacter via ce formulaire.
               </p>
 
               <form>
