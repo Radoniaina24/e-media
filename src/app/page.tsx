@@ -15,6 +15,7 @@ import Video from "@/components/Cvideo";
 import WhyUs from "@/components/WhyUs";
 import { Metadata } from "next";
 import Formation from "@/components/Formation";
+import Carousel from "@/components/Carousel";
 
 export const metadata: Metadata = {
   title: "Accueil | E-media",
@@ -42,9 +43,10 @@ export default function page() {
       <WhyUs />
       {/* <Features /> */}
       <Video />
-      <Galerie />
+      {/* <Galerie /> */}
+      <Carousel />
       {/* Formation*/}
-      <Formation />
+      {/* <Formation /> */}
       {/* <Brands /> */}
       {/* <AboutSectionOne />
       <AboutSectionTwo /> */}

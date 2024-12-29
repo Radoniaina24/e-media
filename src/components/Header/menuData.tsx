@@ -32,8 +32,14 @@ const menuData: Menu[] = [
       },
       {
         id: 32,
-        title: "Université",
-        path: "/formation/université",
+        title: "Licence",
+        path: "/formation/licence",
+        newTab: false,
+      },
+      {
+        id: 32,
+        title: "Master",
+        path: "/formation/licence",
         newTab: false,
       },
       {
