@@ -23,7 +23,7 @@ Ce projet visionnaire place Madagascar au cœur de l'économie numérique mondia
         />
         <div className="mb-10 text-center">
           <Link
-            href="https://nextjstemplates.com/templates/saas-starter-startup"
+            href="/city"
             className="rounded-md bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
           >
             En savoir plus

@@ -11,17 +11,15 @@ import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import QuiSommesNous from "@/components/QuiSommesNous";
 import Testimonials from "@/components/Testimonials";
-import Video from "@/components/Video";
+import Video from "@/components/video";
 import WhyUs from "@/components/WhyUs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
-  description: "This is Home for Startup Nextjs Template",
-  // other metadata
+  title: "Accueil | E-media",
 };
 
-export default function Home() {
+export default function page() {
   var settings = {
     dots: false,
     arrows: false,
