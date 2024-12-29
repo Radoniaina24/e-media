@@ -11,7 +11,7 @@ import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import QuiSommesNous from "@/components/QuiSommesNous";
 import Testimonials from "@/components/Testimonials";
-import Video from "@/components/video";
+import Video from "@/components/Cvideo";
 import WhyUs from "@/components/WhyUs";
 import { Metadata } from "next";
 
