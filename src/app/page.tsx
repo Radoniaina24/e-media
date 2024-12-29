@@ -14,6 +14,7 @@ import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Cvideo";
 import WhyUs from "@/components/WhyUs";
 import { Metadata } from "next";
+import Formation from "@/components/Formation";
 
 export const metadata: Metadata = {
   title: "Accueil | E-media",
@@ -43,10 +44,11 @@ export default function page() {
       <Video />
       <Galerie />
       {/* Formation*/}
+      <Formation />
       {/* <Brands /> */}
       {/* <AboutSectionOne />
       <AboutSectionTwo /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       {/* <Pricing /> */}
       {/* <Blog /> */}
       <Contact />
