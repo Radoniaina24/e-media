@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({
           href={"#" + id}
           className="mt-8 inline-block transform rounded bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
         >
-          Detailes
+          Détails
         </a>
       </div>
     </div>
