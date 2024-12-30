@@ -26,15 +26,15 @@ const SpecializationCard: React.FC<SpecializationCardProps> = ({
         {/* Objectives Card */}
         <div className="rounded-lg bg-gray-50 p-6 shadow-sm">
           <h3 className="mb-4 text-lg font-semibold text-gray-700">
-            Objectifs du parcours :
+            Objectifs du parcours
           </h3>
           <ul className="space-y-3">
             {objectives.map((objective, index) => (
               <li key={index} className="flex items-start">
-                <button className="mr-3 flex h-8 w-8 items-center justify-center rounded bg-gray-100 text-gray-600 shadow-sm">
+                <div className="mr-3 flex h-8 w-8 items-center justify-center rounded bg-gray-100 text-gray-600 shadow-sm">
                   <CheckIcon className="h-5 w-5 text-primary" />
-                </button>
-                <span className="text-gray-600">{objective}</span>
+                </div>
+                <div className="text-gray-600">{objective}</div>
               </li>
             ))}
           </ul>
@@ -43,15 +43,18 @@ const SpecializationCard: React.FC<SpecializationCardProps> = ({
         {/* Careers Card */}
         <div className="rounded-lg bg-gray-50 p-6 shadow-sm">
           <h3 className="mb-4 text-lg font-semibold text-gray-700">
-            Débouchés professionnels :
+            Débouchés professionnels
           </h3>
           <ul className="space-y-3">
             {careers.map((career, index) => (
-              <li key={index} className="flex items-start">
-                <button className="mr-3 flex h-8 w-8 items-center justify-center rounded bg-gray-100 text-gray-600 shadow-sm">
-                  <CheckIcon className="h-5 w-5 text-primary" />
-                </button>
-                <span className="text-gray-600">{career}</span>
+              <li key={index} className="flex items-start ">
+                <div>
+                  <div className="mr-3 flex h-8 w-8 items-center justify-center rounded bg-gray-100 text-gray-600 shadow-sm">
+                    <CheckIcon className="h-5 w-5 text-primary" />
+                  </div>
+                </div>
+
+                <div className=" text-gray-600">{career}</div>
               </li>
             ))}
           </ul>

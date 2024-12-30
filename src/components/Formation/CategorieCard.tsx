@@ -1,0 +1,62 @@
+import Link from "next/link";
+import React from "react";
+
+const categories = [
+  {
+    title: "CFP : Formation modulaire",
+    description:
+      "Les formations modulaires sont conçues pour offrir une flexibilité maximale. Vous pouvez suivre des modules spécifiques selon vos besoins et votre rythme.",
+    icon: "📚",
+    lien: "",
+  },
+  {
+    title: "Licence",
+    description:
+      "La licence est un diplôme universitaire qui vous prépare à un large éventail de métiers, offrant une base solide en théorie et en pratique.",
+    icon: "🎓",
+    lien: "/formation/licence",
+  },
+  {
+    title: "Master",
+    description:
+      "Le master permet d'approfondir vos connaissances et d'acquérir des compétences spécialisées dans un domaine spécifique de votre choix.",
+    icon: "👨‍🎓",
+    lien: "",
+  },
+  {
+    title: "E-learning",
+    description:
+      "L'E-learning permet d'étudier à distance, offrant flexibilité et accès à des ressources pédagogiques interactives en ligne.",
+    icon: "💻",
+    lien: "",
+  },
+];
+
+const CategoryCards: React.FC = () => {
+  return (
+    <div className="container mx-auto my-10 p-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {categories.map((category, index) => (
+          <Link key={index} href={category.lien}>
+            <div className="flex flex-col items-center justify-between rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:cursor-pointer">
+              <div className="mb-4 flex items-center justify-center text-4xl">
+                {category.icon}
+              </div>
+              <h3 className="text-center text-xl font-semibold text-gray-800">
+                {category.title}
+              </h3>
+              <p className="mt-2 text-center text-gray-600">
+                {category.description}
+              </p>
+              <div className="mt-4 inline-block rounded bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600">
+                En savoir plus
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CategoryCards;

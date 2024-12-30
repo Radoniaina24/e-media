@@ -10,7 +10,7 @@ import { CheckIcon } from "@heroicons/react/solid";
 import ParcoursCard from "./ParcourCard";
 import SpecializationCard from "./SpecializationCard";
 import CallToAction from "./CallToAction";
-export default function SectionL1() {
+export default function SectionL4() {
   const currentWorld = {
     title: "Cette licence est ouverte à :",
     items: [
@@ -137,7 +137,6 @@ export default function SectionL1() {
             ))}
           </div>
         </Section>
-
         {/* Call to Action */}
         <Section bgColor="bg-gradient-to-r from-blue-500 to-teal-400 text-white">
           <CallToAction

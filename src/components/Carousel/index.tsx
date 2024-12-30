@@ -58,8 +58,8 @@ export default function Carousel() {
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="flex h-full flex-col items-center justify-center bg-black bg-opacity-50 px-4 text-white">
-                <h2 className="text-3xl font-bold">{slide.title}</h2>
-                <p className="mt-4 text-lg">{slide.description}</p>
+                {/* <h2 className="text-3xl font-bold">{slide.title}</h2>
+                <p className="mt-4 text-lg">{slide.description}</p> */}
               </div>
             </div>
           ))}
@@ -68,19 +68,19 @@ export default function Carousel() {
         {/* Boutons */}
         <button
           onClick={handlePrev}
-          className="absolute left-4 top-1/2 flex -translate-y-1/2 transform items-center justify-center rounded-full bg-white p-2 text-black shadow-md hover:bg-gray-200"
+          className="absolute left-4 top-1/2 flex -translate-y-1/2 transform items-center justify-center rounded-full bg-gray-500 p-2 text-black shadow-md hover:bg-gray-200"
         >
           <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-4 top-1/2 flex -translate-y-1/2 transform items-center justify-center rounded-full bg-white p-2 text-black shadow-md hover:bg-gray-200"
+          className="absolute right-4 top-1/2 flex -translate-y-1/2 transform items-center justify-center rounded-full bg-gray-500 p-2 text-black shadow-md hover:bg-gray-200"
         >
           <ChevronRightIcon className="h-6 w-6 text-gray-700" />
         </button>
 
         {/* Indicateurs */}
-        <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 transform space-x-3">
+        {/* <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 transform space-x-3">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -90,7 +90,7 @@ export default function Carousel() {
               }`}
             ></button>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import CategoryCards from "./CategorieCard";
 export default function Formation() {
   return (
     <div>
@@ -50,8 +51,7 @@ export default function Formation() {
           </ul>
         </div>
       </main>
-      {/* Horizontal Line */}
-      <div className="mx-auto my-6 w-3/4 border-t-2 border-gray-300 shadow dark:hidden md:w-1/2"></div>
+      <CategoryCards />
     </div>
   );
 }

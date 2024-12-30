@@ -1,4 +1,3 @@
-import Licence from "@/components/Licence";
 import SectionL3 from "@/components/Licence/SectionL3";
 
 import { Metadata } from "next";

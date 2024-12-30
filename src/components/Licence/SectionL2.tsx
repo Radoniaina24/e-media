@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./Header";
 import Section from "./Section";
 import Card from "./Card";
-import { CheckIcon } from "@heroicons/react/solid";
 export default function SectionL2() {
   const currentWorld = {
     title: "Cette licence est ouverte à :",

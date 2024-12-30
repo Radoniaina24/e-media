@@ -46,7 +46,7 @@ export default function page() {
       {/* <Galerie /> */}
       <Carousel />
       {/* Formation*/}
-      {/* <Formation /> */}
+      <Formation />
       {/* <Brands /> */}
       {/* <AboutSectionOne />
       <AboutSectionTwo /> */}

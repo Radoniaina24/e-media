@@ -8,7 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
 import { CheckIcon } from "@heroicons/react/solid";
 import ParcoursCard from "./ParcourCard";
-export default function SectionL1() {
+export default function SectionL3() {
   const currentWorld = {
     title: "Cette licence est ouverte à :",
     items: [

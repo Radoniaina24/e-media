@@ -1,4 +1,3 @@
-import Licence from "@/components/Licence";
 import SectionL1 from "@/components/Licence/SectionL1";
 import { Metadata } from "next";
 import React from "react";
