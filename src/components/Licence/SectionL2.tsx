@@ -2,16 +2,33 @@ import React from "react";
 import Header from "./Header";
 import Section from "./Section";
 import Card from "./Card";
+import CiblePublicCard from "../Master/CiblePublicCard";
+import MasterCard from "../Master/MasterCard";
+import ProgramCard from "../Master/ProgramCard";
+import CallToAction from "./CallToAction";
 export default function SectionL2() {
-  const currentWorld = {
-    title: "Cette licence est ouverte à :",
-    items: [
-      "Tous les bacheliers : Que vous soyez un nouveau diplômé ou un professionnel, cette formation s’adresse à tous ceux ayant obtenu leur baccalauréat.",
-      "Les professionnels de la communication : Une opportunité de perfectionner leurs compétences et d’élargir leurs horizons dans le numérique et l’audiovisuel.",
-      "Les fonctionnaires et personnes en reconversion : Idéale pour ceux souhaitant évoluer ou se repositionner dans leur carrière.",
-      "Passionnés de l’apprentissage : Parce qu’il n’y a pas d’âge pour apprendre, cette licence offre un accès à une expertise précieuse pour tous les curieux motivés par les métiers des médias et du numérique.",
-    ],
-  };
+  const currentWorld = [
+    {
+      title: "Tous les bacheliers",
+      description:
+        "Que vous soyez un nouveau diplômé ou un professionnel, cette formation s’adresse à tous ceux ayant obtenu leur baccalauréat.",
+    },
+    {
+      title: "Les professionnels de la communication",
+      description:
+        "Une opportunité de perfectionner leurs compétences et d’élargir leurs horizons dans le numérique et l’audiovisuel.",
+    },
+    {
+      title: "Les fonctionnaires et personnes en reconversion",
+      description:
+        "Idéale pour ceux souhaitant évoluer ou se repositionner dans leur carrière.",
+    },
+    {
+      title: "Passionnés de l’apprentissage",
+      description:
+        "Parce qu’il n’y a pas d’âge pour apprendre, cette licence offre un accès à une expertise précieuse pour tous les curieux motivés par les métiers des médias et du numérique.",
+    },
+  ];
 
   const licences = [
     {
@@ -33,7 +50,7 @@ export default function SectionL2() {
   const careerPaths = [
     {
       title: "Audiovisuel, Cinéma et Télévision",
-      items: [
+      details: [
         "Réalisateur ou assistant réalisateur",
         "Journaliste télévisé, animateur TV ou présentateur",
         "Cadreur, monteur vidéo, ou directeur de la photographie",
@@ -44,7 +61,7 @@ export default function SectionL2() {
     },
     {
       title: "Médias numériques et Web",
-      items: [
+      details: [
         "Web designer, développeur multimédia, ou technicien web",
         "Responsable de projet numérique ou consultant en communication digitale",
         "Créateur de contenu multimédia pour les plateformes de streaming, réseaux sociaux et sites web",
@@ -53,7 +70,7 @@ export default function SectionL2() {
     },
     {
       title: "Communication et Entreprise",
-      items: [
+      details: [
         "Responsable communication en entreprise ou en agence",
         "Marketer digital ou consultant en stratégie de contenu",
         "Expert en production audiovisuelle d’entreprise",
@@ -75,18 +92,21 @@ export default function SectionL2() {
         title="LICENCE EN COMMUNICATION AUDIOVISUELLE ET NUMÉRIQUE (CAN)"
         subtitle="La Licence en Communication Audiovisuelle et Numérique (CAN) d'E-media est une formation unique et innovante, conçue pour répondre aux besoins actuels du marché du travail dans un monde de plus en plus tourné vers le numérique. Ce programme forme les futurs professionnels des médias, du cinéma, de la télévision, et du numérique, leur permettant de maîtriser les outils et compétences nécessaires pour exceller dans ces secteurs en pleine expansion."
       />
-      <div id="sectionL2" className="bg-gray-50 pt-20 font-sans text-gray-800">
+      <div
+        id="sectionL2"
+        className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
+      >
         <Section title="À qui s’adresse cette formation ?"></Section>
         {/* À qui s’adresse cette formation ? */}
 
         <Section bgColor="bg-gray-100">
-          <h3 className="text-bold text-start text-2xl font-semibold ">
-            {currentWorld.title}
+          <h3 className="text-bold mb-10 text-center text-xl font-semibold dark:text-gray-400 ">
+            Cette licence est ouverte à :
           </h3>
 
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-            {currentWorld.items.map((item, index) => (
-              <Card key={index} title={item} items={[]} />
+            {currentWorld.map((item, index) => (
+              <CiblePublicCard key={index} data={item} />
             ))}
           </div>
         </Section>
@@ -115,28 +135,23 @@ export default function SectionL2() {
         >
           <div className="flex justify-center space-x-6">
             {licences.map((spec, index) => (
-              <div
+              <MasterCard
                 key={index}
-                className="max-w-sm transform rounded-lg bg-white p-6 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:bg-teal-500 hover:text-white hover:shadow-xl"
-              >
-                <h3 className="mb-3 text-2xl font-semibold text-gray-800">
-                  {spec.title}
-                </h3>
-                <p className="text-base leading-relaxed text-gray-600">
-                  {spec.description}
-                </p>
-              </div>
+                title={spec.title}
+                description={spec.description}
+              />
             ))}
           </div>
         </Section>
+
         <Section
           title="Débouchés professionnels"
           bgColor="bg-gray-100"
           content="Les diplômés de la Licence en CAN bénéficient d’une grande diversité de carrières dans des secteurs en forte demande :"
         >
-          <div className="grid grid-cols-1  justify-center gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {careerPaths.map((path, index) => (
-              <Card key={index} title={path.title} items={path.items} />
+              <ProgramCard key={index} program={path} />
             ))}
           </div>
         </Section>
@@ -158,18 +173,14 @@ export default function SectionL2() {
         ></Section>
         {/* Call to Action */}
         <Section bgColor="bg-gradient-to-r from-blue-500 to-teal-400 text-white">
-          <h2 className="text-3xl font-semibold">
-            Postulez dès aujourd&apos;hui et
-          </h2>
-          <p className="mt-4 text-lg">
-            façonnez votre avenir dans un secteur en plein essor !
-          </p>
-          <a
-            href="#"
-            className="mt-6 inline-block rounded-lg bg-white px-6 py-3 font-bold text-blue-500 shadow-md hover:bg-gray-100"
-          >
-            Préinscription ouverte ici
-          </a>
+          <CallToAction
+            heading={" Postulez dès aujourd'hui et"}
+            description={
+              " façonnez votre avenir dans un secteur en plein essor !"
+            }
+            buttonText={" Préinscription ouverte ici"}
+            buttonLink={""}
+          />
         </Section>
       </div>
     </div>

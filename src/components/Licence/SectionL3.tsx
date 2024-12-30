@@ -6,17 +6,26 @@ import Header from "./Header";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
-import { CheckIcon } from "@heroicons/react/solid";
-import ParcoursCard from "./ParcourCard";
+import MasterCard from "../Master/MasterCard";
+import ProgramCard from "../Master/ProgramCard";
 export default function SectionL3() {
-  const currentWorld = {
-    title: "Cette licence est ouverte à :",
-    items: [
-      "Bacheliers de toutes filières : Idéal pour ceux souhaitant s’orienter vers des métiers créatifs et stratégiques.",
-      "Professionnels en activité : Entrepreneurs, salariés ou fonctionnaires cherchant à renforcer leurs compétences dans le digital et les médias.",
-      "Acteurs de tous secteurs : La communication et le marketing étant transversaux, ils concernent les secteurs primaire, secondaire et surtout tertiaire",
-    ],
-  };
+  const currentWorld = [
+    {
+      title: "Bacheliers de toutes filières",
+      description:
+        "Idéal pour ceux souhaitant s’orienter vers des métiers créatifs et stratégiques.",
+    },
+    {
+      title: "Professionnels en activité",
+      description:
+        "Entrepreneurs, salariés ou fonctionnaires cherchant à renforcer leurs compétences dans le digital et les médias.",
+    },
+    {
+      title: "Acteurs de tous secteurs",
+      description:
+        "La communication et le marketing étant transversaux, ils concernent les secteurs primaire, secondaire et surtout tertiaire.",
+    },
+  ];
   const currentWorld2 = {
     items: [
       "Le marketing digital est indispensable pour gérer la visibilité en ligne des entreprises et développer des stratégies percutantes.",
@@ -45,7 +54,7 @@ export default function SectionL3() {
   const careerPaths = [
     {
       title: "Marketing Digital et Communication",
-      items: [
+      details: [
         "Responsable marketing digital",
         "Chef de projet en stratégie digitale",
         "Social media manager",
@@ -56,7 +65,7 @@ export default function SectionL3() {
     },
     {
       title: "Journalisme et Médias",
-      items: [
+      details: [
         "Journaliste multimédia (web, TV, radio, presse)",
         "Reporter ou correspondant numérique",
         "Producteur de contenus audiovisuels et podcasts",
@@ -65,7 +74,7 @@ export default function SectionL3() {
     },
     {
       title: "Publicité et Création",
-      items: [
+      details: [
         "Directeur artistique ou concepteur-rédacteur",
         "Créateur de campagnes publicitaires et visuelles",
         "Spécialiste en design interactif et production de contenu multimédia",
@@ -73,7 +82,7 @@ export default function SectionL3() {
     },
     {
       title: "Entrepreneuriat et Développement",
-      items: [
+      details: [
         "Consultant en stratégie de contenu ou analyse de données",
         "Créateur de start-up dans les médias ou le marketing digital",
         "Expert en SEO/SEA et marketing de contenu",
@@ -114,17 +123,24 @@ export default function SectionL3() {
         title="MARKETING DIGITAL ET JOURNALISME (MDJ - L ) - LICENCE"
         subtitle="La Licence en Marketing Digital et Journalisme (MDJ) d’E-Media est une formation multidisciplinaire qui combine innovation digitale, communication et journalisme. Conçue pour répondre aux besoins des entreprises et des médias modernes, elle prépare les étudiants à s’imposer dans des secteurs en pleine transformation."
       />
-      <div id="sectionL3" className="bg-gray-50 pt-20 font-sans text-gray-800">
+      <div
+        id="sectionL3"
+        className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
+      >
         <Section title="À qui s’adresse cette formation ?"></Section>
         {/* À qui s’adresse cette formation ? */}
         <Section bgColor="bg-gray-100">
-          <h3 className="text-bold mb-10 text-center text-xl font-semibold ">
-            {currentWorld.title}
+          <h3 className="text-bold mb-10 text-center text-xl font-semibold dark:text-gray-400 ">
+            Cette licence est ouverte à :
           </h3>
 
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-            {currentWorld.items.map((item, index) => (
-              <Card key={index} title={item} items={[]} />
+            {currentWorld.map((item, index) => (
+              <MasterCard
+                key={index}
+                title={item.title}
+                description={item.description}
+              />
             ))}
           </div>
         </Section>
@@ -146,28 +162,22 @@ export default function SectionL3() {
         >
           <div className="flex justify-center space-x-6">
             {licences.map((spec, index) => (
-              <div
+              <MasterCard
                 key={index}
-                className="max-w-sm transform rounded-lg bg-white p-6 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:bg-teal-500 hover:text-white hover:shadow-xl"
-              >
-                <h3 className="mb-3 text-2xl font-semibold text-gray-800">
-                  {spec.title}
-                </h3>
-                <p className="text-base leading-relaxed text-gray-600">
-                  {spec.description}
-                </p>
-              </div>
+                title={spec.title}
+                description={spec.description}
+              />
             ))}
           </div>
         </Section>
         <Section bgColor="bg-gray-100">
-          <h3 className="text-bold mb-10 text-center text-xl font-semibold ">
+          <h3 className="text-bold mb-10 text-center text-xl font-semibold dark:text-gray-400">
             Les étudiants choisissent parmi deux parcours spécialisés :
           </h3>
 
           <div className="text-md mt-4 flex flex-wrap justify-center gap-6 text-center font-normal">
             {parcoursC.map((item, index) => (
-              <ParcoursCard
+              <MasterCard
                 key={index}
                 title={item.title}
                 description={item.description}
@@ -182,7 +192,7 @@ export default function SectionL3() {
         >
           <div className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
             {careerPaths.map((path, index) => (
-              <Card key={index} title={path.title} items={path.items} />
+              <ProgramCard key={index} program={path} />
             ))}
           </div>
         </Section>

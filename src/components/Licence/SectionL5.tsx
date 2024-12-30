@@ -8,15 +8,26 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
 import SpecializationCard from "./SpecializationCard";
 import CallToAction from "./CallToAction";
+import MasterCard from "../Master/MasterCard";
+import ProgramDetails from "../Master/ProgramDetails";
 export default function SectionL5() {
-  const currentWorld = {
-    title: "Cette licence en ligne est destinée à :",
-    items: [
-      "Les bacheliers de toutes filières : Intéressés par les études juridiques et cherchant une flexibilité dans leur apprentissage.",
-      "Les professionnels en activité : Souhaitant se spécialiser ou évoluer dans les secteurs du droit ou de la diplomatie sans interrompre leur carrière.",
-      "Les étudiants internationaux : À la recherche d’une formation accessible, adaptée à un contexte mondial.",
-    ],
-  };
+  const currentWorld = [
+    {
+      title: "Les bacheliers de toutes filières",
+      description:
+        "Intéressés par les études juridiques et cherchant une flexibilité dans leur apprentissage.",
+    },
+    {
+      title: "Les professionnels en activité",
+      description:
+        "Souhaitant se spécialiser ou évoluer dans les secteurs du droit ou de la diplomatie sans interrompre leur carrière.",
+    },
+    {
+      title: "Les étudiants internationaux",
+      description:
+        "À la recherche d’une formation accessible, adaptée à un contexte mondial.",
+    },
+  ];
   const currentWorld2 = {
     items: [
       "Droit Public",
@@ -71,14 +82,28 @@ export default function SectionL5() {
       ],
     },
   ];
-  const why = {
-    items: [
-      "Flexibilité totale : Étudiez à votre rythme, où que vous soyez, tout en bénéficiant d’un encadrement pédagogique de qualité.",
-      "Programme interactif et pratique : Études de cas, simulations de procès, et projets en ligne pour une immersion professionnelle.",
-      "Spécialisations stratégiques et diversifiées : Répondant aux besoins actuels des secteurs public, privé et international.",
-      "Accessibilité mondiale : Idéal pour les étudiants et les professionnels basés à Madagascar ou à l’étranger.",
-    ],
-  };
+  const why = [
+    {
+      title: "Flexibilité totale",
+      description:
+        "Étudiez à votre rythme, où que vous soyez, tout en bénéficiant d’un encadrement pédagogique de qualité.",
+    },
+    {
+      title: "Programme interactif et pratique",
+      description:
+        "Études de cas, simulations de procès, et projets en ligne pour une immersion professionnelle.",
+    },
+    {
+      title: "Spécialisations stratégiques et diversifiées",
+      description:
+        "Répondant aux besoins actuels des secteurs public, privé et international.",
+    },
+    {
+      title: "Accessibilité mondiale",
+      description:
+        "Idéal pour les étudiants et les professionnels basés à Madagascar ou à l’étranger.",
+    },
+  ];
   const licences = [
     {
       title: "L1",
@@ -97,28 +122,6 @@ export default function SectionL5() {
     },
   ];
 
-  const avantge = [
-    {
-      title: "Flexibilité totale",
-      description:
-        "Étudiez à votre rythme, où que vous soyez, tout en bénéficiant d’un encadrement pédagogique de qualité.",
-    },
-    {
-      title: "Programme interactif et pratique",
-      description:
-        "Études de cas, simulations de procès, et projets en ligne pour une immersion professionnelle",
-    },
-    {
-      title: "Spécialisations stratégiques et diversifiées",
-      description:
-        "Répondant aux besoins actuels des secteurs public, privé et international.",
-    },
-    {
-      title: "Accessibilité mondiale",
-      description:
-        "Idéal pour les étudiants et les professionnels basés à Madagascar ou à l’étranger.",
-    },
-  ];
   useEffect(() => {
     AOS.init({
       duration: 1000, // Durée de l'animation
@@ -133,7 +136,10 @@ export default function SectionL5() {
         title="LICENCE EN DROIT (FORMATION 100% EN LIGNE)"
         subtitle="La Licence en Droit d’E-Media, exclusivement disponible en formation en ligne, est une opportunité unique pour les étudiants et les professionnels souhaitant se former à distance. Cette formation rigoureuse offre une compréhension approfondie des systèmes juridiques nationaux et internationaux tout en s’adaptant à vos contraintes personnelles et professionnelles. Avec des spécialisations stratégiques, ce programme vous prépare à des carrières variées dans les domaines juridique, diplomatique et des affaires."
       />
-      <div id="sectionL5" className="bg-gray-50 pt-20 font-sans text-gray-800">
+      <div
+        id="sectionL5"
+        className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
+      >
         <Section title="Spécialisations">
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
             {currentWorld2.items.map((item, index) => (
@@ -144,13 +150,17 @@ export default function SectionL5() {
         <Section title="À qui s’adresse cette formation ?"></Section>
         {/* À qui s’adresse cette formation ? */}
         <Section bgColor="bg-gray-100">
-          <h3 className="text-bold mb-10 text-center text-xl font-semibold ">
-            {currentWorld.title}
+          <h3 className="text-bold mb-10 text-center text-xl font-semibold dark:text-gray-400 ">
+            Cette licence en ligne est destinée à :
           </h3>
 
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-            {currentWorld.items.map((item, index) => (
-              <Card key={index} title={item} items={[]} />
+            {currentWorld.map((item, index) => (
+              <MasterCard
+                key={index}
+                title={item.title}
+                description={item.description}
+              />
             ))}
           </div>
         </Section>
@@ -160,24 +170,18 @@ export default function SectionL5() {
         >
           <div className="flex justify-center space-x-6">
             {licences.map((spec, index) => (
-              <div
+              <MasterCard
                 key={index}
-                className="max-w-sm transform rounded-lg bg-white p-6 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:bg-teal-500 hover:text-white hover:shadow-xl"
-              >
-                <h3 className="mb-3 text-2xl font-semibold text-gray-800">
-                  {spec.title}
-                </h3>
-                <p className="text-base leading-relaxed text-gray-600">
-                  {spec.description}
-                </p>
-              </div>
+                title={spec.title}
+                description={spec.description}
+              />
             ))}
           </div>
         </Section>
 
         <Section content="Les étudiants accèdent à des ressources numériques modernes, des cours interactifs, des études de cas et un encadrement personnalisé assuré par des experts juridiques."></Section>
         <Section>
-          <h1 className="mb-6 text-3xl font-bold text-gray-800">
+          <h1 className=" mb-10 text-3xl font-bold text-gray-800 dark:text-white">
             Spécialisations proposées
           </h1>
           {specializations.map((spec, index) => (
@@ -185,16 +189,20 @@ export default function SectionL5() {
               key={index}
               title={spec.title}
               description={spec.description}
-              objectives={spec.objectives}
-              careers={spec.careers}
+              content={spec.objectives}
+              opportunities={spec.careers}
             />
           ))}
         </Section>
 
         <Section title="Avantages de la Licence en Droit en ligne d’E-Media">
-          <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-            {why.items.map((item, index) => (
-              <Card key={index} title={item} items={[]} />
+          <div className="text-md mt-20 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
+            {why.map((item, index) => (
+              <MasterCard
+                key={index}
+                title={item.title}
+                description={item.description}
+              />
             ))}
           </div>
         </Section>

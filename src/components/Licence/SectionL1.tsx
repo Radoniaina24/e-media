@@ -7,11 +7,14 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
 import { CheckIcon } from "@heroicons/react/solid";
+import ProgramCard from "../Master/ProgramCard";
+import MasterCard from "../Master/MasterCard";
+import CallToAction from "./CallToAction";
 export default function SectionL1() {
   const careerPaths = [
     {
       title: "Infrastructures informatiques et réseaux",
-      items: [
+      details: [
         "Administrateur réseau",
         "Technicien en maintenance IT",
         "Ingénieur en systèmes et réseaux",
@@ -19,7 +22,7 @@ export default function SectionL1() {
     },
     {
       title: "Développement logiciel et solutions numériques",
-      items: [
+      details: [
         "Développeur d’applications mobiles et web",
         "Ingénieur logiciel",
         "Chef de projet IT",
@@ -27,14 +30,14 @@ export default function SectionL1() {
     },
     {
       title: "Télécommunications",
-      items: [
+      details: [
         "Spécialiste en télécommunication : Gestion et optimisation des infrastructures de communication.",
         "Expert en IoT (Internet des objets) : Développement et déploiement de solutions connectées.",
       ],
     },
     {
       title: "Web et Digital",
-      items: [
+      details: [
         "Webmaster ou web designer : Création et gestion de sites internet ergonomiques et esthétiques.",
         "Responsable en marketing digital : Développement de stratégies numériques pour améliorer la visibilité et les performances des entreprises en ligne.",
         "Consultant en transformation digitale : Accompagnement des organisations dans leur transition vers des solutions numériques.",
@@ -42,7 +45,7 @@ export default function SectionL1() {
     },
     {
       title: "Industries émergentes et spécialisées",
-      items: [
+      details: [
         "Expert en cybersécurité : Sécurisation des données et des systèmes face aux menaces numériques croissantes.",
         "pécialiste en data science : Analyse et exploitation des données pour une meilleure prise de décision stratégique.",
         "Ingénieur en systèmes embarqués : Développement de logiciels pour dispositifs connectés (automobile, santé, domotique).",
@@ -96,25 +99,22 @@ export default function SectionL1() {
     });
   }, []);
   return (
-    <div>
+    <div className="dark:bg-gray-800">
       {/* Header */}
       <Header
         id="sectionL1"
         title="LICENCE EN TECHNOLOGIES DE L’INFORMATION ET DE LA COMMUNICATION (TIC)"
         subtitle="Une formation innovante et intensive pour devenir un acteur clé de la transformation technologique."
       />
-      <div id="sectionL1" className="bg-gray-50 pt-20 font-sans text-gray-800">
+      <div
+        id="sectionL1"
+        className="bg-gray-50 pt-20  font-sans text-gray-800 dark:bg-gray-900"
+      >
         {/* Pourquoi choisir cette licence */}
         <Section
           title="Pourquoi choisir cette licence ?"
           content="Dans un monde interconnecté, les technologies de l’information et de la communication (TIC) sont au cœur de la transformation digitale des entreprises et institutions. La demande pour des professionnels qualifiés dans des domaines comme les réseaux, le développement logiciel, les télécommunications et le web est en constante croissance. Cette licence vous offre une opportunité unique de vous positionner dans des métiers d’avenir où l’innovation et l’adaptabilité sont essentielles."
-        >
-          {/* <img
-          src="/images/digital_transformation.jpg"
-          alt="Transformation digitale"
-          className="mx-auto w-full max-w-lg rounded-lg shadow-md"
-        /> */}
-        </Section>
+        ></Section>
 
         {/* Débouchés professionnels */}
         <Section
@@ -124,7 +124,7 @@ export default function SectionL1() {
         >
           <div className="grid grid-cols-1  gap-6 md:grid-cols-2 lg:grid-cols-3">
             {careerPaths.map((path, index) => (
-              <Card key={index} title={path.title} items={path.items} />
+              <ProgramCard key={index} program={path} />
             ))}
           </div>
         </Section>
@@ -135,7 +135,7 @@ export default function SectionL1() {
           bgColor="bg-gray-100"
           content="Dans un monde de plus en plus connecté et numérisé, les technologies de l’information et de la communication (TIC) jouent un rôle central dans tous les secteurs d’activité. Elles transforment la manière dont les entreprises fonctionnent, les services sont fournis, et les individus interagissent."
         >
-          <h3 className="text-bold mb-4 text-start text-2xl font-semibold ">
+          <h3 className="text-bold mb-4 text-start text-xl font-semibold dark:text-white ">
             {currentWorld.title}
           </h3>
           <div className="text-md m-auto mt-10 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
@@ -152,17 +152,11 @@ export default function SectionL1() {
         >
           <div className="flex items-center justify-center space-x-6">
             {licences.map((spec, index) => (
-              <div
+              <MasterCard
                 key={index}
-                className="max-w-sm transform rounded-lg bg-white p-6 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:bg-teal-500 hover:text-white hover:shadow-xl"
-              >
-                <h3 className="mb-3 text-2xl font-semibold text-gray-800">
-                  {spec.title}
-                </h3>
-                <p className="text-base leading-relaxed text-gray-600">
-                  {spec.description}
-                </p>
-              </div>
+                title={spec.title}
+                description={spec.description}
+              />
             ))}
           </div>
         </Section>
@@ -173,38 +167,23 @@ export default function SectionL1() {
         >
           <div className="flex justify-center space-x-6">
             {specializations.map((spec, index) => (
-              <div
+              <MasterCard
                 key={index}
-                className="relative max-w-sm rounded-lg bg-cover bg-center p-6 shadow-md"
-                style={{
-                  backgroundImage: `url('/images/your-image-${index}.jpg')`, // L'URL de l'image de fond
-                }}
-              >
-                <div className="absolute inset-0 rounded-lg bg-black opacity-40"></div>{" "}
-                {/* Superposition sombre */}
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white">{spec.title}</h3>
-                  <p className="mt-2 text-white opacity-80">
-                    {spec.description}
-                  </p>
-                </div>
-              </div>
+                title={spec.title}
+                description={spec.description}
+              />
             ))}
           </div>
         </Section>
 
         {/* Call to Action */}
         <Section bgColor="bg-gradient-to-r from-blue-500 to-teal-400 text-white">
-          <h2 className="text-3xl font-semibold">
-            Rejoignez-nous dès aujour&apos;hui !
-          </h2>
-          <p className="mt-4 text-lg">Transformez vos ambitions en succès.</p>
-          <a
-            href="#"
-            className="mt-6 inline-block rounded-lg bg-white px-6 py-3 font-bold text-blue-500 shadow-md hover:bg-gray-100"
-          >
-            Préinscription ouverte ici
-          </a>
+          <CallToAction
+            heading={" Rejoignez-nous dès aujourd'hui !"}
+            description={"Transformez vos ambitions en succès."}
+            buttonText={" Préinscription ouverte ici"}
+            buttonLink={""}
+          />
         </Section>
       </div>
     </div>

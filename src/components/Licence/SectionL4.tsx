@@ -10,15 +10,26 @@ import { CheckIcon } from "@heroicons/react/solid";
 import ParcoursCard from "./ParcourCard";
 import SpecializationCard from "./SpecializationCard";
 import CallToAction from "./CallToAction";
+import MasterCard from "../Master/MasterCard";
+import ProgramDetails from "../Master/ProgramDetails";
 export default function SectionL4() {
-  const currentWorld = {
-    title: "Cette licence est ouverte à :",
-    items: [
-      "Les bacheliers de toutes filières : Idéal pour ceux qui souhaitent construire une carrière dans les domaines du management, de la finance ou du commerce.",
-      "Les étudiants souhaitant une base solide en gestion pour poursuivre des études supérieures ou entrer directement sur le marché du travail.",
-      "Les professionnels en début de carrière cherchant à acquérir des compétences théoriques et pratiques en gestion.",
-    ],
-  };
+  const currentWorld = [
+    {
+      title: "Les bacheliers de toutes filières",
+      description:
+        "Idéal pour ceux qui souhaitent construire une carrière dans les domaines du management, de la finance ou du commerce.",
+    },
+    {
+      title: "Les étudiants souhaitant une base solide en gestion",
+      description:
+        "Pour ceux qui souhaitent poursuivre des études supérieures ou entrer directement sur le marché du travail.",
+    },
+    {
+      title: "Les professionnels en début de carrière",
+      description:
+        "Cherchant à acquérir des compétences théoriques et pratiques en gestion.",
+    },
+  ];
   const currentWorld2 = {
     items: [
       "Finance et Comptabilité",
@@ -73,13 +84,23 @@ export default function SectionL4() {
       ],
     },
   ];
-  const why = {
-    items: [
-      "Une formation complète et adaptable : Prépare les étudiants à entrer directement sur le marché du travail ou à poursuivre des études supérieures.",
-      "Un enseignement pratique et concret : Études de cas, projets et stages en entreprise pour une immersion professionnelle.",
-      "Des spécialisations stratégiques : Répondant aux besoins actuels et futurs des entreprises locales et internationales.",
-    ],
-  };
+  const why = [
+    {
+      title: "Une formation complète et adaptable",
+      description:
+        "Prépare les étudiants à entrer directement sur le marché du travail ou à poursuivre des études supérieures.",
+    },
+    {
+      title: "Un enseignement pratique et concret",
+      description:
+        "Études de cas, projets et stages en entreprise pour une immersion professionnelle.",
+    },
+    {
+      title: "Des spécialisations stratégiques",
+      description:
+        "Répondant aux besoins actuels et futurs des entreprises locales et internationales.",
+    },
+  ];
   useEffect(() => {
     AOS.init({
       duration: 1000, // Durée de l'animation
@@ -94,7 +115,10 @@ export default function SectionL4() {
         title="LICENCE EN MANAGEMENT (100% EN LIGNE)"
         subtitle="La Licence en Management d’E-Media est une formation fondamentale et polyvalente, exclusivement disponible en formation en ligne, conçue pour former des professionnels capables de comprendre et de gérer les aspects stratégiques, opérationnels et financiers d’une organisation. Avec des spécialisations adaptées aux besoins du marché, ce programme prépare les étudiants à des carrières prometteuses dans les domaines de la gestion, de la finance et du commerce international."
       />
-      <div id="sectionL4" className="bg-gray-50 pt-20 font-sans text-gray-800">
+      <div
+        id="sectionL4"
+        className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
+      >
         <Section title="Spécialisations">
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
             {currentWorld2.items.map((item, index) => (
@@ -105,18 +129,22 @@ export default function SectionL4() {
         <Section title="À qui s’adresse cette formation ?"></Section>
         {/* À qui s’adresse cette formation ? */}
         <Section bgColor="bg-gray-100">
-          <h3 className="text-bold mb-10 text-center text-xl font-semibold ">
-            {currentWorld.title}
+          <h3 className="text-bold mb-10 text-center text-xl font-semibold dark:text-gray-400 ">
+            Cette licence est ouverte à :
           </h3>
 
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-            {currentWorld.items.map((item, index) => (
-              <Card key={index} title={item} items={[]} />
+            {currentWorld.map((item, index) => (
+              <MasterCard
+                key={index}
+                title={item.title}
+                description={item.description}
+              />
             ))}
           </div>
         </Section>
         <Section>
-          <h1 className="mb-6 text-3xl font-bold text-gray-800">
+          <h1 className="mb-6 text-3xl font-bold text-gray-800 dark:text-white">
             Spécialisations proposées
           </h1>
           {specializations.map((spec, index) => (
@@ -124,16 +152,20 @@ export default function SectionL4() {
               key={index}
               title={spec.title}
               description={spec.description}
-              objectives={spec.objectives}
-              careers={spec.careers}
+              content={spec.objectives}
+              opportunities={spec.careers}
             />
           ))}
         </Section>
 
         <Section title="Pourquoi choisir la Licence en Management d’E-Media ?">
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-            {why.items.map((item, index) => (
-              <Card key={index} title={item} items={[]} />
+            {why.map((item, index) => (
+              <MasterCard
+                key={index}
+                title={item.title}
+                description={item.description}
+              />
             ))}
           </div>
         </Section>

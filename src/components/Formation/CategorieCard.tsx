@@ -21,7 +21,7 @@ const categories = [
     description:
       "Le master permet d'approfondir vos connaissances et d'acquérir des compétences spécialisées dans un domaine spécifique de votre choix.",
     icon: "👨‍🎓",
-    lien: "",
+    lien: "/formation/master",
   },
   {
     title: "E-learning",

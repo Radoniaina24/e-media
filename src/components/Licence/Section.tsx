@@ -13,10 +13,14 @@ const Section: React.FC<SectionProps> = ({
   children,
   bgColor = "bg-white",
 }) => (
-  <section className={`py-12 ${bgColor} `}>
+  <section className={`py-12 ${bgColor} dark:bg-gray-900 `}>
     <div className="container mx-auto text-center">
-      <h2 className="text-3xl font-semibold">{title}</h2>
-      {content && <p className="mt-4 text-lg text-gray-600">{content}</p>}
+      <h2 className="text-3xl font-semibold dark:text-white">{title}</h2>
+      {content && (
+        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+          {content}
+        </p>
+      )}
       {children && <div className="mt-8">{children}</div>}
     </div>
   </section>
