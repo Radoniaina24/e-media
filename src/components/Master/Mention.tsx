@@ -37,8 +37,14 @@ const Mention: React.FC<ProgramCardProps> = ({
             )}
           </p>
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
-            Spécialisation :{" "}
-            <span className="text-blue-500">{specialisation}</span>
+            {specialisation ? (
+              <>
+                Spécialisation :{" "}
+                <span className="text-blue-500">{specialisation}</span>
+              </>
+            ) : (
+              ""
+            )}
           </p>
         </div>
       </div>
