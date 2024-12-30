@@ -6,6 +6,7 @@ import Header from "./Header";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
+import { CheckIcon } from "@heroicons/react/solid";
 export default function SectionL1() {
   const careerPaths = [
     {
@@ -80,15 +81,14 @@ export default function SectionL1() {
     },
   ];
 
-  const currentWorld = [
-    {
-      title: "Un secteur en pleine croissance",
-      items: [
-        "Les technologies numériques représentent aujourd’hui un pilier économique, avec une demande croissante de professionnels qualifiés dans des domaines comme la cybersécurité, le cloud computing, ou encore les solutions IoT.",
-        "À Madagascar et dans l’Océan Indien, le développement rapide des infrastructures numériques et des télécommunications offre des opportunités sans précédent aux diplômés en NTIC.",
-      ],
-    },
-  ];
+  const currentWorld = {
+    title: "Un secteur en pleine croissance:",
+    items: [
+      "Les technologies numériques représentent aujourd’hui un pilier économique, avec une demande croissante de professionnels qualifiés dans des domaines comme la cybersécurité, le cloud computing, ou encore les solutions IoT.",
+      "À Madagascar et dans l’Océan Indien, le développement rapide des infrastructures numériques et des télécommunications offre des opportunités sans précédent aux diplômés en NTIC.",
+    ],
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Durée de l'animation
@@ -122,7 +122,7 @@ export default function SectionL1() {
           bgColor="bg-gray-100"
           content="La Licence en TIC d’E-media ouvre les portes à une vaste gamme de métiers dans des secteurs stratégiques et en pleine croissance, tant à Madagascar que dans le monde entier. Les diplômés peuvent aspirer à des postes dans :"
         >
-          <div className="grid grid-cols-1  justify-center gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1  gap-6 md:grid-cols-2 lg:grid-cols-3">
             {careerPaths.map((path, index) => (
               <Card key={index} title={path.title} items={path.items} />
             ))}
@@ -135,9 +135,12 @@ export default function SectionL1() {
           bgColor="bg-gray-100"
           content="Dans un monde de plus en plus connecté et numérisé, les technologies de l’information et de la communication (TIC) jouent un rôle central dans tous les secteurs d’activité. Elles transforment la manière dont les entreprises fonctionnent, les services sont fournis, et les individus interagissent."
         >
-          <div className="grid grid-cols-1 ">
-            {currentWorld.map((path, index) => (
-              <Card key={index} title={path.title} items={path.items} />
+          <h3 className="text-bold mb-4 text-start text-2xl font-semibold ">
+            {currentWorld.title}
+          </h3>
+          <div className="text-md m-auto mt-10 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
+            {currentWorld.items.map((item, index) => (
+              <Card key={index} title={item} items={[]} />
             ))}
           </div>
         </Section>
@@ -147,7 +150,7 @@ export default function SectionL1() {
           title="Un programme structuré et pratique"
           content="La Licence en TIC s’étend sur 3 ans, avec un format progressif et intensif. Choisissez parmi trois parcours spécialisés selon vos ambitions professionnelles."
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex items-center justify-center space-x-6">
             {licences.map((spec, index) => (
               <div
                 key={index}

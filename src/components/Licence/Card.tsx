@@ -6,19 +6,29 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ title, items }) => (
-  <div className="hover:bg-gray-darkhover:t rounded-lg bg-white p-6 shadow-md hover:cursor-pointer">
-    <h3 className="text-xl font-bold text-gray-800">{title}</h3>
-    <ul className="mt-4 space-y-4 text-start text-gray-600">
-      {items.map((item, index) => (
-        <li key={index} className="flex items-center">
-          <div>
-            <CheckIcon className="mr-2 h-5 w-5 text-green-500" />
-          </div>
+  <div
+    className={`hover:bg-gray-darkhover:t rounded-lg bg-white p-6 shadow-md hover:cursor-pointer ${items.length !== 0 ? "" : "flex items-center justify-center"}`}
+  >
+    <h3
+      className={` ${items.length !== 0 ? "text-xl" : "text-lg"}text-gray-800"  font-bold`}
+    >
+      {title}
+    </h3>
+    {items ? (
+      <ul className="mt-4 space-y-4 text-start text-gray-600">
+        {items.map((item, index) => (
+          <li key={index} className="flex items-center">
+            <div>
+              <CheckIcon className="mr-2 h-5 w-5 text-green-500" />
+            </div>
 
-          <div>{item}</div>
-        </li>
-      ))}
-    </ul>
+            <div>{item}</div>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      ""
+    )}
   </div>
 );
 

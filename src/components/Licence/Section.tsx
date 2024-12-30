@@ -16,7 +16,7 @@ const Section: React.FC<SectionProps> = ({
   <section className={`py-12 ${bgColor} `}>
     <div className="container mx-auto text-center">
       <h2 className="text-3xl font-semibold">{title}</h2>
-      {content && <p className="mt-4 text-gray-600">{content}</p>}
+      {content && <p className="mt-4 text-lg text-gray-600">{content}</p>}
       {children && <div className="mt-8">{children}</div>}
     </div>
   </section>

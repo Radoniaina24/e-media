@@ -23,20 +23,17 @@ const Header: React.FC<HeaderProps> = ({
 
     <div className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white ">
       <div className="max-w-4xl space-y-6">
-        <h1
-          className="text-shadow-lg text-4xl font-extrabold leading-tight transition duration-500 sm:text-2xl  md:text-3xl"
-          data-aos="fade-up"
-        >
+        <h1 className="text-shadow-lg text-xl font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-2xl lg:text-2xl">
           {title}
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-xl font-light leading-relaxed text-gray-800 md:text-2xl">
+        <p className="sm:text-md mx-auto mb-8 max-w-2xl text-lg font-light leading-relaxed text-gray-800 md:text-xl lg:text-xl">
           {subtitle}
         </p>
         <a
           href={"#" + id}
           className="mt-8 inline-block transform rounded bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
         >
-          En savoir plus
+          Detailes
         </a>
       </div>
     </div>
