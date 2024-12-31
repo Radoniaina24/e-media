@@ -1,212 +1,222 @@
-"use client";
-
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css"; // Importer les styles d'AOS
-import Header from "../Licence/Header";
+import React from "react";
+import FormationAudio from "./Formation";
 import Section from "../Licence/Section";
-import Mention from "../Master/Mention";
-import CiblePublicCard from "../Master/CiblePublicCard";
-import MasterCard from "../Master/MasterCard";
-import ProgramDetails from "../Master/ProgramDetails";
+import CardCFP from "./CardCFP";
+import Card from "../Licence/Card";
 import ProgramCard from "../Master/ProgramCard";
-import CallToAction from "../Licence/CallToAction";
 
 export default function SectionDTS() {
-  const ciblePublicData = [
+  const debouchesProfessionnels = [
     {
-      title: "Les titulaires d’une Licence",
-      description:
-        "Étudiants ayant une base en marketing, communication, journalisme ou sciences sociales, souhaitant évoluer vers des postes de direction ou de haute responsabilité.",
-    },
-    {
-      title: "Les professionnels en activité",
-      description:
-        "Consultants, managers ou entrepreneurs désireux de perfectionner leurs compétences et de s’adapter aux évolutions rapides des secteurs du digital et des médias.",
-    },
-    {
-      title: "Les futurs leaders du numérique",
-      description:
-        "Ceux qui veulent influencer et transformer les pratiques marketing et médiatiques grâce à des approches novatrices et une vision globale.",
-    },
-  ];
-  const master = [
-    {
-      title: "M1",
-      description:
-        "Acquisition des fondements avancés en stratégie numérique, data marketing et journalisme multimédia.",
-    },
-    {
-      title: "M2",
-      description:
-        " Spécialisation dans l’un des deux parcours, avec des projets pratiques et immersifs.",
-    },
-    {
-      title: "Mémoire de fin d’études",
-      description:
-        "Les étudiants réalisent un projet de recherche ou une étude appliquée sur des problématiques réelles du marketing digital ou des médias, consolidant ainsi leur expertise et leur valeur sur le marché.",
-    },
-  ];
-  const careerPaths = [
-    {
-      title: "Marketing et Communication",
+      title: "Technicien audiovisuel",
       details: [
-        "Directeur de stratégie digitale.",
-        "Responsable de campagnes marketing à l’international.",
-        "Consultant en data marketing et expérience client.",
+        "Interventions sur les plateaux de tournage, en studios, ou lors d’événements live.",
       ],
     },
     {
-      title: "Journalisme et Médias",
+      title: "Producteur ou ingénieur du son",
       details: [
-        "Rédacteur en chef, journaliste d’investigation ou correspondant international.",
-        "Producteur de contenus innovants pour plateformes numériques et audiovisuelles.",
-        "Responsable éditorial dans des médias traditionnels et numériques.",
+        "Réalisation et production de contenus sonores pour les médias et l’industrie musicale.",
       ],
     },
     {
-      title: "Publicité et Création",
+      title: "Créateur de contenu visuel",
       details: [
-        "Directeur artistique pour agences de communication.",
-        "Créateur de campagnes publicitaires immersives et interactives.",
-        "Innovateur en storytelling digital et production multimédia.",
+        "Production de vidéos, photographies et animations pour les plateformes numériques.",
       ],
     },
     {
-      title: "Entrepreneuriat et Leadership",
+      title: "Développeur web et multimédia",
       details: [
-        "Fondateur de start-up dans les domaines du marketing ou des médias.",
-        "Consultant indépendant en stratégie de communication ou de contenu.",
+        "Création de sites, applications interactives et stratégies numériques.",
+      ],
+    },
+    {
+      title: "Régisseur technique",
+      details: [
+        "Gestion des installations audio et lumineuses lors de spectacles ou événements.",
+      ],
+    },
+    {
+      title: "Entrepreneur créatif",
+      details: [
+        "Lancement d’un studio ou d’une agence spécialisée dans l’audiovisuel, le multimédia ou l’événementiel.",
       ],
     },
   ];
-  const programs = [
+
+  const avantagesFormation = [
     {
-      title: "Marketing Digital : Stratégie et Innovation",
-      description:
-        "Ce parcours se concentre sur le développement de compétences stratégiques et opérationnelles pour concevoir, piloter et optimiser des campagnes marketing numériques à fort impact.",
-      content: [
-        "Développer une expertise en analyse de données marketing (big data, SEO, SEA).",
-        "Concevoir des stratégies omnicanales intégrées, combinant e-commerce, réseaux sociaux et publicité digitale.",
-        "Maîtriser les technologies émergentes : IA, automation marketing, marketing d’influence.",
-        "Construire et gérer des marques en ligne tout en anticipant les crises.",
-      ],
-      opportunities: [
-        "Directeur marketing digital.",
-        "Chef de projet en transformation numérique.",
-        "Spécialiste en branding et gestion d’e-réputation.",
-        "Consultant en stratégie digitale pour entreprises ou organisations internationales.",
+      title: "Une expertise multidisciplinaire",
+      details: [
+        "Idéal pour ceux qui souhaitent une carrière variée et dynamique.",
       ],
     },
     {
-      title: "Journalisme Multimédia : Création et Impact",
-      description:
-        "Ce parcours forme des journalistes et des créateurs de contenu capables de produire des informations percutantes et adaptées aux plateformes modernes. L’accent est mis sur l’innovation éditoriale, les formats multimédias et la gestion des médias numériques.",
-      content: [
-        "Maîtriser les techniques avancées de journalisme narratif et d’investigation.",
-        "Produire des contenus multimédias de qualité (vidéos, podcasts, storytelling interactif).",
-        "Développer des stratégies éditoriales innovantes pour le web et les réseaux sociaux.",
-        "Comprendre et appliquer les principes d’éthique et de déontologie dans un environnement numérique.",
+      title: "Reconnaissance officielle",
+      details: [
+        "Diplôme agréé par l’État, ouvrant des opportunités nationales et internationales.",
       ],
-      opportunities: [
-        "Journaliste senior ou rédacteur en chef numérique.",
-        "Producteur de contenus audiovisuels pour médias ou entreprises.",
-        "Consultant en stratégie éditoriale et journalisme d’impact.",
-        "Responsable de rédaction ou d’équipe journalistique.",
+    },
+    {
+      title: "Insertion professionnelle rapide",
+      details: [
+        "Une formation intensive et complète, en lien direct avec les besoins du marché.",
+      ],
+    },
+    {
+      title: "Opportunité d’évolution",
+      details: [
+        "Prépare les apprenants à poursuivre vers des spécialisations.",
+        "Permet une évolution rapide dans leur carrière.",
       ],
     },
   ];
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Durée de l'animation
-      easing: "ease-in-out", // Type d'animation
-    });
-  }, []);
+  const objectifsFormation = [
+    {
+      item: "Offrir une maîtrise approfondie dans les domaines clés des industries créatives et numériques.",
+    },
+    {
+      item: "Former des techniciens supérieurs capables de s’adapter à différents environnements professionnels : studio, scène, audiovisuel, multimédia et web.",
+    },
+    {
+      item: "Préparer les apprenants à intégrer rapidement le marché du travail avec des compétences pratiques et certifiées.",
+    },
+  ];
+
+  const formations = [
+    {
+      title: "Production Audio & MAO",
+      details: [
+        "Techniques d’enregistrement et de mixage.",
+        "Création musicale assistée par ordinateur (MAO).",
+        "Production de contenus sonores adaptés aux médias, jeux vidéo, publicités, et projets artistiques.",
+      ],
+    },
+    {
+      title: "Sonorisation et Lumières de Spectacle",
+      details: [
+        "Installation et gestion des équipements audio et éclairage pour des événements live.",
+        "Programmation et gestion des scènes lumineuses pour concerts, spectacles et conférences.",
+        "Réactivité et dépannage technique en temps réel.",
+      ],
+    },
+    {
+      title: "Cinématographie, Post-production, Photographie et 3D",
+      details: [
+        "Techniques avancées de prise de vue et montage vidéo.",
+        "Création d’effets spéciaux et animation 3D.",
+        "Réalisation de contenus visuels pour les médias numériques et les plateformes de streaming.",
+      ],
+    },
+    {
+      title: "Web : Création et Développement Multimédia",
+      details: [
+        "Développement de sites web modernes et performants.",
+        "Conception d’interfaces utilisateur (UI/UX).",
+        "Optimisation SEO et stratégies de marketing digital.",
+      ],
+    },
+  ];
+  const competencesDeveloppees = [
+    {
+      title: "Compétences audio",
+      details: [
+        "Enregistrement, mixage, production musicale, sonorisation live.",
+      ],
+    },
+    {
+      title: "Compétences visuelles",
+      details: ["Photographie, cinématographie, montage, animation 3D."],
+    },
+    {
+      title: "Compétences numériques",
+      details: ["Développement web, design d’interfaces, marketing digital."],
+    },
+    {
+      title: "Gestion de projets",
+      details: [
+        "Planification, exécution et suivi de projets techniques et créatifs.",
+      ],
+    },
+  ];
+  const text =
+    "Ce programme constitue une passerelle vers des carrières prometteuses dans les industries numériques, audiovisuelles, événementielles et web.";
   return (
-    <div>
-      {/* Header */}
-      <Header
-        id="dts"
+    <div className="container mt-28">
+      <Section
         title="DTS – Diplôme de Technicien Supérieur"
-        subtitle="Le DTS est une formation intensive et complète, regroupant les quatre spécialités décrites ci-dessus : Production Audio & MAO, Sonorisation et Lumières de Spectacle, Cinéphotographie, Post-production et 3D, et Web : Création et Développement Multimédia. Ce programme unique s’adresse à ceux qui souhaitent acquérir une expertise multidisciplinaire, combinant les compétences techniques et créatives essentielles pour exceller dans les industries numériques, culturelles et événementielles."
-      />
-      <div
-        id="dts"
-        className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
+        content="Le DTS est une formation intensive et complète, regroupant les quatre spécialités décrites ci-dessus : Production Audio & MAO, Sonorisation et Lumières de Spectacle, Cinéphotographie, Post-production et 3D, et Web : Création et Développement Multimédia. Ce programme unique s’adresse à ceux qui souhaitent acquérir une expertise multidisciplinaire, combinant les compétences techniques et créatives essentielles pour exceller dans les industries numériques, culturelles et événementielles."
       >
-        <Mention
-          domain={"Sciences de la Société"}
-          mention={"Marketing Digital et Journalisme"}
-        />
-        <Section title="À qui s’adresse cette formation ?"></Section>
-        {/* À qui s’adresse cette formation ? */}
-        <Section bgColor="bg-gray-100">
-          <h3 className="text-bold mb-10 text-center text-xl font-semibold dark:text-gray-400 ">
-            Ce Master est destiné à :
-          </h3>
+        <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+          <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
+            Durée :
+          </span>
+          <span className="text-xl font-bold">
+            {" "}
+            12 mois de formation + 2 mois de stage en entreprise.
+          </span>
+        </div>
+      </Section>
 
-          <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-            {ciblePublicData.map((item, index) => (
-              <CiblePublicCard key={index} data={item} />
-            ))}
-          </div>
-        </Section>
-
-        <Section
-          title="Durée et organisation de la formation"
-          content="Le Master en MDJ est un programme intensif et structuré sur 2 ans après la Licence (soit 4 semestres):"
-        >
-          <div className="flex justify-center space-x-6">
-            {master.map((spec, index) => (
-              <MasterCard
-                key={index}
-                title={spec.title}
-                description={spec.description}
-              />
-            ))}
-          </div>
-        </Section>
-
-        <Section title="Parcours spécialisés (en M2) ">
-          {programs.map((program, index) => (
-            <ProgramDetails
-              key={index}
-              title={program.title}
-              description={program.description}
-              content={program.content}
-              opportunities={program.opportunities}
-            />
+      <Section content="Objectifs de la formation">
+        <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
+          {objectifsFormation.map((item, index) => (
+            <Card key={index} title={item.item} items={[]} />
           ))}
-        </Section>
+        </div>
+      </Section>
 
-        <Section
-          title="Débouchés professionnels globaux"
-          bgColor="bg-gray-100"
-          content="Les diplômés du Master MDJ disposent des compétences nécessaires pour occuper des postes stratégiques et de leadership dans :"
-        >
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-            {careerPaths.map((program, index) => (
-              <ProgramCard key={index} program={program} />
-            ))}
-          </div>
-        </Section>
+      <Section content="Contenu du programme :">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          {formations.map((program, index) => (
+            <ProgramCard key={index} program={program} />
+          ))}
+        </div>
+      </Section>
+      <Section
+        title="Stage de 2 mois"
+        content="À la fin de la formation, les apprenants réalisent un stage pratique en entreprise dans l’un des secteurs couverts (studio, audiovisuel, événementiel, multimédia ou web). Ce stage leur permet d’appliquer les compétences acquises tout en se familiarisant avec le milieu professionnel."
+      ></Section>
 
-        <Section
-          bgColor="bg-gray-100"
-          title="Une formation axée sur l’excellence et le leadership"
-          content="Le Master en Marketing Digital et Journalisme d’E-Media offre une approche résolument professionnelle et stratégique. Les étudiants sont formés à anticiper les tendances mondiales, à intégrer les outils technologiques les plus récents et à diriger avec assurance dans des environnements dynamiques et compétitifs."
-        ></Section>
-        <Section bgColor="bg-primary">
-          <CallToAction
-            description={
-              "Rejoignez-nous dès maintenant pour devenir un leader dans le marketing et les médias numériques !"
-            }
-            buttonText={"Préinscriptions ouvertes ici"}
-            buttonLink={""}
-            heading={""}
-          />
-        </Section>
-      </div>
+      <Section content="Compétences clés développées :">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          {competencesDeveloppees.map((program, index) => (
+            <ProgramCard key={index} program={program} />
+          ))}
+        </div>
+      </Section>
+      <Section content="Débouchés professionnels:">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          {debouchesProfessionnels.map((program, index) => (
+            <ProgramCard key={index} program={program} />
+          ))}
+        </div>
+      </Section>
+
+      <Section content="Pourquoi choisir le DTS ?">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          {avantagesFormation.map((program, index) => (
+            <ProgramCard key={index} program={program} />
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <div className="mt-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+          <p className="text-lg">{text}</p>
+        </div>
+      </Section>
+      {/* <Section bgColor="bg-gray-500">
+        <CallToAction
+          heading={""}
+          description={
+            "Rejoignez dès maintenant cette formation pour développer des compétences pratiques et construire une carrière prometteuse !"
+          }
+          buttonText={"Inscrivez-vous ici"}
+          buttonLink={""}
+        />
+      </Section> */}
     </div>
   );
 }

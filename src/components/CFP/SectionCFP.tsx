@@ -13,6 +13,7 @@ import SectionSLS from "./SectionSLS";
 import SectionImages from "./SectionImages";
 import SectionMultimedia from "./SectionMultimedia";
 import SectionMDTS from "./SectionDTS";
+import CFPPrograms from "./ProgramCFP";
 
 export default function SectionCFP() {
   useEffect(() => {
@@ -58,7 +59,7 @@ export default function SectionCFP() {
             </p>
           </div>
         </div>
-
+        <CFPPrograms />
         <Section>
           <SectionAudioMao />
         </Section>

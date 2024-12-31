@@ -5,41 +5,41 @@ const programs = [
   {
     title: "MASTER EN INFORMATIQUE ET ÉLECTRONIQUE EMBARQUÉES (IEE)",
     description:
-      "Ce programme forme des experts en développement de solutions technologiques innovantes pour les systèmes embarqués et les applications informatiques avancées.",
-    link: "/formation/master/electronique_informatique",
+      "Cette formation vous permettra d’acquérir les compétences nécessaires dans les domaines des technologies de l’information, de la communication et de la gestion des systèmes d’information.",
+    link: "/formation/master/electronique_informatique", // Remplacez par le lien vers la page de la licence TIC
   },
   {
     title: "MASTER EN AUDIOVISUEL ET CINÉMATOGRAPHIE (AC)",
     description:
-      "Un cursus dédié aux passionnés de production audiovisuelle et cinématographique, combinant techniques modernes et créativité.",
-    link: "/formation/master/ac",
+      "Apprenez les bases de la production audiovisuelle et du numérique, et maîtrisez les techniques de communication visuelle et sonore.",
+    link: "/formation/master/ac", // Remplacez par le lien vers la page de la licence CAN
   },
   {
     title: "MASTER EN MARKETING DIGITAL ET JOURNALISME (MDJ - M)",
     description:
-      "Préparez-vous aux métiers de la communication digitale et du journalisme moderne en maîtrisant les outils et stratégies numériques.",
-    link: "/formation/master/mdj",
+      "Cette formation combine des compétences en marketing digital et en journalisme pour vous préparer à une carrière dans le monde de la communication numérique.",
+    link: "/formation/master/mdj", // Remplacez par le lien vers la page de la licence MDJ
   },
   {
     title:
-      "MBA SPÉCIALISÉ - MASTER OF BUSINESS ADMINISTRATION (FORMATION 100% EN LIGNE)",
+      "MBA SPÉCIALISÉ - MASTER OF BUSINESS ADMINISTRATION (FORMATION 100% EN LIGNE) ",
     description:
-      "Un programme en ligne axé sur le leadership et la gestion stratégique pour développer vos compétences en management.",
-    link: "/formation/master/mba",
+      "Découvrez les principes fondamentaux du management et du leadership, tout en développant des compétences adaptées aux exigences du marché actuel, en ligne.",
+    link: "/formation/master/mba", // Remplacez par le lien vers la page de la licence Management
   },
   {
     title: "MASTER EN DROIT (FORMATION 100% EN LIGNE)",
     description:
-      "Une formation juridique approfondie, accessible à distance, pour devenir un expert en droit national et international.",
-    link: "/formation/master/droit",
+      "Une formation complète en droit, dispensée entièrement en ligne, pour développer des compétences en législation et en analyse juridique.",
+    link: "/formation/master/droit", // Remplacez par le lien vers la page de la licence Droit
   },
 ];
 
-const MasterPrograms: React.FC = () => {
+const CFPPrograms: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-12">
       <h2 className="mb-10 text-center text-3xl font-bold text-gray-800 dark:text-white">
-        Nos Programmes de Maîtrise.
+        Nos Programmes de CFP
       </h2>
       <hr className="mb-20" />
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
@@ -66,4 +66,4 @@ const MasterPrograms: React.FC = () => {
     </div>
   );
 };
-export default MasterPrograms;
+export default CFPPrograms;

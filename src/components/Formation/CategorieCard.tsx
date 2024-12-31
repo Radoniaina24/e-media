@@ -7,7 +7,7 @@ const categories = [
     description:
       "Les formations modulaires sont conçues pour offrir une flexibilité maximale. Vous pouvez suivre des modules spécifiques selon vos besoins et votre rythme.",
     icon: "📚",
-    lien: "",
+    lien: "/formation/cfp",
   },
   {
     title: "Licence",
