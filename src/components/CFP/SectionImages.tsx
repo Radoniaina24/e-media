@@ -168,17 +168,16 @@ export default function SectionImages() {
       <Section
         title="Image : Cinématographie, Post-production, Photographie et 3D"
         content="Cette formation complète et immersive forme les apprenants à maîtriser les outils et techniques liés à la production visuelle, à la post-production, à la photographie et à la conception en 3D. Grâce à une approche centrée sur la pratique, les participants développent des compétences polyvalentes et innovantes pour répondre aux exigences des industries créatives et numériques. Au terme de la formation, un certificat agréé par l’État est délivré, renforçant la reconnaissance professionnelle des diplômés."
-      >
-        <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-          <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
-            Durée :
-          </span>
-          <span className="text-xl font-bold">7 mois</span>
-        </div>
-      </Section>
+      ></Section>
+      <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+        <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
+          Durée :
+        </span>
+        <span className="text-xl font-bold">7 mois</span>
+      </div>
       <FormationAudio data={formationEvent} />
 
-      <div className="mt-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+      <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
         <h2 className="mb-4 text-2xl font-bold">
           Faites le choix d&apos;une formation exceptionnelle !
         </h2>

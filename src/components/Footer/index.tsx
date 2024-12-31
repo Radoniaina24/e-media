@@ -48,7 +48,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="#"
+                    href="/formation/cfp"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     CFP
@@ -56,18 +56,18 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/formation/licence"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    Université
+                    Licence
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/formation/master"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    E-learning
+                    Master
                   </Link>
                 </li>
               </ul>
@@ -81,7 +81,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="#"
+                    href="/"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     Emplois du temps
@@ -97,7 +97,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     Support
@@ -114,7 +114,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="#"
+                    href="/signup"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     S&apos;inscrire
@@ -143,7 +143,7 @@ const Footer = () => {
           {/* Footer Bottom */}
           <div className="mt-8 border-t border-gray-300 pt-8 text-center dark:border-gray-700">
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Copyright © 2024{" "}
+              Copyright © 2025{" "}
               <Link
                 href="/"
                 className="font-bold text-primary hover:underline"

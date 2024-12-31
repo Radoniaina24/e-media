@@ -125,17 +125,16 @@ export default function SectionSLS() {
       <Section
         title="Son : Sonorisation et Lumières de Spectacle"
         content="Cette formation immersive prépare les participants à maîtriser les compétences techniques et opérationnelles nécessaires pour gérer efficacement le son et la lumière lors d’événements live, tels que des concerts, spectacles, conférences et productions scéniques. En s’appuyant sur des ateliers pratiques et des mises en situation réelles, ce programme garantit une formation intensive et orientée vers la professionnalisation."
-      >
-        <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-          <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
-            Durée :
-          </span>
-          <span className="text-xl font-bold">3 mois</span>
-        </div>
-      </Section>
+      ></Section>
+      <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+        <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
+          Durée :
+        </span>
+        <span className="text-xl font-bold">3 mois</span>
+      </div>
       <FormationAudio data={formationEvent} />
 
-      <div className="mt-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+      <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
         <h2 className="mb-4 text-2xl font-bold">
           Faites le choix d&apos;une formation exceptionnelle !
         </h2>

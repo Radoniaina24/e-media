@@ -137,17 +137,16 @@ export default function SectionAudioMao() {
       <Section
         title="Son : Production Audio & MAO "
         content="Cette formation offre une immersion complète dans un environnement studio professionnel, permettant aux apprenants d’acquérir les bases essentielles de la production audio et de la création musicale assistée par ordinateur (MAO). Ce programme intensif met l’accent sur la pratique et l’utilisation d’outils de pointe pour produire des contenus sonores de qualité professionnelle adaptés à divers domaines, tels que la musique, la publicité ou l’audiovisuel."
-      >
-        <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-          <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
-            Durée :
-          </span>
-          <span className="text-xl font-bold">5 mois</span>
-        </div>
-      </Section>
+      ></Section>
+      <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+        <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
+          Durée :
+        </span>
+        <span className="text-xl font-bold">5 mois</span>
+      </div>
       <FormationAudio data={formationAudio} />
 
-      <div className="mt-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+      <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
         <h2 className="mb-4 text-2xl font-bold">
           Faites le choix d&apos;une formation exceptionnelle !
         </h2>

@@ -3,35 +3,34 @@ import Link from "next/link";
 
 const programs = [
   {
-    title: "MASTER EN INFORMATIQUE ET ÉLECTRONIQUE EMBARQUÉES (IEE)",
+    title: "Son : Production Audio & MAO",
     description:
-      "Cette formation vous permettra d’acquérir les compétences nécessaires dans les domaines des technologies de l’information, de la communication et de la gestion des systèmes d’information.",
-    link: "/formation/master/electronique_informatique", // Remplacez par le lien vers la page de la licence TIC
+      "Apprenez les techniques avancées de production audio et maîtrisez les outils de Musique Assistée par Ordinateur (MAO) pour créer des productions sonores de qualité professionnelle.",
+    link: "/formation/cfp/sam",
   },
   {
-    title: "MASTER EN AUDIOVISUEL ET CINÉMATOGRAPHIE (AC)",
+    title: "Son : Sonorisation et Lumières de Spectacle",
     description:
-      "Apprenez les bases de la production audiovisuelle et du numérique, et maîtrisez les techniques de communication visuelle et sonore.",
-    link: "/formation/master/ac", // Remplacez par le lien vers la page de la licence CAN
+      "Devenez expert en sonorisation et en gestion des lumières pour les spectacles en direct, en alliant savoir-faire technique et créativité scénique.",
+    link: "/formation/cfp/ssls",
   },
   {
-    title: "MASTER EN MARKETING DIGITAL ET JOURNALISME (MDJ - M)",
+    title: "Image : Cinématographie, Post-production, Photographie et 3D",
     description:
-      "Cette formation combine des compétences en marketing digital et en journalisme pour vous préparer à une carrière dans le monde de la communication numérique.",
-    link: "/formation/master/mdj", // Remplacez par le lien vers la page de la licence MDJ
+      "Formez-vous aux métiers de l'image, de la captation à la post-production, en passant par la photographie et la création 3D, pour des projets visuels innovants.",
+    link: "/formation/cfp/cpp",
   },
   {
-    title:
-      "MBA SPÉCIALISÉ - MASTER OF BUSINESS ADMINISTRATION (FORMATION 100% EN LIGNE) ",
+    title: "Web : Création et Développement Multimédia",
     description:
-      "Découvrez les principes fondamentaux du management et du leadership, tout en développant des compétences adaptées aux exigences du marché actuel, en ligne.",
-    link: "/formation/master/mba", // Remplacez par le lien vers la page de la licence Management
+      "Développez des compétences en création et développement multimédia pour concevoir des sites web interactifs et des expériences numériques immersives.",
+    link: "/formation/cfp/cdm",
   },
   {
-    title: "MASTER EN DROIT (FORMATION 100% EN LIGNE)",
+    title: "DTS – Diplôme de Technicien Supérieur",
     description:
-      "Une formation complète en droit, dispensée entièrement en ligne, pour développer des compétences en législation et en analyse juridique.",
-    link: "/formation/master/droit", // Remplacez par le lien vers la page de la licence Droit
+      "Un diplôme technique conçu pour vous préparer aux métiers spécialisés, combinant théorie et pratique pour répondre aux besoins du marché.",
+    link: "/formation/cfp/dts",
   },
 ];
 

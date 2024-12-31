@@ -2,17 +2,10 @@
 
 import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Importer les styles d'AOS
+import "aos/dist/aos.css";
 import Header from "../Licence/Header";
 import Section from "../Licence/Section";
-
 import Mention from "../Master/Mention";
-
-import SectionAudioMao from "./SectionAudioMao";
-import SectionSLS from "./SectionSLS";
-import SectionImages from "./SectionImages";
-import SectionMultimedia from "./SectionMultimedia";
-import SectionMDTS from "./SectionDTS";
 import CFPPrograms from "./ProgramCFP";
 
 export default function SectionCFP() {
@@ -50,7 +43,7 @@ export default function SectionCFP() {
                 {" "}
                 catégorie 3{" "}
               </span>
-              délivré par la
+              délivré par la {""}
               <span className="italic">
                 FOP (Formation d&apos;Orientation Professionnelle)
               </span>
@@ -60,18 +53,6 @@ export default function SectionCFP() {
           </div>
         </div>
         <CFPPrograms />
-        <Section>
-          <SectionAudioMao />
-        </Section>
-        <Section>
-          <SectionSLS />
-        </Section>
-        <Section>
-          <SectionImages />
-        </Section>
-        <Section>
-          <SectionMultimedia />
-        </Section>
       </div>
     </div>
   );

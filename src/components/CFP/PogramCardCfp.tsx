@@ -6,7 +6,7 @@ interface Program {
 const ProgramCardCfp: React.FC<{ program: Program }> = ({ program }) => {
   return (
     <div className="flex flex-col items-stretch justify-between rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:cursor-pointer hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <h3 className="text-center text-xl font-semibold text-gray-800 dark:text-gray-50">
+      <h3 className="text-center text-xl font-semibold text-primary dark:text-primary">
         {program.categorie}
       </h3>
 

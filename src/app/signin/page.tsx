@@ -101,7 +101,7 @@ const SigninPage = () => {
                 <p className="text-center text-base font-medium text-body-color">
                   Vous n&apos;avez pas de compte ?{" "}
                   <Link href="/signup" className="text-primary hover:underline">
-                    Sn&apos;inscrire
+                    S&apos;inscrire
                   </Link>
                 </p>
               </div>
