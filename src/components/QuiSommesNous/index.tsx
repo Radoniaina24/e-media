@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import "aos/dist/aos.css"; // Importer les styles AOS
 import AOS from "aos"; // Importer la librairie AOS
+import Link from "next/link";
 
 const App = () => {
   useEffect(() => {
@@ -39,61 +40,69 @@ const App = () => {
             Une Offre Académique Diversifiée
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div
-              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
-              data-aos="zoom-in"
-            >
-              <Image
-                src="/images/why/f-u.jpg"
-                alt="Formations universitaires"
-                className="h-48 w-full rounded-t-lg object-cover"
-                width={500}
-                height={500}
-              />
-              <h3 className="mt-4 text-xl font-semibold">
-                Formations universitaires
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-white">
-                Présentiel et en ligne pour des carrières durables.
-              </p>
-            </div>
-            <div
-              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
-              data-aos="zoom-in"
-            >
-              <Image
-                src="/images/why/f-c.jpg"
-                alt="Formations certifiantes"
-                className="h-48 w-full rounded-t-lg object-cover"
-                width={500}
-                height={500}
-              />
-              <h3 className="mt-4 text-xl font-semibold">
-                Formations certifiantes
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-white">
-                Accessibles avec ou sans baccalauréat, pour des jeunes en
-                reconversion ou en quête d&apos;emploi.
-              </p>
-            </div>
-            <div
-              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
-              data-aos="zoom-in"
-            >
-              <Image
-                src="/images/why/m-s.jpg"
-                alt="Modules spécialisés"
-                className="h-48 w-full rounded-t-lg object-cover"
-                width={500}
-                height={500}
-              />
-              <h3 className="mt-4 text-xl font-semibold">
-                Modules spécialisés
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-white">
-                Apprentissage rapide et pratique.
-              </p>
-            </div>
+            <Link href="/formation/universitaire">
+              <div
+                className="rounded-lg bg-white p-6 shadow-lg hover:bg-dark hover:text-white dark:bg-dark"
+                data-aos="zoom-in"
+              >
+                <Image
+                  src="/images/why/f-u.jpg"
+                  alt="Formations universitaires"
+                  className="h-48 w-full rounded-t-lg object-cover"
+                  width={500}
+                  height={500}
+                />
+                <h3 className="mt-4 text-xl font-semibold">
+                  Formations universitaires
+                </h3>
+                <p className="mt-2 text-gray-600 dark:text-white">
+                  Présentiel et en ligne pour des carrières durables.
+                </p>
+              </div>
+            </Link>
+
+            <Link href="/formation/certificat">
+              <div
+                className="rounded-lg bg-white p-6 shadow-lg hover:bg-dark hover:text-white dark:bg-dark"
+                data-aos="zoom-in"
+              >
+                <Image
+                  src="/images/why/f-c.jpg"
+                  alt="Formations certifiantes"
+                  className="h-48 w-full rounded-t-lg object-cover"
+                  width={500}
+                  height={500}
+                />
+                <h3 className="mt-4 text-xl font-semibold">
+                  Formations certifiantes
+                </h3>
+                <p className="mt-2 text-gray-600 dark:text-white">
+                  Accessibles avec ou sans baccalauréat, pour des jeunes en
+                  reconversion ou en quête d&apos;emploi.
+                </p>
+              </div>
+            </Link>
+
+            <Link href="/formation/modulaire">
+              <div
+                className="rounded-lg bg-white p-6 shadow-lg hover:bg-dark hover:text-white dark:bg-dark"
+                data-aos="zoom-in"
+              >
+                <Image
+                  src="/images/why/m-s.jpg"
+                  alt="Modules spécialisés"
+                  className="h-48 w-full rounded-t-lg object-cover"
+                  width={500}
+                  height={500}
+                />
+                <h3 className="mt-4 text-xl font-semibold">
+                  Modules spécialisés
+                </h3>
+                <p className="mt-2 text-gray-600 dark:text-white">
+                  Apprentissage rapide et pratique.
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

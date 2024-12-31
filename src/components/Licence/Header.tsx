@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 interface HeaderProps {
@@ -30,12 +29,12 @@ const Header: React.FC<HeaderProps> = ({
         <p className="sm:text-md mx-auto mb-8 max-w-2xl text-lg font-light leading-relaxed text-gray-50 md:text-xl lg:text-xl">
           {subtitle}
         </p>
-        <Link
+        <a
           href={"#" + id}
           className="mt-8 inline-block transform rounded bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
         >
           Détails
-        </Link>
+        </a>
       </div>
     </div>
   </header>

@@ -9,19 +9,13 @@ const categories = [
     icon: "📚",
     lien: "/formation/modulaire",
   },
+
   {
-    title: "Licence",
+    title: "Formation Universitaire",
     description:
-      "La licence est un diplôme universitaire qui vous prépare à un large éventail de métiers, offrant une base solide en théorie et en pratique.",
-    icon: "🎓",
-    lien: "/formation/licence",
-  },
-  {
-    title: "Master",
-    description:
-      "Le master permet d'approfondir vos connaissances et d'acquérir des compétences spécialisées dans un domaine spécifique de votre choix.",
+      "Découvrez nos programmes universitaires, y compris les cursus de master, pour approfondir vos connaissances et développer vos compétences.",
     icon: "👨‍🎓",
-    lien: "/formation/master",
+    lien: "/formation/universitaire",
   },
   {
     title: "CFP",
@@ -35,7 +29,7 @@ const categories = [
 const CategoryCards: React.FC = () => {
   return (
     <div className="container mx-auto my-10 p-6">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {categories.map((category, index) => (
           <Link key={index} href={category.lien}>
             <div className="flex h-full flex-col items-center justify-between rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:cursor-pointer dark:bg-gray-dark ">

@@ -6,7 +6,6 @@ import Header from "./Header";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
-import { CheckIcon } from "@heroicons/react/solid";
 import ProgramCard from "../Master/ProgramCard";
 import MasterCard from "../Master/MasterCard";
 import CallToAction from "./CallToAction";
