@@ -1,15 +1,23 @@
 "use client";
 import { useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/counter.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Lightbox from "yet-another-react-lightbox";
+import {
+  Counter,
+  Fullscreen,
+  Thumbnails,
+  Zoom,
+} from "yet-another-react-lightbox/plugins";
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? slides.length - 1 : prevIndex - 1,
     );
   };
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === slides.length - 1 ? 0 : prevIndex + 1,
@@ -43,6 +51,17 @@ export default function Carousel() {
     },
   ];
 
+  const [index, setIndex] = useState(-1);
+  const IMAGES = [
+    { src: "/images/banniere/p1.png" },
+    { src: "/images/banniere/p2.png" },
+    { src: "/images/banniere/p3.png" },
+    { src: "/images/banniere/p4.png" },
+    { src: "/images/banniere/p5.png" },
+    { src: "/images/banniere/p6.png" },
+    { src: "/images/banniere/p7.png" },
+  ];
+
   return (
     <section className=" bg-dark py-16 dark:bg-bg-color-dark md:py-20 lg:py-28">
       <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-lg shadow-lg">
@@ -54,18 +73,23 @@ export default function Carousel() {
           {slides.map((slide) => (
             <div
               key={slide.id}
-              className="h-[500px] min-w-full bg-cover bg-center"
+              className="group relative h-[500px] min-w-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="flex h-full flex-col items-center justify-center bg-black bg-opacity-50 px-4 text-white">
-                {/* <h2 className="text-3xl font-bold">{slide.title}</h2>
-                <p className="mt-4 text-lg">{slide.description}</p> */}
+              {/* Bouton centré visible uniquement au survol */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <button
+                  onClick={() => setIndex(1)}
+                  className="rounded-lg border-2 border-white bg-transparent px-6 py-2 font-semibold text-white shadow-md hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 dark:border-gray-300 dark:hover:bg-gray-300 dark:hover:text-gray-800 dark:focus:ring-gray-600 dark:focus:ring-offset-gray-900"
+                >
+                  Plus d&apos;images
+                </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Boutons */}
+        {/* Boutons de navigation */}
         <button
           onClick={handlePrev}
           className="absolute left-4 top-1/2 flex -translate-y-1/2 transform items-center justify-center rounded-full bg-gray-500 p-2 text-black shadow-md hover:bg-gray-200"
@@ -78,20 +102,14 @@ export default function Carousel() {
         >
           <ChevronRightIcon className="h-6 w-6 text-gray-700" />
         </button>
-
-        {/* Indicateurs */}
-        {/* <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 transform space-x-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-4 w-4 rounded-full ${
-                index === currentIndex ? "bg-white" : "bg-gray-400"
-              }`}
-            ></button>
-          ))}
-        </div> */}
       </div>
+      <Lightbox
+        plugins={[Counter, Fullscreen, Zoom, Thumbnails]}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+        index={index}
+        slides={IMAGES}
+      />
     </section>
   );
 }

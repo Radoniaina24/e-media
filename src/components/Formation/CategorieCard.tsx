@@ -3,11 +3,11 @@ import React from "react";
 
 const categories = [
   {
-    title: "CFP : Formation modulaire",
+    title: "Formation modulaire",
     description:
       "Les formations modulaires sont conçues pour offrir une flexibilité maximale. Vous pouvez suivre des modules spécifiques selon vos besoins et votre rythme.",
     icon: "📚",
-    lien: "/formation/cfp",
+    lien: "/formation/modulaire",
   },
   {
     title: "Licence",
@@ -24,11 +24,11 @@ const categories = [
     lien: "/formation/master",
   },
   {
-    title: "E-learning",
+    title: "CFP",
     description:
-      "L'E-learning permet d'étudier à distance, offrant flexibilité et accès à des ressources pédagogiques interactives en ligne.",
+      "Le CFP propose des formations professionnelles axées sur la pratique, adaptées aux besoins du marché et permettant une montée en compétences rapide et efficace.",
     icon: "💻",
-    lien: "",
+    lien: "/formation/cfp",
   },
 ];
 
