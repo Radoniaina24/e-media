@@ -44,8 +44,8 @@ const menuData: Menu[] = [
       },
       {
         id: 32,
-        title: "E-learning",
-        path: "/formation/elearning",
+        title: "Modulaire",
+        path: "/formation/modulaire",
         newTab: false,
       },
     ],
