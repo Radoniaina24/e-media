@@ -61,7 +61,7 @@ const App = () => {
               </div>
             </Link>
 
-            <Link href="/formation/certificat">
+            <Link href="/formation/cfp">
               <div
                 className="rounded-lg bg-white p-6 shadow-lg hover:bg-dark hover:text-white dark:bg-dark"
                 data-aos="zoom-in"
