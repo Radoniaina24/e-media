@@ -18,7 +18,7 @@ import Formation from "@/components/Formation";
 import Carousel from "@/components/Carousel";
 
 export const metadata: Metadata = {
-  title: "Accueil | E-media",
+  title: "media | Accueil  ",
 };
 
 export default function page() {

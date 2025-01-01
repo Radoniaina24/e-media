@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: {
     absolute: "",
     default: "E-media",
-    template: "%s | E-media",
+    template: "media | %s  ",
   },
   description: "...",
 };
