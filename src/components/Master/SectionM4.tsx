@@ -142,7 +142,7 @@ export default function SectionM4() {
           title="Durée et organisation de la formation"
           content="Le MBA Spécialisé se déroule sur 2 ans après la Licence (4 semestres) :"
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {master.map((spec, index) => (
               <MasterCard
                 key={index}

@@ -142,7 +142,7 @@ export default function SectionM2() {
           title="Durée et organisation de la formation"
           content="Le Master en Audiovisuel et Cinématographie se déroule sur 4 semestres après la Licence (soit 2 ans)."
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {master.map((spec, index) => (
               <MasterCard
                 key={index}

@@ -23,10 +23,10 @@ const Header: React.FC<HeaderProps> = ({
 
     <div className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white ">
       <div className="max-w-4xl space-y-6">
-        <h1 className="text-shadow-lg text-xl font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-2xl lg:text-2xl">
+        <h1 className="text-shadow-lg text-lg font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-2xl lg:text-2xl">
           {title}
         </h1>
-        <p className="sm:text-md mx-auto mb-8 max-w-2xl text-lg font-light leading-relaxed text-gray-50 md:text-xl lg:text-xl">
+        <p className=" sm:text-md text-md mx-auto mb-8 max-w-2xl font-light leading-relaxed text-gray-50 md:text-xl lg:text-xl">
           {subtitle}
         </p>
         <a

@@ -159,7 +159,7 @@ export default function SectionL4() {
         </Section>
 
         <Section title="Pourquoi choisir la Licence en Management d’E-Media ?">
-          <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
+          <div className="text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
             {why.map((item, index) => (
               <MasterCard
                 key={index}

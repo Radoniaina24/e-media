@@ -158,7 +158,7 @@ export default function SectionM3() {
           title="Durée et organisation de la formation"
           content="Le Master en MDJ est un programme intensif et structuré sur 2 ans après la Licence (soit 4 semestres):"
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {master.map((spec, index) => (
               <MasterCard
                 key={index}

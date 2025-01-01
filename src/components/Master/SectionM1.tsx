@@ -139,7 +139,7 @@ export default function SectionM1() {
           title="Durée et organisation de la formation"
           content="Le Master en IEE se déroule sur 2 ans, avec une structure pédagogique claire et progressive :"
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {master.map((spec, index) => (
               <MasterCard
                 key={index}

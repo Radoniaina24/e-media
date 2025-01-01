@@ -168,7 +168,7 @@ export default function SectionL5() {
           title="Durée et organisation de la formation"
           content="La Licence en Droit se déroule sur 3 ans (6 semestres), avec une organisation flexible et adaptée à l’apprentissage en ligne :"
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {licences.map((spec, index) => (
               <MasterCard
                 key={index}

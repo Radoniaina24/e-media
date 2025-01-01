@@ -18,14 +18,14 @@ const Hero = () => {
       <div className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white">
         <div className="max-w-4xl space-y-6">
           <h1
-            className="text-shadow-lg text-4xl font-extrabold leading-tight transition duration-500 sm:text-2xl  md:text-3xl"
+            className="text-shadow-lg text-lg font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-2xl"
             data-aos="fade-up"
           >
             L&apos;institution de référence en cinéma, audiovisuel, ingénierie
             du son et innovations technologiques pour Madagascar et
             l&apos;Afrique, au cœur de l&apos;Océan Indien.
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-xl font-light leading-relaxed text-gray-200 md:text-2xl">
+          <p className="text-md mx-auto mb-8 max-w-2xl font-light leading-relaxed text-gray-200 sm:text-lg md:text-xl">
             Rejoignez une université innovante qui forme les leaders de demain
             dans les secteurs créatifs et technologiques.
           </p>

@@ -149,7 +149,7 @@ export default function SectionL1() {
           title="Un programme structuré et pratique"
           content="La Licence en TIC s’étend sur 3 ans, avec un format progressif et intensif. Choisissez parmi trois parcours spécialisés selon vos ambitions professionnelles."
         >
-          <div className="flex items-center justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {licences.map((spec, index) => (
               <MasterCard
                 key={index}

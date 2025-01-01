@@ -160,7 +160,7 @@ export default function SectionL3() {
           title="Un programme structuré et pratique"
           content="La Licence MDJ se déroule sur 3 ans, avec un format progressif :"
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {licences.map((spec, index) => (
               <MasterCard
                 key={index}

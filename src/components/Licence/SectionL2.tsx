@@ -133,7 +133,7 @@ export default function SectionL2() {
           title="Durée de la formation"
           content="La Licence en CAN se déroule sur 3 ans, avec un format structuré et progressif :"
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {licences.map((spec, index) => (
               <MasterCard
                 key={index}
