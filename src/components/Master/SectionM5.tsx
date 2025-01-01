@@ -12,6 +12,7 @@ import MasterCard from "./MasterCard";
 import ProgramDetails from "./ProgramDetails";
 import CiblePublicCard from "./CiblePublicCard";
 import Card from "../Licence/Card";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionM5() {
   const master = [
@@ -128,6 +129,7 @@ export default function SectionM5() {
         id="master5"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="MASTER EN DROIT (FORMATION 100% EN LIGNE)" />
         <Mention specialisation="Droit Public, Droit Privé et des Affaires, Droit International et Diplomatie" />
         <Section title="À qui s’adresse cette formation ?"></Section>
         {/* À qui s’adresse cette formation ? */}

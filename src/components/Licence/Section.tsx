@@ -13,7 +13,7 @@ const Section: React.FC<SectionProps> = ({
   children,
   bgColor = "bg-white",
 }) => (
-  <section className={`py-10 ${bgColor} dark:bg-gray-900 `}>
+  <section className={`py-5 ${bgColor} dark:bg-gray-900 `}>
     <div className="container mx-auto text-center">
       <h2 className="text-3xl font-semibold dark:text-white">{title}</h2>
       {content && (

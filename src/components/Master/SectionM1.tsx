@@ -12,6 +12,7 @@ import ProgramCard from "./ProgramCard";
 import CallToAction from "../Licence/CallToAction";
 import Mention from "./Mention";
 import MasterCard from "./MasterCard";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionM1() {
   const currentWorld = {
@@ -117,6 +118,7 @@ export default function SectionM1() {
         id="master1"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="MASTER EN INFORMATIQUE ET ÉLECTRONIQUE EMBARQUÉES (IEE)" />
         <Mention
           domain={"Sciences de l’Ingénieur"}
           mention={"Informatique et Électronique Embarquées"}

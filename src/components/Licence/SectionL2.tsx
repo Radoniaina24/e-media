@@ -6,6 +6,7 @@ import CiblePublicCard from "../Master/CiblePublicCard";
 import MasterCard from "../Master/MasterCard";
 import ProgramCard from "../Master/ProgramCard";
 import CallToAction from "./CallToAction";
+import ScrollComponent from "../Scroll/ScrollComponent";
 export default function SectionL2() {
   const currentWorld = [
     {
@@ -96,6 +97,7 @@ export default function SectionL2() {
         id="sectionL2"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="LICENCE EN COMMUNICATION AUDIOVISUELLE ET NUMÉRIQUE (CAN)" />
         <Section title="À qui s’adresse cette formation ?"></Section>
         {/* À qui s’adresse cette formation ? */}
 

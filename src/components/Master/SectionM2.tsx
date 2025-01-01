@@ -13,6 +13,7 @@ import CallToAction from "../Licence/CallToAction";
 import Mention from "./Mention";
 import MasterCard from "./MasterCard";
 import ProgramDetails from "./ProgramDetails";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionM2() {
   const currentWorld = {
@@ -120,6 +121,7 @@ export default function SectionM2() {
         id="master2"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="MASTER EN AUDIOVISUEL ET CINÉMATOGRAPHIE (AC)" />
         <Mention
           domain={"Sciences de la Société"}
           mention={"Audiovisuel et Cinématographie"}

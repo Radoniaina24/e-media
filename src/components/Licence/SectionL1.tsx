@@ -9,6 +9,7 @@ import "aos/dist/aos.css"; // Importer les styles d'AOS
 import ProgramCard from "../Master/ProgramCard";
 import MasterCard from "../Master/MasterCard";
 import CallToAction from "./CallToAction";
+import ScrollComponent from "../Scroll/ScrollComponent";
 export default function SectionL1() {
   const careerPaths = [
     {
@@ -105,10 +106,12 @@ export default function SectionL1() {
         title="LICENCE EN TECHNOLOGIES DE L’INFORMATION ET DE LA COMMUNICATION (TIC)"
         subtitle="Une formation innovante et intensive pour devenir un acteur clé de la transformation technologique."
       />
+
       <div
         id="sectionL1"
-        className="bg-gray-50 pt-20  font-sans text-gray-800 dark:bg-gray-900"
+        className="bg-gray-50 pt-20   font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="LICENCE EN TECHNOLOGIES DE L’INFORMATION ET DE LA COMMUNICATION (TIC)" />
         {/* Pourquoi choisir cette licence */}
         <Section
           title="Pourquoi choisir cette licence ?"
@@ -164,7 +167,7 @@ export default function SectionL1() {
           title=""
           content="Les étudiants peuvent choisir parmi trois parcours spécialisés, en fonction de leurs ambitions professionnelles :"
         >
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-wrap justify-center gap-5">
             {specializations.map((spec, index) => (
               <MasterCard
                 key={index}

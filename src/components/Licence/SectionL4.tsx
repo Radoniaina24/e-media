@@ -12,6 +12,7 @@ import SpecializationCard from "./SpecializationCard";
 import CallToAction from "./CallToAction";
 import MasterCard from "../Master/MasterCard";
 import ProgramDetails from "../Master/ProgramDetails";
+import ScrollComponent from "../Scroll/ScrollComponent";
 export default function SectionL4() {
   const currentWorld = [
     {
@@ -119,6 +120,7 @@ export default function SectionL4() {
         id="sectionL4"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="LICENCE EN MANAGEMENT (100% EN LIGNE)" />
         <Section title="Spécialisations">
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
             {currentWorld2.items.map((item, index) => (

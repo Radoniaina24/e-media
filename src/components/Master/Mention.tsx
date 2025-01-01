@@ -14,9 +14,9 @@ const Mention: React.FC<ProgramCardProps> = ({
   return (
     <div
       id="program-card"
-      className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
+      className="bg-gray-50  font-sans text-gray-800 dark:bg-gray-900"
     >
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-6">
         <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
           <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
             {domain ? (

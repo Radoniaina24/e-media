@@ -13,6 +13,7 @@ import Mention from "./Mention";
 import MasterCard from "./MasterCard";
 import ProgramDetails from "./ProgramDetails";
 import CiblePublicCard from "./CiblePublicCard";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionM3() {
   const ciblePublicData = [
@@ -136,6 +137,7 @@ export default function SectionM3() {
         id="master3"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="MASTER EN MARKETING DIGITAL ET JOURNALISME (MDJ - M)" />
         <Mention
           domain={"Sciences de la Société"}
           mention={"Marketing Digital et Journalisme"}

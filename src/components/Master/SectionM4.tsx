@@ -12,6 +12,7 @@ import MasterCard from "./MasterCard";
 import ProgramDetails from "./ProgramDetails";
 import CiblePublicCard from "./CiblePublicCard";
 import Card from "../Licence/Card";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionM4() {
   const master = [
@@ -123,6 +124,7 @@ export default function SectionM4() {
         id="master4"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="MBA SPÉCIALISÉ - MASTER OF BUSINESS ADMINISTRATION (FORMATION 100% EN LIGNE)" />
         <Mention specialisation=" Marketing Digital et Journalisme" />
         <Section title="À qui s’adresse ce MBA ?"></Section>
         {/* À qui s’adresse cette formation ? */}

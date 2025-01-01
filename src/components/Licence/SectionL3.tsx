@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
 import MasterCard from "../Master/MasterCard";
 import ProgramCard from "../Master/ProgramCard";
+import ScrollComponent from "../Scroll/ScrollComponent";
 export default function SectionL3() {
   const currentWorld = [
     {
@@ -127,6 +128,7 @@ export default function SectionL3() {
         id="sectionL3"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="MARKETING DIGITAL ET JOURNALISME (MDJ - L ) - LICENCE" />
         <Section title="À qui s’adresse cette formation ?"></Section>
         {/* À qui s’adresse cette formation ? */}
         <Section bgColor="bg-gray-100">
