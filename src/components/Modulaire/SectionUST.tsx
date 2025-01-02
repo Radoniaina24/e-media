@@ -5,6 +5,7 @@ import "aos/dist/aos.css"; // Importer les styles d'AOS
 import Header from "../Licence/Header";
 import Section from "../Licence/Section";
 import CardCFP from "../CFP/CardCFP";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionUST() {
   const programs = [
@@ -130,6 +131,7 @@ export default function SectionUST() {
         id="ust"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="UST-IO : UNIVERSITY OF SCIENCE AND TECHNOLOGY - INDIAN OCEAN" />
         <Section
           title="Identité et Mission"
           content="L’UST-IO est une institution clé à Madagascar, dédiée à la formation et à l’innovation dans les domaines des sciences et des nouvelles technologies. Elle vise à former des professionnels compétents pour relever les défis de la transformation digitale et du développement durable."

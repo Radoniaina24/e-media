@@ -14,6 +14,7 @@ import MasterCard from "../Master/MasterCard";
 import ProgramDetails from "../Master/ProgramDetails";
 import ProgramCard from "../Master/ProgramCard";
 import CardCFP from "../CFP/CardCFP";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionUSA() {
   const programs = [
@@ -133,6 +134,7 @@ export default function SectionUSA() {
         id="usa"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="E-MEDIA : UNIVERSITÉ SPÉCIALISÉE EN AUDIOVISUEL, CINÉMATOGRAPHIE ET NUMÉRIQUE" />
         <Section
           title="Identité et Mission"
           content="E-media est la première et unique université à Madagascar dédiée exclusivement aux métiers de l’audiovisuel, de la cinématographie et du numérique. Grâce à des infrastructures modernes et à un réseau de professionnels de renom, E-media forme les talents de demain dans des secteurs en pleine expansion.

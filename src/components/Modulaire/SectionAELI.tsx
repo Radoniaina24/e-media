@@ -5,6 +5,7 @@ import "aos/dist/aos.css"; // Importer les styles d'AOS
 import Header from "../Licence/Header";
 import Section from "../Licence/Section";
 import CardCFP from "../CFP/CardCFP";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionAELI() {
   const programs = [
@@ -244,6 +245,7 @@ export default function SectionAELI() {
         id="aeli"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent text="AELI : L’AFRICAN ENTREPRENEURSHIP AND LEADERSHIP INSTITUTE" />
         <Section
           title="Identité et Mission"
           content="AELI se consacre à la promotion de l’entrepreneuriat et du leadership transformationnel. L’institut offre des programmes conçus pour stimuler l’innovation, la gestion de projet agile, le leadership en entreprise, l’agrobusiness, les énergies renouvelables et les techniques de négociation. L’objectif est de former des leaders capables de relever les défis contemporains et de contribuer au développement durable du continent africain."
