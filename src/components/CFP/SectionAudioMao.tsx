@@ -1,6 +1,9 @@
 import React from "react";
 import FormationAudio from "./Formation";
 import Section from "../Licence/Section";
+import Header from "../Licence/Header";
+import ScrollComponent from "../Scroll/ScrollComponent";
+import DurationCard from "./DurationCard";
 
 export default function SectionAudioMao() {
   const formationAudio = {
@@ -134,23 +137,22 @@ export default function SectionAudioMao() {
     "Cette formation constitue une porte d’entrée idéale pour toute personne passionnée par le son et la musique, offrant une expertise immédiatement exploitable dans un secteur dynamique et en constante évolution.";
   return (
     <div>
-      <Section
-        title="Son : Production Audio & MAO "
-        content="Cette formation offre une immersion complète dans un environnement studio professionnel, permettant aux apprenants d’acquérir les bases essentielles de la production audio et de la création musicale assistée par ordinateur (MAO). Ce programme intensif met l’accent sur la pratique et l’utilisation d’outils de pointe pour produire des contenus sonores de qualité professionnelle adaptés à divers domaines, tels que la musique, la publicité ou l’audiovisuel."
-      ></Section>
-      <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-        <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
-          Durée :
-        </span>
-        <span className="text-xl font-bold">5 mois</span>
-      </div>
-      <FormationAudio data={formationAudio} />
+      <Header
+        title="Son : Production Audio & MAO"
+        id="audiomao"
+        subtitle="Cette formation offre une immersion complète dans un environnement studio professionnel, permettant aux apprenants d’acquérir les bases essentielles de la production audio et de la création musicale assistée par ordinateur (MAO). Ce programme intensif met l’accent sur la pratique et l’utilisation d’outils de pointe pour produire des contenus sonores de qualité professionnelle adaptés à divers domaines, tels que la musique, la publicité ou l’audiovisuel."
+      />
+      <div id="audiomao" className="container">
+        <ScrollComponent text={"Son : Production Audio & MAO"} />
+        <DurationCard duration="5 mois" />
+        <FormationAudio data={formationAudio} />
 
-      <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-        <h2 className="mb-4 text-2xl font-bold">
-          Faites le choix d&apos;une formation exceptionnelle !
-        </h2>
-        <p className="text-lg">{text}</p>
+        <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+          <h2 className="mb-4 text-2xl font-bold">
+            Faites le choix d&apos;une formation exceptionnelle !
+          </h2>
+          <p className="text-lg">{text}</p>
+        </div>
       </div>
     </div>
   );

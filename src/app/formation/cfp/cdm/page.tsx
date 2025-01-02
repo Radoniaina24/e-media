@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div className=" container mt-28">
+    <div className="">
       <SectionMultimedia />
     </div>
   );

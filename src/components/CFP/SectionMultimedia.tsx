@@ -2,6 +2,9 @@ import React from "react";
 import FormationAudio from "./Formation";
 import Section from "../Licence/Section";
 import CardCFP from "./CardCFP";
+import Header from "../Licence/Header";
+import ScrollComponent from "../Scroll/ScrollComponent";
+import DurationCard from "./DurationCard";
 
 export default function SectionMultimedia() {
   const formationEvent = {
@@ -121,35 +124,33 @@ export default function SectionMultimedia() {
     "Cette formation est idéale pour les passionnés de technologie et de création numérique, souhaitant construire une carrière solide et pérenne dans un secteur en constante évolution.";
   return (
     <div>
-      <Section
+      <Header
+        id="multimedia"
         title="Web : Création et Développement Multimédia"
-        content="Cette formation pratique et immersive prépare les apprenants à concevoir, développer et optimiser des sites web modernes, performants et adaptés aux besoins des utilisateurs. En combinant les compétences en programmation et en design, cette formation permet de maîtriser les langages de programmation, les aspects visuels, et les techniques avancées de gestion de projets numériques. Un certificat agréé par l’État est délivré à l’issue de la formation, garantissant une reconnaissance officielle des compétences."
-      ></Section>
-      <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-        <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
-          Durée :
-        </span>
-        <span className="text-xl font-bold"> 5 mois</span>
-      </div>
-      <FormationAudio data={formationEvent} />
-      <Section title="Pourquoi choisir cette formation professionnelle ?">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          {forcesFormation.map((force, index) => (
-            <CardCFP
-              key={index}
-              title={force.titre}
-              description={force.description}
-            />
-          ))}
+        subtitle="Cette formation pratique et immersive prépare les apprenants à concevoir, développer et optimiser des sites web modernes, performants et adaptés aux besoins des utilisateurs. En combinant les compétences en programmation et en design, cette formation permet de maîtriser les langages de programmation, les aspects visuels, et les techniques avancées de gestion de projets numériques. Un certificat agréé par l’État est délivré à l’issue de la formation, garantissant une reconnaissance officielle des compétences."
+      />
+      <div id="multimedia" className="container">
+        <ScrollComponent text={"Web : Création et Développement Multimédia"} />
+        <DurationCard duration={"5 mois"} />
+        <FormationAudio data={formationEvent} />
+        <Section title="Pourquoi choisir cette formation professionnelle ?">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+            {forcesFormation.map((force, index) => (
+              <CardCFP
+                key={index}
+                title={force.titre}
+                description={force.description}
+              />
+            ))}
+          </div>
+        </Section>
+        <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+          <h2 className="mb-4 text-2xl font-bold">
+            Faites le choix d&apos;une formation exceptionnelle !
+          </h2>
+          <p className="text-lg">{text}</p>
         </div>
-      </Section>
-      <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-        <h2 className="mb-4 text-2xl font-bold">
-          Faites le choix d&apos;une formation exceptionnelle !
-        </h2>
-        <p className="text-lg">{text}</p>
-      </div>
-      {/* <Section bgColor="bg-gray-500">
+        {/* <Section bgColor="bg-gray-500">
         <CallToAction
           heading={""}
           description={
@@ -159,6 +160,7 @@ export default function SectionMultimedia() {
           buttonLink={""}
         />
       </Section> */}
+      </div>
     </div>
   );
 }

@@ -2,6 +2,9 @@ import React from "react";
 import FormationAudio from "./Formation";
 import Section from "../Licence/Section";
 import CallToAction from "../Licence/CallToAction";
+import Header from "../Licence/Header";
+import ScrollComponent from "../Scroll/ScrollComponent";
+import DurationCard from "./DurationCard";
 
 export default function SectionImages() {
   const formationEvent = {
@@ -165,25 +168,25 @@ export default function SectionImages() {
     "Cette formation s’adresse aux passionnés de l’image et de la 3D, leur offrant une expertise complète pour exceller dans les métiers techniques, créatifs et numériques.";
   return (
     <div>
-      <Section
+      <Header
+        id="image"
         title="Image : Cinématographie, Post-production, Photographie et 3D"
-        content="Cette formation complète et immersive forme les apprenants à maîtriser les outils et techniques liés à la production visuelle, à la post-production, à la photographie et à la conception en 3D. Grâce à une approche centrée sur la pratique, les participants développent des compétences polyvalentes et innovantes pour répondre aux exigences des industries créatives et numériques. Au terme de la formation, un certificat agréé par l’État est délivré, renforçant la reconnaissance professionnelle des diplômés."
-      ></Section>
-      <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-        <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
-          Durée :
-        </span>
-        <span className="text-xl font-bold">7 mois</span>
-      </div>
-      <FormationAudio data={formationEvent} />
+        subtitle="Cette formation complète et immersive forme les apprenants à maîtriser les outils et techniques liés à la production visuelle, à la post-production, à la photographie et à la conception en 3D. Grâce à une approche centrée sur la pratique, les participants développent des compétences polyvalentes et innovantes pour répondre aux exigences des industries créatives et numériques. Au terme de la formation, un certificat agréé par l’État est délivré, renforçant la reconnaissance professionnelle des diplômés."
+      />
+      <div id="image" className="container">
+        <ScrollComponent
+          text={"Image : Cinématographie, Post-production, Photographie et 3D"}
+        />
+        <DurationCard duration={"7 mois"} />
+        <FormationAudio data={formationEvent} />
 
-      <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-        <h2 className="mb-4 text-2xl font-bold">
-          Faites le choix d&apos;une formation exceptionnelle !
-        </h2>
-        <p className="text-lg">{text}</p>
-      </div>
-      {/* <Section bgColor="bg-gray-500">
+        <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+          <h2 className="mb-4 text-2xl font-bold">
+            Faites le choix d&apos;une formation exceptionnelle !
+          </h2>
+          <p className="text-lg">{text}</p>
+        </div>
+        {/* <Section bgColor="bg-gray-500">
         <CallToAction
           heading={""}
           description={
@@ -193,6 +196,7 @@ export default function SectionImages() {
           buttonLink={""}
         />
       </Section> */}
+      </div>
     </div>
   );
 }

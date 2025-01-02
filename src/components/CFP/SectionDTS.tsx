@@ -4,6 +4,9 @@ import Section from "../Licence/Section";
 import CardCFP from "./CardCFP";
 import Card from "../Licence/Card";
 import ProgramCard from "../Master/ProgramCard";
+import Header from "../Licence/Header";
+import DurationCard from "./DurationCard";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionDTS() {
   const debouchesProfessionnels = [
@@ -143,85 +146,80 @@ export default function SectionDTS() {
   const text =
     "Ce programme constitue une passerelle vers des carrières prometteuses dans les industries numériques, audiovisuelles, événementielles et web.";
   return (
-    <div className="container mt-28">
-      <Section
+    <div>
+      <Header
+        id="dts"
         title="DTS – Diplôme de Technicien Supérieur"
-        content="Le DTS est une formation intensive et complète, regroupant les quatre spécialités décrites ci-dessus : Production Audio & MAO, Sonorisation et Lumières de Spectacle, Cinéphotographie, Post-production et 3D, et Web : Création et Développement Multimédia. Ce programme unique s’adresse à ceux qui souhaitent acquérir une expertise multidisciplinaire, combinant les compétences techniques et créatives essentielles pour exceller dans les industries numériques, culturelles et événementielles."
-      ></Section>
-      <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 p-4 text-white shadow-md transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-        <span className="text-sm font-medium uppercase tracking-wide opacity-75 dark:opacity-90">
-          Durée :
-        </span>
-        <span className="text-xl font-bold">
-          {" "}
-          12 mois de formation + 2 mois de stage en entreprise.
-        </span>
-      </div>
-      <Section>
-        <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
-          Objectifs de la formation
-        </h1>
+        subtitle="Le DTS est une formation intensive et complète, regroupant les quatre spécialités décrites ci-dessus : Production Audio & MAO, Sonorisation et Lumières de Spectacle, Cinéphotographie, Post-production et 3D, et Web : Création et Développement Multimédia. Ce programme unique s’adresse à ceux qui souhaitent acquérir une expertise multidisciplinaire, combinant les compétences techniques et créatives essentielles pour exceller dans les industries numériques, culturelles et événementielles."
+      />
+      <div id="dts" className="container">
+        <ScrollComponent text={"DTS – Diplôme de Technicien Supérieur"} />
+        <DurationCard duration=" 12 mois de formation + 2 mois de stage en entreprise." />
+        <Section>
+          <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
+            Objectifs de la formation
+          </h1>
 
-        <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
-          {objectifsFormation.map((item, index) => (
-            <Card key={index} title={item.item} items={[]} />
-          ))}
-        </div>
-      </Section>
+          <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
+            {objectifsFormation.map((item, index) => (
+              <Card key={index} title={item.item} items={[]} />
+            ))}
+          </div>
+        </Section>
 
-      <Section>
-        <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
-          Contenu du programme
-        </h1>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-          {formations.map((program, index) => (
-            <ProgramCard key={index} program={program} />
-          ))}
-        </div>
-      </Section>
-      <Section
-        title="Stage de 2 mois"
-        content="À la fin de la formation, les apprenants réalisent un stage pratique en entreprise dans l’un des secteurs couverts (studio, audiovisuel, événementiel, multimédia ou web). Ce stage leur permet d’appliquer les compétences acquises tout en se familiarisant avec le milieu professionnel."
-      ></Section>
+        <Section>
+          <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
+            Contenu du programme
+          </h1>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+            {formations.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </Section>
+        <Section
+          title="Stage de 2 mois"
+          content="À la fin de la formation, les apprenants réalisent un stage pratique en entreprise dans l’un des secteurs couverts (studio, audiovisuel, événementiel, multimédia ou web). Ce stage leur permet d’appliquer les compétences acquises tout en se familiarisant avec le milieu professionnel."
+        ></Section>
 
-      <Section>
-        <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
-          Compétences clés développées
-        </h1>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-          {competencesDeveloppees.map((program, index) => (
-            <ProgramCard key={index} program={program} />
-          ))}
-        </div>
-      </Section>
-      <Section>
-        <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
-          Débouchés professionnels
-        </h1>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-          {debouchesProfessionnels.map((program, index) => (
-            <ProgramCard key={index} program={program} />
-          ))}
-        </div>
-      </Section>
+        <Section>
+          <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
+            Compétences clés développées
+          </h1>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+            {competencesDeveloppees.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </Section>
+        <Section>
+          <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
+            Débouchés professionnels
+          </h1>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+            {debouchesProfessionnels.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </Section>
 
-      <Section>
-        <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
-          Pourquoi choisir le DTS ?
-        </h1>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-          {avantagesFormation.map((program, index) => (
-            <ProgramCard key={index} program={program} />
-          ))}
-        </div>
-      </Section>
+        <Section>
+          <h1 className=" mb-9  text-2xl text-gray-800 dark:text-white">
+            Pourquoi choisir le DTS ?
+          </h1>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+            {avantagesFormation.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </Section>
 
-      <Section>
-        <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
-          <p className="text-lg">{text}</p>
-        </div>
-      </Section>
-      {/* <Section bgColor="bg-gray-500">
+        <Section>
+          <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
+            <p className="text-lg">{text}</p>
+          </div>
+        </Section>
+        {/* <Section bgColor="bg-gray-500">
         <CallToAction
           heading={""}
           description={
@@ -231,6 +229,7 @@ export default function SectionDTS() {
           buttonLink={""}
         />
       </Section> */}
+      </div>
     </div>
   );
 }
