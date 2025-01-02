@@ -48,6 +48,14 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
+                    href="/formation/universitaire"
+                    className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+                  >
+                    Universitaire
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/formation/cfp"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
@@ -56,18 +64,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/formation/licence"
+                    href="/formation/modulaire"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    Licence
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/formation/master"
-                    className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                  >
-                    Master
+                    Modulaire
                   </Link>
                 </li>
               </ul>
