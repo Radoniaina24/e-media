@@ -5,6 +5,7 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid"; // Icône pour les listes
+import SectionWithImage from "./SectionWithImage";
 export default function WhyUs() {
   useEffect(() => {
     AOS.init({
@@ -12,6 +13,67 @@ export default function WhyUs() {
       easing: "ease-in-out", // Style de transition
     });
   }, []);
+
+  const eMediaContent = [
+    {
+      title: "Une Formation en Ligne Accessible Partout",
+      description:
+        "E-Media propose des programmes en ligne de haute qualité, accessibles à Madagascar et à l’international.",
+      highlights: [
+        {
+          text: "Une communauté étudiante diversifiée, issue d’Afrique, d’Europe, des Amériques et de la diaspora malgache.",
+        },
+        {
+          text: "Des formations flexibles et un accompagnement personnalisé adaptés aux besoins des apprenants.",
+        },
+      ],
+      imageSrc: "/images/why/online.jpg",
+      imageAlt: "Formation en ligne",
+      imageOnRight: true, // Positionne l'image à droite
+    },
+    {
+      title: "Des Infrastructures Modernes",
+      description:
+        "Avec des équipements de pointe, E-Media garantit une formation pratique et immersive :",
+      highlights: [
+        {
+          text: "Studios professionnels : Fond vert, plateau TV, sonorisation, et régie vidéo.",
+        },
+        {
+          text: "Parc informatique : Ordinateurs performants (Core i7, 7ᵉ génération et plus).",
+        },
+        {
+          text: "Laboratoires spécialisés : Multimédia, informatique et techniques avancées.",
+        },
+        {
+          text: "Cabines de son et studio radiophonique pour une qualité optimale.",
+        },
+      ],
+      imageSrc: "/images/banniere/p6.png",
+      imageAlt: "Infrastructures modernes",
+      imageOnRight: false, // Positionne l'image à droite
+    },
+    {
+      title: "Un Engagement pour le Développement Durable",
+      description:
+        "E-Media contribue au développement socio-économique de Madagascar et de l’Afrique en :",
+      highlights: [
+        {
+          text: "Créant des opportunités professionnelles pour les jeunes dans les industries créatives.",
+        },
+        {
+          text: "Encourageant l’entrepreneuriat et l’innovation comme moteurs de croissance.",
+        },
+        {
+          text: "Valorisant les ressources culturelles et humaines locales pour un rayonnement international.",
+        },
+      ],
+      imageSrc: "/images/banniere/p1.png",
+      imageAlt: "Engagement pour le développement durable",
+      imageOnRight: true, // Positionne l'image à gauche
+    },
+  ];
+
   return (
     <div className="relative   dark:bg-gray-dark ">
       <div
@@ -73,191 +135,17 @@ export default function WhyUs() {
           </div>
         </div>
         <div className="space-y-16 px-6 py-12 dark:bg-gray-dark">
-          {/*  <!-- Section 1: Une Formation en Ligne Accessible Partout -->*/}
-          <div className="mx-auto max-w-7xl space-y-16">
-            <div
-              className="flex flex-col items-center md:flex-row "
-              data-aos="fade-up"
-            >
-              <div className="p-6 md:w-1/2" data-aos="fade-right">
-                <h2 className="mb-4 text-2xl font-bold text-primary dark:text-white md:text-3xl">
-                  Une Formation en Ligne Accessible Partout
-                </h2>
-                <p className="mb-6 text-lg leading-relaxed text-gray-500 dark:text-gray-400">
-                  E-Media propose des programmes en ligne de haute qualité,
-                  accessibles à Madagascar et à l&apos;international.
-                </p>
-                <ul className="space-y-3 text-gray-500 dark:text-gray-400">
-                  <li className=" flex items-center">
-                    <div className="mr-4">
-                      <CheckIcon className=" h-6 w-6 text-green-500" />
-                    </div>
-
-                    <div>
-                      <span className="font-semibold">
-                        Des formations flexibles
-                      </span>{" "}
-                      et un accompagnement personnalisé adaptés aux besoins des
-                      apprenants.
-                    </div>
-                  </li>
-                  <li className=" flex items-center">
-                    <div className="mr-4">
-                      <CheckIcon className=" h-6 w-6 text-green-500" />
-                    </div>
-
-                    <div>
-                      <span className="font-semibold">
-                        Une communauté étudiante diversifiée
-                      </span>
-                      , issue d&apos;Afrique, d&apos;Europe, des Amériques et de
-                      la diaspora malgache.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="md:w-1/2" data-aos="fade-left">
-                <Image
-                  src="/images/why/online.jpg"
-                  alt="Formation en ligne"
-                  className="h-64 w-full rounded-lg object-cover shadow-lg md:h-80"
-                  width={500}
-                  height={500}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* <!-- Section 2: Des Infrastructures Modernes --> */}
-          <div
-            className="flex flex-col items-center md:flex-row"
-            data-aos="fade-up"
-          >
-            <div className="order-2 md:order-1 md:w-1/2" data-aos="fade-right">
-              <img
-                src="/images/banniere/p6.png"
-                alt="Infrastructures modernes"
-                className="h-64 w-full rounded-lg object-cover shadow-lg md:h-80"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div
-              className="order-1 p-6 md:order-2 md:w-1/2"
-              data-aos="fade-left"
-            >
-              <h2 className="mb-4 text-2xl font-bold  text-primary dark:text-white md:text-3xl">
-                Des Infrastructures Modernes
-              </h2>
-              <p className="mb-6 text-lg leading-relaxed text-gray-500 dark:text-gray-400">
-                Avec des équipements de pointe, E-Media garantit une formation
-                pratique et immersive :
-              </p>
-              <ul className="list-inside list-disc space-y-3 text-gray-500 dark:text-gray-400">
-                <li className=" flex items-center">
-                  <div className="mr-4">
-                    <CheckIcon className=" h-6 w-6 text-green-500" />
-                  </div>
-
-                  <div>
-                    Studios professionnels : Fond vert, plateau TV,
-                    sonorisation, et régie vidéo.
-                  </div>
-                </li>
-                <li className=" flex items-center">
-                  <div className="mr-4">
-                    <CheckIcon className=" h-6 w-6 text-green-500" />
-                  </div>
-
-                  <div>
-                    Parc informatique : Ordinateurs performants (Core i7, 7ᵉ
-                    génération et plus).
-                  </div>
-                </li>
-                <li className=" flex items-center">
-                  <div className="mr-4">
-                    <CheckIcon className=" h-6 w-6 text-green-500" />
-                  </div>
-
-                  <div>
-                    Laboratoires spécialisés : Multimédia, informatique et
-                    techniques avancées.
-                  </div>
-                </li>
-
-                <li className=" flex items-center">
-                  <div className="mr-4">
-                    <CheckIcon className=" h-6 w-6 text-green-500" />
-                  </div>
-
-                  <div>
-                    Cabines de son et studio radiophonique pour une qualité
-                    optimale.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* <!-- Section 3: Un Engagement pour le Développement Durable --> */}
-          <div
-            className="flex flex-col items-center md:flex-row"
-            data-aos="fade-up"
-          >
-            <div className="p-6 md:w-1/2">
-              <h2
-                className="mb-4 text-2xl font-bold text-primary dark:text-white md:text-3xl"
-                data-aos="fade-right"
-              >
-                Un Engagement pour le Développement Durable
-              </h2>
-              <p className="mb-6 text-lg leading-relaxed text-gray-500 dark:text-gray-400">
-                E-Media contribue au développement socio-économique de
-                Madagascar et de l&apos;Afrique en :
-              </p>
-              <ul className="list-inside list-disc space-y-3 text-gray-500 dark:text-gray-400">
-                <li className=" flex items-center">
-                  <div className="mr-4">
-                    <CheckIcon className=" h-6 w-6 text-green-500" />
-                  </div>
-
-                  <div>
-                    Créant des opportunités professionnelles pour les jeunes
-                    dans les industries créatives.
-                  </div>
-                </li>
-                <li className=" flex items-center">
-                  <div className="mr-4">
-                    <CheckIcon className=" h-6 w-6 text-green-500" />
-                  </div>
-
-                  <div>
-                    Encourageant l&apos;entrepreneuriat et l&apos;innovation
-                    comme moteurs de croissance.
-                  </div>
-                </li>
-                <li className=" flex items-center">
-                  <div className="mr-4">
-                    <CheckIcon className=" h-6 w-6 text-green-500" />
-                  </div>
-
-                  <div>
-                    Valorisant les ressources culturelles et humaines locales
-                    pour un rayonnement international.
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="md:w-1/2" data-aos="fade-left">
-              <img
-                src="/images/banniere/p1.png"
-                alt="Développement durable"
-                className="h-64 w-full rounded-lg object-cover shadow-lg md:h-80"
-                width={500}
-                height={500}
-              />
-            </div>
-          </div>
+          {eMediaContent.map((item, index) => (
+            <SectionWithImage
+              key={index}
+              title={item.title}
+              description={item.description}
+              highlights={item.highlights}
+              imageSrc={item.imageSrc}
+              imageAlt={item.title}
+              imageOnRight={item.imageOnRight}
+            />
+          ))}
         </div>
       </div>
       {/* <!-- Section 4: E-Media : L&apos;Excellence et l&apos;Impact --> */}
