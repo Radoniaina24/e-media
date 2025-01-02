@@ -152,6 +152,7 @@ const App = () => {
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {engagement.map((item, index) => (
               <BackgroundCard
+                key={index}
                 imageSrc={item.imageSrc}
                 title={item.title}
                 description={item.description}
