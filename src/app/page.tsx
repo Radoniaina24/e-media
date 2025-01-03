@@ -1,21 +1,14 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
-import Banner from "@/components/Banner";
-import Blog from "@/components/Blog";
-import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
-import Features from "@/components/Features";
-import Galerie from "@/components/galerie";
 import Hero from "@/components/Hero";
-import Pricing from "@/components/Pricing";
 import QuiSommesNous from "@/components/QuiSommesNous";
-import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Cvideo";
 import WhyUs from "@/components/WhyUs";
 import { Metadata } from "next";
 import Formation from "@/components/Formation";
-import Carousel from "@/components/Carousel";
+import LightboxImage from "@/components/Carousel/Lightbox";
+import CarouselLightBox from "@/components/Carousel/Carousel";
+import Galerie from "@/components/Carousel";
 
 export const metadata: Metadata = {
   title: "media | Accueil  ",
@@ -34,6 +27,7 @@ export default function page() {
     pauseOnHover: false,
     pauseOnFocus: true,
   };
+
   return (
     <>
       <ScrollUp />
@@ -43,8 +37,7 @@ export default function page() {
       <WhyUs />
       {/* <Features /> */}
       <Video />
-      {/* <Galerie /> */}
-      <Carousel />
+      <Galerie />
       {/* Formation*/}
       <Formation />
       {/* <Brands /> */}
