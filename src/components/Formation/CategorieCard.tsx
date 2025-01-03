@@ -3,6 +3,13 @@ import React from "react";
 
 const categories = [
   {
+    title: "Formation Universitaire",
+    description:
+      "Découvrez nos programmes universitaires, y compris les cursus de master, pour approfondir vos connaissances et développer vos compétences.",
+    icon: "👨‍🎓",
+    lien: "/formation/universitaire",
+  },
+  {
     title: "Formation modulaire",
     description:
       "Les formations modulaires sont conçues pour offrir une flexibilité maximale. Vous pouvez suivre des modules spécifiques selon vos besoins et votre rythme.",
@@ -10,13 +17,6 @@ const categories = [
     lien: "/formation/modulaire",
   },
 
-  {
-    title: "Formation Universitaire",
-    description:
-      "Découvrez nos programmes universitaires, y compris les cursus de master, pour approfondir vos connaissances et développer vos compétences.",
-    icon: "👨‍🎓",
-    lien: "/formation/universitaire",
-  },
   {
     title: "CFP",
     description:

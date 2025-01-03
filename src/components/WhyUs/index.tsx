@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid"; // Icône pour les listes
 import SectionWithImage from "./SectionWithImage";
+import HeroBanner from "../Partenariats/HeroBaner";
 export default function WhyUs() {
   useEffect(() => {
     AOS.init({
@@ -76,30 +77,13 @@ export default function WhyUs() {
 
   return (
     <div className="relative   dark:bg-gray-dark ">
-      <div
-        className="relative bg-cover bg-fixed bg-center px-6 py-16 text-white"
-        style={{
-          backgroundImage: "url('/images/banniere/p1.png')", // Remplacez par l'URL de votre image
-        }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>{" "}
-        {/* Overlay pour améliorer la lisibilité */}
-        <div className="relative z-10 mx-auto max-w-7xl text-center">
-          {/* Titre principal */}
-          <h2
-            className="mb-4 text-4xl font-extrabold text-white md:text-5xl"
-            data-aos="fade-up"
-          >
-            Pourquoi Choisir E-Media ?
-          </h2>
-
-          {/* Sous-titre */}
-          <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed md:text-xl">
-            Découvrez les raisons qui font d&apos;E-Media un choix idéal pour
-            votre avenir dans les industries créatives.
-          </p>
-        </div>
-      </div>
+      <HeroBanner
+        title={"Pourquoi Choisir E-Media ?"}
+        subtitle={
+          "Découvrez les raisons qui font d'E-Media un choix idéal pour votre avenir dans les industries créatives."
+        }
+        backgroundImage={"/images/banniere/p1.png"}
+      />
       <div className="container">
         <div className=" px-6 py-12 dark:bg-gray-dark">
           <div

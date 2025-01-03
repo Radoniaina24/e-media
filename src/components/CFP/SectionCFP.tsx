@@ -7,6 +7,7 @@ import Header from "../Licence/Header";
 import Section from "../Licence/Section";
 import Mention from "../Master/Mention";
 import CFPPrograms from "./ProgramCFP";
+import ScrollComponent from "../Scroll/ScrollComponent";
 
 export default function SectionCFP() {
   useEffect(() => {
@@ -27,6 +28,10 @@ export default function SectionCFP() {
         id="cfp"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
+        <ScrollComponent
+          text="FORMATION PROFESSIONELLE – FORMATION CERTIFIANTE
+            (avec ou sans le bac)"
+        />
         <Mention specialisation=" Son, Image, Web" />
         {/* À qui s’adresse cette formation ? */}
         <Section

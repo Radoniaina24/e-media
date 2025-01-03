@@ -21,7 +21,7 @@ const menuData: Menu[] = [
   // },
   {
     id: 3,
-    title: "Formation",
+    title: "Formations",
     newTab: false,
     submenu: [
       {
@@ -46,6 +46,12 @@ const menuData: Menu[] = [
   },
   {
     id: 4,
+    title: "Partenariats",
+    path: "/partenariats",
+    newTab: false,
+  },
+  {
+    id: 5,
     title: "Contact",
     path: "/contact",
     newTab: false,

@@ -21,9 +21,12 @@ const Hero = () => {
             className="text-shadow-lg text-lg font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-2xl"
             data-aos="fade-up"
           >
-            L&apos;institution de référence en cinéma, audiovisuel, ingénierie
-            du son et innovations technologiques pour Madagascar et
-            l&apos;Afrique, au cœur de l&apos;Océan Indien.
+            L&apos;institution de référence en{" "}
+            <span className="text-primary">cinéma</span>,{" "}
+            <span className="text-primary">audiovisuel</span>,{" "}
+            <span className="text-primary">ingénierie du son</span> et{" "}
+            <span className="text-primary">innovations technologiques</span>{" "}
+            pour Madagascar et l&apos;Afrique, au cœur de l&apos;Océan Indien.
           </h1>
           <p className="text-md mx-auto mb-8 max-w-2xl font-light leading-relaxed text-gray-200 sm:text-lg md:text-xl">
             Rejoignez une université innovante qui forme les leaders de demain

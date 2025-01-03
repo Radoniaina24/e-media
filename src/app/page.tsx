@@ -39,7 +39,7 @@ export default function page() {
       <Video />
       <Galerie />
       {/* Formation*/}
-      <Formation />
+      {/* <Formation /> */}
       {/* <Brands /> */}
       {/* <AboutSectionOne />
       <AboutSectionTwo /> */}

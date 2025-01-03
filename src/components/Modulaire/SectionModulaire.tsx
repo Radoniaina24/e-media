@@ -3,6 +3,7 @@ import Header from "../Licence/Header";
 import Section from "../Licence/Section";
 import Card from "../Licence/Card";
 import ModulePrograms from "./ModuleProgram";
+import ScrollComponent from "../Scroll/ScrollComponent";
 const objectifs = [
   "Apporter une réponse immédiate et pratique aux besoins en renforcement de capacités des entreprises.",
   "Former des collaborateurs sur des thématiques ciblées, permettant une application directe des compétences.",
@@ -21,7 +22,8 @@ export default function SectionModulaire() {
         id="modulaire"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
-        <div className="container mb-10 rounded-lg bg-gray-50 p-8 shadow-md transition duration-300 dark:bg-gray-800">
+        <ScrollComponent text="FORMATIONS MODULAIRES" />
+        <div className=" container mb-10 mt-10 rounded-lg bg-gray-50 p-8 shadow-md transition duration-300 dark:bg-gray-800">
           <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-200">
             Contexte et Justification
           </h2>

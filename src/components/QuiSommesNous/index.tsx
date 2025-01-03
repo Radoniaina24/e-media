@@ -7,6 +7,7 @@ import Link from "next/link";
 import CardLink from "./CardLink";
 import Card from "./Card";
 import BackgroundCard from "./BackgroundCard";
+import CategoryCards from "../Formation/CategorieCard";
 
 const App = () => {
   const formations = [
@@ -106,7 +107,7 @@ const App = () => {
           <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
             Une Offre Académique Diversifiée
           </h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {/* <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {formations.map((item, index) => (
               <CardLink
                 key={index}
@@ -117,7 +118,8 @@ const App = () => {
                 description={item.description}
               />
             ))}
-          </div>
+          </div> */}
+          <CategoryCards />
         </div>
       </section>
 
