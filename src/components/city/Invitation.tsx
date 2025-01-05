@@ -4,7 +4,7 @@ import HeroBanner from "../Partenariats/HeroBaner";
 export default function Invitation() {
   const grandTitre = "Invitation à Investir";
   const subtitle =
-    "Le Village Numérique E-Media représente une opportunité unique de participer à la transformation numérique et éducative de Madagascar et de l’Océan Indien. En rejoignant ce projet, les investisseurs et partenaires auront un impact direct sur :";
+    "Plongez au cœur d’une initiative révolutionnaire avec Indian Ocean Tech Valley, un projet visionnaire conçu pour transformer Madagascar en un carrefour stratégique de l’innovation et de l’éducation numérique. Investir dans ce projet, c’est embrasser une opportunité unique de façonner l’avenir d’une région au potentiel illimité, où technologie, entrepreneuriat et excellence académique se rencontrent. C’est également contribuer activement à bâtir un écosystème de classe mondiale, moteur de croissance pour l’Océan Indien et porte d’entrée vers l’Afrique. En rejoignant cette aventure, vous devenez non seulement un partenaire de premier plan, mais aussi un acteur clé du changement global et durable.";
 
   const points = [
     "L’autonomisation des jeunes talents africains.",
