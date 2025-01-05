@@ -10,6 +10,7 @@ import LightboxImage from "@/components/Carousel/Lightbox";
 import CarouselLightBox from "@/components/Carousel/Carousel";
 import Galerie from "@/components/Carousel";
 import Test from "@/components/Test/Test";
+import GaleriePhotoAlbum from "@/components/galerie";
 
 export const metadata: Metadata = {
   title: "media | Accueil  ",
@@ -39,7 +40,8 @@ export default function page() {
       <WhyUs />
       {/* <Features /> */}
       <Video />
-      <Galerie />
+      {/* <Galerie /> */}
+      <GaleriePhotoAlbum />
       {/* Formation*/}
       {/* <Formation /> */}
       {/* <Brands /> */}

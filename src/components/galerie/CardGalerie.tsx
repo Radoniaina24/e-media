@@ -8,7 +8,7 @@ interface CardProps {
   animationEffect?: string; // Effet d'animation AOS (optionnel)
 }
 
-const Card: React.FC<CardProps> = ({
+const CardGalerie: React.FC<CardProps> = ({
   imageSrc,
   altText,
   title,
@@ -27,8 +27,16 @@ const Card: React.FC<CardProps> = ({
         height={500}
       />
       <h3 className="text-md my-6 text-center font-semibold">{title}</h3>
+      <div className="text-center">
+        <button
+          className="rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-md transition duration-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          onClick={() => alert(`Voir l'album de ${title}`)} // Action à personnaliser
+        >
+          Voir l&apos;album
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Card;
+export default CardGalerie;

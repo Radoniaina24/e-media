@@ -36,7 +36,9 @@ export default function AboutCity() {
                 width={500}
                 height={300}
               />
-              <h3 className="mb-2 text-xl font-semibold">Pôle académique</h3>
+              <h3 className="mb-2 text-xl font-semibold dark:text-dark">
+                Pôle académique
+              </h3>
               <p className="text-gray-600">
                 Un centre d&apos;excellence académique offrant des formations
                 innovantes et adaptées aux besoins du marché.
@@ -53,7 +55,7 @@ export default function AboutCity() {
                 width={500}
                 height={300}
               />
-              <h3 className="mb-2 text-xl font-semibold">
+              <h3 className="mb-2 text-xl font-semibold dark:text-dark">
                 Centre technologique
               </h3>
               <p className="text-gray-600">
@@ -73,7 +75,9 @@ export default function AboutCity() {
                 width={500}
                 height={300}
               />
-              <h3 className="mb-2 text-xl font-semibold">Centre culturel</h3>
+              <h3 className="mb-2 text-xl font-semibold dark:text-dark">
+                Centre culturel
+              </h3>
               <p className="text-gray-600">
                 Une plateforme pour la culture et l&apos;échange, favorisant
                 l&apos;inclusion sociale et technologique.

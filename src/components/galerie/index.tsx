@@ -13,6 +13,8 @@ import {
   Thumbnails,
   Zoom,
 } from "yet-another-react-lightbox/plugins";
+import Card from "../QuiSommesNous/Card";
+import CardGalerie from "./CardGalerie";
 
 const IMAGES = [
   { src: "/images/banniere/p1.png" },
@@ -23,7 +25,40 @@ const IMAGES = [
   { src: "/images/banniere/p6.png" },
   { src: "/images/banniere/p7.png" },
 ];
-export default function Galerie() {
+export default function GaleriePhotoAlbum() {
+  const album = [
+    {
+      title: "Campus & Studios ",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1735890237/IMG_2962_q10hhb.jpg",
+      altText: "Studios professionnels",
+    },
+    {
+      title: "sortie de promotion ",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736099571/IMG_9454_f4tkrl.jpg",
+      altText: "Parc informatique performant",
+    },
+    {
+      title: "Salons et conférences",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736099729/IMG_0554_loiwpl.jpg",
+      altText: "Laboratoires spécialisés",
+    },
+    {
+      title: "Reboisement et Actions pour le Climat",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736099839/IMG_9465_iu7khf.jpg",
+      altText: "Studios professionnels",
+    },
+    {
+      title: "Studio radio E-media FM 107.8 mhz",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736100093/IMG_1984_g8vloz.jpg",
+      altText: "Studios professionnels",
+    },
+  ];
+
   const [index, setIndex] = useState(-1);
   const responsive = {
     superLargeDesktop: {
@@ -44,18 +79,10 @@ export default function Galerie() {
       items: 1,
     },
   };
-  const images = IMAGES.map((data, index) => (
-    <div
-      key={index}
-      className="hover:rotate-y-6 relative  my-2 px-5 transition-transform duration-500 hover:scale-105 hover:cursor-pointer hover:shadow-lg"
-      onClick={() => setIndex(index)}
-    >
-      <Image width={500} height={500} className="" src={data.src} alt="" />
-    </div>
-  ));
+
   return (
     <section className=" bg-dark py-16 dark:bg-bg-color-dark md:py-20 lg:py-28">
-      <div className="container">
+      <div className="container ">
         {/* <h1 className="my-10 text-center text-4xl font-bold uppercase text-white">
           Galerie photo
         </h1> */}
@@ -64,8 +91,16 @@ export default function Galerie() {
           autoPlay
           autoPlaySpeed={3000}
           responsive={responsive}
+          itemClass="px-4"
         >
-          {images}
+          {album.map((item, index) => (
+            <CardGalerie
+              key={index}
+              imageSrc={item.imageSrc}
+              altText={item.altText}
+              title={item.title}
+            />
+          ))}
         </Carousel>
         <Lightbox
           plugins={[Counter, Fullscreen, Zoom, Thumbnails]}

@@ -3,7 +3,7 @@ import Image from "next/image";
 import HeroBanner from "../Partenariats/HeroBaner";
 export default function VillageNumerique() {
   const grandTitre =
-    " Le Village Numérique : Pilier de la Transition Numérique à Madagascar";
+    " Indian Ocean Tech Valley  : Pilier de la Transition Numérique à Madagascar";
   return (
     <div>
       <header className="relative z-10 mx-auto max-w-7xl text-center">
