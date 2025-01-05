@@ -1,9 +1,12 @@
 import React from "react";
 import Image from "next/image";
 export default function AboutCity() {
-  const text0 =
-    " Le Village Numérique E-Media est un projet ambitieux conçu pour propulser Madagascar au rang de leader régional dans l’éducation numérique, l’innovation technologique et l’entrepreneuriat en Afrique et dans l’Océan Indien. Sur 15 hectares, ce complexe multifonctionnel offre un environnement unique dédié à l’épanouissement des jeunes talents malgaches et africains, tout en attirant les investisseurs internationaux désireux de contribuer à la croissance de l’économie numérique en Afrique.s";
-
+  const TextHero =
+    "Indian Ocean Tech Valley : Le Pôle Numérique Visionnaire de Madagascar et de l’Afrique";
+  const subtitleHero1 =
+    "Bien plus qu’un complexe universitaire, Indian Ocean Tech Valley combine des centres de formation d’excellence, des incubateurs de startups, un hub technologique, des espaces de collaboration internationale, et des infrastructures durables. Ce projet ambitieux vise à attirer les jeunes talents malgaches et africains, ainsi que les investisseurs et partenaires internationaux, tout en exploitant la position géographique stratégique de Madagascar comme carrefour entre l’Afrique et l’Asie.";
+  const subtitleHero2 =
+    "Avec une vision globale et un impact local, Indian Ocean Tech Valley devient le moteur de la croissance numérique et économique dans l’Océan Indien, stimulant l’innovation et renforçant la compétitivité régionale.";
   return (
     <div>
       <section id="details" className="bg-white py-16 ">
@@ -12,10 +15,14 @@ export default function AboutCity() {
             className="mb-8 text-center text-3xl font-extrabold text-gray-800  md:text-4xl"
             data-aos="fade-up"
           >
-            Le Village Numérique : Un Complexe Universitaire Visionnaire
+            {TextHero}
           </h2>
-          <p className="mx-auto max-w-4xl text-center text-lg leading-relaxed text-gray-600">
-            {text0}
+          <p className="mx-auto max-w-5xl text-center text-lg leading-relaxed text-gray-600">
+            {subtitleHero1}
+          </p>
+          <p className="mx-auto max-w-5xl text-center text-lg leading-relaxed text-gray-600">
+            {" "}
+            {subtitleHero2}
           </p>
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div

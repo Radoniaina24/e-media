@@ -9,18 +9,14 @@ import Link from "next/link";
 
 const Video = () => {
   const [isOpen, setOpen] = useState(false);
-
+  const title =
+    "Indian Ocean Tech Valley : Le Pôle Numérique Visionnaire de Madagascar et de l’Afrique";
+  const description =
+    "S’étendant sur 15 hectares, Indian Ocean Tech Valley est un projet novateur qui place Madagascar au cœur de l’innovation numérique, de l’éducation technologique et de l’entrepreneuriat en Afrique et dans l’Océan Indien. Bien plus qu’un complexe universitaire, il combine un centre de formation d’excellence, un incubateur de startups, et un hub technologique, attirant talents africains et investisseurs internationaux pour transformer l’avenir de la région.";
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
-        <SectionTitle
-          title="Un Village Numérique à Madagascar : Le Complexe Universitaire Visionnaire"
-          paragraph="L'Université E-Media ambitionne de transformer Madagascar et l'Afrique avec un projet d'envergure : la création d'un village numérique, conçu comme un complexe universitaire multifonctionnel. Ce village numérique sera à la fois un pôle d'excellence académique, un centre technologique et culturel, et un moteur de développement durable pour la région.
-
-Ce projet visionnaire place Madagascar au cœur de l'économie numérique mondiale, en répondant aux besoins d'éducation, d'innovation et de créativité, tout en favorisant l'inclusion sociale et technologique."
-          center
-          mb="40px"
-        />
+        <SectionTitle title={title} paragraph={description} center mb="40px" />
         <div className="mb-10 text-center">
           <Link
             href="/city"
