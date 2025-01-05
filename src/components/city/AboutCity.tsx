@@ -6,10 +6,10 @@ export default function AboutCity() {
 
   return (
     <div>
-      <section id="details" className="bg-white py-16 dark:bg-gray-dark">
+      <section id="details" className="bg-white py-16 ">
         <div className="container mx-auto max-w-7xl px-6">
           <h2
-            className="mb-8 text-center text-3xl font-extrabold text-gray-800 dark:text-white md:text-4xl"
+            className="mb-8 text-center text-3xl font-extrabold text-gray-800  md:text-4xl"
             data-aos="fade-up"
           >
             Le Village Numérique : Un Complexe Universitaire Visionnaire
@@ -19,7 +19,7 @@ export default function AboutCity() {
           </p>
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div
-              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              className="rounded-lg bg-white p-6 shadow-lg "
               data-aos="fade-right"
             >
               <Image
@@ -36,7 +36,7 @@ export default function AboutCity() {
               </p>
             </div>
             <div
-              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              className="rounded-lg bg-white p-6 shadow-lg "
               data-aos="fade-up"
             >
               <Image
@@ -56,7 +56,7 @@ export default function AboutCity() {
               </p>
             </div>
             <div
-              className="rounded-lg bg-white p-6 shadow-lg dark:bg-dark"
+              className="rounded-lg bg-white p-6 shadow-lg "
               data-aos="fade-left"
             >
               <Image

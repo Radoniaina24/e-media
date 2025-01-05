@@ -1,70 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import HeroBanner from "../Partenariats/HeroBaner";
 export default function VillageNumerique() {
-  //Le Village Numérique : Pilier de la Transition Numérique à Madagascar
-  const villageNumerique = [
-    {
-      title: "Infrastructures Éducatives et Technologiques",
-      points: [
-        "Campus connecté : Équipé des dernières technologies pour des formations en intelligence artificielle, cybersécurité, blockchain et entrepreneuriat numérique.",
-        "Studios audiovisuels et numériques : Répondant aux normes internationales, pour développer des talents dans l’audiovisuel et le cinéma numérique.",
-        "Centre de démonstration technologique : Permettre aux grandes entreprises et startups locales de tester et présenter leurs innovations.",
-      ],
-    },
-    {
-      title: "Incubateur pour Startups",
-      points: [
-        "Espaces de coworking : Offrant un environnement dynamique pour stimuler la collaboration et l’innovation.",
-        "Accès à des investisseurs : Organisation de forums technologiques et d’événements pour connecter les startups malgaches et africaines avec des partenaires financiers internationaux.",
-        "Soutien au développement des projets : Coaching, mentorat et financement initial pour transformer les idées en entreprises prospères.",
-      ],
-    },
-    {
-      title: "Attraction des Talents Locaux et Internationaux",
-      points: [
-        "Formation des jeunes malgaches : Offrir une éducation technologique accessible pour donner à la jeunesse les compétences nécessaires pour exceller dans un monde numérique.",
-        "Attirer les étudiants africains : Madagascar, grâce à ses coûts abordables et à la qualité de l’éducation offerte par le Village Numérique, peut devenir une destination de choix pour les étudiants africains désireux d’acquérir une formation de pointe.",
-      ],
-    },
-    {
-      title: "Engagement Écoresponsable",
-      points: [
-        "Le Village Numérique intègre des pratiques durables : énergies renouvelables, gestion écologique des déchets et utilisation de matériaux locaux pour réduire l’impact environnemental.",
-      ],
-    },
-    {
-      title: "Impact du Projet sur Madagascar et l’Afrique",
-      subSections: [
-        {
-          title: "Renforcement de l’Écosystème Numérique",
-          points: [
-            "Le Village Numérique jouera un rôle clé dans la formation de talents qualifiés pour soutenir le secteur des BPO, des services numériques et de l’innovation technologique.",
-            "En stimulant les startups locales, il contribuera à la création d’un écosystème entrepreneurial robuste.",
-          ],
-        },
-        {
-          title: "Rayonnement International de Madagascar",
-          points: [
-            "Le projet positionnera Madagascar comme une destination éducative et technologique en Afrique et dans l’Océan Indien.",
-            "Les collaborations internationales renforceront la notoriété et la crédibilité du pays sur la scène mondiale.",
-          ],
-        },
-        {
-          title: "Transformation Socio-Économique",
-          points: [
-            "Création d’emplois : Des milliers d’emplois directs et indirects seront générés dans les secteurs de l’éducation, de la technologie et des services.",
-            "Éducation accessible : Les jeunes malgaches et africains auront accès à des formations certifiées et reconnues mondialement.",
-            "Réduction de la fracture numérique : En donnant accès à des outils modernes, le Village Numérique contribuera à combler l’écart technologique entre les zones rurales et urbaines.",
-          ],
-        },
-      ],
-    },
-  ];
+  const grandTitre =
+    " Le Village Numérique : Pilier de la Transition Numérique à Madagascar";
   return (
     <div>
-      <header className="bg-blue-600 p-6 text-center text-white">
-        <h1 className="text-3xl font-bold">
-          Le Village Numérique : Pilier de la Transition Numérique à Madagascar
+      <header className="relative z-10 mx-auto max-w-7xl text-center">
+        <h1 className="mb-4 text-4xl font-extrabold text-red-500 md:text-5xl">
+          {grandTitre}
         </h1>
       </header>
 
@@ -318,7 +262,7 @@ const Attraction = () => {
   );
 };
 const engagementEcoresponsableData = {
-  title: "Engagement Écoresponsable",
+  title: "4. Engagement Écoresponsable",
   description:
     "Le Village Numérique intègre des pratiques durables : énergies renouvelables, gestion écologique des déchets et utilisation de matériaux locaux pour réduire l'impact environnemental.",
   image:

@@ -1,14 +1,15 @@
 "use client";
 import React, { useEffect } from "react";
-import Image from "next/image";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import Link from "next/link";
 import FooterCity from "./Footer";
 import HeroCity from "./HeroCity";
 import AboutCity from "./AboutCity";
 import OpportunitiesCity from "./OpportunitiesCity";
 import VillageNumerique from "./VillageNumerique";
+import Impact from "./Impact";
+import Chiffre from "./Chiffre";
+import Invitation from "./Invitation";
 export default function CityProject() {
   //Le Village Numérique : Pilier de la Transition Numérique à Madagascar
   const villageNumerique = [
@@ -136,6 +137,9 @@ export default function CityProject() {
       <AboutCity />
       <OpportunitiesCity />
       <VillageNumerique />
+      <Impact />
+      <Chiffre />
+      <Invitation />
       <FooterCity />
     </div>
   );

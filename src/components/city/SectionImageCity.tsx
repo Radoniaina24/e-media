@@ -29,13 +29,13 @@ const SectionImageCity: React.FC<SectionWithImageProps> = ({
         <div
           className={`${
             imageOnRight ? "border-l-8" : "border-r-8"
-          } border-yellow p-6 pl-4 md:w-1/2`} // Bordure à gauche ou à droite en fonction de imageOnRight
+          } border-red-500 p-6 pl-4 md:w-1/2`} // Bordure à gauche ou à droite en fonction de imageOnRight
           data-aos={imageOnRight ? "fade-right" : "fade-left"}
         >
-          <h2 className="mb-4 text-2xl font-bold text-primary dark:text-white md:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-primary  md:text-3xl">
             {title}
           </h2>
-          <ul className="space-y-3 text-gray-500 dark:text-gray-400">
+          <ul className="space-y-3 text-gray-500 ">
             {highlights.map((highlight, index) => (
               <li key={index} className="flex items-center">
                 <div className="mr-4">

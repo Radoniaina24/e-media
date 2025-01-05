@@ -75,7 +75,7 @@ export default function OpportunitiesCity() {
 
   return (
     <div>
-      <div className="py-12 dark:bg-gray-dark ">
+      <div className="py-12  ">
         <div className="">
           <HeroBanner
             title={
@@ -85,7 +85,7 @@ export default function OpportunitiesCity() {
               "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736066013/village_l3oint.jpg"
             }
           />
-          <div className="space-y-16 px-6 py-12 dark:bg-gray-dark">
+          <div className="space-y-16 px-6 py-12 ">
             {madagascarOpportunities.map((item, index) => (
               <SectionImageCity
                 key={index}

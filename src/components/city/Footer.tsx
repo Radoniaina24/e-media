@@ -2,6 +2,10 @@ import Link from "next/link";
 import React from "react";
 
 export default function FooterCity() {
+  const texte1 =
+    "Faites partie d’une initiative visionnaire qui transforme l’éducation et l’innovation en Afrique. Ensemble, bâtissons un hub numérique d’exception pour Madagascar et l’Océan Indien.";
+  const texte2 =
+    "Contactez-nous dès aujourd’hui pour discuter de votre rôle dans cette révolution numérique ";
   return (
     <div>
       {/* Call-to-Action Section */}
@@ -18,9 +22,17 @@ export default function FooterCity() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Participez à ce projet révolutionnaire et contribuez à transformer
-            Madagascar et l&apos;Afrique avec des solutions innovantes.
+            {texte1}
           </p>
+
+          <p
+            className="mx-auto mt-4 max-w-3xl text-lg md:text-xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            {texte2}
+          </p>
+
           <Link
             href="/contact"
             className="mt-6 inline-block rounded-lg bg-indigo-600 px-8 py-3 text-lg font-semibold shadow-lg transition duration-300 hover:bg-indigo-700"
