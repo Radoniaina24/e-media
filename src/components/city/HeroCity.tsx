@@ -36,8 +36,11 @@ export default function HeroCity() {
           {/* Flèche vers le bas */}
           <div className="mt-8">
             <a href="#details" className="flex flex-col items-center">
+              <span className="mt-2 text-sm font-light">
+                Decouvrir le projet
+              </span>
               <svg
-                className="h-8 w-8 animate-bounce text-white"
+                className="mt-6 h-8 w-8 animate-bounce text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -50,7 +53,6 @@ export default function HeroCity() {
                   d="M19 9l-7 7-7-7"
                 />
               </svg>
-              <span className="mt-2 text-sm font-light">En savoir plus</span>
             </a>
           </div>
         </div>
