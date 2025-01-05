@@ -9,6 +9,7 @@ import Formation from "@/components/Formation";
 import LightboxImage from "@/components/Carousel/Lightbox";
 import CarouselLightBox from "@/components/Carousel/Carousel";
 import Galerie from "@/components/Carousel";
+import Test from "@/components/Test/Test";
 
 export const metadata: Metadata = {
   title: "media | Accueil  ",
@@ -32,6 +33,7 @@ export default function page() {
     <>
       <ScrollUp />
       <Hero />
+
       {/* <Banner /> */}
       <QuiSommesNous />
       <WhyUs />

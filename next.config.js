@@ -4,7 +4,8 @@ const nextConfig = {
     domains: [
       "localhost",
       "images.pexels.com",
-      "via.placeholder.com, res.cloudinary.com",
+      "res.cloudinary.com",
+      "via.placeholder.com",
     ],
     remotePatterns: [
       {

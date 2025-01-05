@@ -130,7 +130,7 @@ const App = () => {
       >
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
-            Un Cadre Moderne et Stimulant
+            Explorez nos Albums et Découvez nos Photos
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {facilities.map((item, index) => (
