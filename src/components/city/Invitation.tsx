@@ -4,7 +4,7 @@ import HeroBanner from "../Partenariats/HeroBaner";
 export default function Invitation() {
   const grandTitre = "Invitation à Investir";
   const subtitle =
-    "Plongez au cœur d’une initiative révolutionnaire avec Indian Ocean Tech Valley, un projet visionnaire conçu pour transformer Madagascar en un carrefour stratégique de l’innovation et de l’éducation numérique. Investir dans ce projet, c’est embrasser une opportunité unique de façonner l’avenir d’une région au potentiel illimité, où technologie, entrepreneuriat et excellence académique se rencontrent. C’est également contribuer activement à bâtir un écosystème de classe mondiale, moteur de croissance pour l’Océan Indien et porte d’entrée vers l’Afrique. En rejoignant cette aventure, vous devenez non seulement un partenaire de premier plan, mais aussi un acteur clé du changement global et durable.";
+    "Investir dans Indian Ocean Tech Valley, c’est saisir une opportunité unique de devenir un acteur clé de l’innovation et de la transformation numérique. En vous associant à ce projet visionnaire, vous renforcez votre position de leader tout en accédant à un écosystème de classe mondiale. C’est bien plus qu’un investissement : c’est une chance de façonner l’avenir et de laisser votre empreinte dans une initiative globale et durable.";
 
   const points = [
     "L’autonomisation des jeunes talents africains.",
