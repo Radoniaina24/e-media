@@ -2,9 +2,9 @@ import React from "react";
 import HeroBanner from "../Partenariats/HeroBaner";
 
 export default function Invitation() {
-  const grandTitre = "Invitation à Investir";
+  const grandTitre = "Invitation à Investir, Collaborer et Prendre Contact";
   const subtitle =
-    "Investir dans Indian Ocean Tech Valley, c’est saisir une opportunité unique de devenir un acteur clé de l’innovation et de la transformation numérique. En vous associant à ce projet visionnaire, vous renforcez votre position de leader tout en accédant à un écosystème de classe mondiale. C’est bien plus qu’un investissement : c’est une chance de façonner l’avenir et de laisser votre empreinte dans une initiative globale et durable.";
+    "Rejoignez Indian Ocean Tech Valley, un projet visionnaire qui associe innovation, rentabilité et impact durable. Saisissez l’opportunité de collaborer sur une initiative stratégique qui redéfinit l’éducation, la technologie et l’entrepreneuriat dans une région en pleine croissance. Prenez part à cette transformation en nous contactant dès aujourd’hui pour explorer les possibilités d’investissement, de collaboration, et d’impact partagé. Commencez par remplir la fiche suivante et engagez un premier dialogue avec notre équipe.";
 
   const points = [
     "L’autonomisation des jeunes talents africains.",
@@ -35,6 +35,7 @@ export default function Invitation() {
         }
         subtitle={subtitle}
       />
+
       <div className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {points.map((point, index) => (
