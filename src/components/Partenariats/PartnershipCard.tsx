@@ -16,7 +16,7 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
       <h1 className=" text-center text-5xl font-semibold text-blue-600">
         {title}
       </h1>
-      <p className="mt-4 text-lg text-gray-700">{subtitle}</p>
+      <p className="mt-4 text-center text-lg text-gray-700">{subtitle}</p>
     </section>
   );
 };

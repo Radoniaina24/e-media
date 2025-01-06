@@ -39,7 +39,7 @@ const ModulePrograms: React.FC = () => {
               <p className="mb-6 flex-grow text-center text-gray-600 dark:text-gray-200">
                 {program.description}
               </p>
-              <button className="mt-4 inline-block rounded bg-blue-500 px-6 py-3 text-sm text-white transition hover:bg-blue-600">
+              <button className="mt-4 inline-block rounded-full bg-blue-500 px-6 py-3 text-sm text-white transition hover:bg-blue-600">
                 En savoir plus
               </button>
             </div>

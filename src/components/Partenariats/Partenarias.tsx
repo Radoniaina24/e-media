@@ -9,6 +9,7 @@ import BackgroundCard from "../QuiSommesNous/BackgroundCard";
 import Academics from "./Academics";
 import Opportunities from "./Opportunities";
 import WhyEmedia from "./WhyEmedia";
+import Technologie from "./Technologie";
 export default function SectionPartenariats() {
   useEffect(() => {
     AOS.init({
@@ -34,6 +35,7 @@ export default function SectionPartenariats() {
         <WhyEmedia />
         <Opportunities />
         <Academics />
+        <Technologie />
 
         {/* <HeroBanner
           title={"Construisons ensemble des projets innovants et durables."}
