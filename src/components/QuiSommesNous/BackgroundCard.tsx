@@ -22,7 +22,7 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({
       data-aos={animationEffect}
     >
       <div className="absolute inset-0 rounded-lg bg-black opacity-50"></div>
-      <div className="relative z-10 flex flex-col items-center justify-center p-8 text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center text-white">
         <div className="mb-4">
           <svg
             className="mb-4 h-12 w-12 text-indigo-500"

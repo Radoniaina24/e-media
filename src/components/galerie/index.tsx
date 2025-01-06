@@ -44,7 +44,7 @@ export default function GaleriePhotoAlbum() {
     {
       title: "Studio radio E-media FM 107.8 mhz",
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736100093/IMG_1984_g8vloz.jpg",
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736136501/1_radio_h33azq.jpg",
       altText: "Studios professionnels",
     },
   ];

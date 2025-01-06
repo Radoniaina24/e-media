@@ -6,7 +6,7 @@ const partnerships = [
     title: "Académiques",
     description:
       "Échanges étudiants, diplômes conjoints, recherche collaborative.",
-    link: "/partnerships/academics",
+    link: "/partenariats/academics",
   },
   {
     title: "Technologiques",
