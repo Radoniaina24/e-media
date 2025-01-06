@@ -59,7 +59,7 @@ export default function GaleriePhotoAlbum() {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 3,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -907,7 +907,7 @@ export default function GaleriePhotoAlbum() {
           autoPlay
           autoPlaySpeed={3000}
           responsive={responsive}
-          itemClass="px-4"
+          itemClass="px-3"
         >
           {album.map((item, index) => (
             <CardGalerie
