@@ -71,7 +71,7 @@ const Contact = () => {
 
                   {/* Submit Button */}
                   <div className="w-full px-4">
-                    <button className="mt-4 w-full rounded-md bg-blue-600 py-3 font-medium text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500">
+                    <button className="mt-4 w-full rounded-full bg-blue-600 py-3 font-medium text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500">
                       Envoyer
                     </button>
                   </div>

@@ -1,72 +1,106 @@
 "use client";
-import Link from "next/link";
+
+import {
+  FaHandshake,
+  FaLightbulb,
+  FaPalette,
+  FaLeaf,
+  FaPiggyBank,
+  FaHandsHelping,
+  FaBroadcastTower,
+} from "react-icons/fa";
 
 const partnerships = [
   {
     title: "Académiques",
     description:
       "Échanges étudiants, diplômes conjoints, recherche collaborative.",
-    link: "/partenariats/academics",
+    icon: FaHandshake,
+    bgColor: "bg-blue-500",
   },
   {
     title: "Technologiques",
     description: "R&D, formations professionnelles, stages en entreprise.",
-    link: "/partnerships/technologies",
+    icon: FaLightbulb,
+    bgColor: "bg-green-500",
   },
   {
     title: "Culturels et Artistiques",
     description:
       "Productions collaboratives, masterclasses, diffusion internationale.",
-    link: "/partnerships/culture-arts",
+    icon: FaPalette,
+    bgColor: "bg-purple-500",
   },
   {
     title: "Développement Durable",
     description:
       "Audiovisuel écoresponsable, innovations vertes, sensibilisation.",
-    link: "/partnerships/sustainable-development",
+    icon: FaLeaf,
+    bgColor: "bg-teal-500",
   },
   {
     title: "Financiers et Stratégiques",
     description: "Bourses, mécénat, incubateurs de projets créatifs.",
-    link: "/partnerships/finance-strategy",
+    icon: FaPiggyBank,
+    bgColor: "bg-primary",
   },
   {
     title: "Avec ONG et Gouvernements",
     description:
       "Initiatives éducatives et culturelles, contenus de sensibilisation.",
-    link: "/partnerships/ngo-government",
+    icon: FaHandsHelping,
+    bgColor: "bg-red-500",
   },
   {
     title: "Avec Médias",
     description: "Diffusion des productions, ateliers de formation.",
-    link: "/partnerships/media",
+    icon: FaBroadcastTower,
+    bgColor: "bg-pink-500",
   },
 ];
+
 const PartenariatsPrograms: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-        {partnerships.map((program, index) => (
-          <Link key={index} href={program.link}>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+        {partnerships.map((program, index) => {
+          const Icon = program.icon;
+          return (
             <div
-              className="flex h-full flex-col items-stretch justify-between rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:cursor-pointer hover:bg-gray-50 dark:bg-gray-dark dark:hover:bg-gray-700"
+              key={index}
+              className="relative flex h-full flex-col items-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:cursor-pointer hover:bg-gray-50 dark:bg-gray-dark dark:hover:bg-gray-700"
               data-aos="fade-up"
-              data-aos-delay={index * 100} // Adding AOS animation delay for each card
+              data-aos-delay={index * 100}
             >
-              <h3 className="mb-4 flex-grow text-center text-xl font-semibold text-gray-800 dark:text-gray-50">
-                {program.title}
-              </h3>
-              <p className="mb-6 flex-grow text-center text-gray-600 dark:text-gray-200">
-                {program.description}
-              </p>
-              <button className="mt-4 inline-block rounded bg-blue-500 px-6 py-3 text-sm text-white transition hover:bg-blue-600">
-                En savoir plus
-              </button>
+              {/* Icon */}
+              <div
+                className={`absolute -top-10 flex h-20 w-20 items-center justify-center rounded-full text-white shadow-lg ${program.bgColor}`}
+              >
+                <Icon size={36} />
+              </div>
+
+              {/* Title and Description */}
+              <div className="mt-10 flex flex-col items-center text-center">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-50">
+                  {program.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-200">
+                  {program.description}
+                </p>
+                {/* Button */}
+                <button
+                  className="mt-4 rounded-full bg-blue-600 px-6 py-2 text-white hover:bg-blue-700 focus:outline-none"
+                  // onClick={() => alert(`En savoir plus sur ${program.title}`)}
+                >
+                  En savoir plus
+                </button>
+              </div>
             </div>
-          </Link>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
 };
+
 export default PartenariatsPrograms;

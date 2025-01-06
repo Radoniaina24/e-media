@@ -34,7 +34,7 @@ const Hero = () => {
           </p>
           <a
             href="#why"
-            className="mt-8 inline-block transform rounded bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
+            className="mt-8 inline-block transform rounded rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
           >
             En savoir plus
           </a>

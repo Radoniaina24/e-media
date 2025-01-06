@@ -20,7 +20,7 @@ const Video = () => {
         <div className="mb-10 text-center">
           <Link
             href="/city"
-            className="rounded-md bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+            className="rounded-full bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
           >
             En savoir plus
           </Link>
@@ -38,7 +38,7 @@ const Video = () => {
                   <button
                     aria-label="video play button"
                     onClick={() => setOpen(true)}
-                    className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
+                    className="flex h-[70px] w-[70px] items-center justify-center  rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
                   >
                     <svg
                       width="16"

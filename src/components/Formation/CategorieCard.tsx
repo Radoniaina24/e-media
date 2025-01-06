@@ -42,7 +42,7 @@ const CategoryCards: React.FC = () => {
               <p className="mt-2 flex-grow text-center text-gray-600 dark:text-gray-300">
                 {category.description}
               </p>
-              <div className="mt-4 inline-block rounded bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600">
+              <div className="mt-4 inline-block rounded-full bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600">
                 En savoir plus
               </div>
             </div>
