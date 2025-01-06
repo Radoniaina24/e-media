@@ -160,11 +160,11 @@ const PartenariatsPrograms: React.FC = () => {
                 {/* Button */}
                 <button
                   className="mt-4 rounded-full bg-blue-600 px-6 py-2 text-white hover:bg-blue-700 focus:outline-none"
-                  onClick={() =>
-                    setSelectedProgram(
-                      selectedProgram === program.title ? null : program.title,
-                    )
-                  }
+                  // onClick={() =>
+                  //   setSelectedProgram(
+                  //     selectedProgram === program.title ? null : program.title,
+                  //   )
+                  // }
                 >
                   En savoir plus
                 </button>
