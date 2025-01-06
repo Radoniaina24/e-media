@@ -6,6 +6,7 @@ const nextConfig = {
       "images.pexels.com",
       "res.cloudinary.com",
       "via.placeholder.com",
+      "source.unsplash.com",
     ],
     remotePatterns: [
       {

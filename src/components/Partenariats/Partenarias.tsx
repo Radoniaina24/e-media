@@ -10,6 +10,12 @@ import Academics from "./Academics";
 import Opportunities from "./Opportunities";
 import WhyEmedia from "./WhyEmedia";
 import Technologie from "./Technologie";
+import Culturels from "./Culturels";
+import Durable from "./Durable";
+import Financier from "./Financier";
+import Ong from "./Ong";
+import FormatPro360 from "./360";
+import ContactPartenariats from "./ContactPartenariats";
 export default function SectionPartenariats() {
   useEffect(() => {
     AOS.init({
@@ -35,14 +41,18 @@ export default function SectionPartenariats() {
         <WhyEmedia />
         <Opportunities />
         <Academics />
-        <Technologie />
-
-        {/* <HeroBanner
+        {/* <Technologie />
+        <Culturels />
+        <Durable />
+        <Financier />
+        <Ong />
+        <FormatPro360 /> */}
+        <HeroBanner
           title={"Construisons ensemble des projets innovants et durables."}
           subtitle={"Service Partenariat – Université E-Media"}
           backgroundImage={"/images/banniere/p3.png"}
         />
-        <ContactPartenariats /> */}
+        <ContactPartenariats />
       </div>
     </div>
   );
