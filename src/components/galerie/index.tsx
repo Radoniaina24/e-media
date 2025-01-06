@@ -66,11 +66,11 @@ export default function GaleriePhotoAlbum() {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 770 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 770, min: 0 },
       items: 1,
     },
   };
