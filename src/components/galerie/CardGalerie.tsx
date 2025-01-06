@@ -6,6 +6,7 @@ interface CardProps {
   altText: string; // Texte alternatif pour l'image
   title: string; // Titre de la carte
   animationEffect?: string; // Effet d'animation AOS (optionnel)
+  onButtonClick?: (title: string) => void; // Fonction appelée au clic du bouton
 }
 
 const CardGalerie: React.FC<CardProps> = ({
@@ -13,6 +14,7 @@ const CardGalerie: React.FC<CardProps> = ({
   altText,
   title,
   animationEffect = "fade-left", // Effet par défaut
+  onButtonClick, // Fonction appelée au clic du bouton
 }) => {
   return (
     <div
@@ -30,7 +32,7 @@ const CardGalerie: React.FC<CardProps> = ({
       <div className="text-center">
         <button
           className="rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-md transition duration-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          onClick={() => alert(`Voir l'album de ${title}`)} // Action à personnaliser
+          onClick={() => onButtonClick && onButtonClick(title)}
         >
           Voir l&apos;album
         </button>

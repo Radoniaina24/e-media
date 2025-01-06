@@ -41,7 +41,6 @@ export default function page() {
       {/* <Features /> */}
       <Video />
       {/* <Galerie /> */}
-      <GaleriePhotoAlbum />
       {/* Formation*/}
       {/* <Formation /> */}
       {/* <Brands /> */}

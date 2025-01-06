@@ -8,6 +8,7 @@ import CardLink from "./CardLink";
 import Card from "./Card";
 import BackgroundCard from "./BackgroundCard";
 import CategoryCards from "../Formation/CategorieCard";
+import GaleriePhotoAlbum from "../galerie";
 
 const App = () => {
   const formations = [
@@ -132,16 +133,7 @@ const App = () => {
           <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
             Explorez nos Albums et Découvez nos Photos
           </h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {facilities.map((item, index) => (
-              <Card
-                key={index}
-                imageSrc={item.imageSrc}
-                altText={item.altText}
-                title={item.title}
-              />
-            ))}
-          </div>
+          <GaleriePhotoAlbum />
         </div>
       </section>
 
