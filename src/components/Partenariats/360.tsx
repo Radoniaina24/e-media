@@ -2,6 +2,8 @@ import React from "react";
 import PartnershipSection from "./PartnershipCard";
 import SectionImageCity from "../city/SectionImageCity";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
+import PartnershipCard from "./PartnershipCard";
 
 export default function FormatPro360() {
   const offreFormation = {
@@ -11,10 +13,8 @@ export default function FormatPro360() {
   };
   return (
     <div id="7" className="py-28">
-      <PartnershipSection
-        title={offreFormation.title}
-        subtitle={offreFormation.description}
-      />
+      <ScrollComponentPartenariats text={offreFormation.title} />
+      <PartnershipCard subtitle={offreFormation.description} />
       <h1 className=" my-12 text-center text-5xl font-semibold">
         Pourquoi collaborer avec E-Media ?
       </h1>

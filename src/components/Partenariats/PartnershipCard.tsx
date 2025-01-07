@@ -3,7 +3,7 @@
 import React from "react";
 
 interface PartnershipSectionProps {
-  title: string;
+  title?: string;
   subtitle: string;
 }
 

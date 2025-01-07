@@ -1,6 +1,8 @@
 import React from "react";
 import PartnershipSection from "./PartnershipCard";
 import SectionImageCity from "../city/SectionImageCity";
+import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
+import PartnershipCard from "./PartnershipCard";
 const partenariat = {
   title: "Nos Opportunités de Partenariat pour le Développement Durable",
   description:
@@ -63,10 +65,9 @@ const initiativesPartenariat = [
 export default function Durable() {
   return (
     <div id="4" className="py-28">
-      <PartnershipSection
-        title={partenariat.title}
-        subtitle={partenariat.description}
-      />
+      <ScrollComponentPartenariats text={partenariat.title} />
+      <PartnershipCard subtitle={partenariat.description} />
+
       <WhyCollaborateSection />
       <h1 className=" my-12 text-center text-5xl font-semibold">
         Nos initiatives et propositions de partenariat

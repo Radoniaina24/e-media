@@ -6,6 +6,8 @@ import {
   GlobeAltIcon,
   TrendingUpIcon,
 } from "@heroicons/react/solid";
+import PartnershipCard from "./PartnershipCard";
+import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
 
 export default function Culturels() {
   const opportunitePartenariat = {
@@ -94,10 +96,8 @@ export default function Culturels() {
     "E-media est votre partenaire idéal pour créer un dialogue entre les cultures et promouvoir une coopération artistique et culturelle durable. Ensemble, célébrons la richesse et la diversité des patrimoines à travers des échanges inspirants.";
   return (
     <div id="3" className="py-28">
-      <PartnershipSection
-        title={opportunitePartenariat.title}
-        subtitle={opportunitePartenariat.description}
-      />
+      <ScrollComponentPartenariats text={opportunitePartenariat.title} />
+      <PartnershipCard subtitle={opportunitePartenariat.description} />
       <h1 className=" my-12 text-center text-5xl font-semibold">
         Pourquoi collaborer avec E-Media ?
       </h1>

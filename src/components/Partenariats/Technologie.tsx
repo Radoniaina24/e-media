@@ -1,6 +1,7 @@
 import React from "react";
 import PartnershipCard from "./PartnershipCard";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
 export default function Technologie() {
   const partenariatTechnologique = {
     title: "Nos Opportunités de Partenariat Technologique",
@@ -10,10 +11,8 @@ export default function Technologie() {
 
   return (
     <div id="2" className="py-28">
-      <PartnershipCard
-        title={partenariatTechnologique.title}
-        subtitle={partenariatTechnologique.description}
-      />
+      <ScrollComponentPartenariats text={partenariatTechnologique.title} />
+      <PartnershipCard subtitle={partenariatTechnologique.description} />
       <CollaborationTable />
       <ImpactDomainsTable />
       <SustainableImpactCommitments />

@@ -1,5 +1,7 @@
 import React from "react";
 import PartnershipCard from "./PartnershipCard";
+import ScrollComponent from "../Scroll/ScrollComponent";
+import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
 
 export default function Academics() {
   const partnershipOpportunities = {
@@ -10,10 +12,8 @@ export default function Academics() {
 
   return (
     <section className="bg-gray-50 px-6 py-28 " id="1">
-      <PartnershipCard
-        title={partnershipOpportunities.title}
-        subtitle={partnershipOpportunities.subtitle}
-      />
+      <ScrollComponentPartenariats text={partnershipOpportunities.title} />
+      <PartnershipCard subtitle={partnershipOpportunities.subtitle} />
 
       <div
         className="relative bg-cover bg-center bg-no-repeat px-6 py-16"

@@ -2,6 +2,8 @@ import React from "react";
 import PartnershipSection from "./PartnershipCard";
 import SectionImageCity from "../city/SectionImageCity";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import PartnershipCard from "./PartnershipCard";
+import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
 
 export default function Ong() {
   const partenariats = {
@@ -76,10 +78,8 @@ export default function Ong() {
 
   return (
     <div id="6" className="py-28">
-      <PartnershipSection
-        title={partenariats.title}
-        subtitle={partenariats.description}
-      />
+      <ScrollComponentPartenariats text={partenariats.title} />
+      <PartnershipCard subtitle={partenariats.description} />
       <h2 className="my-12 text-center text-4xl font-semibold">
         Pourquoi ce partenariat est essentiel pour les jeunes malagasy ?
       </h2>
