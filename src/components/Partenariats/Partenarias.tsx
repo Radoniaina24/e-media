@@ -5,16 +5,9 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
 import Header from "../Licence/Header";
 import HeroBanner from "./HeroBaner";
-import BackgroundCard from "../QuiSommesNous/BackgroundCard";
-import Academics from "./Academics";
 import Opportunities from "./Opportunities";
 import WhyEmedia from "./WhyEmedia";
-import Technologie from "./Technologie";
-import Culturels from "./Culturels";
-import Durable from "./Durable";
-import Financier from "./Financier";
-import Ong from "./Ong";
-import FormatPro360 from "./360";
+
 import ContactPartenariats from "./ContactPartenariats";
 export default function SectionPartenariats() {
   useEffect(() => {
@@ -36,17 +29,10 @@ export default function SectionPartenariats() {
       />
       <div
         id="partenariats"
-        className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
+        className="bg-gray-50 pt-20 font-sans text-gray-800 "
       >
         <WhyEmedia />
         <Opportunities />
-        <Academics />
-        {/* <Technologie />
-        <Culturels />
-        <Durable />
-        <Financier />
-        <Ong />
-        <FormatPro360 /> */}
         <HeroBanner
           title={"Construisons ensemble des projets innovants et durables."}
           subtitle={"Service Partenariat – Université E-Media"}

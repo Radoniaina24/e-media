@@ -14,7 +14,7 @@ const InputField = ({
     <div className={`mb-6 w-full px-4 md:w-1/2 ${className}`}>
       <label
         htmlFor={id}
-        className="mb-2 block text-sm font-medium text-gray-700 dark:text-white"
+        className="mb-2 block text-sm font-medium text-gray-700 "
       >
         {label}
       </label>
@@ -24,7 +24,7 @@ const InputField = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-3 text-gray-700 outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-500"
+        className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-3 text-gray-700 outline-none focus:ring-2 focus:ring-blue-500 "
       />
     </div>
   );

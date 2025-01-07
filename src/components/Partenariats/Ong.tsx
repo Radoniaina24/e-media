@@ -75,7 +75,7 @@ export default function Ong() {
   ];
 
   return (
-    <div>
+    <div id="6" className="py-28">
       <PartnershipSection
         title={partenariats.title}
         subtitle={partenariats.description}

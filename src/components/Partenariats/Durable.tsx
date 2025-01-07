@@ -62,7 +62,7 @@ const initiativesPartenariat = [
 
 export default function Durable() {
   return (
-    <div>
+    <div id="4" className="py-28">
       <PartnershipSection
         title={partenariat.title}
         subtitle={partenariat.description}
@@ -95,14 +95,6 @@ export default function Durable() {
           protéger ce joyau naturel et à promouvoir un avenir plus vert pour les
           générations futures.
         </p>
-        <div className="mt-8 flex justify-center">
-          <a
-            href="#"
-            className="rounded-full bg-green-600 px-6 py-2 font-semibold text-white transition duration-300 ease-in-out hover:bg-green-700"
-          >
-            Rejoindre l&apos;initiative
-          </a>
-        </div>
       </div>
     </div>
   );

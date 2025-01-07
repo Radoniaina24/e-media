@@ -4,8 +4,8 @@ import PartenariatsPrograms from "./PartenariatsPrograms";
 export default function Opportunities() {
   const text1 = " Nos Opportunités de Partenariat";
   return (
-    <div className="mb-10 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 py-8 text-center shadow-lg">
-      <h1 className=" mb-10 text-3xl font-extrabold tracking-wide text-white">
+    <div className="mb-10 rounded-lg  py-8 text-center shadow-lg">
+      <h1 className=" my-20 text-4xl font-extrabold tracking-wide text-gray-dark">
         {text1}
       </h1>
       <PartenariatsPrograms />

@@ -9,7 +9,7 @@ export default function Technologie() {
   };
 
   return (
-    <div>
+    <div id="2" className="py-28">
       <PartnershipCard
         title={partenariatTechnologique.title}
         subtitle={partenariatTechnologique.description}
@@ -17,14 +17,14 @@ export default function Technologie() {
       <CollaborationTable />
       <ImpactDomainsTable />
       <SustainableImpactCommitments />
-      <div className="mx-auto my-12 max-w-4xl rounded-lg bg-white p-8 text-center shadow-lg">
-        <h2 className="mb-6 text-center text-2xl font-semibold text-gray-800">
+      <div className="mx-auto my-12 max-w-4xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
+        <h2 className="mb-6 text-center text-2xl font-semibold text-green-800">
           Rejoignez E-Media pour construire ensemble un avenir technologique où
           la formation, la recherche et l&apos;innovation se conjuguent au
           service de la transformation numérique.
         </h2>
         <p className="mb-8 text-lg leading-relaxed text-gray-600">
-          Avec <span className="font-semibold text-green-600">E-media</span>,
+          Avec <span className="font-semibold text-gray-700">E-media</span>,
           contribuez à un futur innovant où les technologies jouent un rôle clé
           dans la transformation des industries et des sociétés. Soyez acteur de
           ce changement et rejoignez une équipe engagée dans la construction

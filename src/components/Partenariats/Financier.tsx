@@ -9,7 +9,7 @@ const partenariat = {
 
 export default function Financier() {
   return (
-    <div>
+    <div id="5" className="py-28">
       <PartnershipSection
         title={partenariat.title}
         subtitle={partenariat.description}
@@ -303,21 +303,44 @@ const partnershipOpportunities = [
 ];
 const Partnership = () => {
   return (
-    <div className=" container px-6 py-16">
-      <h1 className="mb-10 text-center text-3xl font-semibold text-gray-800">
-        Un partenariat pour un avenir équitable et innovant
-      </h1>
-      <ul className="space-y-8">
-        {partnershipOpportunities.map((item, index) => (
-          <li key={index} className="flex items-start space-x-4">
-            <div className="text-3xl">{item.icon}</div>
-            <div>
-              <h2 className="text-xl font-bold text-gray-800">{item.title}</h2>
-              <p className="text-gray-600">{item.description}</p>
+    <div className="relative px-6 py-16">
+      {/* Contenu principal */}
+      <div className="mx-auto max-w-7xl text-center text-white">
+        {/* Titre de la section */}
+        <h1 className="mb-20 text-3xl font-extrabold text-indigo-700">
+          Un partenariat pour un avenir équitable et innovant
+        </h1>
+
+        {/* Grille de cartes */}
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {partnershipOpportunities.map((opportunity, index) => (
+            <div
+              key={index}
+              className="relative flex transform flex-col items-center overflow-hidden rounded-3xl bg-white p-10 shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+            >
+              {/* Icône dynamique */}
+              <div className="mb-6 flex h-20 w-20 transform items-center justify-center rounded-full bg-indigo-600 text-4xl text-white transition-transform duration-300 ease-in-out hover:rotate-12">
+                {opportunity.icon}
+              </div>
+
+              {/* Titre de l'opportunité */}
+              <h2 className="mb-4 text-2xl font-semibold text-indigo-700">
+                {opportunity.title}
+              </h2>
+
+              {/* Description de l'opportunité */}
+              <p className="mb-6 leading-relaxed text-gray-800">
+                {opportunity.description}
+              </p>
+
+              {/* Bordure subtile au survol */}
+              <div className="absolute inset-0 rounded-3xl border-2 border-indigo-600 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
             </div>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
+
+//  Un partenariat pour un avenir équitable et innovant

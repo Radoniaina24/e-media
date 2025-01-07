@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Partenariats = () => {
   return (
-    <div className=" dark:bg-gray-dark">
+    <div className="">
       <SectionPartenariats />
     </div>
   );

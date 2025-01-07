@@ -93,7 +93,7 @@ export default function Culturels() {
   const texte =
     "E-media est votre partenaire idéal pour créer un dialogue entre les cultures et promouvoir une coopération artistique et culturelle durable. Ensemble, célébrons la richesse et la diversité des patrimoines à travers des échanges inspirants.";
   return (
-    <div>
+    <div id="3" className="py-28">
       <PartnershipSection
         title={opportunitePartenariat.title}
         subtitle={opportunitePartenariat.description}
@@ -114,21 +114,17 @@ export default function Culturels() {
         ))}
       </div>
       <Partenariat />
-      <div className="min-h-screen bg-gradient-to-r from-indigo-50 via-blue-50 to-teal-50 px-6 py-20 sm:px-8 lg:px-16">
-        <div className="mx-auto max-w-4xl rounded-lg bg-white p-10 shadow-lg">
-          <h1 className="mb-6 text-center text-4xl font-extrabold text-gray-800">
+      <div className=" px-6 py-20 sm:px-8 lg:px-16">
+        <div className="mx-auto max-w-4xl rounded-lg bg-green-50 p-10 shadow-lg">
+          <h1 className="mb-6 text-center text-2xl font-semibold text-green-800">
             E-media : Votre Partenaire Culturel
           </h1>
 
-          <p className="mb-8 text-center text-2xl leading-relaxed text-gray-700">
+          <p className="mb-8 text-center text-lg leading-relaxed text-gray-700">
             E-media est votre partenaire idéal pour créer un dialogue entre les
             cultures et promouvoir une coopération artistique et culturelle
-            durable.
-          </p>
-
-          <p className="text-center text-xl leading-relaxed text-gray-600">
-            Ensemble, célébrons la richesse et la diversité des patrimoines à
-            travers des échanges inspirants.
+            durable.Ensemble, célébrons la richesse et la diversité des
+            patrimoines à travers des échanges inspirants.
           </p>
         </div>
       </div>

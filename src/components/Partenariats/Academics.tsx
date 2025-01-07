@@ -9,7 +9,7 @@ export default function Academics() {
   };
 
   return (
-    <section className="bg-gray-50 px-6 py-16 dark:bg-gray-900">
+    <section className="bg-gray-50 px-6 py-28 " id="1">
       <PartnershipCard
         title={partnershipOpportunities.title}
         subtitle={partnershipOpportunities.subtitle}

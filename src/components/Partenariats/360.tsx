@@ -10,7 +10,7 @@ export default function FormatPro360() {
       "E-media lance Formapro 360, une nouvelle offre de formations modulaires personnalisées pour répondre aux besoins spécifiques des entreprises. Bénéficiez de notre expertise pour renforcer les compétences de vos équipes.",
   };
   return (
-    <div>
+    <div id="7">
       <PartnershipSection
         title={offreFormation.title}
         subtitle={offreFormation.description}
@@ -32,13 +32,13 @@ export default function FormatPro360() {
       </div>
       <InterventionDomains opportunities={interventionDomains} />
       <BusinessSolutionsBenefits />
-      <div className="mx-auto my-12 max-w-4xl rounded-lg bg-white p-8 text-center shadow-lg">
-        <h2 className="mb-6 text-center text-4xl font-semibold text-gray-800">
+      <div className="mx-auto my-12 max-w-4xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
+        <h2 className="mb-6 text-center text-4xl font-semibold text-green-800">
           Un partenariat pour des équipes performantes et efficaces
         </h2>
         <p className="mb-8 text-lg leading-relaxed text-gray-600">
           Avec <span className="font-semibold text-green-600">E-media</span> et{" "}
-          <span className="font-semibold text-green-600">Formapro 360</span>,
+          <span className="font-semibold text-gray-700">Formapro 360</span>,
           transformez vos défis organisationnels en opportunités stratégiques
           grâce à des solutions de formation innovantes et personnalisées. Que
           ce soit pour renforcer les compétences techniques de vos équipes,
