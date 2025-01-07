@@ -10,7 +10,7 @@ export default function FormatPro360() {
       "E-media lance Formapro 360, une nouvelle offre de formations modulaires personnalisées pour répondre aux besoins spécifiques des entreprises. Bénéficiez de notre expertise pour renforcer les compétences de vos équipes.",
   };
   return (
-    <div id="7">
+    <div id="7" className="py-28">
       <PartnershipSection
         title={offreFormation.title}
         subtitle={offreFormation.description}
@@ -217,7 +217,7 @@ const BusinessSolutionsBenefits = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-12 text-4xl font-extrabold text-black">
           Avantages des solutions entreprises d&apos;E-media et Formapro 360
         </h1>
 

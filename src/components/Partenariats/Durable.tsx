@@ -195,7 +195,7 @@ const EnvironnementPartnership = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-20 text-5xl font-extrabold text-black">
           Opportunités de Partenariat
         </h1>
 

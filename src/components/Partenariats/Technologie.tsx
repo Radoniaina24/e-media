@@ -196,7 +196,7 @@ const SustainableImpactCommitments = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-12 text-4xl font-extrabold text-black">
           Nos Engagements pour un Impact Durable
         </h1>
 

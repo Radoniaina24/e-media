@@ -135,50 +135,63 @@ const partenariat = {
   titre: "Un partenariat pour une culture inclusive et universelle",
   objectifs: [
     {
-      titre: "Un rayonnement culturel mutuel",
+      title: "Un rayonnement culturel mutuel",
       description:
         "Offrir une visibilité aux cultures étrangères à Madagascar tout en exportant la richesse culturelle malagasy à l’international.",
-      icon: <GlobeAltIcon className="h-6 w-6 text-blue-600" />,
+      icon: <GlobeAltIcon className="h-8 w-8 text-blue-600" />,
     },
     {
-      titre: "Développement économique et social",
+      title: "Développement économique et social",
       description:
         "Stimuler l’industrie culturelle comme moteur de croissance et d’inclusion.",
-      icon: <TrendingUpIcon className="h-6 w-6 text-green-600" />,
+      icon: <TrendingUpIcon className="h-8 w-8 text-green-600" />,
     },
     {
-      titre: "Formation d’une nouvelle génération multiculturelle",
+      title: "Formation d’une nouvelle génération multiculturelle",
       description:
         "Éduquer les jeunes à comprendre et à valoriser la diversité tout en développant des compétences artistiques et technologiques.",
-      icon: <AcademicCapIcon className="text-yellow-600 h-6 w-6" />,
+      icon: <AcademicCapIcon className="text-yellow-600 h-8 w-8" />,
     },
   ],
 };
 
 const Partenariat = () => {
   return (
-    <div className="container my-12 rounded-lg bg-white p-10 shadow-xl">
-      <h1 className="my-12 text-center text-5xl font-semibold">
-        {partenariat.titre}
-      </h1>
+    <div className="relative px-6 py-16">
+      {/* Contenu principal */}
+      <div className="mx-auto max-w-7xl text-center text-white">
+        {/* Titre de la section */}
+        <h1 className="mb-12 text-4xl font-extrabold text-black">
+          {partenariat.titre}
+        </h1>
 
-      <div>
-        <ul className="space-y-8">
-          {partenariat.objectifs.map((objectif, index) => (
-            <li
+        {/* Grille de cartes */}
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {partenariat.objectifs.map((opportunity, index) => (
+            <div
               key={index}
-              className="flex items-start rounded-lg bg-gray-50 p-6 shadow-md transition-all hover:bg-gray-200"
+              className="relative flex transform flex-col items-center overflow-hidden rounded-3xl bg-white p-10 shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl"
             >
-              <div className="mr-6">{objectif.icon}</div>
-              <div>
-                <h2 className="mb-2 text-2xl font-semibold text-blue-600">
-                  {objectif.titre}
-                </h2>
-                <p className="text-lg text-gray-700">{objectif.description}</p>
+              {/* Icône dynamique */}
+              <div className="mb-6 flex h-20 w-20 transform items-center justify-center rounded-full bg-indigo-600 text-4xl text-white transition-transform duration-300 ease-in-out hover:rotate-12">
+                {opportunity.icon}
               </div>
-            </li>
+
+              {/* Titre de l'opportunité */}
+              <h2 className="mb-4 text-2xl font-semibold text-indigo-700">
+                {opportunity.title}
+              </h2>
+
+              {/* Description de l'opportunité */}
+              <p className="mb-6 leading-relaxed text-gray-800">
+                {opportunity.description}
+              </p>
+
+              {/* Bordure subtile au survol */}
+              <div className="absolute inset-0 rounded-3xl border-2 border-indigo-600 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
