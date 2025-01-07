@@ -1,40 +1,44 @@
+// InputField.tsx
 import React from "react";
 
 interface InputFieldProps {
   id: string;
   label: string;
-  type?: string;
-  name?: string;
+  type: string;
   required?: boolean;
   placeholder?: string;
-  className?: string;
+  rows?: number;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
   id,
   label,
-  type = "text",
-  name,
+  type,
   required = false,
-  placeholder,
-  className = "",
+  placeholder = "",
+  rows = 1,
 }) => {
   return (
-    <div className="mb-4">
-      <label
-        htmlFor={id}
-        className="mb-2 block text-sm font-medium text-gray-700"
-      >
+    <div>
+      <label htmlFor={id} className="text-md block font-medium text-gray-700">
         {label} {required && <span className="text-red-500">*</span>}
       </label>
-      <input
-        type={type}
-        id={id}
-        name={name || id}
-        required={required}
-        placeholder={placeholder}
-        className={`w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-3 text-gray-700 outline-none focus:ring-2 focus:ring-blue-500 ${className}`}
-      />
+      {type === "textarea" ? (
+        <textarea
+          id={id}
+          className="mt-1 w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+          placeholder={placeholder}
+          rows={rows}
+        />
+      ) : (
+        <input
+          type={type}
+          id={id}
+          required={required}
+          className="mt-1 w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+          placeholder={placeholder}
+        />
+      )}
     </div>
   );
 };

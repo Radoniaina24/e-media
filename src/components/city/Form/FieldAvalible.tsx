@@ -1,102 +1,58 @@
-import React from "react";
+// FieldAvalible.tsx
+import React, { useState } from "react";
+import RadioGroup from "./RadioGroup";
 
 export default function FieldAvalible() {
+  const [contactMethod, setContactMethod] = useState<string>("contactEmail");
+  const [availability, setAvailability] = useState<string>(
+    "availableImmediately",
+  );
+  const [otherAvailability, setOtherAvailability] = useState<string>("");
+
+  const handleContactMethodChange = (value: string) => {
+    setContactMethod(value);
+  };
+
+  const handleAvailabilityChange = (value: string) => {
+    setAvailability(value);
+  };
+
+  const handleOtherAvailabilityChange = (value: string) => {
+    setOtherAvailability(value);
+  };
+
   return (
     <fieldset className="mb-6 rounded-md border border-gray-300 p-4">
       <legend className="px-2 text-xl font-semibold text-gray-700">
         Disponibilité
       </legend>
       <div className="space-y-4">
-        <div>
-          <p className="text-sm font-medium text-gray-700">
-            Préférez-vous être contacté par :
-          </p>
-          <div className="mt-2 space-y-2">
-            <div>
-              <input
-                type="radio"
-                id="contactEmail"
-                name="contactMethod"
-                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              />
-              <label
-                htmlFor="contactEmail"
-                className="ml-2 text-sm text-gray-700"
-              >
-                Email
-              </label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                id="contactPhone"
-                name="contactMethod"
-                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              />
-              <label
-                htmlFor="contactPhone"
-                className="ml-2 text-sm text-gray-700"
-              >
-                Téléphone
-              </label>
-            </div>
-          </div>
-        </div>
-        <div>
-          <p className="text-sm font-medium text-gray-700">
-            Quand seriez-vous disponible pour un premier rendez-vous ou un appel
-            ?
-          </p>
-          <div className="mt-2 space-y-2">
-            <div>
-              <input
-                type="radio"
-                id="availableImmediately"
-                name="availability"
-                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              />
-              <label
-                htmlFor="availableImmediately"
-                className="ml-2 text-sm text-gray-700"
-              >
-                Immédiatement
-              </label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                id="availableThisWeek"
-                name="availability"
-                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              />
-              <label
-                htmlFor="availableThisWeek"
-                className="ml-2 text-sm text-gray-700"
-              >
-                Dans la semaine
-              </label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                id="availableOther"
-                name="availability"
-                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-              />
-              <label
-                htmlFor="availableOther"
-                className="ml-2 text-sm text-gray-700"
-              >
-                Autre (précisez)
-              </label>
-              <input
-                type="text"
-                className="ml-2 rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                placeholder="Précisez ici"
-              />
-            </div>
-          </div>
-        </div>
+        {/* Préférence de contact */}
+        <RadioGroup
+          label="Préférez-vous être contacté par :"
+          options={[
+            { id: "contactEmail", label: "Email" },
+            { id: "contactPhone", label: "Téléphone" },
+          ]}
+          name="contactMethod"
+          selectedValue={contactMethod}
+          onChange={handleContactMethodChange}
+        />
+
+        {/* Disponibilité */}
+        <RadioGroup
+          label="Quand seriez-vous disponible pour un premier rendez-vous ou un appel ?"
+          options={[
+            { id: "availableImmediately", label: "Immédiatement" },
+            { id: "availableThisWeek", label: "Dans la semaine" },
+          ]}
+          name="availability"
+          selectedValue={availability}
+          onChange={handleAvailabilityChange}
+          otherOptionLabel="Autre"
+          isOtherChecked={availability === "availableOther"}
+          onOtherChange={handleOtherAvailabilityChange}
+        />
       </div>
     </fieldset>
   );
