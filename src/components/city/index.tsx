@@ -10,6 +10,10 @@ import VillageNumerique from "./VillageNumerique";
 import Impact from "./Impact";
 import Chiffre from "./Chiffre";
 import Invitation from "./Invitation";
+import ContactCIty from "./ContactCIty";
+import FormCity from "./FormCity";
+import ProfessionalForm from "./FormCity";
+import Form from "./FormCity";
 export default function CityProject() {
   //Le Village Numérique : Pilier de la Transition Numérique à Madagascar
   const villageNumerique = [
@@ -141,6 +145,7 @@ export default function CityProject() {
       <Chiffre />
       <Invitation />
       <FooterCity />
+      <Form />
     </div>
   );
 }
