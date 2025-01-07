@@ -1,5 +1,4 @@
-// RadioGroup.tsx
-import React, { useState } from "react";
+import React from "react";
 
 interface RadioGroupProps {
   label: string;
@@ -49,7 +48,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
               name={name}
               className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
               checked={isOtherChecked}
-              onChange={() => onOtherChange && onOtherChange("")}
+              onChange={() => onOtherChange && onOtherChange("")} // Reset "Autre"
             />
             <label htmlFor="other" className="text-md ml-2 text-gray-700">
               {otherOptionLabel}
@@ -57,7 +56,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
             {isOtherChecked && (
               <input
                 type="text"
-                value={selectedValue}
+                value={selectedValue} // Utilisez `selectedValue` uniquement si c'est un champ texte
                 onChange={(e) => onOtherChange && onOtherChange(e.target.value)}
                 className="ml-2 rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 placeholder="Précisez ici"

@@ -1,4 +1,3 @@
-// FieldAvalible.tsx
 import React, { useState } from "react";
 import RadioGroup from "./RadioGroup";
 
@@ -14,11 +13,17 @@ export default function FieldAvalible() {
   };
 
   const handleAvailabilityChange = (value: string) => {
+    // Lorsque l'option autre est sélectionnée, on efface l'autre valeur
+    if (value !== "availableOther") {
+      setOtherAvailability(""); // Reset de l'input 'Autre' si on change d'option
+    }
     setAvailability(value);
   };
 
-  const handleOtherAvailabilityChange = (value: string) => {
-    setOtherAvailability(value);
+  const handleOtherAvailabilityChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    setOtherAvailability(event.target.value);
   };
 
   return (
@@ -45,14 +50,31 @@ export default function FieldAvalible() {
           options={[
             { id: "availableImmediately", label: "Immédiatement" },
             { id: "availableThisWeek", label: "Dans la semaine" },
+            { id: "availableOther", label: "Autre" }, // Ajout de l'option "Autre"
           ]}
           name="availability"
           selectedValue={availability}
           onChange={handleAvailabilityChange}
-          otherOptionLabel="Autre"
-          isOtherChecked={availability === "availableOther"}
-          onOtherChange={handleOtherAvailabilityChange}
         />
+
+        {availability === "availableOther" && (
+          <div>
+            <label
+              htmlFor="otherAvailability"
+              className="text-md font-medium text-gray-700"
+            >
+              Précisez votre disponibilité :
+            </label>
+            <input
+              type="text"
+              id="otherAvailability"
+              className="mt-1 w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              placeholder="Précisez ici"
+              value={otherAvailability}
+              onChange={handleOtherAvailabilityChange}
+            />
+          </div>
+        )}
       </div>
     </fieldset>
   );
