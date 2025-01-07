@@ -20,7 +20,7 @@ export default function GaleriePhotoAlbum() {
     {
       title: "Campus & Studios",
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1735890237/IMG_2962_q10hhb.jpg",
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1735890186/IMG_1952_chz1un.jpg",
       altText: "Studios professionnels",
     },
     {
@@ -32,7 +32,7 @@ export default function GaleriePhotoAlbum() {
     {
       title: "Salons et conférences",
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736099729/IMG_0554_loiwpl.jpg",
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736137197/conference_35_rtiuxx.jpg",
       altText: "Laboratoires spécialisés",
     },
     {
@@ -44,7 +44,7 @@ export default function GaleriePhotoAlbum() {
     {
       title: "Studio radio E-media FM 107.8 mhz",
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736136501/1_radio_h33azq.jpg",
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736136497/3_radio_wdfoxu.jpg",
       altText: "Studios professionnels",
     },
   ];
