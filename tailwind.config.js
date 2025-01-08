@@ -62,6 +62,7 @@ module.exports = {
           dark: "#1E232E",
           light: "#F0F2F9",
         },
+        customeRed : "#f5475c"
       },
 
       boxShadow: {

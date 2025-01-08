@@ -23,10 +23,10 @@ const Hero = () => {
             data-aos="fade-up"
           >
             L&apos;institution de référence en{" "}
-            <span className="text-primary">cinéma</span>,{" "}
-            <span className="text-primary">audiovisuel</span>,{" "}
-            <span className="text-primary">ingénierie du son</span> et{" "}
-            <span className="text-primary">innovations technologiques</span>{" "}
+            <span className="text-customeRed">cinéma</span>,{" "}
+            <span className="text-customeRed">audiovisuel</span>,{" "}
+            <span className="text-customeRed">ingénierie du son</span> et{" "}
+            <span className="text-customeRed">innovations technologiques</span>{" "}
             pour Madagascar et l&apos;Afrique, au cœur de l&apos;Océan Indien.
           </h1>
           <p className="text-md text-start  mb-8 font-light leading-relaxed text-gray-200 sm:text-lg md:text-xl">
