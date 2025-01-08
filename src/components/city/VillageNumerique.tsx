@@ -98,7 +98,7 @@ const Infrastructure = () => {
       className="relative bg-cover bg-center bg-no-repeat py-16"
       style={{
         backgroundImage:
-          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1736066013/village_l3oint.jpg')", // Remplacez par l'URL de votre image
+          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1736322517/trano_e304tx.jpg')", // Remplacez par l'URL de votre image
       }}
     >
       {/* Overlay pour un effet sombre */}

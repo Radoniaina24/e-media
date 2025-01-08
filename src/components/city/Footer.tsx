@@ -10,7 +10,7 @@ export default function FooterCity() {
   return (
     <div>
       {/* Call-to-Action Section */}
-      <section className="bg-gradient-to-r from-blue-600 via-purple-500 to-indigo-600 py-16 text-white dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-900 dark:to-black">
+      <section className="bg-gradient-to-r from-blue-600 via-purple-500 to-indigo-600 py-16 text-white dark:bg-gradient-to-r">
         <div className="container mx-auto max-w-7xl px-6 text-center">
           <h2
             className="text-3xl font-extrabold md:text-4xl"
