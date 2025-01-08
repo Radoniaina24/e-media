@@ -60,7 +60,7 @@ const CFPPrograms: React.FC = () => {
              <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-50">
                {program.title.toLocaleUpperCase()}
              </h3>
-             <p className="rounded-lg bg-gray-100 p-4 text-gray-600 dark:bg-gray-700 dark:text-gray-200">
+             <p className="rounded-lg text-justify bg-gray-100 p-4 text-gray-600 dark:bg-gray-700 dark:text-gray-200">
                {program.description}
              </p>
            </div>

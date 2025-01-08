@@ -43,7 +43,7 @@ const Header = () => {
       <header
         className={`header left-0 top-0 z-40 flex w-full items-center text-white ${
           sticky
-            ? "fixed z-[9999] bg-white text-dark !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
+            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
             : "absolute bg-transparent"
         }`}
       >
@@ -113,7 +113,7 @@ const Header = () => {
                             className={`flex py-2 text-lg   lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                               usePathName === menuItem.path
                                 ? "text-white dark:text-white"
-                                : "text-white hover:text-primary dark:text-white/70 dark:hover:text-white"
+                                : "text-white hover:text-gray-800 dark:text-white/70 dark:hover:text-white"
                             }`}
                           >
                             {menuItem.title}
