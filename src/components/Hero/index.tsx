@@ -12,11 +12,12 @@ const Hero = () => {
   return (
     <section
       className="relative h-screen w-full bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/banniere/p3.png')" }}
+      style={{ backgroundImage: "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1736327068/page-d_accueil-moddif_rracn4.png')" }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white">
-        <div className="max-w-4xl space-y-6">
+      <div className="relative z-10 flex h-full items-center justify-start px-6  text-white">
+        <div className="container">
+          <div className="space-y-6 max-w-96">
           <h1
             className="text-shadow text-lg font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-2xl"
             data-aos="fade-up"
@@ -28,7 +29,7 @@ const Hero = () => {
             <span className="text-primary">innovations technologiques</span>{" "}
             pour Madagascar et l&apos;Afrique, au cœur de l&apos;Océan Indien.
           </h1>
-          <p className="text-md mx-auto mb-8 max-w-2xl font-light leading-relaxed text-gray-200 sm:text-lg md:text-xl">
+          <p className="text-md text-start  mb-8 font-light leading-relaxed text-gray-200 sm:text-lg md:text-xl">
             Rejoignez une université innovante qui forme les leaders de demain
             dans les secteurs créatifs et technologiques.
           </p>
@@ -38,6 +39,7 @@ const Hero = () => {
           >
             En savoir plus
           </a>
+          </div>
         </div>
       </div>
     </section>
