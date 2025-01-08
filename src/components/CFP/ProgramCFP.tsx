@@ -7,35 +7,35 @@ const programs = [
     title: "Son : Production Audio & MAO",
     description:
       "Apprenez les techniques avancées de production audio et maîtrisez les outils de Musique Assistée par Ordinateur (MAO) pour créer des productions sonores de qualité professionnelle.",
-    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736328264/son_fsmyel.png",
+    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340927/son_v46pec.png",
     link: "/formation/cfp/sam",
   },
   {
     title: "Sono : Sonorisation et Lumières de Spectacle",
     description:
       "Devenez expert en sonorisation et en gestion des lumières pour les spectacles en direct, en alliant savoir-faire technique et créativité scénique.",
-    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736332109/Sono_yuvvba.png",
+    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340927/sono_zwryiz.png",
     link: "/formation/cfp/ssls",
   },
   {
     title: "Image : Cinématographie, Post-production, Photographie et 3D",
     description:
       "Formez-vous aux métiers de l'image, de la captation à la post-production, en passant par la photographie et la création 3D, pour des projets visuels innovants.",
-    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736328262/image_jyukwy.png",
+    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340528/sans_nom_gb1r1u.png",
     link: "/formation/cfp/cpp",
   },
   {
     title: "Web : Création et Développement Multimédia",
     description:
       "Développez des compétences en création et développement multimédia pour concevoir des sites web interactifs et des expériences numériques immersives.",
-    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736328264/web_xjkbr3.png",
+    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736341038/web_te7wtp.png",
     link: "/formation/cfp/cdm",
   },
   {
     title: "DTS – Diplôme de Technicien Supérieur",
     description:
       "Un diplôme technique conçu pour vous préparer aux métiers spécialisés, combinant théorie et pratique pour répondre aux besoins du marché.",
-    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736333864/DTS-Web_ieqtpa.png",
+    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736341111/DTS_gjpuwe.png",
     link: "/formation/cfp/dts",
   },
 ];
