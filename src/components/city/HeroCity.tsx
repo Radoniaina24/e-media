@@ -12,18 +12,18 @@ export default function HeroCity() {
         className="relative h-screen bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1736066013/village_l3oint.jpg')",
+            "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1736322517/trano_e304tx.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
           <h1
             data-aos="fade-up"
-            className="text-4xl font-extrabold leading-tight md:text-6xl"
+            className="z-10 text-shadow text-4xl font-extrabold leading-tight md:text-6xl"
           >
             {TextHero}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg font-light md:text-xl">
+          <p className="z-10 text-shadow mt-4 max-w-2xl text-lg font-light md:text-xl">
             {subtitleHero}
           </p>
           {/* <a

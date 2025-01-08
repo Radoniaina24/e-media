@@ -31,3 +31,7 @@
     @apply opacity-100;
   }
 }
+
+.text-shadow {
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* Ombre légère */
+}

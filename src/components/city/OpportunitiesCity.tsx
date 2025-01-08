@@ -82,7 +82,7 @@ export default function OpportunitiesCity() {
               "Pourquoi Madagascar est une Opportunité Unique dans le Numérique"
             }
             backgroundImage={
-              "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736066013/village_l3oint.jpg"
+              "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736322517/trano_e304tx.jpg"
             }
           />
           <div className="space-y-16 px-6 py-12 ">
