@@ -49,7 +49,7 @@ export default function AboutCity() {
               data-aos="fade-up"
             >
               <Image
-                src="/images/why/c-t.jpg"
+                src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736337166/centre_technologie_kd7tge.jpg"
                 alt="Centre technologique"
                 className="mb-4 rounded-lg"
                 width={500}
@@ -69,7 +69,7 @@ export default function AboutCity() {
               data-aos="fade-left"
             >
               <Image
-                src="/images/why/c-c.jpg"
+                src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736337165/centre_culturel_dyfpdw.jpg"
                 alt="Centre culturel"
                 className="mb-4 rounded-lg"
                 width={500}
