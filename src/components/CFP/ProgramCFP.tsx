@@ -35,7 +35,7 @@ const programs = [
     title: "DTS – Diplôme de Technicien Supérieur",
     description:
       "Un diplôme technique conçu pour vous préparer aux métiers spécialisés, combinant théorie et pratique pour répondre aux besoins du marché.",
-    image: "/images/image.png",
+    image: "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736333864/DTS-Web_ieqtpa.png",
     link: "/formation/cfp/dts",
   },
 ];
