@@ -30,7 +30,7 @@ export default function AboutCity() {
               data-aos="fade-right"
             >
               <Image
-                src="/images/why/p-a.jpg"
+                src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736337899/pole_academique_d6r9y9.jpg"
                 alt="Pôle académique"
                 className="mb-4 rounded-lg"
                 width={500}

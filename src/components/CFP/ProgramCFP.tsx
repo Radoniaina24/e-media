@@ -51,7 +51,7 @@ const CFPPrograms: React.FC = () => {
         {programs.map((program, index) => (
          <Link key={index} href={program.link} aria-label={`En savoir plus sur ${program.title}`}>
          <div
-           className="flex flex-col items-center md:flex-row  transition-transform hover:scale-105 hover:cursor-pointer hover:bg-gray-50 dark:bg-gray-800"
+           className="flex flex-col items-center md:flex-row  transition-transform hover:scale-105 hover:cursor-pointe "
            data-aos="fade-up"
            data-aos-delay={index * 100}
          >
