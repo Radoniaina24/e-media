@@ -17,7 +17,7 @@ const Hero = () => {
       {/* <div className="absolute inset-0 bg-black "></div> */}
       <div className="relative z-10 flex h-full items-center justify-start px-6  text-white">
         <div className="container">
-          <div className="space-y-11 max-w-96">
+          <div className="space-y-11 max-w-[750px]">
           <h1
             className="text-shadow text-lg font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-2xl"
             data-aos="fade-up"
