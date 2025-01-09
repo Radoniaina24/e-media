@@ -30,7 +30,7 @@ export default function Culturels() {
         },
       ],
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg", // Remplacez par le chemin vers votre image
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736413786/dialogue_xyjoet.jpg", // Remplacez par le chemin vers votre image
       imageAlt: "Dialogue des cultures",
       imageOnRight: false, // Positionne l'image à gauche
     },
@@ -48,7 +48,7 @@ export default function Culturels() {
         },
       ],
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg", // Remplacez par le chemin vers votre image
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736413786/cooperation_two3fz.jpg", // Remplacez par le chemin vers votre image
       imageAlt: "Coopération artistique internationale",
       imageOnRight: true, // Positionne l'image à gauche
     },
@@ -72,7 +72,7 @@ export default function Culturels() {
         },
       ],
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg", // Remplacez par le chemin vers votre image
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736413788/valorisation_ichmao.jpg", // Remplacez par le chemin vers votre image
       imageAlt: "Valorisation des cultures partenaires",
       imageOnRight: false, // Positionne l'image à gauche
     },
@@ -87,7 +87,7 @@ export default function Culturels() {
         },
       ],
       imageSrc:
-        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg", // Remplacez par le chemin vers votre image
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736413765/apprentissage_i4ig1c.jpg", // Remplacez par le chemin vers votre image
       imageAlt: "Formation interculturelle",
       imageOnRight: true, // Positionne l'image à gauche
     },
@@ -98,7 +98,7 @@ export default function Culturels() {
     <div id="3" className="py-28">
       <ScrollComponentPartenariats text={opportunitePartenariat.title} />
       <PartnershipCard subtitle={opportunitePartenariat.description} />
-      <h1 className=" my-12 text-center text-5xl font-semibold">
+      <h1 className=" my-12 text-center text-5xl font-extrabold text-indigo-700">
         Pourquoi collaborer avec E-Media ?
       </h1>
       <div className="space-y-16 px-6 py-12 ">
@@ -161,7 +161,7 @@ const Partenariat = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-4xl font-extrabold text-black">
+        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
           {partenariat.titre}
         </h1>
 

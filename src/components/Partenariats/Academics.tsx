@@ -56,14 +56,14 @@ const WhyCollaborateSection = () => {
       className="relative bg-cover bg-center bg-no-repeat px-6 py-16"
       style={{
         backgroundImage:
-          "url('https://source.unsplash.com/1600x900/?technology,education')", // Lien d'une image de fond
+          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1736410946/why_flgoih.jpg')", // Lien d'une image de fond
       }}
     >
       {/* Overlay pour assombrir l'image */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       {/* Contenu de la section */}
-      <div className="relative z-10 mx-auto max-w-6xl text-center text-white">
+      <div className="relative z-10 mx-auto max-w-6xl text-center text-indigo-700">
         <h1 className="mb-12 text-5xl font-extrabold">
           Pourquoi collaborer avec E-Media ?
         </h1>
@@ -186,7 +186,7 @@ const HumanitarianCommitmentSection = () => {
     <div className="bg-gradient-to-r from-indigo-100 to-blue-50 px-6 py-24">
       <div className="mx-auto max-w-7xl text-center">
         {/* Titre de la section */}
-        <h2 className="mb-12 text-4xl font-extrabold tracking-tight text-indigo-900">
+        <h2 className="mb-12 text-5xl font-extrabold tracking-tight text-indigo-700">
           Un engagement humanitaire et inclusif
         </h2>
 

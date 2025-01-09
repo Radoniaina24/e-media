@@ -51,6 +51,10 @@ export default function ContactPartenariats() {
       label: "Développement d'applications",
       value: "developpement_applications",
     },
+    {
+      label: "Autres",
+      value: "autres",
+    },
   ];
 
   return (

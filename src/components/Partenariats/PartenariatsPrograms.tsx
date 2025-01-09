@@ -95,7 +95,7 @@ const PartenariatsPrograms: React.FC = () => {
     <>
       <div className="container mx-auto px-6 py-12">
         {/* Section des cartes */}
-        <div className="grid grid-cols-1 gap-14 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+        <div className="grid  grid-cols-1 justify-items-center gap-14 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {partnerships.map((program, index) => {
             const Icon = program.icon;
 

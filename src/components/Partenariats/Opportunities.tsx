@@ -5,7 +5,7 @@ export default function Opportunities() {
   const text1 = " Nos Opportunités de Partenariat";
   return (
     <div className="mb-10 rounded-lg  py-8 text-center shadow-lg">
-      <h1 className=" my-20 text-4xl font-extrabold tracking-wide text-gray-dark">
+      <h1 className=" my-20 text-5xl font-extrabold tracking-wide text-gray-dark">
         {text1}
       </h1>
       <PartenariatsPrograms />

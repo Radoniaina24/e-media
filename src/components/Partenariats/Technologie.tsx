@@ -64,7 +64,7 @@ const CollaborationTable: React.FC = () => {
   return (
     <div className="bg-gray-50 px-6 py-16">
       <div className="mx-auto max-w-7xl text-center">
-        <h1 className="mb-20 text-4xl font-extrabold text-gray-900">
+        <h1 className="mb-20 text-5xl font-extrabold text-indigo-700">
           Pourquoi collaborer avec E-media ?
         </h1>
 
@@ -131,7 +131,7 @@ const ImpactDomainsTable: React.FC = () => {
   return (
     <div className="bg-gray-50 px-6 py-16">
       <div className="mx-auto max-w-7xl text-center">
-        <h1 className="mb-20 text-4xl font-extrabold text-gray-900">
+        <h1 className="mb-20 text-5xl font-extrabold text-indigo-700">
           Domaines d&apos;impact technologique
         </h1>
 
@@ -195,7 +195,7 @@ const SustainableImpactCommitments = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-4xl font-extrabold text-black">
+        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
           Nos Engagements pour un Impact Durable
         </h1>
 

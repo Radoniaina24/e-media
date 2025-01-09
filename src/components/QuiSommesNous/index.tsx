@@ -1,57 +1,12 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect } from "react";
 import "aos/dist/aos.css"; // Importer les styles AOS
 import AOS from "aos"; // Importer la librairie AOS
-import Link from "next/link";
-import CardLink from "./CardLink";
-import Card from "./Card";
 import BackgroundCard from "./BackgroundCard";
 import CategoryCards from "../Formation/CategorieCard";
 import GaleriePhotoAlbum from "../galerie";
 
 const App = () => {
-  const formations = [
-    {
-      title: "Formations universitaires",
-      description: "Présentiel et en ligne pour des carrières durables.",
-      imageSrc: "/images/why/f-u.jpg",
-      href: "/formation/universitaire",
-      altText: "Formations universitaires",
-    },
-    {
-      title: "Formations certifiantes",
-      description:
-        "Accessibles avec ou sans baccalauréat, pour des jeunes en reconversion ou en quête d’emploi.",
-      imageSrc: "/images/why/f-c.jpg",
-      href: "/formation/cfp",
-      altText: "Formations certifiantes",
-    },
-    {
-      title: "Modules spécialisés",
-      description: "Apprentissage rapide et pratique.",
-      imageSrc: "/images/why/m-s.jpg",
-      href: "/formation/modulaire",
-      altText: "Modules spécialisés",
-    },
-  ];
-  const facilities = [
-    {
-      title: "Studios professionnels",
-      imageSrc: "/images/why/s-p.jpg",
-      altText: "Studios professionnels",
-    },
-    {
-      title: "Parc informatique performant",
-      imageSrc: "/images/why/p-f.jpg",
-      altText: "Parc informatique performant",
-    },
-    {
-      title: "Laboratoires spécialisés",
-      imageSrc: "/images/why/l-i.jpg",
-      altText: "Laboratoires spécialisés",
-    },
-  ];
   const engagement = [
     {
       title: "Développer les talents locaux",
@@ -81,7 +36,12 @@ const App = () => {
       easing: "ease-in-out", // Transition fluide
     });
   }, []);
-
+  const who = "Qui Sommes-Nous ?";
+  const emedia =
+    "E-Media : L'Université de Référence pour les Industries Créatives à Madagascar et en Afrique";
+  const academique = " Une Offre Académique Diversifiée";
+  const album = "Explorez nos Albums et Découvez nos Photos";
+  const engagements = "  Notre Engagement";
   return (
     <div className="bg-gray-100 px-6 py-20 dark:bg-gray-dark" id="why">
       {/* Header Section */}
@@ -92,12 +52,9 @@ const App = () => {
       >
         <div className="absolute inset-0 rounded-lg bg-black opacity-50"></div>
         <div className="relative z-10 py-20 text-center text-white">
-          <h1 className="mb-4 text-4xl font-extrabold md:text-5xl">
-            Qui Sommes-Nous ?
-          </h1>
+          <h1 className="mb-4 text-4xl font-extrabold md:text-5xl">{who}</h1>
           <p className="mx-auto max-w-3xl text-xl font-light md:text-2xl">
-            E-Media : L&apos;Université de Référence pour les Industries
-            Créatives à Madagascar et en Afrique
+            {emedia}
           </p>
         </div>
       </section>
@@ -106,7 +63,7 @@ const App = () => {
       <section className="py-16" data-aos="fade-up">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
-            Une Offre Académique Diversifiée
+            {academique}
           </h2>
           {/* <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {formations.map((item, index) => (
@@ -130,9 +87,7 @@ const App = () => {
         data-aos="fade-up"
       >
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
-            Explorez nos Albums et Découvez nos Photos
-          </h2>
+          <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">{album}</h2>
           <GaleriePhotoAlbum />
         </div>
       </section>
@@ -141,7 +96,7 @@ const App = () => {
       <section className="py-16" data-aos="fade-up">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="mb-12 text-4xl font-extrabold text-gray-800 dark:text-white">
-            Notre Engagement
+            {engagements}
           </h2>
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {engagement.map((item, index) => (

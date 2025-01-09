@@ -69,7 +69,7 @@ const WhyCollaborateSection = () => {
 
       {/* Contenu de la section */}
       <div className="relative z-10 mx-auto max-w-6xl text-center text-white">
-        <h1 className="mb-12 text-5xl font-extrabold">
+        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
           Pourquoi un partenariat financier et stratégique est essentiel ?
         </h1>
 
@@ -122,7 +122,7 @@ const StructuralProjectsSupport = () => {
     <div className="px-6 py-16">
       {/* Contenu de la section */}
       <div className="mx-auto max-w-6xl text-center">
-        <h1 className="mb-12 text-3xl font-extrabold text-gray-900">
+        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
           Soutenir des projets structurants
         </h1>
 
@@ -177,7 +177,7 @@ const CreativeProjectsSupport = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-3xl font-extrabold text-indigo-700">
+        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
           Incubation et soutien aux projets créatifs
         </h1>
 
@@ -244,7 +244,7 @@ const CollaborationOpportunities = ({ opportunities }) => {
   return (
     <div className="bg-gray-50 px-6 py-16">
       <div className="mx-auto max-w-7xl text-center">
-        <h1 className="mb-20 text-4xl font-extrabold text-gray-900">
+        <h1 className="mb-20 text-5xl font-extrabold text-indigo-700">
           Opportunités de Collaboration pour les Partenaires
         </h1>
 
@@ -307,7 +307,7 @@ const Partnership = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-20 text-3xl font-extrabold text-indigo-700">
+        <h1 className="mb-20 text-5xl font-extrabold text-indigo-700">
           Un partenariat pour un avenir équitable et innovant
         </h1>
 

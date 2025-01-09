@@ -1,5 +1,4 @@
 import React from "react";
-import PartnershipSection from "./PartnershipCard";
 import SectionImageCity from "../city/SectionImageCity";
 import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
 import PartnershipCard from "./PartnershipCard";
@@ -22,7 +21,8 @@ const initiativesPartenariat = [
         text: "Plateforme pour le changement : Utilisons l’audiovisuel comme un outil puissant pour éduquer les populations locales et internationales sur l’importance de la préservation écologique.",
       },
     ],
-    imageSrc: "https://source.unsplash.com/1600x900/?technology,education", // Remplacez par l'URL de l'image
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736414586/audivisuel_bb75mp.jpg", // Remplacez par l'URL de l'image
     imageAlt: "Audiovisuel écoresponsable",
     imageOnRight: false, // Positionne l'image à gauche
   },
@@ -39,7 +39,8 @@ const initiativesPartenariat = [
         text: "Formation à l’électronique verte : Offrons des modules spécifiques pour enseigner l’utilisation et la maintenance d’équipements durables.",
       },
     ],
-    imageSrc: "https://source.unsplash.com/1600x900/?technology,education", // Remplacez par l'URL de l'image
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736414588/verte_alp9dw.jpg", // Remplacez par l'URL de l'image
     imageAlt: "Innovations technologiques vertes",
     imageOnRight: true, // Positionne l'image à droite
   },
@@ -56,7 +57,8 @@ const initiativesPartenariat = [
         text: "Partenariats avec ONG et entreprises : Travaillons avec des organisations locales et internationales pour maximiser l’impact des initiatives de sensibilisation et d’action sur le terrain.",
       },
     ],
-    imageSrc: "https://source.unsplash.com/1600x900/?technology,education", // Remplacez par l'URL de l'image
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736414589/education_g6ihxc.jpg", // Remplacez par l'URL de l'image
     imageAlt: "Sensibilisation et éducation environnementale",
     imageOnRight: false, // Positionne l'image à gauche
   },
@@ -69,7 +71,7 @@ export default function Durable() {
       <PartnershipCard subtitle={partenariat.description} />
 
       <WhyCollaborateSection />
-      <h1 className=" my-12 text-center text-5xl font-semibold">
+      <h1 className=" my-12 text-center text-5xl font-extrabold text-indigo-700">
         Nos initiatives et propositions de partenariat
       </h1>
       <div className="space-y-16 px-6 py-12 ">
@@ -127,7 +129,7 @@ const WhyCollaborateSection = () => {
       className="relative bg-cover bg-center bg-no-repeat px-6 py-16"
       style={{
         backgroundImage:
-          "url('https://source.unsplash.com/1600x900/?technology,education')", // Lien d'une image de fond
+          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1736414288/centre_fbrimk.jpg')", // Lien d'une image de fond
       }}
     >
       {/* Overlay pour assombrir l'image */}
@@ -135,7 +137,7 @@ const WhyCollaborateSection = () => {
 
       {/* Contenu de la section */}
       <div className="relative z-10 mx-auto max-w-6xl text-center text-white">
-        <h1 className="mb-12 text-5xl font-extrabold">
+        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
           Pourquoi Madagascar est central dans cette mission ?
         </h1>
 
@@ -196,7 +198,7 @@ const EnvironnementPartnership = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-20 text-5xl font-extrabold text-black">
+        <h1 className="mb-20 text-5xl font-extrabold text-indigo-700">
           Opportunités de Partenariat
         </h1>
 
