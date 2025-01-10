@@ -86,7 +86,7 @@ export default function WhyUs() {
         backgroundImage={"/images/banniere/p3.png"}
       />
       <div className="bg-gray-200">
-        <div className="container mb-4" data-aos="fade-up">
+        <div className="container my-4" data-aos="fade-up">
           <div className="flex items-center justify-between">
             <div className="">
               <Image
