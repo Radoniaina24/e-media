@@ -4,7 +4,7 @@ import Link from "next/link";
 const programs = [
   {
     title:
-      "LICENCE EN TECHNOLOGIES DE L’INFORMATION ET DE LA COMMUNICATION (TIC)",
+      "LICENCE EN TECHNOLOGIES DE L’INFORMATION ET DE LA TELECOMMUNICATION (TIC)",
     description:
       "Cette formation vous permettra d’acquérir les compétences nécessaires dans les domaines des technologies de l’information, de la communication et de la gestion des systèmes d’information.",
     link: "/formation/licence/tic", // Remplacez par le lien vers la page de la licence TIC
