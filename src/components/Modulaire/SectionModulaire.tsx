@@ -17,6 +17,7 @@ export default function SectionModulaire() {
         id="modulaire"
         title="OFFRE DE FORMATIONS MODULAIRES"
         subtitle="DÉDIÉES AUX ENTREPRISES PUBLIQUES ET PRIVÉES"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736510253/Fond-Modulaire_mkcgzm.jpg"
       />
       <div
         id="modulaire"
