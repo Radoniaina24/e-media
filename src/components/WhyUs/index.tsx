@@ -85,36 +85,36 @@ export default function WhyUs() {
         }
         backgroundImage={"/images/banniere/p3.png"}
       />
-      <div className="container">
-        <div className=" dark:bg-gray-dark">
-          <div className="mt-6" data-aos="fade-up">
-            <div className="flex items-center justify-between">
-              <div className="">
-                <Image
-                  src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736493896/localisation_efccti.png"
-                  alt="Photo de Nanisana"
-                  className=" "
-                  width={500}
-                  height={500}
-                />
-              </div>
-              <div className="col-span-2 pl-6">
-                <p className="text-justify text-lg leading-relaxed text-gray-700">
-                  Située à{" "}
-                  <Link href={"#localisation"}>
-                    <span className="font-bold text-blue-600">Nanisana</span>
-                  </Link>{" "}
-                  , au cœur d&apos;
-                  <span className="font-bold text-blue-600">Antananarivo</span>,
-                  <span className="font-bold"> E-Media</span> est facilement
-                  accessible grâce à un réseau de transports bien desservi et
-                  proche des commodités essentielles, offrant un environnement
-                  pratique et accueillant.
-                </p>
-              </div>
+      <div className="bg-gray-200">
+        <div className="container mb-4" data-aos="fade-up">
+          <div className="flex items-center justify-between">
+            <div className="">
+              <Image
+                src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736493896/localisation_efccti.png"
+                alt="Photo de Nanisana"
+                className=" "
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="col-span-2 pl-6">
+              <p className="text-justify text-lg leading-relaxed text-gray-700">
+                Située à{" "}
+                <Link href={"#localisation"}>
+                  <span className="font-bold text-blue-600">Nanisana</span>
+                </Link>{" "}
+                , au cœur d&apos;
+                <span className="font-bold text-blue-600">Antananarivo</span>,
+                <span className="font-bold"> E-Media</span> est facilement
+                accessible grâce à un réseau de transports bien desservi et
+                proche des commodités essentielles, offrant un environnement
+                pratique et accueillant.
+              </p>
             </div>
           </div>
         </div>
+      </div>
+      <div className="container">
         <div className="space-y-16 px-6 pb-12 dark:bg-gray-dark">
           {eMediaContent.map((item, index) => (
             <SectionWithImage

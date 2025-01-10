@@ -8,6 +8,7 @@ import {
   FaPiggyBank,
   FaHandsHelping,
   FaBroadcastTower,
+  FaChalkboard,
 } from "react-icons/fa";
 import { useState } from "react";
 import Academics from "./Academics";
@@ -78,7 +79,15 @@ const partnerships = [
     icon: FaBroadcastTower,
     bgColor: "bg-pink-500",
     component: <FormatPro360 />,
-    id: "#7",
+    id: "#8",
+  },
+  {
+    title: "FormaPro 360",
+    description: "Diffusion des productions, ateliers de formation.",
+    icon: FaChalkboard,
+    bgColor: "bg-red-500",
+    component: <FormatPro360 />,
+    id: "#8",
   },
 ];
 
