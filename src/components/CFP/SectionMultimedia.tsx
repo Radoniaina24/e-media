@@ -125,6 +125,7 @@ export default function SectionMultimedia() {
   return (
     <div>
       <Header
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736477610/WEB_CR%C3%89ATION_ET_D%C3%89VELOPPEMENT_MULTIM%C3%89DIA_x1gbnt.jpg"
         id="multimedia"
         title="Web : Création et Développement Multimédia"
         subtitle="Cette formation pratique et immersive prépare les apprenants à concevoir, développer et optimiser des sites web modernes, performants et adaptés aux besoins des utilisateurs. En combinant les compétences en programmation et en design, cette formation permet de maîtriser les langages de programmation, les aspects visuels, et les techniques avancées de gestion de projets numériques. Un certificat agréé par l’État est délivré à l’issue de la formation, garantissant une reconnaissance officielle des compétences."
