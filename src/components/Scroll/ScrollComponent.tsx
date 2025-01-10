@@ -8,7 +8,7 @@ const ScrollComponent: React.FC<ScrollComponentProps> = ({ text }) => {
 
   return (
     <div className={` sticky left-1/2 top-24 z-50  `}>
-      <div className="rounded-lg bg-transparent p-4 text-center text-xl font-semibold  text-primary  backdrop-blur-sm dark:bg-opacity-50 dark:text-primary sm:text-xl md:text-2xl lg:text-2xl">
+      <div className="rounded-lg bg-white p-4 text-center text-xl font-semibold  text-primary  dark:bg-opacity-50 dark:text-primary sm:text-xl md:text-2xl lg:text-2xl">
         {text.toLocaleUpperCase()}
       </div>
     </div>
