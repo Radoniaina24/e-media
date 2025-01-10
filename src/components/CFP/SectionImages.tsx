@@ -169,7 +169,7 @@ export default function SectionImages() {
   return (
     <div>
       <Header
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736477610/IMAGE_CIN%C3%89MATOGRAPHIE_POST-PRODUCTION_PHOTOGRAPHIE_ET_3D_v81zdm.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736491650/IMAGE--CIN%C3%89MATOGRAPHIE_-POST-PRODUCTION_-PHOTOGRAPHIE-ET-3D_bj1kh6.jpg"
         id="image"
         title="Image : Cinématographie, Post-production, Photographie et 3D"
         subtitle="Cette formation complète et immersive forme les apprenants à maîtriser les outils et techniques liés à la production visuelle, à la post-production, à la photographie et à la conception en 3D. Grâce à une approche centrée sur la pratique, les participants développent des compétences polyvalentes et innovantes pour répondre aux exigences des industries créatives et numériques. Au terme de la formation, un certificat agréé par l’État est délivré, renforçant la reconnaissance professionnelle des diplômés."

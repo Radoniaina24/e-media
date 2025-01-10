@@ -126,7 +126,7 @@ export default function SectionSLS() {
   return (
     <div>
       <Header
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736477610/SONO_SONORISATION_ET_LUMI%C3%88RES_DE_SPECTACLE_vmxw7j.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736491650/SONO--SONORISATION-ET-LUMI%C3%88RES-DE-SPECTACLE_zq6cxm.jpg"
         id="sls"
         title="Son : Sonorisation et Lumières de Spectacle"
         subtitle="Cette formation immersive prépare les participants à maîtriser les compétences techniques et opérationnelles nécessaires pour gérer efficacement le son et la lumière lors d’événements live, tels que des concerts, spectacles, conférences et productions scéniques. En s’appuyant sur des ateliers pratiques et des mises en situation réelles, ce programme garantit une formation intensive et orientée vers la professionnalisation."

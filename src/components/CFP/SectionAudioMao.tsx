@@ -138,7 +138,7 @@ export default function SectionAudioMao() {
   return (
     <div>
       <Header
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736477610/SON_PRODUCTION_AUDIO_MAO_umpo3w.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736491651/SON--PRODUCTION-AUDIO-_-MAO_e4ajeu.jpg"
         title="Son : Production Audio & MAO"
         id="audiomao"
         subtitle="Cette formation offre une immersion complète dans un environnement studio professionnel, permettant aux apprenants d’acquérir les bases essentielles de la production audio et de la création musicale assistée par ordinateur (MAO). Ce programme intensif met l’accent sur la pratique et l’utilisation d’outils de pointe pour produire des contenus sonores de qualité professionnelle adaptés à divers domaines, tels que la musique, la publicité ou l’audiovisuel."

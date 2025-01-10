@@ -148,7 +148,7 @@ export default function SectionDTS() {
   return (
     <div>
       <Header
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736477610/DTS_DIPL%C3%94ME_DE_TECHNICIEN_SUP%C3%89RIEUR_jhldzw.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736491651/DTS-_-DIPL%C3%94ME-DE-TECHNICIEN-SUP%C3%89RIEUR_acwybh.jpg"
         id="dts"
         title="DTS – Diplôme de Technicien Supérieur"
         subtitle="Le DTS est une formation intensive et complète, regroupant les quatre spécialités décrites ci-dessus : Production Audio & MAO, Sonorisation et Lumières de Spectacle, Cinéphotographie, Post-production et 3D, et Web : Création et Développement Multimédia. Ce programme unique s’adresse à ceux qui souhaitent acquérir une expertise multidisciplinaire, combinant les compétences techniques et créatives essentielles pour exceller dans les industries numériques, culturelles et événementielles."

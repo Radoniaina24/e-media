@@ -125,7 +125,7 @@ export default function SectionMultimedia() {
   return (
     <div>
       <HeaderWebMultimedia
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736477610/WEB_CR%C3%89ATION_ET_D%C3%89VELOPPEMENT_MULTIM%C3%89DIA_x1gbnt.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736491651/WEB--CR%C3%89ATION-ET-D%C3%89VELOPPEMENT-MULTIM%C3%89DIA_ffftkh.jpg"
         id="multimedia"
         title="Web : Création et Développement Multimédia"
         subtitle="Ce
