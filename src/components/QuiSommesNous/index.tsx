@@ -43,7 +43,7 @@ const App = () => {
   const album = "Explorez nos Albums et Découvez nos Photos";
   const engagements = "  Notre Engagement";
   return (
-    <div className="bg-gray-100 px-6 py-20 dark:bg-gray-dark" id="why">
+    <div className="bg-gray-100 px-6 py-20" id="why">
       {/* Header Section */}
       <section
         className="relative rounded-lg bg-cover bg-center shadow-lg"
@@ -62,7 +62,7 @@ const App = () => {
       {/* Content Section */}
       <section className="py-16" data-aos="fade-up">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">
+          <h2 className="mb-8 text-3xl font-extrabold text-dark md:text-4xl">
             {academique}
           </h2>
           {/* <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -82,12 +82,11 @@ const App = () => {
       </section>
 
       {/* Modern and Stimulating Environment */}
-      <section
-        className="bg-gray-200 py-16 dark:bg-gray-dark"
-        data-aos="fade-up"
-      >
+      <section className="bg-gray-200 py-16 " data-aos="fade-up">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-8 text-3xl font-extrabold md:text-4xl">{album}</h2>
+          <h2 className="mb-8 text-3xl font-extrabold text-dark md:text-4xl">
+            {album}
+          </h2>
           <GaleriePhotoAlbum />
         </div>
       </section>
@@ -95,7 +94,7 @@ const App = () => {
       {/* Commitment Section */}
       <section className="py-16" data-aos="fade-up">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-12 text-4xl font-extrabold text-gray-800 dark:text-white">
+          <h2 className="mb-12 text-4xl font-extrabold text-gray-800">
             {engagements}
           </h2>
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">

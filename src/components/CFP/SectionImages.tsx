@@ -1,7 +1,5 @@
 import React from "react";
 import FormationAudio from "./Formation";
-import Section from "../Licence/Section";
-import CallToAction from "../Licence/CallToAction";
 import Header from "../Licence/Header";
 import ScrollComponent from "../Scroll/ScrollComponent";
 import DurationCard from "./DurationCard";

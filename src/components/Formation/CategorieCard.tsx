@@ -32,14 +32,14 @@ const CategoryCards: React.FC = () => {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {categories.map((category, index) => (
           <Link key={index} href={category.lien}>
-            <div className="flex h-full flex-col items-center justify-between rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:cursor-pointer dark:bg-gray-dark ">
+            <div className="flex h-full flex-col items-center justify-between rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:cursor-pointer ">
               <div className="mb-4 flex items-center justify-center text-4xl">
                 {category.icon}
               </div>
-              <h3 className="flex-grow text-center text-xl font-semibold text-gray-800 dark:text-white">
+              <h3 className="flex-grow text-center text-xl font-semibold text-gray-800 ">
                 {category.title}
               </h3>
-              <p className="mt-2 flex-grow text-center text-gray-600 dark:text-gray-300">
+              <p className="0 mt-2 flex-grow text-center text-gray-600">
                 {category.description}
               </p>
               <div className="mt-4 inline-block rounded-full bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600">

@@ -13,7 +13,7 @@ interface FormationAudioProps {
 const FormationAudio: React.FC<FormationAudioProps> = ({ data }) => {
   return (
     <div className="rounded-lg p-6 shadow-md ">
-      <h2 className="my-10 mb-14 text-2xl font-bold dark:text-white">
+      <h2 className="my-10 mb-14 text-2xl font-bold text-dark">
         Points Formations
       </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
@@ -26,7 +26,7 @@ const FormationAudio: React.FC<FormationAudioProps> = ({ data }) => {
         ))}
       </div>
 
-      <h2 className="my-14 mt-6 text-2xl font-bold dark:text-white">
+      <h2 className="my-14 mt-6 text-2xl font-bold text-dark">
         Compétences Développées
       </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
@@ -34,7 +34,7 @@ const FormationAudio: React.FC<FormationAudioProps> = ({ data }) => {
           <ProgramCardCfp key={index} program={comp} />
         ))}
       </div>
-      <h2 className="mb-6 mt-6 text-2xl font-bold dark:text-white">
+      <h2 className="mb-6 mt-6 text-2xl font-bold text-dark">
         Débouchés Professionnels
       </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
@@ -44,7 +44,7 @@ const FormationAudio: React.FC<FormationAudioProps> = ({ data }) => {
       </div>
       {data.forcesFormation ? (
         <>
-          <h2 className="mb-6 mt-6 text-2xl font-bold dark:text-white">
+          <h2 className="mb-6 mt-6 text-2xl font-bold text-dark">
             Forces de la Formation
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">

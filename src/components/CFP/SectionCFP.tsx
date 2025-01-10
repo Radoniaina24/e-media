@@ -23,6 +23,7 @@ export default function SectionCFP() {
         id="cfp"
         title="FORMATION PROFESSIONELLE – FORMATION CERTIFIANTE
             (avec ou sans le bac)"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736493168/FORMATION-PROFESSIONELLE-_-FORMATION-CERTIFIANTE-_AVEC-OU-SANS-LE-BAC_t2qytz.jpg"
       />
       <div
         id="cfp"
