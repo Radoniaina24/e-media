@@ -15,7 +15,7 @@ export default function FormatPro360() {
     <div id="7" className="py-28">
       <ScrollComponentPartenariats text={offreFormation.title} />
       <PartnershipCard subtitle={offreFormation.description} />
-      <h1 className=" my-12 text-center text-5xl font-semibold">
+      <h1 className="m-auto my-12 max-w-[700px] text-3xl font-semibold text-indigo-700">
         Pourquoi collaborer avec E-Media ?
       </h1>
       <div className="space-y-16 px-6 py-12 ">
@@ -33,7 +33,7 @@ export default function FormatPro360() {
       <InterventionDomains opportunities={interventionDomains} />
       <BusinessSolutionsBenefits />
       <div className="mx-auto my-12 max-w-4xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
-        <h2 className="mb-6 text-center text-4xl font-semibold text-green-800">
+        <h2 className="m-auto mb-6 max-w-[700px]  text-2xl font-semibold text-green-800">
           Un partenariat pour des équipes performantes et efficaces
         </h2>
         <p className="mb-8 text-lg leading-relaxed text-gray-600">
@@ -148,7 +148,7 @@ const InterventionDomains = ({ opportunities }) => {
   return (
     <div className="bg-gray-50 px-6 py-16">
       <div className="mx-auto max-w-7xl text-center">
-        <h1 className="mb-28 text-4xl font-extrabold text-gray-900">
+        <h1 className="m-auto mb-28 max-w-[700px] text-4xl font-semibold text-indigo-700">
           Domaines d&apos;intervention avec E-media et Formapro 360
         </h1>
 
@@ -217,7 +217,7 @@ const BusinessSolutionsBenefits = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-4xl font-extrabold text-black">
+        <h1 className="m-auto mb-12 max-w-[700px]  text-4xl font-semibold text-indigo-700">
           Avantages des solutions entreprises d&apos;E-media et Formapro 360
         </h1>
 

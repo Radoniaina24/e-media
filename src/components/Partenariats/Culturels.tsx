@@ -98,7 +98,7 @@ export default function Culturels() {
     <div id="3" className="py-28">
       <ScrollComponentPartenariats text={opportunitePartenariat.title} />
       <PartnershipCard subtitle={opportunitePartenariat.description} />
-      <h1 className=" my-12 text-center text-5xl font-extrabold text-indigo-700">
+      <h1 className=" my-12 text-center text-4xl font-extrabold text-indigo-700">
         Pourquoi collaborer avec E-Media ?
       </h1>
       <div className="space-y-16 px-6 py-12 ">
@@ -161,7 +161,7 @@ const Partenariat = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-12 text-4xl font-extrabold text-indigo-700">
           {partenariat.titre}
         </h1>
 

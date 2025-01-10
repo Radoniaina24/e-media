@@ -14,7 +14,9 @@ module.exports = {
       center: true,
       padding: "1rem",
     },
-
+    fontFamily: {
+      sans: ["var(--font-montserrat)", "sans-serif"], // Utilisation de la variable
+    },
     screens: {
       xs: "450px",
       // => @media (min-width: 450px) { ... }

@@ -80,7 +80,7 @@ export default function Ong() {
     <div id="6" className="py-28">
       <ScrollComponentPartenariats text={partenariats.title} />
       <PartnershipCard subtitle={partenariats.description} />
-      <h2 className="my-12 text-center text-5xl font-extrabold text-indigo-700">
+      <h2 className="my-12 text-center text-4xl font-extrabold text-indigo-700">
         Pourquoi ce partenariat est essentiel pour les jeunes malagasy ?
       </h2>
       <div className="space-y-16 px-6 py-12 ">
@@ -98,7 +98,7 @@ export default function Ong() {
       <InitiativesWithEMedia opportunities={initiativesWithEMedia} />
       <PartnershipInitiative />
       <div className="mx-auto my-12 max-w-3xl rounded-lg bg-blue-50 p-8 shadow-lg">
-        <h2 className="mb-6 text-center text-3xl font-semibold text-blue-800">
+        <h2 className="mb-6 text-center text-2xl font-semibold text-blue-800">
           Avec E-media, transformons les défis sociaux en opportunités
         </h2>
         <p className="text-center text-lg leading-relaxed text-gray-700">
@@ -149,7 +149,7 @@ const InitiativesWithEMedia = ({ opportunities }) => {
   return (
     <div className="bg-gray-50 px-6 py-16">
       <div className="mx-auto max-w-7xl text-center">
-        <h1 className="mb-28 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-28 text-4xl font-extrabold text-indigo-700">
           Initiatives concrètes avec E-media
         </h1>
 
@@ -219,7 +219,7 @@ const PartnershipInitiative = () => {
 
       {/* Contenu de la section */}
       <div className="relative z-10 mx-auto max-w-6xl text-center text-white">
-        <h1 className="mb-12  text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-12  text-4xl font-extrabold text-indigo-700">
           Un partenariat pour transformer les causes en solutions
         </h1>
 

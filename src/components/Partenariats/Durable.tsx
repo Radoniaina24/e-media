@@ -71,7 +71,7 @@ export default function Durable() {
       <PartnershipCard subtitle={partenariat.description} />
 
       <WhyCollaborateSection />
-      <h1 className=" my-12 text-center text-5xl font-extrabold text-indigo-700">
+      <h1 className=" my-12 text-center text-4xl font-extrabold text-indigo-700">
         Nos initiatives et propositions de partenariat
       </h1>
       <div className="space-y-16 px-6 py-12 ">
@@ -137,7 +137,7 @@ const WhyCollaborateSection = () => {
 
       {/* Contenu de la section */}
       <div className="relative z-10 mx-auto max-w-6xl text-center text-white">
-        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-12 text-4xl font-extrabold text-indigo-700">
           Pourquoi Madagascar est central dans cette mission ?
         </h1>
 
@@ -198,7 +198,7 @@ const EnvironnementPartnership = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-20 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-20 text-4xl font-extrabold text-indigo-700">
           Opportunités de Partenariat
         </h1>
 

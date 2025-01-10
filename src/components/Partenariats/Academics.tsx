@@ -64,7 +64,7 @@ const WhyCollaborateSection = () => {
 
       {/* Contenu de la section */}
       <div className="relative z-10 mx-auto max-w-6xl text-center text-indigo-700">
-        <h1 className="mb-12 text-5xl font-extrabold">
+        <h1 className="mb-12 text-4xl font-extrabold">
           Pourquoi collaborer avec E-Media ?
         </h1>
 
@@ -126,7 +126,7 @@ const PartnershipOpportunities = () => {
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
-        <h1 className="mb-12 text-5xl font-extrabold text-indigo-700">
+        <h1 className="mb-12 text-4xl font-extrabold text-indigo-700">
           Opportunités de Partenariat
         </h1>
 
@@ -186,7 +186,7 @@ const HumanitarianCommitmentSection = () => {
     <div className="bg-gradient-to-r from-indigo-100 to-blue-50 px-6 py-24">
       <div className="mx-auto max-w-7xl text-center">
         {/* Titre de la section */}
-        <h2 className="mb-12 text-5xl font-extrabold tracking-tight text-indigo-700">
+        <h2 className="mb-12 text-4xl font-extrabold tracking-tight text-indigo-700">
           Un engagement humanitaire et inclusif
         </h2>
 
@@ -198,7 +198,7 @@ const HumanitarianCommitmentSection = () => {
               className="flex transform items-center justify-start rounded-xl bg-white p-8 shadow-md transition-transform hover:scale-105 hover:bg-indigo-50 hover:shadow-2xl"
             >
               {/* Icône */}
-              <div className="mr-6 text-5xl text-indigo-600">
+              <div className="mr-6 text-4xl text-indigo-600">
                 {commitment.icon}
               </div>
 

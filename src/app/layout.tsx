@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   },
   description: "...",
 };
-const inter = Montserrat({ subsets: ["latin"], weight: ["100", "300"] });
+const inter = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-montserrat",
+});
 
 export default function RootLayout({
   children,

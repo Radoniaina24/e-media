@@ -38,8 +38,8 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({
             />
           </svg>
         </div>
-        <h3 className="text-2xl font-semibold">{title}</h3>
-        <p className="mt-2 text-lg">{description}</p>
+        <h3 className="text-2xl font-semibold text-white">{title}</h3>
+        <p className="mt-2 text-lg text-white">{description}</p>
       </div>
     </div>
   );
