@@ -86,22 +86,19 @@ export default function WhyUs() {
         backgroundImage={"/images/banniere/p3.png"}
       />
       <div className="container">
-        <div className=" px-6  dark:bg-gray-dark">
-          <div
-            className="mx-auto max-w-4xl overflow-hidden rounded-lg "
-            data-aos="fade-up"
-          >
-            <div className="grid grid-cols-1 items-center md:grid-cols-2">
-              <div className="flex justify-center">
+        <div className=" dark:bg-gray-dark">
+          <div className="mt-6" data-aos="fade-up">
+            <div className="flex items-center justify-between">
+              <div className="">
                 <Image
                   src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736493896/localisation_efccti.png"
                   alt="Photo de Nanisana"
-                  className=" w-80  md:h-80"
+                  className=" "
                   width={500}
                   height={500}
                 />
               </div>
-              <div className="pl-6">
+              <div className="col-span-2 pl-6">
                 <p className="text-justify text-lg leading-relaxed text-gray-700">
                   Située à{" "}
                   <Link href={"#localisation"}>
@@ -109,7 +106,7 @@ export default function WhyUs() {
                   </Link>{" "}
                   , au cœur d&apos;
                   <span className="font-bold text-blue-600">Antananarivo</span>,
-                  <span className="font-bold">E-Media</span> est facilement
+                  <span className="font-bold"> E-Media</span> est facilement
                   accessible grâce à un réseau de transports bien desservi et
                   proche des commodités essentielles, offrant un environnement
                   pratique et accueillant.
