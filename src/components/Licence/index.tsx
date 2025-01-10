@@ -40,14 +40,56 @@ export default function Licence() {
         <hr className="mb-20" />
         <div className=" grid grid-cols-2 gap-5  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {programs.map((program, index) => (
-            <HoverCard
-              link={program.link}
-              imageSrc={program.imageSrc}
-              key={index}
-            />
+            <Link href={program.link} key={index}>
+              <HoverCard link={program.link} imageSrc={program.imageSrc} />
+            </Link>
           ))}
         </div>
+
+        {/* <StaircaseImages /> */}
       </div>
     </>
+  );
+}
+
+import Image from "next/image";
+import Link from "next/link";
+
+function StaircaseImages() {
+  return (
+    <div className="relative mx-auto w-full max-w-lg">
+      {/* Image 1 */}
+      <div className="absolute left-0 top-0">
+        <Image
+          src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340927/son_v46pec.png"
+          alt="Image 1"
+          width={150}
+          height={150}
+          className="rounded-lg shadow-lg"
+        />
+      </div>
+
+      {/* Image 2 */}
+      <div className="absolute left-16 top-0">
+        <Image
+          src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340927/son_v46pec.png"
+          alt="Image 2"
+          width={150}
+          height={150}
+          className="rounded-lg shadow-lg"
+        />
+      </div>
+
+      {/* Image 3 */}
+      <div className="absolute left-32 top-0">
+        <Image
+          src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340927/son_v46pec.png"
+          alt="Image 3"
+          width={150}
+          height={150}
+          className="rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
   );
 }
