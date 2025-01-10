@@ -8,7 +8,7 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     flowbite.content(),
   ],
-  darkMode: "class",
+  // darkMode: "class",
   theme: {
     container: {
       center: true,
@@ -62,7 +62,7 @@ module.exports = {
           dark: "#1E232E",
           light: "#F0F2F9",
         },
-        customeRed : "#ffb145"
+        customeRed: "#ffb145",
       },
 
       boxShadow: {

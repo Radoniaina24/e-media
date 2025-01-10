@@ -124,11 +124,12 @@ export default function SectionMultimedia() {
     "Cette formation est idéale pour les passionnés de technologie et de création numérique, souhaitant construire une carrière solide et pérenne dans un secteur en constante évolution.";
   return (
     <div>
-      <Header
+      <HeaderWebMultimedia
         imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736477610/WEB_CR%C3%89ATION_ET_D%C3%89VELOPPEMENT_MULTIM%C3%89DIA_x1gbnt.jpg"
         id="multimedia"
         title="Web : Création et Développement Multimédia"
-        subtitle="Cette formation pratique et immersive prépare les apprenants à concevoir, développer et optimiser des sites web modernes, performants et adaptés aux besoins des utilisateurs. En combinant les compétences en programmation et en design, cette formation permet de maîtriser les langages de programmation, les aspects visuels, et les techniques avancées de gestion de projets numériques. Un certificat agréé par l’État est délivré à l’issue de la formation, garantissant une reconnaissance officielle des compétences."
+        subtitle="Ce
+        tte formation pratique et immersive prépare les apprenants à concevoir, développer et optimiser des sites web modernes, performants et adaptés aux besoins des utilisateurs. En combinant les compétences en programmation et en design, cette formation permet de maîtriser les langages de programmation, les aspects visuels, et les techniques avancées de gestion de projets numériques. Un certificat agréé par l’État est délivré à l’issue de la formation, garantissant une reconnaissance officielle des compétences."
       />
       <div id="multimedia" className="container">
         <ScrollComponent text={"Web : Création et Développement Multimédia"} />
@@ -165,3 +166,52 @@ export default function SectionMultimedia() {
     </div>
   );
 }
+
+interface HeaderProps {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  ctaText?: string; // Call to action text for the button
+  ctaLink?: string; // URL for the call to action button
+  imageSrc?: string;
+}
+
+const HeaderWebMultimedia: React.FC<HeaderProps> = ({
+  title,
+  id,
+  subtitle,
+  imageSrc = "/images/why/fond.jpg",
+}) => (
+  <header className="relative h-screen w-full bg-cover bg-center py-16 text-white">
+    {/* Image de fond */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: `url("${imageSrc}")` }}
+    ></div>
+
+    {/* Contenu */}
+    <div className="relative z-10 flex h-full items-center justify-end px-8">
+      <div className="mr-32 max-w-xl space-y-6 text-right">
+        {/* Titre */}
+        <h1 className="text-shadow-lg text-center text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:text-4xl">
+          {title.toLocaleUpperCase()}
+        </h1>
+
+        {/* Sous-titre */}
+        <p className="text-md text-center font-light leading-relaxed text-gray-200 sm:text-lg lg:text-xl">
+          {subtitle}
+        </p>
+
+        {/* Bouton */}
+        <div className="text-center">
+          <a
+            href={"#" + id}
+            className="inline-block transform rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
+          >
+            Détails
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+);

@@ -33,7 +33,11 @@ const Video = () => {
               data-wow-delay=".15s"
             >
               <div className="relative aspect-[77/40] items-center justify-center">
-                <Image src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736322517/trano_e304tx.jpg" alt="video image" fill />
+                <Image
+                  src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736322517/trano_e304tx.jpg"
+                  alt="video image"
+                  fill
+                />
                 <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
                   <button
                     aria-label="video play button"
@@ -61,7 +65,7 @@ const Video = () => {
         autoplay={true}
         start={true}
         isOpen={isOpen}
-        videoId="Y96k4-ytRgo"
+        videoId="JQqS2o9rVkI"
         onClose={() => setOpen(false)}
       />
 

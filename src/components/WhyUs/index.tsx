@@ -82,7 +82,7 @@ export default function WhyUs() {
         subtitle={
           "Découvrez les raisons qui font d'E-Media un choix idéal pour votre avenir dans les industries créatives."
         }
-        backgroundImage={"/images/banniere/p1.png"}
+        backgroundImage={"/images/banniere/p3.png"}
       />
       <div className="container">
         <div className=" px-6 py-12 dark:bg-gray-dark">
