@@ -157,7 +157,7 @@ export default function SectionDTS() {
         <ScrollComponent text={"DTS – Diplôme de Technicien Supérieur"} />
         <DurationCard duration=" 12 mois de formation + 2 mois de stage en entreprise." />
         <Section>
-          <h1 className=" mb-9  text-2xl text-dark">
+          <h1 className=" mb-9 text-2xl font-extrabold text-dark">
             Objectifs de la formation
           </h1>
 

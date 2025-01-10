@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid"; // Icône pour les listes
 import SectionWithImage from "./SectionWithImage";
 import HeroBanner from "../Partenariats/HeroBaner";
+import Link from "next/link";
 export default function WhyUs() {
   useEffect(() => {
     AOS.init({
@@ -85,40 +86,39 @@ export default function WhyUs() {
         backgroundImage={"/images/banniere/p3.png"}
       />
       <div className="container">
-        <div className=" px-6 py-12 dark:bg-gray-dark">
+        <div className=" px-6  dark:bg-gray-dark">
           <div
-            className="mx-auto max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg"
+            className="mx-auto max-w-4xl overflow-hidden rounded-lg "
             data-aos="fade-up"
           >
-            <div className="relative">
-              <Image
-                src="/images/banniere/p3.png"
-                alt="Photo de Nanisana"
-                className="h-64 w-full object-cover md:h-80"
-                width={500}
-                height={500}
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-blue-900 bg-opacity-25">
-                <h2 className="text-2xl font-bold text-white drop-shadow-md md:text-3xl">
-                  Emplacement Stratégique
-                </h2>
+            <div className="grid grid-cols-1 items-center md:grid-cols-2">
+              <div className="flex justify-center">
+                <Image
+                  src="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736493896/localisation_efccti.png"
+                  alt="Photo de Nanisana"
+                  className=" w-80  md:h-80"
+                  width={500}
+                  height={500}
+                />
               </div>
-            </div>
-            <div className="p-6 md:p-8">
-              <p className="text-lg leading-relaxed text-gray-700">
-                Située à{" "}
-                <span className="font-bold text-blue-600">Nanisana</span>, au
-                cœur d&apos;
-                <span className="font-bold text-blue-600">Antananarivo</span>,
-                <span className="font-bold">E-Media</span> est facilement
-                accessible grâce à un réseau de transports bien desservi et
-                proche des commodités essentielles, offrant un environnement
-                pratique et accueillant.
-              </p>
+              <div className="pl-6">
+                <p className="text-justify text-lg leading-relaxed text-gray-700">
+                  Située à{" "}
+                  <Link href={"#localisation"}>
+                    <span className="font-bold text-blue-600">Nanisana</span>
+                  </Link>{" "}
+                  , au cœur d&apos;
+                  <span className="font-bold text-blue-600">Antananarivo</span>,
+                  <span className="font-bold">E-Media</span> est facilement
+                  accessible grâce à un réseau de transports bien desservi et
+                  proche des commodités essentielles, offrant un environnement
+                  pratique et accueillant.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="space-y-16 px-6 py-12 dark:bg-gray-dark">
+        <div className="space-y-16 px-6 pb-12 dark:bg-gray-dark">
           {eMediaContent.map((item, index) => (
             <SectionWithImage
               key={index}

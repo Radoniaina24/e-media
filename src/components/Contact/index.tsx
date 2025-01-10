@@ -80,7 +80,7 @@ const Contact = () => {
             </div>
           </div>
           {/* Google Map Section (At the bottom) */}
-          <div className="mt-12 w-full">
+          <div className="mt-12 w-full" id="localisation">
             <div className="rounded-lg bg-gray-200 shadow-lg dark:bg-gray-700">
               <h2 className=" p-6 text-center text-xl font-semibold text-gray-800 dark:text-white">
                 Trouvez-nous à Nanisana Antananarivo, Madagascar
