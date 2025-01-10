@@ -112,8 +112,8 @@ const Header = () => {
                             href={menuItem.path}
                             className={`flex py-2 text-lg   lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                               usePathName === menuItem.path
-                                ? `${sticky ? "text-dark" : "text-white sm:text-dark md:text-white"}`
-                                : `${sticky ? "text-dark" : "text-white sm:text-dark md:text-white"}`
+                                ? `${sticky ? "text-dark" : "text-dark sm:text-dark md:text-white"}`
+                                : `${sticky ? "text-dark" : "text-dark sm:text-dark md:text-white"}`
                             }`}
                           >
                             {menuItem.title}
@@ -122,7 +122,7 @@ const Header = () => {
                           <>
                             <p
                               onClick={() => handleSubmenu(index)}
-                              className={`flex cursor-pointer items-center justify-between py-2 text-lg  sm:text-gray-800 ${sticky ? "text-dark" : "text-white sm:text-dark md:text-white"}   lg:mr-0 lg:inline-flex lg:px-0 lg:py-6`}
+                              className={`flex cursor-pointer items-center justify-between py-2 text-lg  sm:text-gray-800 ${sticky ? "text-dark" : "text-dark sm:text-dark md:text-white"}   lg:mr-0 lg:inline-flex lg:px-0 lg:py-6`}
                             >
                               {menuItem.title}
                               <span className="pl-3">

@@ -190,8 +190,8 @@ const HeaderWebMultimedia: React.FC<HeaderProps> = ({
     ></div>
 
     {/* Contenu */}
-    <div className="relative z-10 flex h-full items-center justify-end px-8">
-      <div className="mr-32 max-w-xl space-y-6 text-right">
+    <div className="relative z-10 flex h-full items-center justify-center px-8 sm:justify-center md:justify-end">
+      <div className=" max-w-xl space-y-6 text-right md:mr-32">
         {/* Titre */}
         <h1 className="text-shadow-lg text-center text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:text-4xl">
           {title.toLocaleUpperCase()}

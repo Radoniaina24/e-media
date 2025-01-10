@@ -27,7 +27,7 @@ export default function Universitaire() {
         title="Université E-Media"
         subtitle="Formations universitaires d'excellence pour les métiers de
             demain"
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736494930/FOND-UNIVERSITE-EMEDIA_hi4zkv.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736498600/FOND-UNIVERSITE-EMEDIA_1_gl11fp.jpg"
       />
       <div
         id="universitaire"

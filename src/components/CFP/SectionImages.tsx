@@ -166,7 +166,7 @@ export default function SectionImages() {
     "Cette formation s’adresse aux passionnés de l’image et de la 3D, leur offrant une expertise complète pour exceller dans les métiers techniques, créatifs et numériques.";
   return (
     <div>
-      <Header
+      <HeaderWebCinematography
         imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736491650/IMAGE--CIN%C3%89MATOGRAPHIE_-POST-PRODUCTION_-PHOTOGRAPHIE-ET-3D_bj1kh6.jpg"
         id="image"
         title="Image : Cinématographie, Post-production, Photographie et 3D"
@@ -199,3 +199,51 @@ export default function SectionImages() {
     </div>
   );
 }
+interface HeaderProps {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  ctaText?: string; // Call to action text for the button
+  ctaLink?: string; // URL for the call to action button
+  imageSrc?: string;
+}
+
+const HeaderWebCinematography: React.FC<HeaderProps> = ({
+  title,
+  id,
+  subtitle,
+  imageSrc = "/images/why/fond.jpg",
+}) => (
+  <header className="relative h-screen w-full bg-cover bg-center py-16 text-white">
+    {/* Image de fond */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: `url("${imageSrc}")` }}
+    ></div>
+
+    {/* Contenu */}
+    <div className="relative z-10 flex h-full items-center justify-center px-8 sm:justify-center md:justify-start">
+      <div className=" max-w-xl space-y-6 text-right md:ml-96">
+        {/* Titre */}
+        <h1 className="text-shadow-lg text-start text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:text-4xl">
+          {title.toLocaleUpperCase()}
+        </h1>
+
+        {/* Sous-titre */}
+        <p className="text-md text-start font-light leading-relaxed text-gray-200 sm:text-lg lg:text-xl">
+          {subtitle}
+        </p>
+
+        {/* Bouton */}
+        <div className="text-start">
+          <a
+            href={"#" + id}
+            className="inline-block transform rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
+          >
+            Détails
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+);
