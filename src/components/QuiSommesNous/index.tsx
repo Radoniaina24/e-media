@@ -84,7 +84,7 @@ const App = () => {
       {/* Modern and Stimulating Environment */}
       <section className="bg-gray-200 py-16 " data-aos="fade-up">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-8 text-3xl font-extrabold text-dark md:text-4xl">
+          <h2 className=" text-3xl font-extrabold text-dark md:text-4xl">
             {album}
           </h2>
           <GaleriePhotoAlbum />

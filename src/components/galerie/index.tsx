@@ -897,7 +897,7 @@ export default function GaleriePhotoAlbum() {
   ];
 
   return (
-    <section className=" py-16  md:py-20 lg:py-28">
+    <section className=" pb-16 pt-12  md:py-20 lg:py-12">
       <div className="container ">
         {/* <h1 className="my-10 text-center text-4xl font-bold uppercase text-white">
           Galerie photo
