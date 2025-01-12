@@ -136,6 +136,7 @@ export default function SectionL5() {
         id="sectionL5"
         title="LICENCE EN DROIT (FORMATION 100% EN LIGNE)"
         subtitle="La Licence en Droit d’E-Media, exclusivement disponible en formation en ligne, est une opportunité unique pour les étudiants et les professionnels souhaitant se former à distance. Cette formation rigoureuse offre une compréhension approfondie des systèmes juridiques nationaux et internationaux tout en s’adaptant à vos contraintes personnelles et professionnelles. Avec des spécialisations stratégiques, ce programme vous prépare à des carrières variées dans les domaines juridique, diplomatique et des affaires."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736692262/Droit_r8nimt.jpg"
       />
       <div
         id="sectionL5"
