@@ -115,6 +115,7 @@ export default function SectionL4() {
         id="sectionL4"
         title="LICENCE EN MANAGEMENT (100% EN LIGNE)"
         subtitle="La Licence en Management d’E-Media est une formation fondamentale et polyvalente, exclusivement disponible en formation en ligne, conçue pour former des professionnels capables de comprendre et de gérer les aspects stratégiques, opérationnels et financiers d’une organisation. Avec des spécialisations adaptées aux besoins du marché, ce programme prépare les étudiants à des carrières prometteuses dans les domaines de la gestion, de la finance et du commerce international."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736658993/MGT_vy80lf.jpg"
       />
       <div
         id="sectionL4"

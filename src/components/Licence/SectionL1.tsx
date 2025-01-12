@@ -105,6 +105,7 @@ export default function SectionL1() {
         id="sectionL1"
         title="LICENCE EN TECHNOLOGIES DE L’INFORMATION ET DE LA COMMUNICATION (TIC)"
         subtitle="Une formation innovante et intensive pour devenir un acteur clé de la transformation technologique."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736658993/TIC_fhiblc.jpg"
       />
 
       <div

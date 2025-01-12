@@ -123,6 +123,7 @@ export default function SectionL3() {
         id="sectionL3"
         title="MARKETING DIGITAL ET JOURNALISME (MDJ - L ) - LICENCE"
         subtitle="La Licence en Marketing Digital et Journalisme (MDJ) d’E-Media est une formation multidisciplinaire qui combine innovation digitale, communication et journalisme. Conçue pour répondre aux besoins des entreprises et des médias modernes, elle prépare les étudiants à s’imposer dans des secteurs en pleine transformation."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736658993/MDJ_daojyr.jpg"
       />
       <div
         id="sectionL3"
