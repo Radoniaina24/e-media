@@ -116,6 +116,7 @@ export default function SectionM2() {
         id="master2"
         title="MASTER EN AUDIOVISUEL ET CINÉMATOGRAPHIE (AC)"
         subtitle="Le Master en Audiovisuel et Cinématographie (AC) d’E-Media est une formation avancée et multidisciplinaire qui allie expertise technique, créativité artistique et vision stratégique. Ce programme forme les futurs professionnels du cinéma, de l’audiovisuel et de l’ingénierie sonore, leur permettant d’évoluer dans des secteurs en plein essor à l’échelle locale et internationale."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736755984/MASTER-EN-AUDIOVISUEL-ET-CIN%C3%89MATOGRAPHIE-_AC_mhlqkj.jpg"
       />
       <div
         id="master2"

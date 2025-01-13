@@ -13,6 +13,7 @@
     "aos": "^2.3.4",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.1.0",
+    "flag-icons": "^7.2.3",
     "flowbite": "^2.5.2",
     "flowbite-react": "^0.10.2",
     "fontawesome": "^5.6.3",
@@ -30,6 +31,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-phone-number-input": "^3.4.10",
     "react-slick": "^0.30.3",
+    "react-world-flags": "^1.6.0",
     "swiper": "^11.1.15",
     "yet-another-react-lightbox": "^3.21.7"
   },

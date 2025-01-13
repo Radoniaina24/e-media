@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
+import LanguageSelect from "../Langue/LanguageSelect";
 
 const Header = () => {
   // Navbar toggle
@@ -98,7 +99,7 @@ const Header = () => {
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 dark:border-body-color/20 dark:bg-dark ${
                     navbarOpen
                       ? "visibility top-full opacity-100"
                       : "invisible top-[120%] opacity-0"
@@ -137,7 +138,7 @@ const Header = () => {
                               </span>
                             </p>
                             <div
-                              className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 lg:invisible group-hover:opacity-100 dark:bg-dark lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
+                              className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 lg:invisible group-hover:opacity-100 lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full dark:bg-dark ${
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
@@ -145,7 +146,7 @@ const Header = () => {
                                 <Link
                                   href={submenuItem.path}
                                   key={index}
-                                  className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3"
+                                  className="block rounded py-2.5 text-sm text-dark hover:text-primary lg:px-3 dark:text-white/70 dark:hover:text-white"
                                 >
                                   {submenuItem.title}
                                 </Link>
@@ -161,7 +162,7 @@ const Header = () => {
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
                   href="/signin"
-                  className="hidden rounded-full px-7 py-3 text-base  font-medium text-customeRed hover:opacity-70 dark:text-white md:block"
+                  className="hidden rounded-full px-7 py-3 text-base  font-medium text-customeRed hover:opacity-70 md:block dark:text-white"
                 >
                   Se connecter
                 </Link>
@@ -171,7 +172,10 @@ const Header = () => {
                 >
                   S&apos;inscrire
                 </Link>
-                <div>{/* <ThemeToggler /> */}</div>
+                <div>
+                  {/* <ThemeToggler /> */}
+                  <LanguageSelect sticky={sticky} />
+                </div>
               </div>
             </div>
           </div>
