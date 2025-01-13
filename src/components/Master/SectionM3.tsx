@@ -132,6 +132,7 @@ export default function SectionM3() {
         id="master3"
         title="MASTER EN MARKETING DIGITAL ET JOURNALISME (MDJ - M)"
         subtitle="Le Master en Marketing Digital et Journalisme (MDJ) d’E-Media est une formation d’excellence, spécialement conçue pour former des cadres supérieurs et des experts capables d’anticiper, de piloter et de transformer les stratégies marketing et journalistiques à l’ère du numérique. Ce programme, unique à Madagascar, associe innovation, leadership stratégique et expertise opérationnelle pour répondre aux exigences croissantes des entreprises et des médias modernes."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736771303/MASTER-EN-MARKETING-DIGITAL-ET-JOURNALISME-_MDJ---M_nky7j7.jpg"
       />
       <div
         id="master3"
