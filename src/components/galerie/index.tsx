@@ -14,9 +14,11 @@ import {
   Zoom,
 } from "yet-another-react-lightbox/plugins";
 import CardGalerie from "./CardGalerie";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 export default function GaleriePhotoAlbum() {
-  const album = [
+  const { language } = useLanguageContext();
+  const albumFr = [
     {
       title: "Campus & Studios",
       imageSrc:
@@ -24,7 +26,7 @@ export default function GaleriePhotoAlbum() {
       altText: "Studios professionnels",
     },
     {
-      title: "sortie de promotion",
+      title: "Sortie de promotion",
       imageSrc:
         "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736099571/IMG_9454_f4tkrl.jpg",
       altText: "Parc informatique performant",
@@ -48,7 +50,39 @@ export default function GaleriePhotoAlbum() {
       altText: "Studios professionnels",
     },
   ];
-
+  const albumUs = [
+    {
+      title: "Campus & Studios",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1735890186/IMG_1952_chz1un.jpg",
+      altText: "Professional studios",
+    },
+    {
+      title: "Graduation Ceremony",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736099571/IMG_9454_f4tkrl.jpg",
+      altText: "High-performance computer lab",
+    },
+    {
+      title: "Exhibitions and Conferences",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736137197/conference_35_rtiuxx.jpg",
+      altText: "Specialized laboratories",
+    },
+    {
+      title: "Reforestation and Climate Action",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736099839/IMG_9465_iu7khf.jpg",
+      altText: "Professional studios",
+    },
+    {
+      title: "E-media FM 107.8 MHz Radio Studio",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736136497/3_radio_wdfoxu.jpg",
+      altText: "Professional studios",
+    },
+  ];
+  const album = language === "fr" ? albumFr : albumUs;
   const [currentAlbum, setCurrentAlbum] = useState("");
 
   const handleAlbumClick = (albumTitle) => {
@@ -921,31 +955,31 @@ export default function GaleriePhotoAlbum() {
         </Carousel>
         <Lightbox
           plugins={[Counter, Fullscreen, Zoom, Thumbnails]}
-          open={currentAlbum === "Campus & Studios"}
+          open={currentAlbum === album[0].title}
           close={() => setCurrentAlbum("")}
           slides={studioCampus}
         />
         <Lightbox
           plugins={[Counter, Fullscreen, Zoom, Thumbnails]}
-          open={currentAlbum === "Reboisement et Actions pour le Climat"}
+          open={currentAlbum === album[3].title}
           close={() => setCurrentAlbum("")}
           slides={reboisement}
         />
         <Lightbox
           plugins={[Counter, Fullscreen, Zoom, Thumbnails]}
-          open={currentAlbum === "sortie de promotion"}
+          open={currentAlbum === album[1].title}
           close={() => setCurrentAlbum("")}
           slides={promotion}
         />
         <Lightbox
           plugins={[Counter, Fullscreen, Zoom, Thumbnails]}
-          open={currentAlbum === "Studio radio E-media FM 107.8 mhz"}
+          open={currentAlbum === album[4].title}
           close={() => setCurrentAlbum("")}
           slides={radioFm}
         />
         <Lightbox
           plugins={[Counter, Fullscreen, Zoom, Thumbnails]}
-          open={currentAlbum === "Salons et conférences"}
+          open={currentAlbum === album[2].title}
           close={() => setCurrentAlbum("")}
           slides={salons}
         />

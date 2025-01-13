@@ -5,9 +5,11 @@ import AOS from "aos"; // Importer la librairie AOS
 import BackgroundCard from "./BackgroundCard";
 import CategoryCards from "../Formation/CategorieCard";
 import GaleriePhotoAlbum from "../galerie";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 const App = () => {
-  const engagement = [
+  const { language } = useLanguageContext();
+  const engagementFR = [
     {
       title: "Développer les talents locaux",
       description:
@@ -30,18 +32,54 @@ const App = () => {
       altText: "Soutenir l'entrepreneuriat",
     },
   ];
+
+  const engagementUs = [
+    {
+      title: "Develop local talents",
+      description:
+        "Meet the needs of the creative industries with skilled local talents.",
+      imageSrc: "/images/why/t-l.png",
+      altText: "Develop local talents",
+    },
+    {
+      title: "Make technology accessible",
+      description:
+        "Promote access to technology for everyone, regardless of their background.",
+      imageSrc: "/images/why/t-a.jpg",
+      altText: "Make technology accessible",
+    },
+    {
+      title: "Support entrepreneurship",
+      description:
+        "Encourage innovation and support entrepreneurship to create a sustainable impact.",
+      imageSrc: "/images/why/s-a.jpg",
+      altText: "Support entrepreneurship",
+    },
+  ];
+
+  const engagement = language === "fr" ? engagementFR : engagementUs;
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Durée de l'animation
       easing: "ease-in-out", // Transition fluide
     });
   }, []);
-  const who = "Qui Sommes-Nous ?";
+  const who = language === "fr" ? "Qui Sommes-Nous ?" : "Who Are We ?";
   const emedia =
-    "E-Media : L'Université de Référence pour les Industries Créatives à Madagascar et en Afrique";
-  const academique = " Une Offre Académique Diversifiée";
-  const album = "Explorez nos Albums et Découvez nos Photos";
-  const engagements = "  Notre Engagement";
+    language === "fr"
+      ? "E-Media : L'Université de Référence pour les Industries Créatives à Madagascar et en Afrique"
+      : "E-Media: The Leading University for Creative Industries in Madagascar and Africa";
+  const academique =
+    language === "fr"
+      ? "Une Offre Académique Diversifiée"
+      : "A Diverse Academic Offering";
+
+  const album =
+    language === "fr"
+      ? "Explorez nos Albums et Découvez nos Photos"
+      : "Explore Our Albums and Discover Our Photos";
+  const engagements = language === "fr" ? "Notre Engagement" : "Our Commitment";
   return (
     <div className="bg-gray-100 px-6 py-20" id="why">
       {/* Header Section */}
@@ -65,18 +103,6 @@ const App = () => {
           <h2 className="mb-8 text-3xl font-extrabold text-dark md:text-4xl">
             {academique}
           </h2>
-          {/* <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {formations.map((item, index) => (
-              <CardLink
-                key={index}
-                href={item.href}
-                imageSrc={item.imageSrc}
-                altText={item.altText}
-                title={item.title}
-                description={item.description}
-              />
-            ))}
-          </div> */}
           <CategoryCards />
         </div>
       </section>

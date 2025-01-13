@@ -1,7 +1,8 @@
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import Link from "next/link";
 import React from "react";
 
-const categories = [
+const categoriesFr = [
   {
     title: "Formation Universitaire",
     description:
@@ -26,7 +27,34 @@ const categories = [
   },
 ];
 
+const categoriesUs = [
+  {
+    title: "University Education",
+    description:
+      "Explore our university programs, including master's courses, to deepen your knowledge and enhance your skills.",
+    icon: "👨‍🎓",
+    lien: "/education/university",
+  },
+  {
+    title: "Modular Training",
+    description:
+      "Modular training programs are designed to offer maximum flexibility. You can follow specific modules based on your needs and pace.",
+    icon: "📚",
+    lien: "/education/modular",
+  },
+  {
+    title: "Vocational Training",
+    description:
+      "The Vocational Training program offers hands-on training tailored to market needs, enabling rapid and effective skill development.",
+    icon: "💻",
+    lien: "/education/vocational",
+  },
+];
+
 const CategoryCards: React.FC = () => {
+  const { language } = useLanguageContext();
+  const categories = language === "fr" ? categoriesFr : categoriesUs;
+  const btntext = language === "fr" ? "En savoir plus" : "Learn more";
   return (
     <div className="container mx-auto my-10 p-6">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -43,7 +71,7 @@ const CategoryCards: React.FC = () => {
                 {category.description}
               </p>
               <div className="mt-4 inline-block rounded-full bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600">
-                En savoir plus
+                {btntext}
               </div>
             </div>
           </Link>
