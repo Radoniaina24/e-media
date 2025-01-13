@@ -59,3 +59,27 @@
     margin-left: -48px;
   }
 }
+
+@media (min-width: 449px) and (max-width: 574px) {
+  /* Vos styles spécifiques */
+  .ei_m {
+    margin-top: -40px;
+    margin-left: -22px;
+  }
+  .ca_m {
+    margin-top: -33px;
+    margin-left: -33px;
+  }
+  .mdj_m {
+    margin-top: -39px;
+    margin-left: -44px;
+  }
+  .mba_m {
+    margin-top: -43px;
+    margin-left: -70px;
+  }
+  .d_m {
+    margin-top: -40px;
+    margin-left: -69px;
+  }
+}
