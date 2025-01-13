@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import HeroSectionPrograms from "../HeroSectionPrograms/HeroSectionPrograms";
 const programs = [
   {
     imageSrc:
@@ -41,21 +42,28 @@ const programs = [
 
 const MasterPrograms: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 py-12">
-      <h2 className="mb-10 text-center text-3xl font-bold text-gray-800 dark:text-white">
-        Nos Programmes de Master.
-      </h2>
-      <hr className="mb-20" />
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-        {programs.map((program, index) => (
-          <Link key={index} href={program.link}>
-            <HoverCard
-              imageSrc={program.imageSrc}
-              link={program.link}
-              classe={program.classe}
-            />
-          </Link>
-        ))}
+    <div>
+      <HeroSectionPrograms
+        title={" Nos Programmes de Master"}
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736776262/Fond-Nos-programmes_sluhvk.jpg"
+      />
+      <div className="container mx-auto px-6 py-12">
+        {/* <h2 className="mb-10 text-center text-3xl font-bold text-gray-800 dark:text-white">
+        Nos Programmes de Master
+      </h2> */}
+
+        <hr className="mb-20" />
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          {programs.map((program, index) => (
+            <Link key={index} href={program.link}>
+              <HoverCard
+                imageSrc={program.imageSrc}
+                link={program.link}
+                classe={program.classe}
+              />
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ const LicensePrograms: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-12">
       <h2 className="mb-10 text-center text-3xl font-bold text-gray-800 dark:text-white">
-        Nos Programmes de Licence
+        Nos Programmes de Licence dfsfsdfsdfsdfsdfs
       </h2>
       <hr className="mb-20" />
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
