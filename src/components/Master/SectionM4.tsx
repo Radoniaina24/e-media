@@ -119,7 +119,7 @@ export default function SectionM4() {
         id="master4"
         title="MBA SPÉCIALISÉ - MASTER OF BUSINESS ADMINISTRATION (FORMATION 100% EN LIGNE) "
         subtitle="Le MBA Spécialisé d’E-Media est une formation d’excellence destinée à former des cadres supérieurs et des leaders capables de piloter des projets stratégiques et de gérer des organisations dans un environnement économique globalisé. Exclusivement disponible en formation en ligne. Ce programme s’adresse à des professionnels ambitieux, désireux d’acquérir une expertise approfondie dans leur domaine tout en développant des compétences managériales et décisionnelles avancées."
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736771319/meeting-room-office_e0lyzt.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736772102/MBA-SP%C3%89CIALIS%C3%89---MASTER-OF-BUSINESS-ADMINISTRATION-_FORMATION-100_-EN-LIGNE_vplf1h.jpg"
       />
       <div
         id="master4"

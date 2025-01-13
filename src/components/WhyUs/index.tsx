@@ -8,6 +8,7 @@ import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid"; // Icône p
 import SectionWithImage from "./SectionWithImage";
 import HeroBanner from "../Partenariats/HeroBaner";
 import Link from "next/link";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 export default function WhyUs() {
   useEffect(() => {
     AOS.init({
@@ -76,6 +77,8 @@ export default function WhyUs() {
     },
   ];
 
+  const { language } = useLanguageContext();
+
   return (
     <div className="relative   dark:bg-gray-dark ">
       <HeroBanner
@@ -140,20 +143,44 @@ export default function WhyUs() {
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
         {/* Contenu */}
-        <div className="relative z-10" data-aos="zoom-in">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            E-Media : L&apos;Excellence et l&apos;Impact
-          </h2>
-          <p className="mx-auto mb-6 max-w-3xl text-lg leading-relaxed md:text-xl">
-            E-Media allie innovation technologique et engagement pour un avenir
-            durable, transformant créativité et savoir-faire en leviers de
-            développement.
-          </p>
-          <p className="text-lg font-semibold text-blue-300 md:text-xl">
-            E-Media : Construisons l&apos;avenir ensemble.
-          </p>
-        </div>
+        {language === "fr" ? <French /> : <English />}
       </div>
     </div>
   );
 }
+
+const English = () => {
+  return (
+    <div className="relative z-10" data-aos="zoom-in">
+      <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+        E-Media: Excellence and Impact
+      </h2>
+      <p className="mx-auto mb-6 max-w-3xl text-lg leading-relaxed md:text-xl">
+        E-Media combines technological innovation with a commitment to a
+        sustainable future, transforming creativity and expertise into drivers
+        of development.
+      </p>
+      <p className="text-lg font-semibold text-blue-300 md:text-xl">
+        E-Media: Building the Future Together.
+      </p>
+    </div>
+  );
+};
+
+const French = () => {
+  return (
+    <div className="relative z-10" data-aos="zoom-in">
+      <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+        E-Media : L&apos;Excellence et l&apos;Impact
+      </h2>
+      <p className="mx-auto mb-6 max-w-3xl text-lg leading-relaxed md:text-xl">
+        E-Media allie innovation technologique et engagement pour un avenir
+        durable, transformant créativité et savoir-faire en leviers de
+        développement.
+      </p>
+      <p className="text-lg font-semibold text-blue-300 md:text-xl">
+        E-Media : Construisons l&apos;avenir ensemble.
+      </p>
+    </div>
+  );
+};
