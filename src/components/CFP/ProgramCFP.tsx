@@ -1,8 +1,9 @@
 "use client";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
 
-const programs = [
+const programsFr = [
   {
     title: "Son : Production Audio & MAO",
     description:
@@ -44,12 +45,56 @@ const programs = [
     link: "/formation/cfp/dts",
   },
 ];
+const programsEn = [
+  {
+    title: "Sound: Audio Production & DAW",
+    description:
+      "Learn advanced audio production techniques and master Digital Audio Workstation (DAW) tools to create professional-quality sound productions.",
+    image:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340927/son_v46pec.png",
+    link: "/training/cfp/sam",
+  },
+  {
+    title: "Sound: Sound and Lighting for Live Performances",
+    description:
+      "Become an expert in sound reinforcement and lighting management for live shows, combining technical expertise with creative stagecraft.",
+    image:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340927/sono_zwryiz.png",
+    link: "/training/cfp/ssls",
+  },
+  {
+    title: "Image: Cinematography, Post-production, Photography, and 3D",
+    description:
+      "Train in image-related professions, from shooting to post-production, including photography and 3D creation, for innovative visual projects.",
+    image:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736340528/sans_nom_gb1r1u.png",
+    link: "/training/cfp/cpp",
+  },
+  {
+    title: "Web: Multimedia Creation and Development",
+    description:
+      "Develop skills in multimedia creation and development to design interactive websites and immersive digital experiences.",
+    image:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736341038/web_te7wtp.png",
+    link: "/training/cfp/cdm",
+  },
+  {
+    title: "DTS – Higher Technician Diploma",
+    description:
+      "A technical diploma designed to prepare you for specialized careers, combining theory and practice to meet market demands.",
+    image:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736341111/DTS_gjpuwe.png",
+    link: "/training/cfp/dts",
+  },
+];
 
 const CFPPrograms: React.FC = () => {
+  const { language } = useLanguageContext();
+  const programs = language === "fr" ? programsFr : programsEn;
   return (
     <div className="container mx-auto px-4 py-12">
       <h2 className="mb-10 text-center text-3xl font-bold text-gray-800 dark:text-white">
-        Nos Programmes de CFP
+        {language === "fr" ? "Nos Programmes de CFP" : "Our CFP Programs"}
       </h2>
       <hr className="mb-10" />
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
@@ -91,7 +136,7 @@ const CFPPrograms: React.FC = () => {
 
                   {/* Bouton en bas */}
                   <button className="mt-4 w-full rounded-full bg-blue-500 px-6 py-2 text-sm text-white transition hover:bg-blue-600">
-                    En savoir plus
+                    {language === "fr" ? "En savoir plus" : "Learn more"}
                   </button>
                 </div>
               </div>

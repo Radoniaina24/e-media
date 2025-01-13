@@ -1,3 +1,4 @@
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import React from "react";
 
 interface ProgramCardProps {
