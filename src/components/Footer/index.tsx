@@ -1,8 +1,10 @@
 "use client";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const { language } = useLanguageContext();
   return (
     <>
       <footer className="bg-gray-100 py-16 dark:bg-gray-800">
@@ -29,8 +31,17 @@ const Footer = () => {
                 </Link>
               </div>
               <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-                <span className="font-bold"> E-Media</span> : Inspirer, Former,
-                Transformer - Pour Madagascar et l&apos;Afrique.
+                {language === "fr" ? (
+                  <>
+                    <span className="font-bold"> E-Media</span> + Inspirer,
+                    Former, Transformer - Pour Madagascar et l&apos;Afrique.
+                  </>
+                ) : (
+                  <>
+                    <span className="font-bold">E-Media</span>: Inspire,
+                    Educate, Transform - For Madagascar and Africa.
+                  </>
+                )}
               </p>
               <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
                 <strong>Email :</strong> emediauniv.mada@gmail.com
@@ -43,7 +54,7 @@ const Footer = () => {
             {/* Liens utiles */}
             <div className="mb-8 w-full md:w-1/6">
               <h3 className="mb-4 font-semibold text-gray-800 dark:text-gray-200">
-                Liens utiles
+                {language === "fr" ? "Liens utiles" : "Useful Links"}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -51,7 +62,7 @@ const Footer = () => {
                     href="/formation/universitaire"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    Universitaire
+                    {language === "fr" ? "Universitaire" : "University"}
                   </Link>
                 </li>
                 <li>
@@ -67,7 +78,7 @@ const Footer = () => {
                     href="/formation/modulaire"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    Modulaire
+                    {language === "fr" ? "Modulaire" : "Modular"}
                   </Link>
                 </li>
               </ul>
@@ -76,7 +87,7 @@ const Footer = () => {
             {/* Resources */}
             <div className="mb-8 w-full md:w-1/6">
               <h3 className="mb-4 font-semibold text-gray-800 dark:text-gray-200">
-                Resources
+                {language === "fr" ? "Resources" : "Ressources"}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -84,7 +95,7 @@ const Footer = () => {
                     href="/"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    Emplois du temps
+                    {language === "fr" ? "Se connecter" : "Log in"}
                   </Link>
                 </li>
                 <li>
@@ -92,7 +103,7 @@ const Footer = () => {
                     href="/signin"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    Se connecter
+                    {language === "fr" ? " Emplois du temps" : "Timetables"}
                   </Link>
                 </li>
                 <li>
@@ -100,7 +111,7 @@ const Footer = () => {
                     href="/"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    Support
+                    {language === "fr" ? "Support" : "Support"}
                   </Link>
                 </li>
               </ul>
@@ -117,7 +128,7 @@ const Footer = () => {
                     href="/signup"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    S&apos;inscrire
+                    {language === "fr" ? "S'inscrire" : "Sign up"}
                   </Link>
                 </li>
                 <li>
@@ -151,7 +162,9 @@ const Footer = () => {
               >
                 E-media
               </Link>{" "}
-              Tout droit réservé.
+              {language === "fr"
+                ? "Tout droit réservé."
+                : "All rights reserved."}
             </p>
           </div>
         </div>

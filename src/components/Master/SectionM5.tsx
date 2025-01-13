@@ -124,6 +124,7 @@ export default function SectionM5() {
         id="master5"
         title="MASTER EN DROIT (FORMATION 100% EN LIGNE)"
         subtitle="Le Master en Droit d’E-Media, exclusivement disponible en formation en ligne, est conçu pour former des experts et des décideurs dans les différents domaines du droit. Contrairement à la Licence, qui offre une compréhension générale et fondamentale des concepts juridiques, ce programme de niveau Master se concentre sur l’acquisition de compétences avancées et spécialisées. Il prépare les étudiants à occuper des postes de responsabilité stratégique dans les secteurs public, privé et international, en combinant une formation académique rigoureuse avec une orientation pratique et professionnelle."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736774315/MASTER-EN-DROIT-_FORMATION-100_-EN-LIGNE_nvoozm.jpg"
       />
       <div
         id="master5"

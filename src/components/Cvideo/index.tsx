@@ -6,13 +6,20 @@ import SectionTitle from "../Common/SectionTitle";
 
 import ModalVideo from "react-modal-video";
 import Link from "next/link";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 const Video = () => {
+  const { language } = useLanguageContext();
   const [isOpen, setOpen] = useState(false);
   const title =
-    "Indian Ocean Tech Valley : Le Pôle Numérique Visionnaire de Madagascar et de l’Afrique";
+    language === "fr"
+      ? "Indian Ocean Tech Valley : Le Pôle Numérique Visionnaire de Madagascar et de l’Afrique"
+      : "Indian Ocean Tech Valley: The Visionary Digital Hub of Madagascar and Africa";
   const description =
-    "S’étendant sur 15 hectares, Indian Ocean Tech Valley est un projet novateur qui place Madagascar au cœur de l’innovation numérique, de l’éducation technologique et de l’entrepreneuriat en Afrique et dans l’Océan Indien. Bien plus qu’un complexe universitaire, il combine un centre de formation d’excellence, un incubateur de startups, et un hub technologique, attirant talents africains et investisseurs internationaux pour transformer l’avenir de la région.";
+    language === "fr"
+      ? "S’étendant sur 15 hectares, Indian Ocean Tech Valley est un projet novateur qui place Madagascar au cœur de l’innovation numérique, de l’éducation technologique et de l’entrepreneuriat en Afrique et dans l’Océan Indien. Bien plus qu’un complexe universitaire, il combine un centre de formation d’excellence, un incubateur de startups, et un hub technologique, attirant talents africains et investisseurs internationaux pour transformer l’avenir de la région."
+      : "Spanning 15 hectares, the Indian Ocean Tech Valley is an innovative project positioning Madagascar at the forefront of digital innovation, technological education, and entrepreneurship in Africa and the Indian Ocean region. Far more than a university complex, it combines a center of excellence for training, a startup incubator, and a technology hub, attracting African talent and international investors to transform the future of the region.";
+  const btnText = language === "fr" ? "En savoir plus" : "Learn more ";
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -22,7 +29,7 @@ const Video = () => {
             href="/city"
             className="rounded-full bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
           >
-            En savoir plus
+            {btnText}
           </Link>
         </div>
 

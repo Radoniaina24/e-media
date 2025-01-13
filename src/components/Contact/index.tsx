@@ -1,22 +1,29 @@
+"use client";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import React from "react";
 
 const Contact = () => {
+  const { language } = useLanguageContext();
+  const contact = language === "fr" ? "Contactez-nous" : "Contact Us";
+  const descritption =
+    language === "fr"
+      ? "Si vous avez des questions ou des demandes, n'hésitez pas à nous contacter via ce formulaire."
+      : "If you have any questions or requests, feel free to contact us through this form.";
   return (
     <section
       id="contact"
-      className="overflow-hidden bg-gray-50 py-16 dark:bg-gray-dark md:py-20 lg:py-16"
+      className="overflow-hidden bg-gray-50 py-16 md:py-20 lg:py-16 dark:bg-gray-dark"
     >
       <div className="container mx-auto px-4">
         <div className="-mx-4 flex flex-wrap">
           {/* Form Section */}
           <div className="m-auto mb-12 w-full px-4 lg:mb-0 lg:w-7/12 xl:w-8/12">
-            <div className="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800 sm:p-12">
+            <div className="rounded-lg bg-white p-8 shadow-lg sm:p-12 dark:bg-gray-800">
               <h2 className="mb-6 text-3xl font-semibold text-gray-800 dark:text-white">
-                Contactez-nous
+                {contact}
               </h2>
               <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
-                Si vous avez des questions ou des demandes, n&apos;hésitez pas à
-                nous contacter via ce formulaire.
+                {descritption}
               </p>
 
               <form>
@@ -27,12 +34,16 @@ const Contact = () => {
                       htmlFor="name"
                       className="mb-2 block text-sm font-medium text-gray-700 dark:text-white"
                     >
-                      Nom
+                      {language === "fr" ? "Nom" : "Name"}
                     </label>
                     <input
                       type="text"
                       id="name"
-                      placeholder="Entrez votre nom"
+                      placeholder={
+                        language === "fr"
+                          ? "Entrer votre nom"
+                          : "Enter your name"
+                      }
                       className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-3 text-gray-700 outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-500"
                     />
                   </div>
@@ -48,7 +59,11 @@ const Contact = () => {
                     <input
                       type="email"
                       id="email"
-                      placeholder="Entrez votre email"
+                      placeholder={
+                        language === "fr"
+                          ? "Entrer votre email"
+                          : "Enter your email"
+                      }
                       className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-3 text-gray-700 outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-500"
                     />
                   </div>
@@ -72,7 +87,7 @@ const Contact = () => {
                   {/* Submit Button */}
                   <div className="w-full px-4">
                     <button className="mt-4 w-full rounded-full bg-blue-600 py-3 font-medium text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500">
-                      Envoyer
+                      {language === "fr" ? "Envoyer" : "Send"}
                     </button>
                   </div>
                 </div>
@@ -83,7 +98,9 @@ const Contact = () => {
           <div className="mt-12 w-full" id="localisation">
             <div className="rounded-lg bg-gray-200 shadow-lg dark:bg-gray-700">
               <h2 className=" p-6 text-center text-xl font-semibold text-gray-800 dark:text-white">
-                Trouvez-nous à Nanisana Antananarivo, Madagascar
+                {language === "fr"
+                  ? "Trouvez-nous à Nanisana Antananarivo, Madagascar"
+                  : "Find us at Nanisana, Antananarivo, Madagascar"}
               </h2>
               {/* Google Map Embed */}
               <iframe

@@ -16,8 +16,8 @@ export default function WhyUs() {
       easing: "ease-in-out", // Style de transition
     });
   }, []);
-
-  const eMediaContent = [
+  const { language } = useLanguageContext();
+  const eMediaContentFr = [
     {
       title: "Une Formation en Ligne Accessible Partout",
       description:
@@ -76,16 +76,79 @@ export default function WhyUs() {
       imageOnRight: true, // Positionne l'image à gauche
     },
   ];
+  const eMediaContentEn = [
+    {
+      title: "Accessible Online Training Anywhere",
+      description:
+        "E-Media offers high-quality online programs accessible in Madagascar and internationally.",
+      highlights: [
+        {
+          text: "A diverse student community from Africa, Europe, the Americas, and the Malagasy diaspora.",
+        },
+        {
+          text: "Flexible courses and personalized support tailored to learners' needs.",
+        },
+      ],
+      imageSrc: "/images/why/online.jpg",
+      imageAlt: "Online Training",
+      imageOnRight: true, // Positions the image on the right
+    },
+    {
+      title: "Modern Infrastructure",
+      description:
+        "With state-of-the-art equipment, E-Media ensures practical and immersive training:",
+      highlights: [
+        {
+          text: "Professional studios: Green screen, TV set, sound systems, and video control rooms.",
+        },
+        {
+          text: "Computer lab: High-performance computers (Core i7, 7th generation and above).",
+        },
+        {
+          text: "Specialized labs: Multimedia, IT, and advanced technology.",
+        },
+        {
+          text: "Sound booths and radio studio for optimal quality.",
+        },
+      ],
+      imageSrc: "/images/banniere/p6.png",
+      imageAlt: "Modern Infrastructure",
+      imageOnRight: false, // Positions the image on the left
+    },
+    {
+      title: "A Commitment to Sustainable Development",
+      description:
+        "E-Media contributes to the socio-economic development of Madagascar and Africa by:",
+      highlights: [
+        {
+          text: "Creating job opportunities for young people in the creative industries.",
+        },
+        {
+          text: "Encouraging entrepreneurship and innovation as drivers of growth.",
+        },
+        {
+          text: "Promoting local cultural and human resources for international recognition.",
+        },
+      ],
+      imageSrc: "/images/banniere/p1.png",
+      imageAlt: "Commitment to Sustainable Development",
+      imageOnRight: true, // Positions the image on the right
+    },
+  ];
 
-  const { language } = useLanguageContext();
+  const eMediaContent = language === "fr" ? eMediaContentFr : eMediaContentEn;
 
+  const why =
+    language === "fr" ? "Pourquoi Choisir E-Media ?" : "Why Choose E-Media?";
+  const description =
+    language === "fr"
+      ? "Découvrez les raisons qui font d'E-Media un choix idéal pour votre avenir dans les industries créatives."
+      : "Discover the reasons why E-Media is the ideal choice for your future in the creative industries.";
   return (
     <div className="relative   dark:bg-gray-dark ">
       <HeroBanner
-        title={"Pourquoi Choisir E-Media ?"}
-        subtitle={
-          "Découvrez les raisons qui font d'E-Media un choix idéal pour votre avenir dans les industries créatives."
-        }
+        title={why}
+        subtitle={description}
         backgroundImage={"/images/banniere/p3.png"}
       />
       <div className="bg-gray-200">
@@ -100,20 +163,7 @@ export default function WhyUs() {
                 height={500}
               />
             </div>
-            <div className="col-span-2 pl-6">
-              <p className="text-justify text-lg leading-relaxed text-gray-700">
-                Située à{" "}
-                <Link href={"#localisation"}>
-                  <span className="font-bold text-blue-600">Nanisana</span>
-                </Link>{" "}
-                , au cœur d&apos;
-                <span className="font-bold text-blue-600">Antananarivo</span>,
-                <span className="font-bold"> E-Media</span> est facilement
-                accessible grâce à un réseau de transports bien desservi et
-                proche des commodités essentielles, offrant un environnement
-                pratique et accueillant.
-              </p>
-            </div>
+            {language === "fr" ? <LocalFr /> : <LocalEng />}
           </div>
         </div>
       </div>
@@ -180,6 +230,42 @@ const French = () => {
       </p>
       <p className="text-lg font-semibold text-blue-300 md:text-xl">
         E-Media : Construisons l&apos;avenir ensemble.
+      </p>
+    </div>
+  );
+};
+
+const LocalEng = () => {
+  return (
+    <div className="col-span-2 pl-6">
+      <p className="text-justify text-lg leading-relaxed text-gray-700">
+        Located in{" "}
+        <Link href={"#localisation"}>
+          <span className="font-bold text-blue-600">Nanisana</span>
+        </Link>{" "}
+        , in the heart of{" "}
+        <span className="font-bold text-blue-600">Antananarivo</span>,
+        <span className="font-bold"> E-Media</span> is easily accessible thanks
+        to a well-connected transport network and its proximity to essential
+        amenities, offering a practical and welcoming environment.
+      </p>
+    </div>
+  );
+};
+
+const LocalFr = () => {
+  return (
+    <div className="col-span-2 pl-6">
+      <p className="text-justify text-lg leading-relaxed text-gray-700">
+        Située à{" "}
+        <Link href={"#localisation"}>
+          <span className="font-bold text-blue-600">Nanisana</span>
+        </Link>{" "}
+        , au cœur d&apos;
+        <span className="font-bold text-blue-600">Antananarivo</span>,
+        <span className="font-bold"> E-Media</span> est facilement accessible
+        grâce à un réseau de transports bien desservi et proche des commodités
+        essentielles, offrant un environnement pratique et accueillant.
       </p>
     </div>
   );
