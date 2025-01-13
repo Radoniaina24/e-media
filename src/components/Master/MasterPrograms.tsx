@@ -6,35 +6,35 @@ const programs = [
     imageSrc:
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736512786/univ-M-1_ikzy9d.png",
     classe:
-      "absolute top-[258px] left-[60px]  flex items-end justify-center  bg-opacity-50 opacity-100 md:top-[167px] md:left-6 lg:top-[140px] lg:left-2 xl:top-[218px] xl:left-[45px] transition-opacity duration-300",
+      "absolute ei_m top-[258px] left-[60px]  flex items-end justify-center  bg-opacity-50 opacity-100 md:top-[167px] md:left-6 lg:top-[140px] lg:left-2 xl:top-[218px] xl:left-[45px] transition-opacity duration-300",
     link: "/formation/master/electronique_informatique",
   },
   {
     imageSrc:
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736512786/univ-M-2_necsbs.png",
     classe:
-      "absolute top-[205px] left-[115px]  flex items-end justify-center  bg-opacity-50 opacity-100 md:top-[130px] md:left-[62px] lg:top-[105px] lg:left-[45px] xl:top-[172px] xl:left-[92px] transition-opacity duration-300",
+      "absolute ca_m top-[205px] left-[115px]  flex items-end justify-center  bg-opacity-50 opacity-100 md:top-[130px] md:left-[62px] lg:top-[105px] lg:left-[45px] xl:top-[172px] xl:left-[92px] transition-opacity duration-300",
     link: "/formation/master/ac",
   },
   {
     imageSrc:
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736512785/univ-M5_cd5k4o.png",
     classe:
-      "absolute top-[258px] left-[150px]  flex items-end justify-center  bg-opacity-50 opacity-100  md:top-[170px] md:left-[82px] lg:top-[140px] lg:left-[62px] xl:top-[220px] xl:left-[120px] transition-opacity duration-300",
+      "absolute mdj_m top-[258px] left-[150px]  flex items-end justify-center  bg-opacity-50 opacity-100  md:top-[170px] md:left-[82px] lg:top-[140px] lg:left-[62px] xl:top-[220px] xl:left-[120px] transition-opacity duration-300",
     link: "/formation/master/mdj",
   },
   {
     imageSrc:
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736512785/univ-M-3_ov3yxn.png",
     classe:
-      "absolute top-[288px] left-[280px]  flex items-end justify-center  bg-opacity-50 opacity-100  md:top-[188px] md:left-[172px] lg:top-[160px] lg:left-[138px] xl:top-[245px] xl:left-[230px] transition-opacity duration-300",
+      "absolute mba_m top-[288px] left-[280px]  flex items-end justify-center  bg-opacity-50 opacity-100  md:top-[188px] md:left-[172px] lg:top-[160px] lg:left-[138px] xl:top-[245px] xl:left-[230px] transition-opacity duration-300",
     link: "/formation/master/mba",
   },
   {
     imageSrc:
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736512785/univ-M-4_lnjdme.png",
     classe:
-      "absolute top-[250px] left-[290px]  flex items-end justify-center  bg-opacity-50 opacity-100  md:top-[162px] md:left-[185px] lg:top-[132px] lg:left-[148px] xl:top-[212px] xl:left-[245px] transition-opacity duration-300",
+      "absolute d_m top-[250px] left-[290px]  flex items-end justify-center  bg-opacity-50 opacity-100  md:top-[162px] md:left-[185px] lg:top-[132px] lg:left-[148px] xl:top-[212px] xl:left-[245px] transition-opacity duration-300",
     link: "/formation/master/droit",
   },
 ];
