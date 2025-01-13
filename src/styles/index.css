@@ -83,3 +83,26 @@
     margin-left: -69px;
   }
 }
+@media (min-width: 368px) and (max-width: 448px) {
+  /* Vos styles spécifiques */
+  .ei_m {
+    margin-top: -83px;
+    margin-left: -43px;
+  }
+  .ca_m {
+    margin-top: -60px;
+    margin-left: -59px;
+  }
+  .mdj_m {
+    margin-top: -80px;
+    margin-left: -75px;
+  }
+  .mba_m {
+    margin-top: -95px;
+    margin-left: -120px;
+  }
+  .d_m {
+    margin-top: -80px;
+    margin-left: -120px;
+  }
+}
