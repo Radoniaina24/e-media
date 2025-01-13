@@ -1,3 +1,4 @@
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import React, { useState } from "react";
 import Flag from "react-world-flags";
 
@@ -6,8 +7,7 @@ interface LanguageSelectProps {
 }
 
 const LanguageSelect: React.FC<LanguageSelectProps> = ({ sticky }) => {
-  const [language, setLanguage] = useState("fr");
-
+  const { language, setLanguage } = useLanguageContext();
   const languages = [
     {
       code: "fr",
@@ -24,10 +24,9 @@ const LanguageSelect: React.FC<LanguageSelectProps> = ({ sticky }) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(event.target.value);
   };
-
   return (
     <div
-      className={`relative ml-5 w-64 ${sticky ? "sticky top-0 z-10" : ""}`} // Application de la classe sticky si le prop est true
+      className={`relative ml-5  ${sticky ? "sticky top-0 z-10" : ""}`} // Application de la classe sticky si le prop est true
     >
       <div className="group flex cursor-pointer items-center gap-2 rounded-full bg-gray-100 bg-transparent px-4 py-3 transition-all">
         {/* Icône de la langue sélectionnée */}

@@ -33,10 +33,12 @@ export default function RootLayout({
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
+          <LanguageProvider>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </LanguageProvider>
         </Providers>
       </body>
     </html>
@@ -45,3 +47,4 @@ export default function RootLayout({
 
 import { Providers } from "./providers";
 import { Metadata } from "next";
+import { LanguageProvider } from "@/lib/context/LanguageContext";

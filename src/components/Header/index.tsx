@@ -160,12 +160,12 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
+                {/* <Link
                   href="/signin"
                   className="hidden rounded-full px-7 py-3 text-base  font-medium text-customeRed hover:opacity-70 md:block dark:text-white"
                 >
                   Se connecter
-                </Link>
+                </Link> */}
                 <Link
                   href="/signup"
                   className="ease-in-up hidden rounded-full bg-primary px-8 py-3 text-base font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-6 xl:px-9"
