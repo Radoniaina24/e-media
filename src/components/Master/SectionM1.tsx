@@ -113,6 +113,7 @@ export default function SectionM1() {
         id="master1"
         title="MASTER EN INFORMATIQUE ET ÉLECTRONIQUE EMBARQUÉES (IEE)"
         subtitle="Le Master en Informatique et Électronique Embarquées (IEE) d’E-Media est une formation d’excellence, alliant innovation technologique, recherche appliquée et compétences en gestion des systèmes complexes. Ce programme prépare les étudiants à des carrières de haut niveau dans des secteurs en pleine expansion, tels que la cybersécurité, les systèmes embarqués et la gestion des systèmes d’information."
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736754974/MASTER-EN-INFORMATIQUE-ET-%C3%89LECTRONIQUE-EMBARQU%C3%89ES-_IEE_hsgxn1.jpg"
       />
       <div
         id="master1"
