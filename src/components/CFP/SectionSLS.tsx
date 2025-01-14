@@ -1,12 +1,24 @@
+"use client";
 import React from "react";
 import FormationAudio from "./Formation";
 import Section from "../Licence/Section";
 import Header from "../Licence/Header";
 import ScrollComponent from "../Scroll/ScrollComponent";
 import DurationCard from "./DurationCard";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 export default function SectionSLS() {
-  const formationEvent = {
+  const { language } = useLanguageContext();
+  const title =
+    language === "fr"
+      ? "Son : Sonorisation et Lumières de Spectacle"
+      : "Sound: Live Sound and Stage Lighting";
+  const subtitle =
+    language === "fr"
+      ? "Cette formation immersive prépare les participants à maîtriser les compétences techniques et opérationnelles nécessaires pour gérer efficacement le son et la lumière lors d’événements live, tels que des concerts, spectacles, conférences et productions scéniques. En s’appuyant sur des ateliers pratiques et des mises en situation réelles, ce programme garantit une formation intensive et orientée vers la professionnalisation."
+      : "This immersive training prepares participants to master the technical and operational skills required to efficiently manage sound and lighting for live events, such as concerts, shows, conferences, and stage productions. Through hands-on workshops and real-world scenarios, this program ensures intensive, career-focused training.";
+
+  const formationEventFr = {
     pointsForts: [
       {
         titre: "Apprentissage pratique et immersif",
@@ -121,24 +133,145 @@ export default function SectionSLS() {
       },
     ],
   };
+  const formationEventEn = {
+    pointsForts: [
+      {
+        titre: "Practical and Immersive Learning",
+        description:
+          "75% of the training content focuses on hands-on workshops with real-world scenarios, offering complete immersion in the live events industry.",
+      },
+      {
+        titre: "State-of-the-Art Professional Equipment",
+        description:
+          "Participants learn to handle digital and analog consoles, modern lighting systems, and specialized software used in the industry.",
+      },
+      {
+        titre: "Guidance by Industry Experts",
+        description:
+          "Instructors are experienced professionals from the events industry, providing practical advice and insights into best practices.",
+      },
+      {
+        titre: "Recognized Certification",
+        description:
+          "A certificate issued by FOP (Professional Orientation Training), recognized by the Malagasy government, enhances acquired skills and employability.",
+      },
+    ],
+    competencesDeveloppees: [
+      {
+        categorie: "Installation and Management of Sound Systems",
+        details: [
+          "Setting up audio systems tailored to various types of events.",
+          "Adjusting sound levels and optimizing audio quality based on stage requirements.",
+        ],
+      },
+      {
+        categorie: "Programming and Managing Stage Lighting",
+        details: [
+          "Creating lighting effects synchronized with performances.",
+          "Using specialized software and equipment to program complex lighting sequences.",
+        ],
+      },
+      {
+        categorie: "Live Technical Problem Solving",
+        details: [
+          "Quick response and efficient management of technical issues during events.",
+          "Maintenance and rapid troubleshooting of sound and lighting equipment.",
+        ],
+      },
+    ],
+    debouchesProfessionnels: [
+      {
+        categorie: "Sound Technician and Lighting Manager",
+        details: [
+          "Responsible for supervising the installation, testing, and management of audio and lighting equipment during events.",
+          "Employed by production companies, theaters, event organizers, or as a freelancer.",
+        ],
+      },
+      {
+        categorie: "Technical Assistant for Live Events and Shows",
+        details: [
+          "Assists the main manager in coordinating and ensuring smooth technical operations.",
+          "Works on events such as concerts, festivals, weddings, conferences, etc.",
+        ],
+      },
+      {
+        categorie: "Audiovisual Equipment Operator",
+        details: [
+          "Works for companies specializing in audiovisual equipment rental and management.",
+          "Responsible for handling and maintaining equipment on-site.",
+        ],
+      },
+      {
+        categorie: "Event Technical Consultant",
+        details: [
+          "Supports clients in designing and implementing the technical aspects of their events, addressing specific production needs.",
+        ],
+      },
+      {
+        categorie: "Independent Sound and Lighting Solutions Creator",
+        details: [
+          "Designs customized setups for artistic performances, exhibitions, or audiovisual productions.",
+        ],
+      },
+      {
+        categorie: "General Manager in Events",
+        details: [
+          "Progresses to a role with overall responsibility, overseeing technical, logistical, and artistic aspects of major events.",
+        ],
+      },
+    ],
+    forcesFormation: [
+      {
+        titre: "Meeting High Industry Demand",
+        description:
+          "With the growth of cultural, event, and entertainment industries, professionals in sound and lighting are in high demand, both locally and internationally.",
+      },
+      {
+        titre: "Flexible Skill Set",
+        description:
+          "The acquired skills apply to a variety of environments, from small venues to large-scale international productions.",
+      },
+      {
+        titre: "Diverse Career Opportunities",
+        description:
+          "The training opens doors to jobs in various sectors, including audiovisual, performing arts, events, tourism, and media.",
+      },
+      {
+        titre: "Quick Job Market Entry",
+        description:
+          "With its short but intensive duration, this training enables participants to enter the workforce rapidly.",
+      },
+      {
+        titre: "Adaptation to Technological Advances",
+        description:
+          "Participants are trained to use the latest technologies, ensuring their relevance in an ever-evolving field.",
+      },
+    ],
+  };
+  const formationEvent =
+    language === "fr" ? formationEventFr : formationEventEn;
   const text =
-    "Cette formation constitue une opportunité unique pour ceux qui souhaitent développer une carrière technique et créative dans l’univers dynamique des événements live, en se distinguant par une expertise reconnue et immédiatement opérationnelle.";
+    language === "fr"
+      ? "Cette formation constitue une opportunité unique pour ceux qui souhaitent développer une carrière technique et créative dans l’univers dynamique des événements live, en se distinguant par une expertise reconnue et immédiatement opérationnelle."
+      : "This training offers a unique opportunity for those looking to build a technical and creative career in the dynamic world of live events, standing out with recognized expertise that is immediately applicable.";
   return (
     <div>
       <Header
         imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736491650/SONO--SONORISATION-ET-LUMI%C3%88RES-DE-SPECTACLE_zq6cxm.jpg"
         id="sls"
-        title="Son : Sonorisation et Lumières de Spectacle"
-        subtitle="Cette formation immersive prépare les participants à maîtriser les compétences techniques et opérationnelles nécessaires pour gérer efficacement le son et la lumière lors d’événements live, tels que des concerts, spectacles, conférences et productions scéniques. En s’appuyant sur des ateliers pratiques et des mises en situation réelles, ce programme garantit une formation intensive et orientée vers la professionnalisation."
+        title={title}
+        subtitle={subtitle}
       />
       <div id="sls" className="container">
-        <ScrollComponent text={"Son : Sonorisation et Lumières de Spectacle"} />
-        <DurationCard duration="3 mois" />
+        <ScrollComponent text={title} />
+        <DurationCard duration={language === "fr" ? "3 mois " : "3 months"} />
         <FormationAudio data={formationEvent} />
 
         <div className="my-10 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-lg transition-colors duration-300 dark:from-gray-800 dark:to-gray-900 dark:text-gray-200">
           <h2 className="mb-4 text-2xl font-bold">
-            Faites le choix d&apos;une formation exceptionnelle !
+            {language === "fr"
+              ? " Faites le choix d'une formation exceptionnelle !"
+              : "Choose a training program that stands out!"}
           </h2>
           <p className="text-lg">{text}</p>
         </div>
