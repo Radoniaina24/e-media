@@ -63,7 +63,7 @@ export default function SectionL3() {
     ],
   };
   const currentWorld2 = language === "fr" ? currentWorld2Fr : currentWorld2En;
-  const licences = [
+  const licencesFr = [
     {
       title: "L1",
       description:
@@ -80,6 +80,23 @@ export default function SectionL3() {
         "10 mois pour se spécialiser et développer une expertise professionnelle.",
     },
   ];
+  const licencesEn = [
+    {
+      title: "L1",
+      description:
+        "10 months to master the fundamentals of marketing, communication, and journalism.",
+    },
+    {
+      title: "L2",
+      description: "10 months to deepen technical and analytical skills.",
+    },
+    {
+      title: "L3",
+      description:
+        "10 months to specialize and develop professional expertise.",
+    },
+  ];
+  const licences = language === "fr" ? licencesFr : licencesEn;
   const careerPathsFr = [
     {
       title: "Marketing Digital et Communication",

@@ -11,8 +11,11 @@ import CallToAction from "./CallToAction";
 import MasterCard from "../Master/MasterCard";
 import ProgramDetails from "../Master/ProgramDetails";
 import ScrollComponent from "../Scroll/ScrollComponent";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
+import { cp } from "fs";
 export default function SectionL5() {
-  const currentWorld = [
+  const { language } = useLanguageContext();
+  const currentWorldFr = [
     {
       title: "Les bacheliers de toutes filières",
       description:
@@ -29,14 +32,40 @@ export default function SectionL5() {
         "À la recherche d’une formation accessible, adaptée à un contexte mondial.",
     },
   ];
-  const currentWorld2 = {
+  const currentWorldEn = [
+    {
+      title: "High school graduates from all fields",
+      description:
+        "Interested in legal studies and seeking flexibility in their learning.",
+    },
+    {
+      title: "Professionals in active employment",
+      description:
+        "Looking to specialize or evolve in the fields of law or diplomacy without interrupting their career.",
+    },
+    {
+      title: "International students",
+      description:
+        "Looking for an accessible program suited to a global context.",
+    },
+  ];
+  const currentWorld = language === "fr" ? currentWorldFr : currentWorldEn;
+  const currentWorld2Fr = {
     items: [
       "Droit Public",
       "Droit Privé et des Affaires",
       "Droit International et Diplomatie",
     ],
   };
-  const specializations = [
+  const currentWorld2En = {
+    items: [
+      "Public Law",
+      "Private and Business Law",
+      "International Law and Diplomacy",
+    ],
+  };
+  const currentWorld2 = language === "fr" ? currentWorld2Fr : currentWorld2En;
+  const specializationsFr = [
     {
       title: "Droit Public",
       description:
@@ -83,7 +112,56 @@ export default function SectionL5() {
       ],
     },
   ];
-  const why = [
+  const specializationsEn = [
+    {
+      title: "Public Law",
+      description:
+        "This specialization explores the relationships between public institutions, administrations, and citizens.",
+      objectives: [
+        "Study constitutional law, administrative law, and public freedoms.",
+        "Understand the issues of governance and public policies.",
+        "Master administrative procedures and local government law.",
+      ],
+      careers: [
+        "Public servant in public or international institutions.",
+        "Project officer in local governments or NGOs.",
+        "Consultant in public governance or lawyer specialized in administrative law.",
+      ],
+    },
+    {
+      title: "Private Law and Business Law",
+      description:
+        "This specialization trains experts in legal relations between individuals and businesses.",
+      objectives: [
+        "Master the fundamental principles of contract law, corporate law, and commercial law.",
+        "Understand the fiscal and legal issues facing businesses.",
+        "Manage commercial litigation and legal procedures.",
+      ],
+      careers: [
+        "Business lawyer or legal advisor in a company.",
+        "Legal or tax manager in a company.",
+        "Freelance lawyer or mediator in dispute resolution.",
+      ],
+    },
+    {
+      title: "International Law and Diplomacy",
+      description:
+        "This specialization is aimed at those who wish to evolve in an international environment.",
+      objectives: [
+        "Study international public and private law, treaty law, and humanitarian law.",
+        "Understand international institutions and regulatory mechanisms.",
+        "Develop skills in diplomatic negotiation and conflict management.",
+      ],
+      careers: [
+        "Diplomat or public servant in an international organization (UN, African Union, etc.).",
+        "Consultant in international law or international arbitration.",
+        "International affairs officer in embassies, NGOs, or multinational companies.",
+      ],
+    },
+  ];
+  const specializations =
+    language === "fr" ? specializationsFr : specializationsEn;
+  const whyFr = [
     {
       title: "Flexibilité totale",
       description:
@@ -105,7 +183,30 @@ export default function SectionL5() {
         "Idéal pour les étudiants et les professionnels basés à Madagascar ou à l’étranger.",
     },
   ];
-  const licences = [
+  const whyEn = [
+    {
+      title: "Total Flexibility",
+      description:
+        "Study at your own pace, wherever you are, while benefiting from high-quality academic support.",
+    },
+    {
+      title: "Interactive and Practical Program",
+      description:
+        "Case studies, mock trials, and online projects for a professional immersion.",
+    },
+    {
+      title: "Strategic and Diverse Specializations",
+      description:
+        "Meeting the current needs of the public, private, and international sectors.",
+    },
+    {
+      title: "Global Accessibility",
+      description:
+        "Ideal for students and professionals based in Madagascar or abroad.",
+    },
+  ];
+  const why = language === "fr" ? whyFr : whyEn;
+  const licencesFr = [
     {
       title: "L1",
       description:
@@ -122,6 +223,24 @@ export default function SectionL5() {
         "10 mois pour se concentrer sur l’une des trois spécialisations et travailler sur des projets pratiques.",
     },
   ];
+  const licencesEn = [
+    {
+      title: "L1",
+      description:
+        "10 months to acquire the basics of constitutional, civil, and administrative law.",
+    },
+    {
+      title: "L2",
+      description:
+        "10 months to deepen legal concepts and explore specializations.",
+    },
+    {
+      title: "L3",
+      description:
+        "10 months to focus on one of the three specializations and work on practical projects.",
+    },
+  ];
+  const licences = language === "fr" ? licencesFr : licencesEn;
 
   useEffect(() => {
     AOS.init({
@@ -129,32 +248,50 @@ export default function SectionL5() {
       easing: "ease-in-out", // Type d'animation
     });
   }, []);
+  const title =
+    language === "fr"
+      ? "LICENCE EN DROIT (FORMATION 100% EN LIGNE)"
+      : "Bachelor's Degree in Law (100% Online Program)";
+  const subtitle =
+    language === "fr"
+      ? "La Licence en Droit d’E-Media, exclusivement disponible en formation en ligne, est une opportunité unique pour les étudiants et les professionnels souhaitant se former à distance. Cette formation rigoureuse offre une compréhension approfondie des systèmes juridiques nationaux et internationaux tout en s’adaptant à vos contraintes personnelles et professionnelles. Avec des spécialisations stratégiques, ce programme vous prépare à des carrières variées dans les domaines juridique, diplomatique et des affaires."
+      : "E-Media's Bachelor's Degree in Law, exclusively available as an online program, is a unique opportunity for students and professionals seeking to study remotely. This rigorous program offers an in-depth understanding of national and international legal systems while adapting to your personal and professional constraints. With strategic specializations, this program prepares you for diverse careers in the legal, diplomatic, and business fields.";
   return (
     <div>
       {/* Header */}
       <Header
         id="sectionL5"
-        title="LICENCE EN DROIT (FORMATION 100% EN LIGNE)"
-        subtitle="La Licence en Droit d’E-Media, exclusivement disponible en formation en ligne, est une opportunité unique pour les étudiants et les professionnels souhaitant se former à distance. Cette formation rigoureuse offre une compréhension approfondie des systèmes juridiques nationaux et internationaux tout en s’adaptant à vos contraintes personnelles et professionnelles. Avec des spécialisations stratégiques, ce programme vous prépare à des carrières variées dans les domaines juridique, diplomatique et des affaires."
+        title={title}
+        subtitle={subtitle}
         imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736692262/Droit_r8nimt.jpg"
       />
       <div
         id="sectionL5"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
-        <ScrollComponent text="LICENCE EN DROIT (FORMATION 100% EN LIGNE)" />
-        <Section title="Spécialisations">
+        <ScrollComponent text={title} />
+        <Section
+          title={language === "fr" ? "Spécialisations" : "Specializations"}
+        >
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
             {currentWorld2.items.map((item, index) => (
               <Card key={index} title={item} items={[]} />
             ))}
           </div>
         </Section>
-        <Section title="À qui s’adresse cette formation ?"></Section>
+        <Section
+          title={
+            language === "fr"
+              ? "À qui s’adresse cette formation ?"
+              : "Who is this program for ?"
+          }
+        ></Section>
         {/* À qui s’adresse cette formation ? */}
         <Section bgColor="bg-gray-100">
           <h3 className="text-bold mb-10 text-center text-xl font-semibold dark:text-gray-400 ">
-            Cette licence en ligne est destinée à :
+            {language === "fr"
+              ? "Cette licence en ligne est destinée à :"
+              : "This online bachelor's degree is intended for:"}
           </h3>
 
           <div className=" text-md mt-4 grid grid-cols-1 gap-6 text-center font-normal md:grid-cols-2 lg:grid-cols-3">
@@ -168,8 +305,16 @@ export default function SectionL5() {
           </div>
         </Section>
         <Section
-          title="Durée et organisation de la formation"
-          content="La Licence en Droit se déroule sur 3 ans (6 semestres), avec une organisation flexible et adaptée à l’apprentissage en ligne :"
+          title={
+            language === "fr"
+              ? "Durée et organisation de la formation"
+              : "Duration and Organization of the Program"
+          }
+          content={
+            language === "fr"
+              ? "La Licence en Droit se déroule sur 3 ans (6 semestres), avec une organisation flexible et adaptée à l’apprentissage en ligne :"
+              : "The Law Bachelor's degree lasts for 3 years (6 semesters), with a flexible structure tailored for online learning:"
+          }
         >
           <div className="flex flex-wrap justify-center gap-5">
             {licences.map((spec, index) => (
@@ -182,10 +327,18 @@ export default function SectionL5() {
           </div>
         </Section>
 
-        <Section content="Les étudiants accèdent à des ressources numériques modernes, des cours interactifs, des études de cas et un encadrement personnalisé assuré par des experts juridiques."></Section>
+        <Section
+          content={
+            language === "fr"
+              ? "Les étudiants accèdent à des ressources numériques modernes, des cours interactifs, des études de cas et un encadrement personnalisé assuré par des experts juridiques."
+              : "Students have access to modern digital resources, interactive courses, case studies, and personalized guidance provided by legal experts."
+          }
+        ></Section>
         <Section>
           <h1 className=" mb-10 text-3xl font-bold text-gray-800 dark:text-white">
-            Spécialisations proposées
+            {language === "fr"
+              ? "Spécialisations proposées"
+              : "Proposed Specializations:"}
           </h1>
           {specializations.map((spec, index) => (
             <SpecializationCard
@@ -211,14 +364,25 @@ export default function SectionL5() {
         </Section>
         {/* Call to Action */}
         <Section bgColor="bg-gradient-to-r from-blue-500 to-teal-400 text-white">
-          <CallToAction
-            heading={"Rejoignez E-Media dès aujourd’hui"}
-            description={
-              "Lancez votre carrière dans le domaine juridique et diplomatique !"
-            }
-            buttonText={"Préinscriptions ouvertes ici"}
-            buttonLink={""}
-          />
+          {language === "fr" ? (
+            <CallToAction
+              heading={"Rejoignez E-Media dès aujourd’hui"}
+              description={
+                "Lancez votre carrière dans le domaine juridique et diplomatique !"
+              }
+              buttonText={"Préinscriptions ouvertes ici"}
+              buttonLink={""}
+            />
+          ) : (
+            <CallToAction
+              heading={"Join E-Media today"}
+              description={
+                "Kickstart your career in the legal and diplomatic field!"
+              }
+              buttonText={"Pre-registration open here"}
+              buttonLink={""}
+            />
+          )}
         </Section>
       </div>
     </div>
