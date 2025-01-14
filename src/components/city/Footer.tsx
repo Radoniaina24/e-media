@@ -1,12 +1,18 @@
-import Link from "next/link";
+"use client ";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import React from "react";
-import ContactCIty from "./ContactCIty";
 
 export default function FooterCity() {
+  const { language } = useLanguageContext();
   const texte1 =
-    "Merci de votre intérêt pour Indian Ocean Tech Valley : Le Pôle Numérique de Madagascar !";
+    language === "fr"
+      ? "Merci de votre intérêt pour Indian Ocean Tech Valley : Le Pôle Numérique de Madagascar !"
+      : "Thank you for your interest in Indian Ocean Tech Valley: Madagascar's Digital Hub!";
+
   const texte2 =
-    "Contactez-nous dès aujourd’hui pour discuter de votre rôle dans cette révolution numérique ";
+    language === "fr"
+      ? "Contactez-nous dès aujourd’hui pour discuter de votre rôle dans cette révolution numérique "
+      : "Contact us today to discuss your role in this digital revolution.";
   return (
     <div>
       {/* Call-to-Action Section */}
@@ -16,8 +22,9 @@ export default function FooterCity() {
             className="text-3xl font-extrabold md:text-4xl"
             data-aos="fade-up"
           >
-            Formulaire d&apos;Intérêt - Indian Ocean Tech Valley : Le Pôle
-            Numérique de Madagascar
+            {language === "fr"
+              ? "Formulaire d'Intérêt - Indian Ocean Tech Valley : Le Pôle Numérique de Madagascar"
+              : "Interest Form - Indian Ocean Tech Valley: Madagascar's Digital Hub"}
           </h2>
           <p
             className="mx-auto mt-4 max-w-3xl text-lg md:text-xl"

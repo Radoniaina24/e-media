@@ -1,9 +1,15 @@
+"use client";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import React from "react";
 
 export default function HeroCity() {
-  const TextHero = "Indian Ocean Tech Valley";
+  const { language } = useLanguageContext();
+  const TextHero =
+    language === "fr" ? "Indian Ocean Tech Valley" : "Indian Ocean Tech Valley";
   const subtitleHero =
-    "Indian Ocean Tech Valley est un projet visionnaire et multifonctionnel qui s’étend sur 15 hectares, conçu pour transformer Madagascar en un hub stratégique dans l’Océan Indien. Ce pôle numérique intègre l’éducation de pointe, l’innovation technologique, l’entrepreneuriat, et le développement économique pour propulser Madagascar et l’Afrique vers l’avenir.";
+    language === "fr"
+      ? "Indian Ocean Tech Valley est un projet visionnaire et multifonctionnel qui s’étend sur 15 hectares, conçu pour transformer Madagascar en un hub stratégique dans l’Océan Indien. Ce pôle numérique intègre l’éducation de pointe, l’innovation technologique, l’entrepreneuriat, et le développement économique pour propulser Madagascar et l’Afrique vers l’avenir."
+      : "Indian Ocean Tech Valley is a visionary and multifunctional project spanning 15 hectares, designed to transform Madagascar into a strategic hub in the Indian Ocean. This digital hub integrates cutting-edge education, technological innovation, entrepreneurship, and economic development to propel Madagascar and Africa into the future.";
 
   return (
     <div>
@@ -19,11 +25,11 @@ export default function HeroCity() {
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
           <h1
             data-aos="fade-up"
-            className="z-10 text-shadow text-4xl font-extrabold leading-tight md:text-6xl"
+            className="text-shadow z-10 text-4xl font-extrabold leading-tight md:text-6xl"
           >
             {TextHero}
           </h1>
-          <p className="z-10 text-shadow mt-4 max-w-2xl text-lg font-light md:text-xl">
+          <p className="text-shadow z-10 mt-4 max-w-2xl text-lg font-light md:text-xl">
             {subtitleHero}
           </p>
           {/* <a
@@ -37,7 +43,9 @@ export default function HeroCity() {
           <div className="mt-8">
             <a href="#details" className="flex flex-col items-center">
               <span className="mt-2 text-sm font-light">
-                Decouvrir le projet
+                {language === "fr"
+                  ? "Decouvrir le projet"
+                  : "Discover the Project"}
               </span>
               <svg
                 className="mt-6 h-8 w-8 animate-bounce text-white"

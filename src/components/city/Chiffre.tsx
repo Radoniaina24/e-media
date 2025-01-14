@@ -1,8 +1,14 @@
+"use client";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import React from "react";
 
 export default function Chiffre() {
-  const grandTitre = "Chiffres Clés et Opportunités";
-  const madagascarStatistics = {
+  const { language } = useLanguageContext();
+  const grandTitre =
+    language === "fr"
+      ? "Chiffres Clés et Opportunités"
+      : "Key Figures and Opportunities";
+  const madagascarStatisticsFr = {
     title: "1. statistiques Économiques de Madagascar",
     points: [
       {
@@ -73,8 +79,80 @@ export default function Chiffre() {
       },
     ],
   };
+  const madagascarStatisticsEn = {
+    title: "1. Economic Statistics of Madagascar",
+    points: [
+      {
+        title: "Annual GDP Growth",
+        description: "Annual GDP growth: +5% on average in recent years.",
+        bgColor: "bg-green-600",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"
+            />
+          </svg>
+        ),
+      },
+      {
+        title: "Jobs Created in the BPO and Digital Sector",
+        description:
+          "Over 40,000 jobs created in the BPO and digital sector in 2023.",
+        bgColor: "bg-orange-600",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 8c-1.657 0-3 1.567-3 3.5S10.343 15 12 15s3-1.567 3-3.5S13.657 8 12 8zM12 14c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"
+            />
+          </svg>
+        ),
+      },
+      {
+        title: "Increase in Internet Connectivity",
+        description:
+          "10% annual increase in internet connectivity, supporting the growth of digital services.",
+        bgColor: "bg-blue-600",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+            />
+          </svg>
+        ),
+      },
+    ],
+  };
 
-  const madagascarOpportunities = {
+  const madagascarStatistics =
+    language === "fr" ? madagascarStatisticsFr : madagascarStatisticsEn;
+  const madagascarOpportunitiesFr = {
     title: "2. Opportunités dans l’Océan Indien",
     points: [
       {
@@ -123,7 +201,57 @@ export default function Chiffre() {
       },
     ],
   };
-
+  const madagascarOpportunitiesEn = {
+    title: "2. Opportunities in the Indian Ocean",
+    points: [
+      {
+        title: "Cumulative Population of Neighboring Islands",
+        description:
+          "Cumulative population of over 45 million in neighboring islands, with a growing demand for technological and educational services.",
+        bgColor: "bg-purple-600",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
+            />
+          </svg>
+        ),
+      },
+      {
+        title: "Expanding Market",
+        description:
+          "An expanding market: Digital and educational services in Africa are expected to reach a value of over 300 billion USD by 2025.",
+        bgColor: "bg-red-600",
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+            />
+          </svg>
+        ),
+      },
+    ],
+  };
+  const madagascarOpportunities =
+    language === "fr" ? madagascarOpportunitiesFr : madagascarOpportunitiesEn;
   return (
     <div>
       <header className="relative z-10 mx-auto max-w-7xl text-center">

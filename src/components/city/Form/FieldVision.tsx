@@ -2,7 +2,7 @@ import { useState } from "react";
 import InputField from "./InputField";
 import RadioGroup from "./RadioGroup";
 
-const FieldVision: React.FC = () => {
+export const FieldVisionFr: React.FC = () => {
   const [collaboration, setCollaboration] = useState<string>("");
 
   const handleCollaborationChange = (value: string) => {
@@ -50,5 +50,51 @@ const FieldVision: React.FC = () => {
     </fieldset>
   );
 };
+export const FieldVisionEn: React.FC = () => {
+  const [collaboration, setCollaboration] = useState<string>("");
 
-export default FieldVision;
+  const handleCollaborationChange = (value: string) => {
+    setCollaboration(value);
+  };
+
+  return (
+    <fieldset className="mb-6 rounded-md border border-gray-300 p-4">
+      <legend className="px-2 text-xl font-semibold text-gray-700">
+        Your Vision and Expectations
+      </legend>
+      <div className="space-y-4">
+        <InputField
+          label="Why are you interested in this project?"
+          id="interestReason"
+          placeholder="Write a brief explanation"
+          type="textarea"
+          rows={4}
+        />
+        <InputField
+          label="What value do you want to bring to this project?"
+          id="valueContribution"
+          placeholder="Example: Expertise, funding, mentoring, resources, etc."
+          type="text"
+        />
+        <RadioGroup
+          label="Have you previously collaborated on similar projects in Africa or the Indian Ocean?"
+          name="collaboration"
+          options={[
+            { id: "yesCollaboration", label: "Yes" },
+            { id: "noCollaboration", label: "No" },
+          ]}
+          onChange={handleCollaborationChange}
+          selectedValue={collaboration}
+        />
+        {collaboration === "yesCollaboration" && (
+          <InputField
+            label="Please specify here"
+            id="collaborationDetails"
+            placeholder="Please specify here"
+            type="text"
+          />
+        )}
+      </div>
+    </fieldset>
+  );
+};

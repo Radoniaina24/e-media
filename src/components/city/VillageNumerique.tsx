@@ -1,9 +1,14 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import HeroBanner from "../Partenariats/HeroBaner";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 export default function VillageNumerique() {
+  const { language } = useLanguageContext();
   const grandTitre =
-    " Indian Ocean Tech Valley  : Pilier de la Transition Numérique à Madagascar";
+    language === "fr"
+      ? "Indian Ocean Tech Valley  : Pilier de la Transition Numérique à Madagascar"
+      : "Indian Ocean Tech Valley: Pillar of the Digital Transition in Madagascar";
   return (
     <div>
       <header className="relative z-10 mx-auto max-w-7xl text-center">
@@ -27,7 +32,7 @@ export default function VillageNumerique() {
   );
 }
 
-const InfrastructureData = {
+const InfrastructureDataFr = {
   title: "1. Infrastructures Éducatives et Technologiques",
   points: [
     {
@@ -92,7 +97,76 @@ const InfrastructureData = {
     },
   ],
 };
+const InfrastructureDataEn = {
+  title: "1. Educational and Technological Infrastructures",
+  points: [
+    {
+      title: "Connected Campus",
+      description:
+        "Equipped with the latest technologies for training in artificial intelligence, cybersecurity, blockchain, and digital entrepreneurship.",
+      bgColor: "bg-blue-600",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-8 w-8 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 8c-1.657 0-3-1.567-3-3.5S10.343 1 12 1s3 1.567 3 3.5S13.657 8 12 8zM12 14c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Audiovisual and Digital Studios",
+      description:
+        "Meeting international standards, to develop talents in audiovisual and digital cinema.",
+      bgColor: "bg-green-600",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-8 w-8 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 4v16m8-8H4"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Technology Demonstration Center",
+      description:
+        "Allowing large companies and local startups to test and showcase their innovations.",
+      bgColor: "bg-red-600",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-8 w-8 text-white"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
+      ),
+    },
+  ],
+};
+
 const Infrastructure = () => {
+  const { language } = useLanguageContext();
+  const InfrastructureData =
+    language === "fr" ? InfrastructureDataFr : InfrastructureDataEn;
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat py-16"
@@ -136,7 +210,7 @@ const Infrastructure = () => {
     </section>
   );
 };
-const incubateurData = [
+const incubateurDataFr = [
   {
     title: "Espaces de coworking",
     description:
@@ -162,13 +236,45 @@ const incubateurData = [
     bgColor: "bg-red-600",
   },
 ];
+const incubateurDataEn = [
+  {
+    title: "Coworking Spaces",
+    description:
+      "Providing a dynamic environment to stimulate collaboration and innovation.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736079354/coworking_nwlmga.jpg",
+    bgColor: "bg-blue-600",
+  },
+  {
+    title: "Access to Investors",
+    description:
+      "Organizing technology forums and events to connect Malagasy and African startups with international financial partners.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736079355/investissement_exbedl.jpg",
+    bgColor: "bg-green-600",
+  },
+  {
+    title: "Project Development Support",
+    description:
+      "Coaching, mentoring, and seed funding to transform ideas into successful businesses.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736079355/soutient_xsfni7.jpg",
+    bgColor: "bg-red-600",
+  },
+];
+
 const Incurbateur = () => {
+  const { language } = useLanguageContext();
+  const incubateurData =
+    language === "fr" ? incubateurDataFr : incubateurDataEn;
   return (
     <section className="relative bg-gray-50 py-16">
       <div className="absolute inset-0   opacity-30"></div>
       <div className="container relative mx-auto px-4">
         <h2 className="mb-12 text-center text-3xl font-bold text-gray-dark ">
-          2. Incubateur pour Startups
+          {language === "fr"
+            ? "2. Incubateur pour Startups"
+            : "2. Incubator for Startups"}
         </h2>
         <div className="grid gap-12 md:grid-cols-3">
           {incubateurData.map((data, index) => (
@@ -201,7 +307,7 @@ const Incurbateur = () => {
     </section>
   );
 };
-const attractionData = [
+const attractionDataFr = [
   {
     title: "Formation des jeunes malgaches",
     description:
@@ -219,7 +325,29 @@ const attractionData = [
     bgColor: "bg-indigo-500",
   },
 ];
+const attractionDataEn = [
+  {
+    title: "Training Malagasy Youth",
+    description:
+      "Providing accessible technological education to equip the youth with the necessary skills to excel in a digital world.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736080385/formation_zyq8o8.jpg",
+    bgColor: "bg-purple-500",
+  },
+  {
+    title: "Attracting African Students",
+    description:
+      "With its affordable costs and the quality of education offered by the Digital Village, Madagascar can become a top destination for African students seeking advanced training.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736080385/Attyrer_z0wphw.jpg",
+    bgColor: "bg-indigo-500",
+  },
+];
+
 const Attraction = () => {
+  const { language } = useLanguageContext();
+  const attractionData =
+    language === "fr" ? attractionDataFr : attractionDataEn;
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat py-16"
@@ -231,7 +359,9 @@ const Attraction = () => {
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="container relative mx-auto px-6">
         <h2 className="mb-16 text-center text-3xl font-bold text-white">
-          3. Attraction des Talents Locaux et Internationaux
+          {language === "fr"
+            ? "3. Attraction des Talents Locaux et Internationaux"
+            : "3. Attraction of Local and International Talents"}
         </h2>
         <div className="grid gap-12 md:grid-cols-2">
           {attractionData.map((item, index) => (
@@ -261,7 +391,7 @@ const Attraction = () => {
     </section>
   );
 };
-const engagementEcoresponsableData = {
+const engagementEcoresponsableDataFr = {
   title: "4. Engagement Écoresponsable",
   description:
     "Le Village Numérique intègre des pratiques durables : énergies renouvelables, gestion écologique des déchets et utilisation de matériaux locaux pour réduire l'impact environnemental.",
@@ -274,8 +404,26 @@ const engagementEcoresponsableData = {
     },
   ],
 };
+const engagementEcoresponsableDataEn = {
+  title: "4. Eco-Responsibility Commitment",
+  description:
+    "The Digital Village incorporates sustainable practices: renewable energy, ecological waste management, and the use of local materials to reduce environmental impact.",
+  image:
+    "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736080936/engagement_i57pyl.jpg", // Image of eco-responsibility commitment
+  content: [
+    {
+      title: "Sustainable Practices at the Core of Our Commitment",
+      text: "We firmly believe in integrating ecological solutions to ensure a sustainable future. Through the use of renewable energy and responsible waste management, the Digital Village contributes to preserving our environment while fostering innovation.",
+    },
+  ],
+};
 
 const Engagement = () => {
+  const { language } = useLanguageContext();
+  const engagementEcoresponsableData =
+    language === "fr"
+      ? engagementEcoresponsableDataFr
+      : engagementEcoresponsableDataEn;
   return (
     <section className="mb-16 py-16">
       <div className="container mx-auto px-6 text-center">

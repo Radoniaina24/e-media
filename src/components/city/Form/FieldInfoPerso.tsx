@@ -3,7 +3,7 @@ import React from "react";
 import PhoneInputComponent from "./InputPhoneInternational";
 import InputField from "./InputField";
 
-export default function FieldInfoPerso() {
+export function FieldInfoPerso() {
   return (
     <fieldset className="mb-6 rounded-md border border-gray-300 p-4">
       <legend className="px-2 text-xl font-semibold text-gray-700">
@@ -51,6 +51,62 @@ export default function FieldInfoPerso() {
         <InputField
           id="website"
           label="Site web de l'entreprise (si applicable)"
+          type="url"
+          placeholder="https://example.com"
+        />
+      </div>
+    </fieldset>
+  );
+}
+
+export function PersonalAndContactInfo() {
+  return (
+    <fieldset className="mb-6 rounded-md border border-gray-300 p-4">
+      <legend className="px-2 text-xl font-semibold text-gray-700">
+        Personal and Contact Information
+      </legend>
+      <div className="space-y-4">
+        {/* Full Name */}
+        <InputField
+          id="fullName"
+          label="Full Name"
+          type="text"
+          required
+          placeholder="Enter your full name"
+        />
+
+        {/* Company Name */}
+        <InputField
+          id="company"
+          label="Company or Organization Name"
+          type="text"
+          placeholder="Enter the company name"
+        />
+
+        {/* Role / Title */}
+        <InputField
+          id="role"
+          label="Role / Title"
+          type="text"
+          placeholder="Example: CEO, Director of Investments"
+        />
+
+        {/* Professional Email */}
+        <InputField
+          id="email"
+          label="Professional Email"
+          type="email"
+          required
+          placeholder="Enter your email"
+        />
+
+        {/* Phone Input International */}
+        <PhoneInputComponent />
+
+        {/* Website */}
+        <InputField
+          id="website"
+          label="Company Website (if applicable)"
           type="url"
           placeholder="https://example.com"
         />

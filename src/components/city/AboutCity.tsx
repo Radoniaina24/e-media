@@ -1,12 +1,21 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 export default function AboutCity() {
+  const { language } = useLanguageContext();
   const TextHero =
-    "Indian Ocean Tech Valley : Le Pôle Numérique Visionnaire de Madagascar et de l’Afrique";
+    language === "fr"
+      ? "Indian Ocean Tech Valley : Le Pôle Numérique Visionnaire de Madagascar et de l’Afrique"
+      : "Indian Ocean Tech Valley: The Visionary Digital Hub of Madagascar and Africa";
   const subtitleHero1 =
-    "Bien plus qu’un complexe universitaire, Indian Ocean Tech Valley combine des centres de formation d’excellence, des incubateurs de startups, un hub technologique, des espaces de collaboration internationale, et des infrastructures durables. Ce projet ambitieux vise à attirer les jeunes talents malgaches et africains, ainsi que les investisseurs et partenaires internationaux, tout en exploitant la position géographique stratégique de Madagascar comme carrefour entre l’Afrique et l’Asie.";
+    language === "fr"
+      ? "Bien plus qu’un complexe universitaire, Indian Ocean Tech Valley combine des centres de formation d’excellence, des incubateurs de startups, un hub technologique, des espaces de collaboration internationale, et des infrastructures durables. Ce projet ambitieux vise à attirer les jeunes talents malgaches et africains, ainsi que les investisseurs et partenaires internationaux, tout en exploitant la position géographique stratégique de Madagascar comme carrefour entre l’Afrique et l’Asie."
+      : "More than just a university complex, Indian Ocean Tech Valley combines centers of excellence for training, startup incubators, a technological hub, international collaboration spaces, and sustainable infrastructure. This ambitious project aims to attract young Malagasy and African talents, as well as international investors and partners, while leveraging Madagascar's strategic geographical location as a crossroads between Africa and Asia.";
   const subtitleHero2 =
-    "Avec une vision globale et un impact local, Indian Ocean Tech Valley devient le moteur de la croissance numérique et économique dans l’Océan Indien, stimulant l’innovation et renforçant la compétitivité régionale.";
+    language === "fr"
+      ? "Avec une vision globale et un impact local, Indian Ocean Tech Valley devient le moteur de la croissance numérique et économique dans l’Océan Indien, stimulant l’innovation et renforçant la compétitivité régionale."
+      : "With a global vision and a local impact, Indian Ocean Tech Valley is becoming the driving force behind digital and economic growth in the Indian Ocean region, fostering innovation and strengthening regional competitiveness.";
   return (
     <div>
       <section id="details" className="bg-white py-16 ">
@@ -37,11 +46,12 @@ export default function AboutCity() {
                 height={300}
               />
               <h3 className="mb-2 text-xl font-semibold dark:text-dark">
-                Pôle académique
+                {language === "fr" ? "Pôle académique" : "Academic Hub"}
               </h3>
               <p className="text-gray-600">
-                Un centre d&apos;excellence académique offrant des formations
-                innovantes et adaptées aux besoins du marché.
+                {language === "fr"
+                  ? "Un centre d'excellence académique offrant des formations innovantes et adaptées aux besoins du marché."
+                  : "An academic center of excellence offering innovative training programs tailored to market needs."}
               </p>
             </div>
             <div
@@ -56,12 +66,14 @@ export default function AboutCity() {
                 height={300}
               />
               <h3 className="mb-2 text-xl font-semibold dark:text-dark">
-                Centre technologique
+                {language === "fr"
+                  ? "Centre technologique"
+                  : "Technology Center"}
               </h3>
               <p className="text-gray-600">
-                Un espace dédié à l&apos;innovation et à la recherche
-                technologique, pour stimuler la créativité et
-                l&apos;entrepreneuriat.
+                {language === "fr"
+                  ? "Un espace dédié à l'innovation et à la recherche technologique, pour stimuler la créativité et l'entrepreneuriat."
+                  : "A space dedicated to innovation and technological research, designed to foster creativity and entrepreneurship."}
               </p>
             </div>
             <div
@@ -76,11 +88,12 @@ export default function AboutCity() {
                 height={300}
               />
               <h3 className="mb-2 text-xl font-semibold dark:text-dark">
-                Centre culturel
+                {language === "fr" ? "Centre culturel" : "Cultural Center"}
               </h3>
               <p className="text-gray-600">
-                Une plateforme pour la culture et l&apos;échange, favorisant
-                l&apos;inclusion sociale et technologique.
+                {language === "fr"
+                  ? "Une plateforme pour la culture et l'échange, favorisant l'inclusion sociale et technologique."
+                  : "A platform for culture and exchange, promoting social and technological inclusion."}
               </p>
             </div>
           </div>
