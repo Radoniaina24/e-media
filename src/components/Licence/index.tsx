@@ -29,13 +29,15 @@ export default function Licence() {
         "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736506071/drt_zzt0od.png", // Lien de l'image pour Droit
     },
   ];
-
+  const { language } = useLanguageContext();
   return (
     <>
       <div id="programme" className="container mt-36">
         {/* <LicensePrograms /> */}
         <h2 className="mb-10 text-center text-3xl font-bold text-gray-800 dark:text-white">
-          Nos Programmes de Licence
+          {language === "fr"
+            ? "Nos Programmes de Licence"
+            : "Our Bachelor's Degree Programs"}
         </h2>
         <hr className="mb-20" />
         <div className=" grid grid-cols-2 gap-5  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
@@ -54,6 +56,7 @@ export default function Licence() {
 
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 function StaircaseImages() {
   return (

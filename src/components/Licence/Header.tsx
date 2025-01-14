@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({
           <h1 className="text-shadow-lg text-lg font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-xl lg:text-2xl">
             {title.toLocaleUpperCase()}
           </h1>
-          <p className=" sm:text-md text-md md:text-md mx-auto mb-8 max-w-2xl font-light leading-relaxed text-gray-50 lg:text-xl">
+          <p className="sm:text-md text-md md:text-md mx-auto mb-8 max-w-2xl text-justify font-light leading-relaxed text-gray-50 lg:text-xl">
             {subtitle}
           </p>
           <a
