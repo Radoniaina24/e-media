@@ -1,7 +1,9 @@
+"use client";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import Link from "next/link";
 import React from "react";
 
-const categories = [
+const categoriesFr = [
   {
     title: "Licence",
     icon: "🎓",
@@ -17,8 +19,26 @@ const categories = [
       "Le MASTER est un diplôme de deuxième cycle universitaire qui permet aux étudiants de se spécialiser dans un domaine spécifique après avoir obtenu leur Licence. Ce programme de deux ans propose un enseignement approfondi et souvent orienté vers la recherche ou la pratique professionnelle. Le Master prépare les étudiants à des carrières avancées dans des secteurs variés ou à poursuivre avec un doctorat pour des études plus approfondies.",
   },
 ];
+const categoriesEn = [
+  {
+    title: "Bachelor's Degree",
+    icon: "🎓",
+    lien: "/formation/licence",
+    description:
+      "The Bachelor's Degree is an undergraduate program designed to provide students with foundational knowledge in their field of study. This degree offers a combination of theoretical and practical training, paving the way for specialization or entry into the job market across various sectors. Typically completed in three years, it serves as the first step toward advanced studies such as a Master's Degree.",
+  },
+  {
+    title: "Master's Degree",
+    icon: "👨‍🎓",
+    lien: "/formation/master",
+    description:
+      "The Master's Degree is a postgraduate program that allows students to specialize in a specific field after earning their Bachelor's Degree. This two-year program offers in-depth education, often focusing on research or professional practice. The Master's Degree prepares students for advanced careers in various sectors or further studies, such as pursuing a PhD for more specialized academic work.",
+  },
+];
 
 const CategoryUniversitaires: React.FC = () => {
+  const { language } = useLanguageContext();
+  const categories = language === "fr" ? categoriesFr : categoriesEn;
   return (
     <div className="container mx-auto my-10 p-6">
       <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
@@ -35,7 +55,7 @@ const CategoryUniversitaires: React.FC = () => {
                 {category.description}
               </p>
               <div className="mt-4 inline-block rounded bg-blue-500 px-4 py-2 text-sm text-white transition hover:bg-blue-600">
-                En savoir plus
+                {language === "fr" ? "En savoir plus" : "Learn more"}
               </div>
             </div>
           </Link>
