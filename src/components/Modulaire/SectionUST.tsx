@@ -228,7 +228,12 @@ export default function SectionUST() {
   return (
     <div>
       {/* Header */}
-      <Header id="ust" title={title} subtitle="" />
+      <Header
+        id="ust"
+        title={title}
+        subtitle=""
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736946795/Fond-UST-IO-_-UNIVERSITY-OF-SCIENCE-AND-TECHNOLOGY---INDIAN-OCEAN_f1xatu.jpg"
+      />
       <div
         id="ust"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
