@@ -4,8 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
-import menuData from "./menuData";
+
 import LanguageSelect from "../Langue/LanguageSelect";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
+import { menuDataEn, menuDataFr } from "./menuData";
 
 const Header = () => {
   // Navbar toggle
@@ -38,7 +40,8 @@ const Header = () => {
   };
 
   const usePathName = usePathname();
-
+  const { language } = useLanguageContext();
+  const menuData = language === "fr" ? menuDataFr : menuDataEn;
   return (
     <>
       <header

@@ -17,7 +17,7 @@ const HeroSectionPrograms: React.FC<HeaderProps> = ({
   ctaLink,
   imageSrc = "/images/why/fond.jpg",
 }) => (
-  <header className=" relative h-80 w-full bg-cover bg-center text-white">
+  <header className=" relative h-96 w-full bg-cover bg-center text-white">
     <div
       className="absolute inset-0 bg-cover bg-center"
       style={{ backgroundImage: `url("${imageSrc}")` }}
