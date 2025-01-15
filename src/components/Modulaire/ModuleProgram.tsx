@@ -1,8 +1,9 @@
 "use client";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
 
-const programs = [
+const programsFr = [
   {
     title:
       "E-media : Université spécialisée en Audiovisuel, Cinématographie et Numérique",
@@ -29,8 +30,37 @@ const programs = [
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736508890/AELI_wn0rfr.png",
   },
 ];
+const programsEn = [
+  {
+    title:
+      "E-media: University specializing in Audiovisual, Cinematography, and Digital Technologies",
+    description:
+      "This program trains experts in audiovisual, cinematography, and digital technologies, offering skills in video production, editing, and multimedia project management.",
+    link: "/formation/modulaire/mediaUsa",
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736508890/univ_mgaskl.png",
+  },
+  {
+    title: "UST-IO: University of Science and Technology - Indian Ocean",
+    description:
+      "UST-IO is a leading academic institution offering programs in science and technology, aimed at training professionals capable of addressing the technological challenges of the Indian Ocean region.",
+    link: "/formation/modulaire/ust_io",
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736508891/UST_IO_jifewl.png",
+  },
+  {
+    title: "AELI: The African Entrepreneurship and Leadership Institute",
+    description:
+      "AELI offers training in entrepreneurship and leadership, aiming to develop management and innovation skills for future leaders and entrepreneurs in Africa.",
+    link: "/formation/modulaire/aeli",
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736508890/AELI_wn0rfr.png",
+  },
+];
 
 const ModulePrograms: React.FC = () => {
+  const { language } = useLanguageContext();
+  const programs = language === "fr" ? programsFr : programsEn;
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -57,7 +87,7 @@ const ModulePrograms: React.FC = () => {
                 {program.description}
               </p>
               <button className="rounded-full bg-blue-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-blue-600">
-                En savoir plus
+                {language === "fr" ? "En savoir plus" : "Learn more"}
               </button>
             </div>
           </Link>

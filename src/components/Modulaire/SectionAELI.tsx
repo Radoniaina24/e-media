@@ -6,9 +6,11 @@ import Header from "../Licence/Header";
 import Section from "../Licence/Section";
 import CardCFP from "../CFP/CardCFP";
 import ScrollComponent from "../Scroll/ScrollComponent";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 export default function SectionAELI() {
-  const programs = [
+  const { language } = useLanguageContext();
+  const programsFr = [
     {
       title: "Gestion de Projet Agile",
       description:
@@ -110,8 +112,109 @@ export default function SectionAELI() {
         "Utiliser l’intelligence émotionnelle pour améliorer les relations professionnelles et le leadership.",
     },
   ];
-
-  const atout = [
+  const programsEn = [
+    {
+      title: "Agile Project Management",
+      description:
+        "Adopt Scrum and Kanban methodologies for flexible and efficient project management.",
+    },
+    {
+      title: "Transformational Leadership in Business",
+      description:
+        "Techniques to inspire, motivate, and guide teams towards change.",
+    },
+    {
+      title: "Entrepreneurship in Agrobusiness",
+      description:
+        "Identify opportunities in sustainable agriculture and develop viable projects.",
+    },
+    {
+      title: "Introduction to Renewable Energies",
+      description:
+        "Understand solar, wind, and other green energy systems to propose sustainable solutions.",
+    },
+    {
+      title: "Negotiation Techniques for Leaders",
+      description:
+        "Enhance influence, persuasion, and conflict management skills.",
+    },
+    {
+      title: "Design Thinking and Innovation",
+      description:
+        "Stimulate creativity and solve complex problems with a user-centered approach.",
+    },
+    {
+      title: "Finance for Entrepreneurs",
+      description:
+        "Learn the basics of financial management, fundraising, and business plan development.",
+    },
+    {
+      title: "Startup Creation and Management",
+      description:
+        "From idea to market: steps to launch and grow an innovative business.",
+    },
+    {
+      title: "Sustainable and Ethical Management",
+      description:
+        "Implement responsible and sustainable practices in business management.",
+    },
+    {
+      title: "Social Entrepreneurship",
+      description:
+        "Create projects that combine social impact and economic viability.",
+    },
+    {
+      title: "Digital Marketing for Entrepreneurs",
+      description:
+        "Strategies to build a strong brand and acquire customers online.",
+    },
+    {
+      title: "Inclusive Leadership and Diversity",
+      description: "Create inclusive environments that value diverse talents.",
+    },
+    {
+      title: "Resilience and Adaptability for Leaders",
+      description:
+        "Strengthen skills to overcome crises and adapt to changing environments.",
+    },
+    {
+      title: "Introduction to Logistics and Supply Chain",
+      description:
+        "Understand the basics of supply chain management for high-performing businesses.",
+    },
+    {
+      title: "Data Analysis for Decision Making",
+      description:
+        "Learn to leverage data to guide business strategies and decisions.",
+    },
+    {
+      title: "Entrepreneurship in Cultural and Creative Industries",
+      description:
+        "Leverage cultural resources to create innovative businesses.",
+    },
+    {
+      title: "Leadership and Communication in Crisis Contexts",
+      description:
+        "Develop effective communication strategies to manage crises and maintain trust.",
+    },
+    {
+      title: "Entrepreneurship and Green Financing",
+      description:
+        "Identify and mobilize funding for environmentally-friendly projects.",
+    },
+    {
+      title: "Impact Investing and Measuring Impact",
+      description:
+        "Learn how to invest to generate both financial returns and social or environmental impact.",
+    },
+    {
+      title: "Emotional Intelligence for Managers",
+      description:
+        "Use emotional intelligence to improve professional relationships and leadership.",
+    },
+  ];
+  const programs = language === "fr" ? programsFr : programsEn;
+  const atoutFr = [
     {
       title: "Approche Holistique",
       description:
@@ -138,7 +241,35 @@ export default function SectionAELI() {
         "L’institut met l’accent sur des pratiques durables et éthiques, formant des leaders conscients de leur impact sur la société et l’environnement.",
     },
   ];
-  const methods = [
+  const atoutEn = [
+    {
+      title: "Holistic Approach",
+      description:
+        "AELI integrates technical, managerial, and ethical aspects into its training programs, ensuring comprehensive preparation for participants in the professional world.",
+    },
+    {
+      title: "Network of Experts",
+      description:
+        "The institute collaborates with recognized professionals and academics, providing learners with a practical and up-to-date perspective on the challenges and opportunities in their respective fields.",
+    },
+    {
+      title: "Customized Programs",
+      description:
+        "The training programs are tailored to the specific needs of individuals and organizations, allowing for the immediate application of acquired skills.",
+    },
+    {
+      title: "Focus on Innovation",
+      description:
+        "AELI fosters creative thinking and innovation, helping participants develop unique solutions to contemporary problems.",
+    },
+    {
+      title: "Commitment to Sustainable Development",
+      description:
+        "The institute emphasizes sustainable and ethical practices, training leaders who are aware of their impact on society and the environment.",
+    },
+  ];
+  const atout = language === "fr" ? atoutFr : atoutEn;
+  const methodsFr = [
     {
       title: "Ateliers Interactifs",
       description: "Favoriser l’apprentissage par la pratique.",
@@ -157,8 +288,27 @@ export default function SectionAELI() {
         "Accès à des ressources en ligne pour prolonger l’apprentissage.",
     },
   ];
+  const methodsEn = [
+    {
+      title: "Interactive Workshops",
+      description: "Promote learning through hands-on practice.",
+    },
+    {
+      title: "Practical Cases and Simulations",
+      description: "Based on real-world scenarios for total immersion.",
+    },
+    {
+      title: "Personalized Guidance",
+      description: "Coaching by national and international experts.",
+    },
+    {
+      title: "Modern Digital Resources",
+      description: "Access to online materials to extend learning.",
+    },
+  ];
+  const methods = language === "fr" ? methodsFr : methodsEn;
 
-  const atout2 = [
+  const atout2Fr = [
     {
       title: "Expertise Reconnue",
       description:
@@ -185,8 +335,33 @@ export default function SectionAELI() {
         "Formations disponibles en présentiel, en ligne ou hybrides.",
     },
   ];
-
-  const benefits = [
+  const atout2En = [
+    {
+      title: "Recognized Expertise",
+      description:
+        "Our institutions are leaders in their respective fields, ensuring high-quality training.",
+    },
+    {
+      title: "Strategic Partnerships",
+      description:
+        "Collaboration with international experts and renowned companies.",
+    },
+    {
+      title: "State-of-the-Art Infrastructure",
+      description: "Advanced technological platforms and professional studios.",
+    },
+    {
+      title: "Tailored Programs",
+      description:
+        "Custom-designed programs to meet the specific needs of organizations.",
+    },
+    {
+      title: "Logistical Flexibility",
+      description: "Training available in-person, online, or hybrid formats.",
+    },
+  ];
+  const atout2 = language === "fr" ? atout2Fr : atout2En;
+  const benefitsFr = [
     {
       title: "Amélioration de la Productivité",
       description: "Employés mieux formés et plus efficaces.",
@@ -206,7 +381,27 @@ export default function SectionAELI() {
         "Programmes intensifs et courts, limitant l’impact sur les activités quotidiennes.",
     },
   ];
-  const details = [
+  const benefitsEn = [
+    {
+      title: "Improved Productivity",
+      description: "Better-trained and more efficient employees.",
+    },
+    {
+      title: "Targeted Skill Enhancement",
+      description: "Acquisition of specific and practical expertise.",
+    },
+    {
+      title: "Talent Recognition",
+      description: "Increased motivation and employee retention.",
+    },
+    {
+      title: "Cost Reduction",
+      description:
+        "Intensive and short programs, minimizing impact on daily operations.",
+    },
+  ];
+  const benefits = language === "fr" ? benefitsFr : benefitsEn;
+  const detailsFr = [
     {
       title: "Durée",
       description: "Entre 1 et 4 semaines, selon le module choisi.",
@@ -226,33 +421,63 @@ export default function SectionAELI() {
         "Via notre plateforme en ligne ou par contact direct avec notre équipe.",
     },
   ];
-
+  const detailsEn = [
+    {
+      title: "Duration",
+      description: "Between 1 and 4 weeks, depending on the chosen module.",
+    },
+    {
+      title: "Location",
+      description: "At our modern facilities “Emedia Nanisana”.",
+    },
+    {
+      title: "Pricing",
+      description:
+        "Fixed and competitive, tailored to the size and needs of the groups.",
+    },
+    {
+      title: "Registration",
+      description:
+        "Through our online platform or by direct contact with our team.",
+    },
+  ];
+  const details = language === "fr" ? detailsFr : detailsEn;
   useEffect(() => {
     AOS.init({
       duration: 1000, // Durée de l'animation
       easing: "ease-in-out", // Type d'animation
     });
   }, []);
+  const title =
+    language === "fr"
+      ? "AELI : L’AFRICAN ENTREPRENEURSHIP AND LEADERSHIP INSTITUTE"
+      : " AELI: THE AFRICAN ENTREPRENEURSHIP AND LEADERSHIP INSTITUTE";
+  const subtitle =
+    language === "fr"
+      ? "L’African Entrepreneurship and Leadership Institute (AELI) est une institution dédiée à la formation de leaders et d’entrepreneurs en Afrique. Elle se distingue par une approche holistique, visant à doter les individus des compétences nécessaires pour innover et créer de la valeur dans divers secteurs."
+      : " The African Entrepreneurship and Leadership Institute (AELI) is an institution dedicated to training leaders and entrepreneurs in Africa. It stands out for its holistic approach, aiming to equip individuals with the skills needed to innovate and create value across various sectors.";
   return (
     <div>
       {/* Header */}
-      <Header
-        id="aeli"
-        title="AELI : L’AFRICAN ENTREPRENEURSHIP AND LEADERSHIP INSTITUTE"
-        subtitle="L’African Entrepreneurship and Leadership Institute (AELI) est une institution dédiée à la formation de leaders et d’entrepreneurs en Afrique. Elle se distingue par une approche holistique, visant à doter les individus des compétences nécessaires pour innover et créer de la valeur dans divers secteurs."
-      />
+      <Header id="aeli" title={title} subtitle={subtitle} />
       <div
         id="aeli"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
         <ScrollComponent text="AELI : L’AFRICAN ENTREPRENEURSHIP AND LEADERSHIP INSTITUTE" />
         <Section
-          title="Identité et Mission"
-          content="AELI se consacre à la promotion de l’entrepreneuriat et du leadership transformationnel. L’institut offre des programmes conçus pour stimuler l’innovation, la gestion de projet agile, le leadership en entreprise, l’agrobusiness, les énergies renouvelables et les techniques de négociation. L’objectif est de former des leaders capables de relever les défis contemporains et de contribuer au développement durable du continent africain."
+          title={
+            language === "fr" ? "Identité et Mission" : "Identity and Mission"
+          }
+          content={
+            language === "fr"
+              ? "AELI se consacre à la promotion de l’entrepreneuriat et du leadership transformationnel. L’institut offre des programmes conçus pour stimuler l’innovation, la gestion de projet agile, le leadership en entreprise, l’agrobusiness, les énergies renouvelables et les techniques de négociation. L’objectif est de former des leaders capables de relever les défis contemporains et de contribuer au développement durable du continent africain."
+              : "AELI is dedicated to promoting entrepreneurship and transformational leadership. The institute offers programs designed to foster innovation, agile project management, leadership in business, agribusiness, renewable energies, and negotiation techniques. The goal is to train leaders capable of facing contemporary challenges and contributing to the sustainable development of the African continent."
+          }
         ></Section>
         <Section bgColor="bg-gray-200">
           <h2 className=" my-10 mb-14  text-xl font-semibold dark:text-white">
-            Atouts Distinctifs
+            {language === "fr" ? "Atouts Distinctifs" : "Atouts Distinctifs"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {atout.map((point, index) => (
@@ -266,21 +491,30 @@ export default function SectionAELI() {
         </Section>
 
         <Section
-          title="Programmes Innovants"
-          content="AELI propose une gamme de programmes couvrant des domaines tels que la gestion de projet agile, le leadership transformationnel, l’entrepreneuriat en agrobusiness, les énergies renouvelables et les techniques de négociation. Ces formations sont conçues pour être attrayantes et pertinentes, répondant aux besoins actuels du marché et aux aspirations des professionnels africains."
+          title={
+            language === "fr" ? "Programmes Innovants" : "Innovative Programs"
+          }
+          content={
+            language === "fr"
+              ? "AELI propose une gamme de programmes couvrant des domaines tels que la gestion de projet agile, le leadership transformationnel, l’entrepreneuriat en agrobusiness, les énergies renouvelables et les techniques de négociation. Ces formations sont conçues pour être attrayantes et pertinentes, répondant aux besoins actuels du marché et aux aspirations des professionnels africains."
+              : "AELI offers a range of programs covering areas such as agile project management, transformational leadership, entrepreneurship in agribusiness, renewable energies, and negotiation techniques. These programs are designed to be engaging and relevant, addressing the current market needs and the aspirations of African professionals."
+          }
         ></Section>
         <Section
           bgColor="bg-gray-200"
-          title="Vision"
-          content="AELI aspire à être un catalyseur de changement en Afrique, en formant des leaders et des entrepreneurs capables de transformer leurs communautés et de contribuer positivement à l’économie mondiale. En mettant l’accent sur l’innovation, l’éthique et le développement durable, l’institut joue un rôle crucial dans la préparation de la prochaine génération de leaders africains."
-        ></Section>
+          title={language === "fr" ? "Vision" : "Vision"}
+          content={
+            language === "fr"
+              ? "AELI aspire à être un catalyseur de changement en Afrique, en formant des leaders et des entrepreneurs capables de transformer leurs communautés et de contribuer positivement à l’économie mondiale. En mettant l’accent sur l’innovation, l’éthique et le développement durable, l’institut joue un rôle crucial dans la préparation de la prochaine génération de leaders africains."
+              : "AELI aspires to be a catalyst for change in Africa, training leaders and entrepreneurs who can transform their communities and contribute positively to the global economy. By focusing on innovation, ethics, and sustainable development, the institute plays a crucial role in preparing the next generation of African leaders."
+          }
+        />
         <Section bgColor="bg-gray-200">
           <div className="mx-auto mt-8 max-w-3xl rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
             <p className="text-xl  leading-relaxed text-gray-800 dark:text-gray-300">
-              En somme, l&apos;African Entrepreneurship and Leadership Institute
-              se positionne comme un acteur clé dans le paysage éducatif
-              africain, offrant des formations de qualité qui répondent aux
-              défis et aux opportunités du continent.
+              {language === "fr"
+                ? "En somme, l'African Entrepreneurship and Leadership Institute se positionne comme un acteur clé dans le paysage éducatif africain, offrant des formations de qualité qui répondent aux défis et aux opportunités du continent."
+                : "In summary, the African Entrepreneurship and Leadership Institute positions itself as a key player in the African educational landscape, offering high-quality training that addresses the challenges and opportunities of the continent."}
             </p>
           </div>
         </Section>
@@ -298,19 +532,22 @@ export default function SectionAELI() {
 
         <div className="mx-auto my-10 max-w-2xl rounded-lg bg-gray-300 p-6 shadow-md dark:bg-gray-800">
           <p className="text-lg font-medium leading-relaxed text-gray-700 dark:text-gray-300">
-            Ces thèmes visent à préparer des leaders visionnaires, capables
-            d&apos;innover et de faire face aux défis contemporains, tout en
-            favorisant la création de valeur durable.
+            {language === "fr"
+              ? "Ces thèmes visent à préparer des leaders visionnaires, capables d'innover et de faire face aux défis contemporains, tout en favorisant la création de valeur durable."
+              : "These themes aim to prepare visionary leaders capable of innovating and facing contemporary challenges, while fostering the creation of sustainable value."}
           </p>
         </div>
 
         <Section bgColor="bg-gray-200">
           <h2 className=" my-10 mb-14  text-xl font-semibold dark:text-white">
-            Approche Méthodologique
+            {language === "fr"
+              ? "Approche Méthodologique"
+              : "Methodological Approach "}
           </h2>
           <h4 className=" mb-10 text-start text-lg  leading-relaxed text-gray-800 dark:text-gray-300">
-            Les formations suivent une approche structurée et dynamique pour
-            maximiser l&apos;impact.
+            {language === "fr"
+              ? "Les formations suivent une approche structurée et dynamique pour maximiser l'impact."
+              : "The training programs follow a structured and dynamic approach to maximize impact."}
           </h4>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {methods.map((point, index) => (
@@ -325,7 +562,7 @@ export default function SectionAELI() {
 
         <Section>
           <h2 className=" my-10 mb-14 text-2xl font-semibold dark:text-white">
-            Nos Atouts
+            {language === "fr" ? "Nos Atouts" : "Our Strengths"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {atout2.map((point, index) => (
@@ -339,7 +576,9 @@ export default function SectionAELI() {
         </Section>
         <Section bgColor="bg-gray-200">
           <h2 className=" my-10 mb-14 text-2xl font-semibold dark:text-white">
-            Avantages pour les Entreprises
+            {language === "fr"
+              ? "Avantages pour les Entreprises"
+              : "Benefits for Businesses"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {benefits.map((point, index) => (
@@ -354,7 +593,9 @@ export default function SectionAELI() {
 
         <Section>
           <h2 className=" my-10 mb-14 text-2xl font-semibold dark:text-white">
-            Modalités Pratiques pour chaque établissement :
+            {language === "fr"
+              ? "Modalités Pratiques pour chaque établissement :"
+              : "Practical Modalities for Each Institution :"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {details.map((point, index) => (

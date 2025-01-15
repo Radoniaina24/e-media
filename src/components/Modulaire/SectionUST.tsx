@@ -6,9 +6,11 @@ import Header from "../Licence/Header";
 import Section from "../Licence/Section";
 import CardCFP from "../CFP/CardCFP";
 import ScrollComponent from "../Scroll/ScrollComponent";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 export default function SectionUST() {
-  const programs = [
+  const { language } = useLanguageContext();
+  const programsFr = [
     {
       title: "Introduction à la Robotique Ludique",
       description:
@@ -85,8 +87,80 @@ export default function SectionUST() {
         "Exploration des approches numériques pour favoriser des modèles durables en entreprise.",
     },
   ];
-
-  const atout = [
+  const programsEn = [
+    {
+      title: "Introduction to Playful Robotics",
+      description: "First steps in assembling and programming simple robots.",
+    },
+    {
+      title: "Cyber-hygiene and IT Security",
+      description: "Protection of sensitive data in a digital environment.",
+    },
+    {
+      title: "Introduction to Machine Learning",
+      description: "Accelerated training to demystify machine learning.",
+    },
+    {
+      title: "IoT and Simple Connected Devices",
+      description: "Design and deployment of accessible IoT applications.",
+    },
+    {
+      title: "Data Analysis with Python",
+      description:
+        "Discovering the basics of Python for data manipulation and analysis.",
+    },
+    {
+      title: "Blockchain and Decentralized Applications",
+      description:
+        "Introduction to blockchain concepts and their use in various sectors.",
+    },
+    {
+      title: "Creating Simple Mobile Applications",
+      description:
+        "Developing applications for Android and iOS with accessible tools.",
+    },
+    {
+      title: "Renewable Energy and Smart Technologies",
+      description:
+        "Introduction to smart energy systems and connected solar solutions.",
+    },
+    {
+      title: "Digital Mapping and GIS (Geographic Information Systems)",
+      description:
+        "Using GIS software to analyze and represent geospatial data.",
+    },
+    {
+      title: "3D Printing and Rapid Prototyping",
+      description:
+        "Learning the basics of 3D printing and creating functional prototypes.",
+    },
+    {
+      title: "Interactive Educational Technologies",
+      description:
+        "Exploring digital tools for teaching, including augmented reality and interactive whiteboards.",
+    },
+    {
+      title: "Introduction to Digital Biotechnology",
+      description: "Awareness of the applications of IT in biotechnology.",
+    },
+    {
+      title: "Optimizing Industrial Processes with AI",
+      description:
+        "Introduction to tools and methods for integrating artificial intelligence in industrial processes.",
+    },
+    {
+      title: "Virtual and Augmented Reality Techniques",
+      description:
+        "Designing and deploying immersive experiences for practical applications.",
+    },
+    {
+      title: "Circular Economy and Digital Solutions",
+      description:
+        "Exploring digital approaches to promote sustainable business models.",
+    },
+  ];
+  const programs = language === "fr" ? programsFr : programsEn;
+  const atoutFr = [
     {
       title: "Expertise Technologique",
       description:
@@ -113,32 +187,66 @@ export default function SectionUST() {
         "Solutions adaptées aux défis régionaux, notamment en agriculture, santé et énergie.",
     },
   ];
+  const atoutEn = [
+    {
+      title: "Technological Expertise",
+      description:
+        "Innovative programs in AI, IoT, renewable energy, and cybersecurity.",
+    },
+    {
+      title: "Practical Teaching",
+      description:
+        "Modern laboratories and hands-on projects for immediate application of knowledge.",
+    },
+    {
+      title: "International Collaboration",
+      description:
+        "Academic and industrial partnerships offering global opportunities.",
+    },
+    {
+      title: "Interdisciplinarity",
+      description:
+        "Training integrating technology, entrepreneurship, and sustainable development.",
+    },
+    {
+      title: "Local and Sustainable Impact",
+      description:
+        "Solutions tailored to regional challenges, particularly in agriculture, health, and energy.",
+    },
+  ];
+  const atout = language === "fr" ? atoutFr : atoutEn;
   useEffect(() => {
     AOS.init({
       duration: 1000, // Durée de l'animation
       easing: "ease-in-out", // Type d'animation
     });
   }, []);
+  const title =
+    language === "fr"
+      ? "UST-IO : UNIVERSITY OF SCIENCE AND TECHNOLOGY - INDIAN OCEAN"
+      : "UST-IO: UNIVERSITY OF SCIENCE AND TECHNOLOGY - INDIAN OCEAN";
   return (
     <div>
       {/* Header */}
-      <Header
-        id="ust"
-        title="UST-IO : UNIVERSITY OF SCIENCE AND TECHNOLOGY - INDIAN OCEAN"
-        subtitle=""
-      />
+      <Header id="ust" title={title} subtitle="" />
       <div
         id="ust"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
-        <ScrollComponent text="UST-IO : UNIVERSITY OF SCIENCE AND TECHNOLOGY - INDIAN OCEAN" />
+        <ScrollComponent text={title} />
         <Section
-          title="Identité et Mission"
-          content="L’UST-IO est une institution clé à Madagascar, dédiée à la formation et à l’innovation dans les domaines des sciences et des nouvelles technologies. Elle vise à former des professionnels compétents pour relever les défis de la transformation digitale et du développement durable."
+          title={
+            language === "fr" ? "Identité et Mission" : "Identity and Mission"
+          }
+          content={
+            language === "fr"
+              ? "L’UST-IO est une institution clé à Madagascar, dédiée à la formation et à l’innovation dans les domaines des sciences et des nouvelles technologies. Elle vise à former des professionnels compétents pour relever les défis de la transformation digitale et du développement durable."
+              : "UST-IO is a key institution in Madagascar, dedicated to training and innovation in the fields of science and new technologies. Its mission is to develop skilled professionals who can tackle the challenges of digital transformation and sustainable development."
+          }
         ></Section>
         <Section bgColor="bg-gray-200">
           <h2 className=" my-10 mb-14  text-xl font-semibold dark:text-white">
-            Atouts Distinctifs
+            {language === "fr" ? "Atouts Distinctifs" : "Atouts Distinctifs"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {atout.map((point, index) => (
@@ -152,13 +260,19 @@ export default function SectionUST() {
         </Section>
 
         <Section
-          title="Vision"
-          content="L’UST-IO ambitionne de devenir un moteur de transformation digitale et un incubateur de talents pour Madagascar et la région de l’océan Indien, alliant excellence académique et impact communautaire."
+          title={language === "fr" ? "Vision" : "Vision"}
+          content={
+            language === "fr"
+              ? "L’UST-IO ambitionne de devenir un moteur de transformation digitale et un incubateur de talents pour Madagascar et la région de l’océan Indien, alliant excellence académique et impact communautaire."
+              : "UST-IO aims to become a driving force for digital transformation and a talent incubator for Madagascar and the Indian Ocean region, combining academic excellence with community impact."
+          }
         ></Section>
 
         <Section bgColor="bg-gray-200">
           <h2 className=" my-10 mb-14  text-xl font-semibold dark:text-white">
-            Programmes de formations modulaires :
+            {language === "fr"
+              ? "Programmes de formations modulaires :"
+              : "Modular Training Programs:"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {programs.map((point, index) => (
@@ -173,11 +287,9 @@ export default function SectionUST() {
         <Section bgColor="bg-gray-200">
           <div className="mx-auto max-w-2xl rounded-lg bg-gray-300 p-6 shadow-md dark:bg-gray-800">
             <p className="text-lg font-medium leading-relaxed text-gray-700 dark:text-gray-300">
-              Ces thèmes s&apos;inscrivent dans l&apos;objectif d&apos;UST-IO de
-              promouvoir l&apos;innovation technologique et de répondre aux
-              besoins émergents de la transformation digitale, tout en restant
-              complémentaires aux formations proposées par d&apos;autres
-              institutions comme E-media.
+              {language === "fr"
+                ? "Ces thèmes s'inscrivent dans l'objectif d'UST-IO de promouvoir l'innovation technologique et de répondre aux besoins émergents de la transformation digitale, tout en restant complémentaires aux formations proposées par d'autres institutions comme E-media."
+                : "These themes align with UST-IO's objective of promoting technological innovation and addressing the emerging needs of digital transformation, while remaining complementary to the programs offered by other institutions like E-media."}
             </p>
           </div>
         </Section>

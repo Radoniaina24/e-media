@@ -1,23 +1,16 @@
 "use client";
-
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importer les styles d'AOS
-
 import Header from "../Licence/Header";
 import Section from "../Licence/Section";
-
-import CallToAction from "../Licence/CallToAction";
-import Mention from "../Master/Mention";
-import CiblePublicCard from "../Master/CiblePublicCard";
-import MasterCard from "../Master/MasterCard";
-import ProgramDetails from "../Master/ProgramDetails";
-import ProgramCard from "../Master/ProgramCard";
 import CardCFP from "../CFP/CardCFP";
 import ScrollComponent from "../Scroll/ScrollComponent";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 export default function SectionUSA() {
-  const programs = [
+  const { language } = useLanguageContext();
+  const programsFr = [
     {
       title: "Sonorisation et Lumière de Spectacles",
       description:
@@ -89,7 +82,80 @@ export default function SectionUSA() {
         "Sensibilisation aux enjeux de sécurité numérique : protection des données, bonnes pratiques en ligne, et bases des outils de cybersécurité.",
     },
   ];
-  const atout = [
+  const programsEn = [
+    {
+      title: "Sound and Lighting for Shows",
+      description:
+        "Techniques for live event sound: audio settings, equipment placement, real-time mixing. Design and management of lighting to create suitable stage atmospheres.",
+    },
+    {
+      title: "Music Production and Photography",
+      description:
+        "Learning Music Production Software (MAO), recording, mixing, and mastering techniques. Introduction to photography: framing, lighting, and photo retouching.",
+    },
+    {
+      title: "VFX Production and Post-production",
+      description:
+        "Introduction to digital visual effects for cinema and television. Compositing techniques, motion design, and integration of 3D elements.",
+    },
+    {
+      title: "TV Presentation and Influence",
+      description:
+        "Training in screen communication: posture, diction, expression, and influence strategies in the television context.",
+    },
+    {
+      title: "Radio Presentation and Technique",
+      description:
+        "Radio hosting techniques: articulation, live broadcast management, and mastering technical equipment for a professional show.",
+    },
+    {
+      title: "Radio and TV Program Design",
+      description:
+        "Program creation steps: writing, planning, content management, and structuring to attract and retain an audience.",
+    },
+    {
+      title: "Video Filming and Drone Operation",
+      description:
+        "Training in video capture with cameras and drones. Framing techniques, aerial shots, and post-production.",
+    },
+    {
+      title: "3D Graphics Design",
+      description:
+        "Introduction to 3D modeling, texturing, animation, and rendering using specialized software for innovative visual projects.",
+    },
+    {
+      title: "Web Design and UX/UI",
+      description:
+        "Creating attractive and functional websites using graphic design principles, ergonomics, and user experience. Mastery of tools like Figma, Adobe XD, and WordPress.",
+    },
+    {
+      title: "Web Development",
+      description:
+        "Learning programming languages (HTML, CSS, JavaScript, PHP) and modern frameworks to design dynamic and high-performance websites.",
+    },
+    {
+      title: "Digital Marketing and SEO",
+      description:
+        "Introduction to online marketing strategies: SEO (Search Engine Optimization), social media advertising, email marketing, and managing advertising campaigns.",
+    },
+    {
+      title: "Community Management and Animation",
+      description:
+        "Techniques for managing and engaging online communities: creating engaging content, moderation, and loyalty strategies.",
+    },
+    {
+      title: "Social Media Content Creation",
+      description:
+        "Design and production of visual and textual content optimized for social platforms. Using tools like Canva, Adobe Creative Suite, and performance analysis via key performance indicators (KPIs).",
+    },
+    {
+      title: "Introduction to Cybersecurity",
+      description:
+        "Awareness of digital security challenges: data protection, online best practices, and basic cybersecurity tools.",
+    },
+  ];
+  const programs = language === "fr" ? programsFr : programsEn;
+  const atoutFr = [
     {
       title: "Infrastructure de Pointe",
       description:
@@ -116,35 +182,68 @@ export default function SectionUSA() {
         "Focus sur les compétences techniques, créatives et entrepreneuriales, directement applicables au marché du travail.",
     },
   ];
+  const atoutEn = [
+    {
+      title: "State-of-the-Art Infrastructure",
+      description:
+        "Film studios, professional post-production equipment, and multimedia laboratories.",
+    },
+    {
+      title: "Network of Experts",
+      description:
+        "Teachers from the film, audiovisual, and digital industries, providing learning grounded in professional reality.",
+    },
+    {
+      title: "Innovative Programs",
+      description:
+        "Training programs tailored to the current needs of the creative and digital industries.",
+    },
+    {
+      title: "Industry Connection",
+      description:
+        "Internship opportunities, collaborative productions, and local and international partnerships.",
+    },
+    {
+      title: "Practical Orientation",
+      description:
+        "Focus on technical, creative, and entrepreneurial skills directly applicable to the job market.",
+    },
+  ];
+  const atout = language === "fr" ? atoutFr : atoutEn;
   useEffect(() => {
     AOS.init({
       duration: 1000, // Durée de l'animation
       easing: "ease-in-out", // Type d'animation
     });
   }, []);
+  const title =
+    language === "fr"
+      ? "E-MEDIA : UNIVERSITÉ SPÉCIALISÉE EN AUDIOVISUEL, CINÉMATOGRAPHIE ET NUMÉRIQUE"
+      : "E-MEDIA: UNIVERSITY SPECIALIZING IN AUDIOVISUAL, CINEMATOGRAPHY, AND DIGITAL TECHNOLOGIES";
+  const subtitle = language === "fr" ? "" : "";
   return (
     <div>
       {/* Header */}
-      <Header
-        id="usa"
-        title="E-MEDIA : UNIVERSITÉ SPÉCIALISÉE EN AUDIOVISUEL, CINÉMATOGRAPHIE ET NUMÉRIQUE"
-        subtitle=""
-      />
+      <Header id="usa" title={title} subtitle="" />
       <div
         id="usa"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
       >
-        <ScrollComponent text="E-MEDIA : UNIVERSITÉ SPÉCIALISÉE EN AUDIOVISUEL, CINÉMATOGRAPHIE ET NUMÉRIQUE" />
+        <ScrollComponent text={title} />
         <Section
-          title="Identité et Mission"
-          content="E-media est la première et unique université à Madagascar dédiée exclusivement aux métiers de l’audiovisuel, de la cinématographie et du numérique. Grâce à des infrastructures modernes et à un réseau de professionnels de renom, E-media forme les talents de demain dans des secteurs en pleine expansion.
-
-"
+          title={
+            language === "fr" ? "Identité et Mission" : "Identity and Mission"
+          }
+          content={
+            language === "fr"
+              ? "E-media est la première et unique université à Madagascar dédiée exclusivement aux métiers de l’audiovisuel, de la cinématographie et du numérique. Grâce à des infrastructures modernes et à un réseau de professionnels de renom, E-media forme les talents de demain dans des secteurs en pleine expansion."
+              : "E-media is the first and only university in Madagascar exclusively dedicated to audiovisual, cinematography, and digital professions. With modern infrastructure and a network of renowned professionals, E-media trains the talents of tomorrow in rapidly growing sectors."
+          }
         ></Section>
 
         <Section bgColor="bg-gray-200">
           <h2 className=" my-10 mb-14  text-xl font-semibold dark:text-white">
-            Atouts Distinctifs
+            {language === "fr" ? "Atouts Distinctifs" : "Distinctive Strengths"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {atout.map((point, index) => (
@@ -158,15 +257,19 @@ export default function SectionUSA() {
         </Section>
 
         <Section
-          title="Vision"
-          content="E-media ambitionne de devenir un centre d’excellence et de référence en Afrique pour les métiers créatifs et numériques, en formant une nouvelle génération de professionnels capables d’innover et de contribuer au rayonnement culturel et économique de Madagascar.
-
-"
+          title={language === "fr" ? "Vision" : "Vision"}
+          content={
+            language === "fr"
+              ? "E-media ambitionne de devenir un centre d’excellence et de référence en Afrique pour les métiers créatifs et numériques, en formant une nouvelle génération de professionnels capables d’innover et de contribuer au rayonnement culturel et économique de Madagascar."
+              : "E-media aims to become a center of excellence and a benchmark in Africa for creative and digital professions, training a new generation of professionals capable of innovating and contributing to the cultural and economic development of Madagascar."
+          }
         ></Section>
 
         <Section bgColor="bg-gray-200">
           <h2 className=" my-10 mb-14  text-xl font-semibold dark:text-white">
-            Programmes de formations modulaires proposés par l&apos;E-media :
+            {language === "fr"
+              ? "Programmes de formations modulaires proposés par l'E-media :"
+              : "Modular Training Programs Offered by E-media:"}
           </h2>
           <div className=" grid grid-cols-1 justify-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {programs.map((point, index) => (
