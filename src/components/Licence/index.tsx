@@ -31,7 +31,7 @@ export default function Licence() {
   ];
   const { language } = useLanguageContext();
   return (
-    <div>
+    <div className="">
       <HeroSectionPrograms
         title={
           language === "fr"
@@ -40,7 +40,7 @@ export default function Licence() {
         }
         imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736923503/Fond-Nos-programmes_1_ehkxvu.jpg"
       />
-      <div id="programme" className="container mt-10">
+      <div id="programme" className="container mb-14 mt-10">
         {/* <LicensePrograms /> */}
         <div className=" grid grid-cols-2 gap-5  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {programs.map((program, index) => (
