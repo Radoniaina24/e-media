@@ -4,7 +4,7 @@ import SelectFields from "./Form/SelectFields";
 import TextArea from "./Form/TextArea";
 import CheckBox from "./Form/CheckBox";
 
-export default function ContactPartenariats() {
+export function ContactPartenariatsFr() {
   const options = [
     { label: "Académiques", value: "Académiques" },
     { label: "Technologiques", value: "Technologiques" },
@@ -144,6 +144,145 @@ export default function ContactPartenariats() {
                   <div className="w-full px-4">
                     <button className="d mt-4 w-full rounded-full bg-blue-600 py-3 font-medium text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 ">
                       Envoyer
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function PartnershipContact() {
+  const options = [
+    { label: "Academic", value: "Academic" },
+    { label: "Technological", value: "Technological" },
+    { label: "Cultural and Artistic", value: "Cultural and Artistic" },
+    { label: "Sustainable Development", value: "Sustainable Development" },
+    { label: "Financial and Strategic", value: "Financial and Strategic" },
+    { label: "With NGOs and Governments", value: "With NGOs and Governments" },
+    { label: "With Media", value: "With Media" },
+    { label: "Other", value: "Other" },
+  ];
+
+  const collaborationIdeas = [
+    { label: "Educational Partnerships", value: "educational_partnerships" },
+    { label: "Technological Projects", value: "technological_projects" },
+    {
+      label: "Cultural and Artistic Initiatives",
+      value: "cultural_artistic_initiatives",
+    },
+    {
+      label: "Sustainable Development Programs",
+      value: "sustainable_development",
+    },
+    { label: "Funding Strategies", value: "funding_strategies" },
+    {
+      label: "Collaborations with NGOs or Governments",
+      value: "ngos_governments",
+    },
+    { label: "Media and Communication", value: "media_communication" },
+    { label: "Research and Innovation", value: "research_innovation" },
+    { label: "Professional Training", value: "professional_training" },
+    { label: "Community Events", value: "community_events" },
+    { label: "Corporate Social Responsibility (CSR)", value: "csr" },
+    { label: "Business Agreements", value: "business_agreements" },
+    { label: "Logistics Solutions", value: "logistics_solutions" },
+    { label: "Startup Support", value: "startup_support" },
+    { label: "Immersive Experiences (VR/AR)", value: "immersive_experiences" },
+    { label: "App Development", value: "app_development" },
+    { label: "Others", value: "others" },
+  ];
+
+  return (
+    <section
+      id="contact"
+      className="overflow-hidden bg-gray-50 py-16 md:py-20 lg:py-16"
+    >
+      <div className="container mx-auto px-4">
+        <div className="-mx-4 flex flex-wrap">
+          {/* Form Section */}
+          <div className="m-auto mb-12 w-full px-4 lg:mb-0 lg:w-7/12 xl:w-10/12">
+            <div className="rounded-lg bg-white p-8 shadow-lg sm:p-12">
+              <h2 className="mb-6 text-center text-3xl font-semibold text-gray-800">
+                Please fill out this form to establish initial contact with us.
+              </h2>
+
+              <form>
+                <div className="-mx-4 flex flex-wrap">
+                  <InputField
+                    id="name"
+                    type="text"
+                    label="Name"
+                    placeholder="Enter your name"
+                  />
+                  <InputField
+                    id="firstname"
+                    type="text"
+                    label="First Name"
+                    placeholder="Enter your first name"
+                  />
+                  <InputField
+                    id="email"
+                    type="text"
+                    label="Email"
+                    placeholder="Enter your email"
+                  />
+                  <InputField
+                    id="entity"
+                    type="text"
+                    label="Entity"
+                    placeholder="Enter your entity"
+                  />
+                  <InputField
+                    id="telephone"
+                    type="text"
+                    label="Phone Number"
+                    placeholder="Enter your phone number"
+                  />
+                  <InputField
+                    id="whatsApp"
+                    type="text"
+                    label="WhatsApp"
+                    placeholder="Enter your WhatsApp"
+                  />
+                  <InputField
+                    id="position"
+                    type="text"
+                    label="Position"
+                    placeholder="Enter your position"
+                  />
+                  <InputField
+                    id="country"
+                    type="text"
+                    label="Country/Location"
+                    placeholder="Enter your location"
+                  />
+                  <SelectFields
+                    label={"Desired Type of Partnership"}
+                    id={"partnership"}
+                    options={options}
+                  />
+                  <SelectFields
+                    label={"Suggestions or Ideas for Collaboration"}
+                    id={"collaboration"}
+                    options={collaborationIdeas}
+                  />
+                  <CheckBox label={"Consent"} />
+                  {/* Message Field */}
+                  <TextArea />
+                  <CheckBox
+                    label={
+                      "I agree to share my information to be contacted by the E-media partnership team."
+                    }
+                  />
+                  {/* Submit Button */}
+                  <div className="w-full px-4">
+                    <button className="mt-4 w-full rounded-full bg-blue-600 py-3 font-medium text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-500">
+                      Submit
                     </button>
                   </div>
                 </div>

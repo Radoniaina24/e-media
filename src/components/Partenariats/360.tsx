@@ -1,22 +1,36 @@
 import React from "react";
-import PartnershipSection from "./PartnershipCard";
 import SectionImageCity from "../city/SectionImageCity";
 import { CheckCircleIcon } from "@heroicons/react/solid";
 import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
 import PartnershipCard from "./PartnershipCard";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 export default function FormatPro360() {
-  const offreFormation = {
+  const { language } = useLanguageContext();
+  const offreFormationFr = {
     title: "Formapro 360 : Solutions de formation sur mesure pour entreprises",
     description:
       "E-media lance Formapro 360, une nouvelle offre de formations modulaires personnalisées pour répondre aux besoins spécifiques des entreprises. Bénéficiez de notre expertise pour renforcer les compétences de vos équipes.",
   };
+  const offreFormationEn = {
+    title: "Formapro 360: Tailored Training Solutions for Businesses",
+    description:
+      "E-media launches Formapro 360, a new offer of customized modular training to meet the specific needs of businesses. Benefit from our expertise to enhance the skills of your teams.",
+  };
+  const offreFormation =
+    language === "fr" ? offreFormationFr : offreFormationEn;
+  const educationHighlights =
+    language === "fr" ? educationHighlightsFr : educationHighlightsEn;
+  const interventionDomains =
+    language === "fr" ? interventionDomainsFr : interventionDomainsEn;
   return (
     <div id="7" className="py-28">
       <ScrollComponentPartenariats text={offreFormation.title} />
       <PartnershipCard subtitle={offreFormation.description} />
       <h1 className="m-auto my-12 max-w-[700px] text-3xl font-semibold text-indigo-700">
-        Pourquoi collaborer avec E-Media ?
+        {language === "fr"
+          ? "Pourquoi collaborer avec E-Media ?"
+          : "Why collaborate with E-Media?"}
       </h1>
       <div className="space-y-16 px-6 py-12 ">
         {educationHighlights.map((item, index) => (
@@ -32,25 +46,44 @@ export default function FormatPro360() {
       </div>
       <InterventionDomains opportunities={interventionDomains} />
       <BusinessSolutionsBenefits />
-      <div className="mx-auto my-12 max-w-4xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
-        <h2 className="m-auto mb-6 max-w-[700px]  text-2xl font-semibold text-green-800">
-          Un partenariat pour des équipes performantes et efficaces
-        </h2>
-        <p className="mb-8 text-lg leading-relaxed text-gray-600">
-          Avec <span className="font-semibold text-green-600">E-media</span> et{" "}
-          <span className="font-semibold text-gray-700">Formapro 360</span>,
-          transformez vos défis organisationnels en opportunités stratégiques
-          grâce à des solutions de formation innovantes et personnalisées. Que
-          ce soit pour renforcer les compétences techniques de vos équipes,
-          améliorer leur leadership, ou les accompagner dans la transition
-          numérique, nous sommes votre partenaire idéal.
-        </p>
-      </div>
+      {language === "fr" ? (
+        <div className="mx-auto my-12 max-w-4xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
+          <h2 className="m-auto mb-6 max-w-[700px]  text-2xl font-semibold text-green-800">
+            Un partenariat pour des équipes performantes et efficaces
+          </h2>
+          <p className="mb-8 text-lg leading-relaxed text-gray-600">
+            Avec <span className="font-semibold text-green-600">E-media</span>{" "}
+            et <span className="font-semibold text-gray-700">Formapro 360</span>
+            , transformez vos défis organisationnels en opportunités
+            stratégiques grâce à des solutions de formation innovantes et
+            personnalisées. Que ce soit pour renforcer les compétences
+            techniques de vos équipes, améliorer leur leadership, ou les
+            accompagner dans la transition numérique, nous sommes votre
+            partenaire idéal.
+          </p>
+        </div>
+      ) : (
+        <div className="mx-auto my-12 max-w-4xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
+          <h2 className="m-auto mb-6 max-w-[700px] text-2xl font-semibold text-green-800">
+            A partnership for high-performing and efficient teams
+          </h2>
+          <p className="mb-8 text-lg leading-relaxed text-gray-600">
+            With <span className="font-semibold text-green-600">E-media</span>{" "}
+            and{" "}
+            <span className="font-semibold text-gray-700">Formapro 360</span>,
+            transform your organizational challenges into strategic
+            opportunities with innovative and personalized training solutions.
+            Whether it&apos;s to strengthen your teams&apos; technical skills,
+            improve their leadership, or support them through digital
+            transformation, we are your ideal partner.
+          </p>
+        </div>
+      )}
     </div>
   );
 }
 
-const educationHighlights = [
+const educationHighlightsFr = [
   {
     title: "Une formation sur mesure adaptée à vos besoins",
     highlights: [
@@ -106,7 +139,64 @@ const educationHighlights = [
     imageOnRight: false,
   },
 ];
-const interventionDomains = [
+const educationHighlightsEn = [
+  {
+    title: "Custom Training Tailored to Your Needs",
+    highlights: [
+      {
+        text: "Complete customization: We design training programs tailored to your organization's specific objectives, whether it's technical strengthening, digital transformation, or strategic communication.",
+      },
+      {
+        text: "Flexible formats: Online, in-person, or hybrid, our solutions adapt to your organizational and time constraints.",
+      },
+      {
+        text: "Sector targeting: Whether you're a private company, public institution, or NGO, we offer modules tailored to your professional challenges.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+    imageAlt: "Custom training",
+    imageOnRight: false,
+  },
+  {
+    title: "Formapro 360: A Modular and Impactful Solution",
+    highlights: [
+      {
+        text: "Modular approach: Short and intensive training, focused on specific skills for quick results.",
+      },
+      {
+        text: "Focus on immediate impact: Each module is designed to directly address the operational needs of your teams.",
+      },
+      {
+        text: "Continuous assessment: Measure the impact of the training before, during, and after, to ensure an optimal return on investment.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+    imageAlt: "Modular training",
+    imageOnRight: true,
+  },
+  {
+    title: "Expertise and Innovation by E-media",
+    highlights: [
+      {
+        text: "Modern infrastructure: Our audiovisual studios, digital laboratories, and educational tools provide a high-level professional environment for your training.",
+      },
+      {
+        text: "Proven expertise: Expertise in audiovisual, digital, engineering, and management, combined with national and international experience.",
+      },
+      {
+        text: "Personalized support: Our trainers work with you to define and achieve your strategic objectives.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+    imageAlt: "Expertise and innovation",
+    imageOnRight: false,
+  },
+];
+
+const interventionDomainsFr = [
   {
     title: "Audiovisuel et communication",
     description: [
@@ -144,12 +234,54 @@ const interventionDomains = [
     icon: "🌍",
   },
 ];
+const interventionDomainsEn = [
+  {
+    title: "Audiovisual and Communication",
+    description: [
+      "Audiovisual production techniques: shooting, editing, directing.",
+      "Digital communication and corporate storytelling.",
+      "Creation of visual and audiovisual content for campaigns and projects.",
+    ],
+    icon: "🎥",
+  },
+  {
+    title: "Digital and Technologies",
+    description: [
+      "Training on digital tools to improve productivity.",
+      "Website development, digital marketing, and social media management.",
+      "Digital security and data management for businesses and NGOs.",
+    ],
+    icon: "💻",
+  },
+  {
+    title: "Management and Organization",
+    description: [
+      "Leadership development and team management.",
+      "Project management, organizational strategy, and negotiation.",
+      "Motivational techniques and strengthening of soft skills.",
+    ],
+    icon: "📊",
+  },
+  {
+    title: "Sector Strengthening for NGOs and International Organizations",
+    description: [
+      "Production of educational and awareness-raising content.",
+      "Communication for social change and impact campaigns.",
+      "Training in humanitarian project management and monitoring-evaluation.",
+    ],
+    icon: "🌍",
+  },
+];
+
 const InterventionDomains = ({ opportunities }) => {
+  const { language } = useLanguageContext();
   return (
     <div className="bg-gray-50 px-6 py-16">
       <div className="mx-auto max-w-7xl text-center">
         <h1 className="m-auto mb-28 max-w-[700px] text-4xl font-semibold text-indigo-700">
-          Domaines d&apos;intervention avec E-media et Formapro 360
+          {language === "fr"
+            ? "Domaines d'intervention avec E-media et Formapro 360"
+            : "Intervention Areas with E-media and Formapro 360"}
         </h1>
 
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
@@ -184,7 +316,7 @@ const InterventionDomains = ({ opportunities }) => {
     </div>
   );
 };
-const businessSolutionsBenefits = [
+const businessSolutionsBenefitsFr = [
   {
     title: "Flexibilité et personnalisation",
     description:
@@ -210,15 +342,47 @@ const businessSolutionsBenefits = [
     icon: "💡", // Icône représentant l'innovation et les nouvelles idées
   },
 ];
+const businessSolutionsBenefitsEn = [
+  {
+    title: "Flexibility and Customization",
+    description: "An offering that adapts to your specific needs and industry.",
+    icon: "⚙️", // Icon representing flexibility and adaptability
+  },
+  {
+    title: "Immediate Impact",
+    description:
+      "Practical training focused on concrete and measurable results.",
+    icon: "🚀", // Icon symbolizing speed and immediate results
+  },
+  {
+    title: "Recognized Expertise",
+    description:
+      "A team of qualified trainers, supported by E-media's modern infrastructure.",
+    icon: "🎓", // Icon highlighting expertise and training
+  },
+  {
+    title: "Innovation with Formapro 360",
+    description:
+      "An innovative modular approach for quick and targeted skill enhancement.",
+    icon: "💡", // Icon representing innovation and new ideas
+  },
+];
 
 const BusinessSolutionsBenefits = () => {
+  const { language } = useLanguageContext();
+  const businessSolutionsBenefits =
+    language === "fr"
+      ? businessSolutionsBenefitsFr
+      : businessSolutionsBenefitsEn;
   return (
     <div className="relative px-6 py-16">
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
         <h1 className="m-auto mb-12 max-w-[700px]  text-4xl font-semibold text-indigo-700">
-          Avantages des solutions entreprises d&apos;E-media et Formapro 360
+          {language === "fr"
+            ? "Avantages des solutions entreprises d'E-media et Formapro 360"
+            : "Benefits of E-media's Business Solutions and Formapro 360"}
         </h1>
 
         {/* Grille de cartes */}

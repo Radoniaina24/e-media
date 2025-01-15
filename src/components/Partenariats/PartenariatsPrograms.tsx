@@ -1,5 +1,4 @@
 "use client";
-
 import {
   FaHandshake,
   FaLightbulb,
@@ -18,9 +17,10 @@ import Financier from "./Financier";
 import Ong from "./Ong";
 import Durable from "./Durable";
 import FormatPro360 from "./360";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 // Liste des partenariats
-const partnerships = [
+const partnershipsFr = [
   {
     title: "Académiques",
     description:
@@ -90,10 +90,79 @@ const partnerships = [
     id: "#8",
   },
 ];
+const partnershipsEn = [
+  {
+    title: "Academic",
+    description: "Student exchanges, joint degrees, collaborative research.",
+    icon: FaHandshake,
+    bgColor: "bg-blue-500",
+    component: <Academics />,
+    id: "#1",
+  },
+  {
+    title: "Technological",
+    description: "R&D, professional training, corporate internships.",
+    icon: FaLightbulb,
+    bgColor: "bg-green-500",
+    component: <Technologie />,
+    id: "#2",
+  },
+  {
+    title: "Cultural and Artistic",
+    description:
+      "Collaborative productions, masterclasses, international distribution.",
+    icon: FaPalette,
+    bgColor: "bg-purple-500",
+    component: <Culturels />,
+    id: "#3",
+  },
+  {
+    title: "Sustainable Development",
+    description:
+      "Eco-friendly audiovisual production, green innovations, awareness campaigns.",
+    icon: FaLeaf,
+    bgColor: "bg-teal-500",
+    component: <Durable />,
+    id: "#4",
+  },
+  {
+    title: "Financial and Strategic",
+    description: "Scholarships, sponsorships, creative project incubators.",
+    icon: FaPiggyBank,
+    bgColor: "bg-primary",
+    component: <Financier />,
+    id: "#5",
+  },
+  {
+    title: "With NGOs and Governments",
+    description: "Educational and cultural initiatives, awareness content.",
+    icon: FaHandsHelping,
+    bgColor: "bg-red-500",
+    component: <Ong />,
+    id: "#6",
+  },
+  {
+    title: "With Media",
+    description: "Production broadcasting, training workshops.",
+    icon: FaBroadcastTower,
+    bgColor: "bg-pink-500",
+    component: <FormatPro360 />,
+    id: "#8",
+  },
+  {
+    title: "FormaPro 360",
+    description: "Production broadcasting, training workshops.",
+    icon: FaChalkboard,
+    bgColor: "bg-red-500",
+    component: <FormatPro360 />,
+    id: "#8",
+  },
+];
 
 const PartenariatsPrograms: React.FC = () => {
+  const { language } = useLanguageContext();
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
-
+  const partnerships = language === "fr" ? partnershipsFr : partnershipsEn;
   // Fonction pour afficher le composant correspondant
   const getComponent = () => {
     const program = partnerships.find((p) => p.title === selectedProgram);
@@ -140,7 +209,7 @@ const PartenariatsPrograms: React.FC = () => {
                         )
                       }
                     >
-                      En savoir plus
+                      {language === "fr" ? "En savoir plus" : "Learn more"}
                     </button>
                   </a>
                 </div>

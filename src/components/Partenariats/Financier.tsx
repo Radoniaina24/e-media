@@ -1,15 +1,24 @@
 import React from "react";
-import PartnershipSection from "./PartnershipCard";
+
 import { CheckCircleIcon } from "@heroicons/react/outline";
 import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
 import PartnershipCard from "./PartnershipCard";
-const partenariat = {
+import { useLanguageContext } from "@/lib/context/LanguageContext";
+const partenariatFr = {
   title: "Nos Opportunités de Partenariat Financiers et Stratégiques",
   description:
     "E-media, en tant qu'université engagée dans la transformation numérique et éducative, invite des partenaires financiers et stratégiques à collaborer pour soutenir nos initiatives et répondre aux besoins croissants de nos étudiants et de notre institution.",
 };
-
+const partenariatEn = {
+  title: "Our Financial and Strategic Partnership Opportunities",
+  description:
+    "E-media, as a university committed to digital and educational transformation, invites financial and strategic partners to collaborate in supporting our initiatives and addressing the growing needs of our students and institution.",
+};
 export default function Financier() {
+  const { language } = useLanguageContext();
+  const partenariat = language === "fr" ? partenariatFr : partenariatEn;
+
+  const opportunities = language === "fr" ? opportunitiesFr : opportunitiesEn;
   return (
     <div id="5" className="py-28">
       <ScrollComponentPartenariats text={partenariat.title} />
@@ -19,23 +28,39 @@ export default function Financier() {
       <CreativeProjectsSupport />
       <CollaborationOpportunities opportunities={opportunities} />
       <Partnership />
-      <div className="mx-auto my-12 max-w-3xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
-        <h2 className="mb-6 text-center text-3xl font-semibold text-green-800">
-          Rejoignez E-media pour un avenir où chaque jeune talent peut réaliser
-          ses ambitions
-        </h2>
-        <p className="text-text-center text-lg leading-relaxed text-gray-700">
-          Rejoignez-nous pour bâtir ensemble un avenir où chaque jeune talent,
-          quel que soit son milieu, peut accéder à une éducation de qualité et
-          réaliser ses ambitions. Ensemble, nous pouvons ouvrir de nouvelles
-          opportunités pour les talents de demain grâce à des initiatives
-          durables et innovantes.
-        </p>
-      </div>
+      {language === "fr" ? (
+        <div className="mx-auto my-12 max-w-3xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
+          <h2 className="mb-6 text-center text-3xl font-semibold text-green-800">
+            Rejoignez E-media pour un avenir où chaque jeune talent peut
+            réaliser ses ambitions
+          </h2>
+          <p className="text-text-center text-lg leading-relaxed text-gray-700">
+            Rejoignez-nous pour bâtir ensemble un avenir où chaque jeune talent,
+            quel que soit son milieu, peut accéder à une éducation de qualité et
+            réaliser ses ambitions. Ensemble, nous pouvons ouvrir de nouvelles
+            opportunités pour les talents de demain grâce à des initiatives
+            durables et innovantes.
+          </p>
+        </div>
+      ) : (
+        <div className="mx-auto my-12 max-w-3xl rounded-lg bg-green-50 p-8 text-center shadow-lg">
+          <h2 className="mb-6 text-center text-3xl font-semibold text-green-800">
+            Join E-media for a future where every young talent can achieve their
+            ambitions
+          </h2>
+          <p className="text-center text-lg leading-relaxed text-gray-700">
+            Join us to build a future where every young talent, regardless of
+            their background, can access quality education and achieve their
+            ambitions. Together, we can open new opportunities for
+            tomorrow&apos;s talents through sustainable and innovative
+            initiatives.
+          </p>
+        </div>
+      )}
     </div>
   );
 }
-const educationScholarships = [
+const educationScholarshipsFr = [
   {
     title: "Un accès limité pour de nombreux jeunes talents",
     description:
@@ -55,7 +80,31 @@ const educationScholarships = [
     icon: "🌍", // Icône pour les opportunités internationales
   },
 ];
+const educationScholarshipsEn = [
+  {
+    title: "Limited access for many young talents",
+    description:
+      "Despite competitive training costs, many students cannot continue their education due to financial constraints. Every year, several students drop out or give up on joining our institution.",
+    icon: "🎓", // Icon for access to education
+  },
+  {
+    title: "Impact of scholarships",
+    description:
+      "Scholarships are a key solution to allow young people from disadvantaged backgrounds to access quality education, encourage deserving students to continue their studies without financial constraints, and offer international opportunities.",
+    icon: "💡", // Icon for the impact of scholarships
+  },
+  {
+    title: "International opportunities",
+    description:
+      "Scholarships offer opportunities to pursue studies abroad, thus opening doors to global educational and professional experiences.",
+    icon: "🌍", // Icon for international opportunities
+  },
+];
+
 const WhyCollaborateSection = () => {
+  const { language } = useLanguageContext();
+  const educationScholarships =
+    language === "fr" ? educationScholarshipsFr : educationScholarshipsEn;
   return (
     <div
       className="relative bg-cover bg-center bg-no-repeat px-6 py-16"
@@ -70,7 +119,9 @@ const WhyCollaborateSection = () => {
       {/* Contenu de la section */}
       <div className="relative z-10 mx-auto max-w-6xl text-center text-white">
         <h1 className="mb-12 text-4xl font-extrabold text-indigo-700">
-          Pourquoi un partenariat financier et stratégique est essentiel ?
+          {language === "fr"
+            ? "Pourquoi un partenariat financier et stratégique est essentiel ?"
+            : "Why is a financial and strategic partnership essential?"}
         </h1>
 
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -103,7 +154,7 @@ const WhyCollaborateSection = () => {
     </div>
   );
 };
-const structuralProjectsSupport = [
+const structuralProjectsSupportFr = [
   {
     title: "Financement du village numérique",
     description:
@@ -117,13 +168,35 @@ const structuralProjectsSupport = [
     icon: "💻", // Icône pour l'acquisition de matériels
   },
 ];
+const structuralProjectsSupportEn = [
+  {
+    title: "Funding for the Digital Village",
+    description:
+      "E-media plans to build a digital village, an integrated educational space with technology laboratories, audiovisual studios, creative project incubators, and student housing.",
+    icon: "🏙️", // Icon for the digital village
+  },
+  {
+    title: "Acquisition of Modern Educational Equipment",
+    description:
+      "The need for equipment (computers, cameras, advanced software, sound equipment) is essential to provide training aligned with international standards.",
+    icon: "💻", // Icon for the acquisition of equipment
+  },
+];
+
 const StructuralProjectsSupport = () => {
+  const { language } = useLanguageContext();
+  const structuralProjectsSupport =
+    language === "fr"
+      ? structuralProjectsSupportFr
+      : structuralProjectsSupportEn;
   return (
     <div className="px-6 py-16">
       {/* Contenu de la section */}
       <div className="mx-auto max-w-6xl text-center">
         <h1 className="mb-12 text-4xl font-extrabold text-indigo-700">
-          Soutenir des projets structurants
+          {language === "fr"
+            ? "Soutenir des projets structurants"
+            : "Supporting Structural Projects"}
         </h1>
 
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
@@ -156,7 +229,7 @@ const StructuralProjectsSupport = () => {
     </div>
   );
 };
-const creativeProjectsSupport = [
+const creativeProjectsSupportFr = [
   {
     title: "Incubateurs de talents",
     description:
@@ -170,15 +243,34 @@ const creativeProjectsSupport = [
     icon: "🎭", // Vous pouvez remplacer cette icône par une autre
   },
 ];
+const creativeProjectsSupportEn = [
+  {
+    title: "Talent Incubators",
+    description:
+      "Invest in the creation of incubators to support students in developing creative and entrepreneurial projects in the fields of audiovisual, technology, and social innovation.",
+    icon: "💡", // You can replace this icon with another
+  },
+  {
+    title: "Cultural Sponsorship",
+    description:
+      "Fund audiovisual productions or artistic projects that showcase local talents while strengthening your brand image as a committed partner for culture.",
+    icon: "🎭", // You can replace this icon with another
+  },
+];
 
 const CreativeProjectsSupport = () => {
+  const { language } = useLanguageContext();
+  const creativeProjectsSupport =
+    language === "fr" ? creativeProjectsSupportFr : creativeProjectsSupportEn;
   return (
     <div className="relative px-6 py-16">
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
         <h1 className="mb-12 text-4xl font-extrabold text-indigo-700">
-          Incubation et soutien aux projets créatifs
+          {language === "fr"
+            ? "Incubation et soutien aux projets créatifs"
+            : "Incubation and Support for Creative Projects"}
         </h1>
 
         {/* Grille de cartes */}
@@ -213,7 +305,7 @@ const CreativeProjectsSupport = () => {
   );
 };
 
-const opportunities = [
+const opportunitiesFr = [
   {
     title: "Création de programmes de bourses",
     description: [
@@ -240,12 +332,43 @@ const opportunities = [
     icon: "🚀",
   },
 ];
+const opportunitiesEn = [
+  {
+    title: "Creation of Scholarship Programs",
+    description: [
+      "Scholarships to fund tuition fees for underprivileged or deserving students.",
+      "Mobility scholarships to allow students to pursue their studies internationally.",
+      "Support for scholarships specifically for young girls and underrepresented groups in technology and audiovisual sectors.",
+    ],
+    icon: "🎓",
+  },
+  {
+    title: "Support for Infrastructure Projects",
+    description: [
+      "Invest in the digital village, a flagship project to transform learning and strengthen the educational and digital ecosystem in Madagascar.",
+      "Help equip laboratories, studios, and necessary infrastructures to maintain exemplary teaching quality.",
+    ],
+    icon: "🏗️",
+  },
+  {
+    title: "Partnership for Incubators",
+    description: [
+      "Collaborate to support young talents by providing financial and technical resources to bring their creative or entrepreneurial projects to life.",
+      "Host and fund innovative projects from E-media's students and teachers.",
+    ],
+    icon: "🚀",
+  },
+];
+
 const CollaborationOpportunities = ({ opportunities }) => {
+  const { language } = useLanguageContext();
   return (
     <div className="bg-gray-50 px-6 py-16">
       <div className="mx-auto max-w-7xl text-center">
         <h1 className="mb-20 text-4xl font-extrabold text-indigo-700">
-          Opportunités de Collaboration pour les Partenaires
+          {language === "fr"
+            ? "Opportunités de Collaboration pour les Partenaires"
+            : "Collaboration Opportunities for Partners"}
         </h1>
 
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -281,7 +404,7 @@ const CollaborationOpportunities = ({ opportunities }) => {
   );
 };
 
-const partnershipOpportunities = [
+const partnershipOpportunitiesFr = [
   {
     title: "Contribuez à rendre l’éducation accessible",
     description:
@@ -301,14 +424,40 @@ const partnershipOpportunities = [
     icon: "💡", // Icône personnalisée ou un autre symbole
   },
 ];
+const partnershipOpportunitiesEn = [
+  {
+    title: "Contribute to Making Education Accessible",
+    description:
+      "Make education accessible to a talented yet economically vulnerable youth.",
+    icon: "📚", // Custom icon or another symbol
+  },
+  {
+    title: "Invest in the Future of Madagascar",
+    description:
+      "Support sustainable educational and technological initiatives for the development of Madagascar and the Indian Ocean region.",
+    icon: "🌍", // Custom icon or another symbol
+  },
+  {
+    title: "Be Part of a Positive Transformation",
+    description:
+      "Help build modern infrastructures, develop local talents, and support high-impact creative projects.",
+    icon: "💡", // Custom icon or another symbol
+  },
+];
+
 const Partnership = () => {
+  const { language } = useLanguageContext();
+  const partnershipOpportunities =
+    language === "fr" ? partnershipOpportunitiesFr : partnershipOpportunitiesEn;
   return (
     <div className="relative px-6 py-16">
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
         <h1 className="mb-20 text-4xl font-extrabold text-indigo-700">
-          Un partenariat pour un avenir équitable et innovant
+          {language === "fr"
+            ? "Un partenariat pour un avenir équitable et innovant"
+            : "A Partnership for a Fair and Innovative Future"}
         </h1>
 
         {/* Grille de cartes */}

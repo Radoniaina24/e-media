@@ -1,15 +1,23 @@
+"use client";
 import React from "react";
 import PartnershipCard from "./PartnershipCard";
-import ScrollComponent from "../Scroll/ScrollComponent";
 import ScrollComponentPartenariats from "./ScrollComponentPartenariats";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 export default function Academics() {
-  const partnershipOpportunities = {
+  const { language } = useLanguageContext();
+  const partnershipOpportunitiesFr = {
     title: "Nos Opportunités de Partenariat Académique",
     subtitle:
       "E-Media, université pionnière à Madagascar, propose des partenariats académiques stratégiques pour soutenir la transformation numérique et éducative à Madagascar, dans l’Océan Indien et en Afrique.",
   };
-
+  const partnershipOpportunitiesEn = {
+    title: "Our Academic Partnership Opportunities",
+    subtitle:
+      "E-Media, a pioneering university in Madagascar, offers strategic academic partnerships to support digital and educational transformation in Madagascar, the Indian Ocean, and Africa.",
+  };
+  const partnershipOpportunities =
+    language === "fr" ? partnershipOpportunitiesFr : partnershipOpportunitiesEn;
   return (
     <section className="bg-gray-50 px-6 py-28 " id="1">
       <ScrollComponentPartenariats text={partnershipOpportunities.title} />
@@ -30,7 +38,7 @@ export default function Academics() {
   );
 }
 
-const whyCollaborateWithEMedia = [
+const whyCollaborateWithEMediaFr = [
   {
     title: "Position stratégique",
     description:
@@ -50,7 +58,31 @@ const whyCollaborateWithEMedia = [
     icon: "🚀", // Icône personnalisée
   },
 ];
+const whyCollaborateWithEMediaEn = [
+  {
+    title: "Strategic Position",
+    description:
+      "Madagascar, at the crossroads of Africa and the Indian Ocean, offers a unique potential to develop programs tailored to regional needs.",
+    icon: "🌍", // You can replace this with an SVG icon
+  },
+  {
+    title: "Commitment to Inclusion",
+    description:
+      "We democratize access to digital tools and quality education, with a special focus on supporting youth from underprivileged backgrounds.",
+    icon: "🤝", // Custom icon
+  },
+  {
+    title: "Innovation for Africa and the Indian Ocean",
+    description:
+      "Our projects strengthen local capacities and prepare talent to face global challenges.",
+    icon: "🚀", // Custom icon
+  },
+];
+
 const WhyCollaborateSection = () => {
+  const { language } = useLanguageContext();
+  const whyCollaborateWithEMedia =
+    language === "fr" ? whyCollaborateWithEMediaFr : whyCollaborateWithEMediaEn;
   return (
     <div
       className="relative bg-cover bg-center bg-no-repeat px-6 py-16"
@@ -65,7 +97,9 @@ const WhyCollaborateSection = () => {
       {/* Contenu de la section */}
       <div className="relative z-10 mx-auto max-w-6xl text-center text-indigo-700">
         <h1 className="mb-12 text-4xl font-extrabold">
-          Pourquoi collaborer avec E-Media ?
+          {language === "fr"
+            ? "Pourquoi collaborer avec E-Media ?"
+            : "Why Collaborate with E-Media ?"}
         </h1>
 
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -99,7 +133,7 @@ const WhyCollaborateSection = () => {
   );
 };
 
-const partnershipOpportunities = [
+const partnershipOpportunitiesFr = [
   {
     title: "Échanges académiques",
     description:
@@ -119,15 +153,40 @@ const partnershipOpportunities = [
     icon: "🔬",
   },
 ];
+const partnershipOpportunitiesEn = [
+  {
+    title: "Academic Exchanges",
+    description:
+      "Student and faculty mobility to share skills and global perspectives.",
+    icon: "🌍",
+  },
+  {
+    title: "Joint Degrees",
+    description:
+      "Co-created programs for international academic recognition and enhanced employability.",
+    icon: "🎓",
+  },
+  {
+    title: "Collaborative Research",
+    description:
+      "Joint projects on digital transformation, sustainable development, and social inclusion.",
+    icon: "🔬",
+  },
+];
 
 const PartnershipOpportunities = () => {
+  const { language } = useLanguageContext();
+  const partnershipOpportunities =
+    language === "fr" ? partnershipOpportunitiesFr : partnershipOpportunitiesEn;
   return (
     <div className="relative px-6 py-16">
       {/* Contenu principal */}
       <div className="mx-auto max-w-7xl text-center text-white">
         {/* Titre de la section */}
         <h1 className="mb-12 text-4xl font-extrabold text-indigo-700">
-          Opportunités de Partenariat
+          {language === "fr"
+            ? "Opportunités de Partenariat"
+            : "Partnership Opportunities"}
         </h1>
 
         {/* Grille de cartes */}
@@ -162,7 +221,7 @@ const PartnershipOpportunities = () => {
   );
 };
 
-const humanitarianCommitment = [
+const humanitarianCommitmentFr = [
   {
     title: "Réduction des inégalités d’accès à l’éducation",
     icon: "📚",
@@ -180,14 +239,37 @@ const humanitarianCommitment = [
     icon: "🌍",
   },
 ];
+const humanitarianCommitmentEn = [
+  {
+    title: "Reducing Inequalities in Access to Education",
+    icon: "📚",
+  },
+  {
+    title: "Empowering Youth",
+    icon: "💪",
+  },
+  {
+    title: "Supporting Sustainable Development",
+    icon: "🌱",
+  },
+  {
+    title: "Building a Generation of Competent Leaders",
+    icon: "🌍",
+  },
+];
 
 const HumanitarianCommitmentSection = () => {
+  const { language } = useLanguageContext();
+  const humanitarianCommitment =
+    language === "fr" ? humanitarianCommitmentFr : humanitarianCommitmentEn;
   return (
     <div className="bg-gradient-to-r from-indigo-100 to-blue-50 px-6 py-24">
       <div className="mx-auto max-w-7xl text-center">
         {/* Titre de la section */}
         <h2 className="mb-12 text-4xl font-extrabold tracking-tight text-indigo-700">
-          Un engagement humanitaire et inclusif
+          {language === "fr"
+            ? "Un engagement humanitaire et inclusif"
+            : "A Humanitarian and Inclusive Commitment"}
         </h2>
 
         {/* Engagements détaillés sans description */}
