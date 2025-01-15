@@ -459,7 +459,12 @@ export default function SectionAELI() {
   return (
     <div>
       {/* Header */}
-      <Header id="aeli" title={title} subtitle={subtitle} />
+      <HeaderAeli
+        id="aeli"
+        title={title}
+        subtitle={subtitle}
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736948584/Fond-AELI-_-L_AFRICAN-ENTREPRENEURSHIP-AND-LEADERSHIP-INSTITUTE_ptvgd1.jpg"
+      />
       <div
         id="aeli"
         className="bg-gray-50 pt-20 font-sans text-gray-800 dark:bg-gray-900"
@@ -611,3 +616,55 @@ export default function SectionAELI() {
     </div>
   );
 }
+
+interface HeaderProps {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+  ctaText?: string; // Call to action text for the button
+  ctaLink?: string; // URL for the call to action button
+  imageSrc?: string;
+}
+
+const HeaderAeli: React.FC<HeaderProps> = ({
+  title,
+  id,
+  subtitle,
+  imageSrc = "/images/why/fond.jpg",
+}) => {
+  const { language } = useLanguageContext();
+  return (
+    <header className="relative h-screen w-full bg-cover bg-center py-16 text-white">
+      {/* Image de fond */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url("${imageSrc}")` }}
+      ></div>
+
+      {/* Contenu */}
+      <div className="relative z-10 flex h-full items-center justify-center px-8 sm:justify-center md:justify-end">
+        <div className=" max-w-xl space-y-6 text-right md:mr-32">
+          {/* Titre */}
+          <h1 className="text-shadow-lg text-center text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:text-4xl">
+            {title.toLocaleUpperCase()}
+          </h1>
+
+          {/* Sous-titre */}
+          <p className="text-md text-center font-light leading-relaxed text-gray-200 sm:text-lg lg:text-xl">
+            {subtitle}
+          </p>
+
+          {/* Bouton */}
+          <div className="text-center">
+            <a
+              href={"#" + id}
+              className="inline-block transform rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-blue-800"
+            >
+              {language === "fr" ? "Détails" : "Details"}
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
