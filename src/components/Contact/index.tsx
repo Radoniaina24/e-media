@@ -1,6 +1,7 @@
 "use client";
 import { useLanguageContext } from "@/lib/context/LanguageContext";
 import React from "react";
+import HeroSectionPrograms from "../HeroSectionPrograms/HeroSectionPrograms";
 
 const Contact = () => {
   const { language } = useLanguageContext();
@@ -10,10 +11,12 @@ const Contact = () => {
       ? "Si vous avez des questions ou des demandes, n'hésitez pas à nous contacter via ce formulaire."
       : "If you have any questions or requests, feel free to contact us through this form.";
   return (
-    <section
-      id="contact"
-      className="overflow-hidden bg-gray-50 py-16 md:py-20 lg:py-16 dark:bg-gray-dark"
-    >
+    <div id="contact" className="">
+      {" "}
+      <HeroSectionPrograms
+        title={language === "fr" ? "Nous contacter" : "Contact Us"}
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736923503/Fond-Nos-programmes_1_ehkxvu.jpg"
+      />
       <div className="container mx-auto px-4">
         <div className="-mx-4 flex flex-wrap">
           {/* Form Section */}
@@ -117,7 +120,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

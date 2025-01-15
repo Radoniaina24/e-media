@@ -1,4 +1,5 @@
 import React from "react";
+import FrameDecoration from "./FrameDecoration";
 
 interface HeaderProps {
   id?: string;
@@ -17,21 +18,36 @@ const HeroSectionPrograms: React.FC<HeaderProps> = ({
   ctaLink,
   imageSrc = "/images/why/fond.jpg",
 }) => (
-  <header className=" relative h-96 w-full bg-cover bg-center text-white">
-    <div
-      className="absolute inset-0 bg-cover bg-center"
-      style={{ backgroundImage: `url("${imageSrc}")` }}
-    ></div>
-
-    <div className="relative z-10 flex h-full items-center justify-center px-6 text-center text-white ">
-      <div className="max-w-4xl space-y-6">
-        <h1 className="text-shadow-lg text-lg font-extrabold leading-tight transition duration-500 sm:text-xl  md:text-xl lg:text-2xl">
-          {title.toLocaleUpperCase()}
+  <header
+    className="relative h-[500px] bg-cover bg-center text-white sm:h-[600px] lg:h-[600px]"
+    style={{
+      backgroundImage: `url("${imageSrc}")`,
+    }}
+  >
+    {/* Texte centré */}
+    <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+      <div className="space-y-6">
+        <h1 className="text-shadow-lg text-2xl font-extrabold leading-tight sm:text-3xl md:text-4xl">
+          {title?.toLocaleUpperCase()}
         </h1>
-        <p className=" sm:text-md text-md md:text-md mx-auto mb-8 max-w-2xl font-light leading-relaxed text-gray-50 lg:text-xl">
+        <p className="text-md mx-auto max-w-2xl font-light leading-relaxed text-gray-50 sm:text-lg md:text-xl">
           {subtitle}
         </p>
+        {/* Ajout du bouton Call to Action si les props sont présentes */}
+        {ctaText && ctaLink && (
+          <a
+            href={ctaLink}
+            className="mt-4 inline-block rounded bg-blue-600 px-6 py-2 text-lg text-white hover:bg-blue-700"
+          >
+            {ctaText}
+          </a>
+        )}
       </div>
+    </div>
+
+    {/* Décoration en bas */}
+    <div className="absolute bottom-0 w-full">
+      <FrameDecoration />
     </div>
   </header>
 );

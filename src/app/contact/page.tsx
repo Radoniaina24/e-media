@@ -10,11 +10,7 @@ export const metadata: Metadata = {
 };
 
 const ContactPage = () => {
-  return (
-    <div className="py-28 dark:bg-gray-dark">
-      <Contact />
-    </div>
-  );
+  return <Contact />;
 };
 
 export default ContactPage;

@@ -31,15 +31,17 @@ export default function Licence() {
   ];
   const { language } = useLanguageContext();
   return (
-    <>
-      <div id="programme" className="container mt-36">
-        {/* <LicensePrograms /> */}
-        <h2 className="mb-10 text-center text-3xl font-bold text-gray-800 dark:text-white">
-          {language === "fr"
+    <div>
+      <HeroSectionPrograms
+        title={
+          language === "fr"
             ? "Nos Programmes de Licence"
-            : "Our Bachelor's Degree Programs"}
-        </h2>
-        <hr className="mb-20" />
+            : "Our Bachelor's Degree Programs"
+        }
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736923503/Fond-Nos-programmes_1_ehkxvu.jpg"
+      />
+      <div id="programme" className="container mt-10">
+        {/* <LicensePrograms /> */}
         <div className=" grid grid-cols-2 gap-5  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {programs.map((program, index) => (
             <Link href={program.link} key={index}>
@@ -50,13 +52,14 @@ export default function Licence() {
 
         {/* <StaircaseImages /> */}
       </div>
-    </>
+    </div>
   );
 }
 
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguageContext } from "@/lib/context/LanguageContext";
+import HeroSectionPrograms from "../HeroSectionPrograms/HeroSectionPrograms";
 
 function StaircaseImages() {
   return (
