@@ -463,7 +463,7 @@ export default function SectionAELI() {
         id="aeli"
         title={title}
         subtitle={subtitle}
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736948584/Fond-AELI-_-L_AFRICAN-ENTREPRENEURSHIP-AND-LEADERSHIP-INSTITUTE_ptvgd1.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736949226/Fond-AELI-_-L_AFRICAN-ENTREPRENEURSHIP-AND-LEADERSHIP-INSTITUTE_1_y9ft0a.jpg"
       />
       <div
         id="aeli"
