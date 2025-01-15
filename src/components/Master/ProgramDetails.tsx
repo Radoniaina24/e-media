@@ -1,5 +1,7 @@
+"use client ";
 import React from "react";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 interface ProgramDetailsProps {
   title: string;
@@ -14,6 +16,7 @@ const ProgramDetails: React.FC<ProgramDetailsProps> = ({
   content,
   opportunities,
 }) => {
+  const { language } = useLanguageContext();
   return (
     <div className="mx-auto mb-8 max-w-5xl">
       <h3 className="mb-4 text-2xl font-bold text-gray-800 dark:text-white">
@@ -24,7 +27,7 @@ const ProgramDetails: React.FC<ProgramDetailsProps> = ({
         {/* Carte Contenu du Parcours */}
         <div className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:bg-gray-800">
           <h4 className="mb-2 text-lg font-semibold text-blue-500 dark:text-blue-400">
-            Contenu du parcours
+            {language === "fr" ? "Contenu du parcours" : "Program Content"}
           </h4>
           <ul className="space-y-2">
             {content.map((item, index) => (
@@ -44,7 +47,7 @@ const ProgramDetails: React.FC<ProgramDetailsProps> = ({
         {/* Carte Débouchés */}
         <div className="rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-xl dark:bg-gray-800">
           <h4 className="mb-2 text-lg font-semibold text-blue-500 dark:text-blue-400">
-            Débouchés
+            {language === "fr" ? "Débouchés" : "Career Opportunities"}
           </h4>
           <ul className="space-y-2">
             {opportunities.map((item, index) => (

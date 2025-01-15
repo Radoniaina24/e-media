@@ -12,6 +12,7 @@ const Mention: React.FC<ProgramCardProps> = ({
   mention,
   specialisation,
 }) => {
+  const { language } = useLanguageContext();
   return (
     <div
       id="program-card"
@@ -40,7 +41,8 @@ const Mention: React.FC<ProgramCardProps> = ({
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
             {specialisation ? (
               <>
-                Spécialisation :{" "}
+                {language === "fr" ? "Spécialisation :" : ""}{" "}
+                {"Specialization : "}
                 <span className="text-blue-500">{specialisation}</span>
               </>
             ) : (
