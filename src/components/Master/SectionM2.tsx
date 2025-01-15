@@ -211,7 +211,7 @@ export default function SectionM2() {
         id="master2"
         title={title}
         subtitle={subtitle}
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736755984/MASTER-EN-AUDIOVISUEL-ET-CIN%C3%89MATOGRAPHIE-_AC_mhlqkj.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736924334/E-MEDIA---UNIVERSIT%C3%89-SP%C3%89CIALIS%C3%89E-EN-AUDIOVISUEL--CIN%C3%89MATOGRAPHIE-ET-NUM%C3%89RIQUE_vu2zce.jpg"
       />
       <div
         id="master2"

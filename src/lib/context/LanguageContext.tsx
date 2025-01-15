@@ -1,17 +1,9 @@
 "use client";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const LanguageContext = createContext<any | null>(null);
 function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState(() => {
-    const savedLanguage = localStorage.getItem("language");
-    return savedLanguage ? savedLanguage : "fr";
-  });
-
-  useEffect(() => {
-    localStorage.setItem("language", language);
-  }, [language]);
-  console.log(language);
+  const [language, setLanguage] = useState("fr");
   return (
     <LanguageContext.Provider
       value={{

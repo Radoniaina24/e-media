@@ -205,7 +205,7 @@ export default function SectionM1() {
         id="master1"
         title={title}
         subtitle={subtitle}
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736754974/MASTER-EN-INFORMATIQUE-ET-%C3%89LECTRONIQUE-EMBARQU%C3%89ES-_IEE_hsgxn1.jpg"
+        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736924334/MASTER-EN-INFORMATIQUE-ET-%C3%89LECTRONIQUE-EMBARQU%C3%89ES-_IEE_1_c39hi5.jpg"
       />
       <div
         id="master1"
