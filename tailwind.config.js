@@ -8,6 +8,7 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     flowbite.content(),
   ],
+  darkMode: false, // Désactive le mode sombre
   theme: {
     container: {
       center: true,
