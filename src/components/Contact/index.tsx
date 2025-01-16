@@ -13,15 +13,11 @@ const Contact = () => {
   return (
     <div id="contact" className="">
       {" "}
-      <HeroSectionPrograms
-        title={language === "fr" ? "Nous contacter" : "Contact Us"}
-        imageSrc="https://res.cloudinary.com/dx3xhdaym/image/upload/v1736923503/Fond-Nos-programmes_1_ehkxvu.jpg"
-      />
       <div className="container mx-auto px-4">
         <div className="-mx-4 flex flex-wrap">
           {/* Form Section */}
           <div className="m-auto mb-12 w-full px-4 lg:mb-0 lg:w-7/12 xl:w-8/12">
-            <div className="rounded-lg bg-white p-8 shadow-lg sm:p-12 dark:bg-gray-800">
+            <div className="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800 sm:p-12">
               <h2 className="mb-6 text-3xl font-semibold text-gray-800 dark:text-white">
                 {contact}
               </h2>

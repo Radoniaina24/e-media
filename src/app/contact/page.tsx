@@ -1,5 +1,6 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
 import Contact from "@/components/Contact";
+import HeaderContact from "@/components/Contact/HeaderContact";
+import HeroSectionPrograms from "@/components/HeroSectionPrograms/HeroSectionPrograms";
 
 import { Metadata } from "next";
 
@@ -10,7 +11,12 @@ export const metadata: Metadata = {
 };
 
 const ContactPage = () => {
-  return <Contact />;
+  return (
+    <div>
+      <HeaderContact />
+      <Contact />;
+    </div>
+  );
 };
 
 export default ContactPage;
