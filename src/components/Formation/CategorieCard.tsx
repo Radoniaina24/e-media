@@ -33,21 +33,21 @@ const categoriesUs = [
     description:
       "Explore our university programs, including master's courses, to deepen your knowledge and enhance your skills.",
     icon: "👨‍🎓",
-    lien: "/education/university",
+    lien: "/formation/universitaire",
   },
   {
     title: "Modular Training",
     description:
       "Modular training programs are designed to offer maximum flexibility. You can follow specific modules based on your needs and pace.",
     icon: "📚",
-    lien: "/education/modular",
+    lien: "/formation/modulaire",
   },
   {
     title: "Vocational Training",
     description:
       "The Vocational Training program offers hands-on training tailored to market needs, enabling rapid and effective skill development.",
     icon: "💻",
-    lien: "/education/vocational",
+    lien: "/formation/cfp",
   },
 ];
 
