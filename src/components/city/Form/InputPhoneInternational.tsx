@@ -17,7 +17,7 @@ const PhoneInputComponent = () => {
         defaultCountry="MG"
         value={value}
         onChange={setValue}
-        className="mt-2 w-full rounded-md border border-gray-300 p-2  focus:border-indigo-500 focus:ring-indigo-500 dark:text-dark"
+        className="mt-2 w-full rounded-md border border-gray-300 p-2  text-dark focus:border-indigo-500 focus:ring-indigo-500"
         placeholder="Inclure le code international"
       />
     </div>

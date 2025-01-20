@@ -26,7 +26,7 @@ const InputField: React.FC<InputFieldProps> = ({
       {type === "textarea" ? (
         <textarea
           id={id}
-          className="mt-1 w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+          className="mt-1 w-full rounded-md border border-gray-300 p-2 text-dark shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
           placeholder={placeholder}
           rows={rows}
         />
@@ -35,7 +35,7 @@ const InputField: React.FC<InputFieldProps> = ({
           type={type}
           id={id}
           required={required}
-          className="mt-1 w-full rounded-md border border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+          className="mt-1 w-full rounded-md border border-gray-300 p-2 text-dark shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
           placeholder={placeholder}
         />
       )}
