@@ -17,7 +17,7 @@ const Contact = () => {
         <div className="-mx-4 flex flex-wrap">
           {/* Form Section */}
           <div className="m-auto mb-12 w-full px-4 lg:mb-0 lg:w-7/12 xl:w-8/12">
-            <div className="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800 sm:p-12">
+            <div className="rounded-lg bg-white p-8 shadow-lg sm:p-12 dark:bg-gray-800">
               <h2 className="mb-6 text-3xl font-semibold text-gray-800 dark:text-white">
                 {contact}
               </h2>
@@ -78,7 +78,11 @@ const Contact = () => {
                     <textarea
                       id="message"
                       rows={5}
-                      placeholder="Entrez votre message"
+                      placeholder={
+                        language === "fr"
+                          ? "Entrer votre message"
+                          : "Enter your message"
+                      }
                       className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-3 text-gray-700 outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-500"
                     ></textarea>
                   </div>
