@@ -32,7 +32,7 @@ export default function SignUp() {
                       placeholder={
                         language === "fr"
                           ? "Merci de saisir votre complet"
-                          : "PLeasse enter your full name"
+                          : "Please enter your full name"
                       }
                       className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                     />
