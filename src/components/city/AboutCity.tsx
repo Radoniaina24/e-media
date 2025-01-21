@@ -45,7 +45,7 @@ export default function AboutCity() {
                 width={500}
                 height={300}
               />
-              <h3 className="mb-2 text-xl font-semibold dark:text-dark">
+              <h3 className="mb-2 text-xl font-semibold text-dark">
                 {language === "fr" ? "Pôle académique" : "Academic Hub"}
               </h3>
               <p className="text-gray-600">
@@ -65,7 +65,7 @@ export default function AboutCity() {
                 width={500}
                 height={300}
               />
-              <h3 className="mb-2 text-xl font-semibold dark:text-dark">
+              <h3 className="mb-2 text-xl font-semibold text-dark">
                 {language === "fr"
                   ? "Centre technologique"
                   : "Technology Center"}
@@ -87,7 +87,7 @@ export default function AboutCity() {
                 width={500}
                 height={300}
               />
-              <h3 className="mb-2 text-xl font-semibold dark:text-dark">
+              <h3 className="mb-2 text-xl font-semibold text-dark">
                 {language === "fr" ? "Centre culturel" : "Cultural Center"}
               </h3>
               <p className="text-gray-600">
