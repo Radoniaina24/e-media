@@ -14,8 +14,8 @@ const SigninPage = () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-[500px] rounded bg-white px-6 py-10 shadow-three dark:bg-dark sm:p-[60px]">
-                <h3 className="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl">
+              <div className="mx-auto max-w-[500px] rounded bg-white px-6 py-10 shadow-three sm:p-[60px] dark:bg-dark">
+                <h3 className="mb-3 text-center text-2xl font-bold text-black sm:text-3xl dark:text-white">
                   E-Media
                 </h3>
                 <p className="mb-11 text-center text-base font-medium text-body-color"></p>

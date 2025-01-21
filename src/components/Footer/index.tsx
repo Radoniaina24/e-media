@@ -92,7 +92,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/"
+                    href="/signin"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     {language === "fr" ? "Se connecter" : "Log in"}
@@ -141,10 +141,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#why"
+                    href="/#why"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
-                    About
+                    {language === "fr" ? "A propos" : "About"}
                   </Link>
                 </li>
               </ul>
