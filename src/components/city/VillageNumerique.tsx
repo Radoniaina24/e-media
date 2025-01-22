@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import HeroBanner from "../Partenariats/HeroBaner";
 import { useLanguageContext } from "@/lib/context/LanguageContext";
+import SectionImageCity from "./SectionImageCity";
 export default function VillageNumerique() {
   const { language } = useLanguageContext();
   const grandTitre =
@@ -22,11 +23,14 @@ export default function VillageNumerique() {
         <Infrastructure />
         {/* <!-- Incubateur pour Startups --> */}
         <Incurbateur />
+        {/* <!-- Hebergerment--> */}
+        <Hebergerment />
         {/* <!-- Attraction des Talents Locaux et Internationaux --> */}
         <Attraction />
-
+        {/* <!-- Sport --> */}
+        <Sport />
         {/* <!-- Engagement Écoresponsable --> */}
-        <Engagement />
+        {/* <Engagement /> */}
       </main>
     </div>
   );
@@ -307,6 +311,281 @@ const Incurbateur = () => {
     </section>
   );
 };
+
+const accommodationsFr = [
+  {
+    title: "Résidences Étudiantes et Hébergements Locatifs",
+    highlights: [
+      {
+        text: "Capacité d’accueil jusqu’à 1 000 étudiants logés dans des chambres modernes, avec des espaces privatifs ou partagés selon les besoins.",
+      },
+      {
+        text: "Services intégrés : Connexion Internet haut débit, zones d’étude, bibliothèques et espaces communs de détente, sécurité 24/7 avec accès sécurisé.",
+      },
+      {
+        text: "Options modulaires : Chambres individuelles, studios ou dortoirs partagés pour répondre à différents budgets et besoins.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520958/Indian_4_paxrcg.png",
+    imageAlt: "Résidences étudiantes",
+    imageOnRight: false,
+  },
+  {
+    title: "Résidences pour Professeurs, Chercheurs et Personnel",
+    highlights: [
+      {
+        text: "Capacité d’accueil : Jusqu’à 200 logements pour les enseignants, techniciens et chercheurs internationaux.",
+      },
+      {
+        text: "Appartements modernes : Logements familiaux pour les résidents permanents, suites individuelles pour les intervenants de courte durée.",
+      },
+      {
+        text: "Espaces communs premium : Zones de coworking, salles de réunion, et espaces de networking.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736337899/pole_academique_d6r9y9.jpg",
+    imageAlt: "Résidences pour professeurs et chercheurs",
+    imageOnRight: true,
+  },
+  {
+    title: "Hébergements pour Visiteurs",
+    highlights: [
+      {
+        text: "Suites et studios temporaires : Pour les conférenciers invités, investisseurs, et participants à des événements internationaux.",
+      },
+      {
+        text: "Capacité adaptable : Jusqu’à 300 visiteurs grâce à des espaces flexibles.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736337165/centre_culturel_dyfpdw.jpg",
+    imageAlt: "Hébergements pour visiteurs",
+    imageOnRight: false,
+  },
+];
+const accommodationsEn = [
+  {
+    title: "Student Residences and Rental Accommodations",
+    highlights: [
+      {
+        text: "Capacity: Up to 1,000 students housed in modern rooms, with private or shared spaces depending on individual needs.",
+      },
+      {
+        text: "Integrated services: High-speed internet access, study areas, libraries, and communal relaxation spaces. 24/7 security with controlled access.",
+      },
+      {
+        text: "Flexible options: Single rooms, studios, or shared dormitories to accommodate different budgets and preferences.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520958/Indian_4_paxrcg.png",
+    imageAlt: "Student residences",
+    imageOnRight: false,
+  },
+  {
+    title: "Residences for Professors, Researchers, and Staff",
+    highlights: [
+      {
+        text: "Capacity: Up to 200 housing units for teachers, technicians, and international researchers.",
+      },
+      {
+        text: "Modern apartments: Family housing for permanent residents, individual suites for short-term visitors.",
+      },
+      {
+        text: "Premium communal spaces: Coworking areas, meeting rooms, and networking spaces.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736337899/pole_academique_d6r9y9.jpg",
+    imageAlt: "Residences for professors and researchers",
+    imageOnRight: true,
+  },
+  {
+    title: "Visitor Accommodations",
+    highlights: [
+      {
+        text: "Temporary suites and studios: Designed for guest lecturers, investors, and participants in international events.",
+      },
+      {
+        text: "Flexible capacity: Accommodates up to 300 visitors through adaptable spaces.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736337165/centre_culturel_dyfpdw.jpg",
+    imageAlt: "Visitor accommodations",
+    imageOnRight: false,
+  },
+];
+const Hebergerment = () => {
+  const { language } = useLanguageContext();
+  const accommodations =
+    language === "fr" ? accommodationsFr : accommodationsEn;
+  return (
+    <>
+      <h1 className="mb-5 text-center text-3xl font-bold text-dark">
+        {language === "fr"
+          ? "3. Hébergements Étendus et Résidences Modernes"
+          : "3. Extended Accommodations and Modern Residences"}
+      </h1>
+      <div className="space-y-16 px-6 py-12 ">
+        {accommodations.map((item, index) => (
+          <SectionImageCity
+            key={index}
+            title={item.title}
+            highlights={item.highlights}
+            imageSrc={item.imageSrc}
+            imageAlt={item.title}
+            imageOnRight={item.imageOnRight}
+          />
+        ))}
+      </div>
+    </>
+  );
+};
+const sportsAndLeisureFacilitiesEn = [
+  {
+    title: "Multidisciplinary Sports Complex",
+    highlights: [
+      {
+        text: "Versatile sports fields: Football, basketball, volleyball, and handball, designed for university and regional competitions.",
+      },
+      {
+        text: "Olympic swimming pool: International standard dimensions for hosting competitions, along with aquatic leisure spaces for residents.",
+      },
+      {
+        text: "Athletics track and fitness zones: Equipped with modern facilities for outdoor training.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520953/Indian_3_ghuwad.png",
+    imageAlt: "Multidisciplinary sports complex",
+    imageOnRight: false,
+  },
+  {
+    title: "High-End Golf Course",
+    highlights: [
+      {
+        text: "9-hole semi-professional course, designed to attract both amateurs and professionals.",
+      },
+      {
+        text: "Dedicated areas for local and international tournaments.",
+      },
+      {
+        text: "Sustainable maintenance with eco-friendly irrigation and climate-adapted grass.",
+      },
+      {
+        text: "Clubhouse included: An exclusive space for meetings, networking, and leisure.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520952/Indian_2_mzlcdd.png",
+    imageAlt: "High-end golf course",
+    imageOnRight: true,
+  },
+  {
+    title: "Outdoor Leisure Areas",
+    highlights: [
+      {
+        text: "Landscaped green spaces: Scenic gardens, walking trails, and picnic areas.",
+      },
+      {
+        text: "Family-friendly facilities: Children's playgrounds and family relaxation zones.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520955/Indian_7_meuk12.png",
+    imageAlt: "Outdoor leisure areas",
+    imageOnRight: false,
+  },
+];
+
+const sportsAndLeisureFacilitiesFr = [
+  {
+    title: "Complexe Sportif Multidisciplinaire",
+    highlights: [
+      {
+        text: "Terrains de sport polyvalents : Football, basket-ball, volley-ball et handball, conçus pour les compétitions universitaires et régionales.",
+      },
+      {
+        text: "Piscine olympique : Dimensions conformes aux normes internationales pour accueillir des compétitions, avec des espaces de loisirs aquatiques pour les résidents.",
+      },
+      {
+        text: "Piste d’athlétisme et zones de fitness : Équipées d'installations modernes pour l'entraînement en plein air.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520953/Indian_3_ghuwad.png",
+    imageAlt: "Complexe sportif multidisciplinaire",
+    imageOnRight: false,
+  },
+  {
+    title: "Parcours de Golf Haut de Gamme",
+    highlights: [
+      {
+        text: "Parcours 9 trous semi-professionnels, conçu pour attirer les amateurs et les professionnels.",
+      },
+      {
+        text: "Zones dédiées aux tournois locaux et internationaux.",
+      },
+      {
+        text: "Entretien durable avec une irrigation écoresponsable et un gazon adapté au climat.",
+      },
+      {
+        text: "Clubhouse inclus : Un espace exclusif pour les réunions, le networking et les loisirs.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520952/Indian_2_mzlcdd.png",
+    imageAlt: "Parcours de golf haut de gamme",
+    imageOnRight: true,
+  },
+  {
+    title: "Zones de Loisirs Extérieures",
+    highlights: [
+      {
+        text: "Espaces verts aménagés : Jardins paysagers, sentiers de promenade et aires de pique-nique.",
+      },
+      {
+        text: "Installations adaptées aux familles : Aires de jeux pour enfants et espaces de détente familiaux.",
+      },
+    ],
+    imageSrc:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520955/Indian_7_meuk12.png",
+    imageAlt: "Zones de loisirs extérieures",
+    imageOnRight: false,
+  },
+];
+
+const Sport = () => {
+  const { language } = useLanguageContext();
+  const sportsAndLeisureFacilities =
+    language === "fr"
+      ? sportsAndLeisureFacilitiesFr
+      : sportsAndLeisureFacilitiesEn;
+  return (
+    <>
+      <h1 className="mb-5 mt-10 text-center text-3xl font-bold text-dark">
+        {language === "fr"
+          ? "5. Installations Sportives de Haute Qualité"
+          : "5. High-Quality Sports Facilities"}
+      </h1>
+      <div className="space-y-16 px-6 py-12 ">
+        {sportsAndLeisureFacilities.map((item, index) => (
+          <SectionImageCity
+            key={index}
+            title={item.title}
+            highlights={item.highlights}
+            imageSrc={item.imageSrc}
+            imageAlt={item.title}
+            imageOnRight={item.imageOnRight}
+          />
+        ))}
+      </div>
+    </>
+  );
+};
 const attractionDataFr = [
   {
     title: "Formation des jeunes malgaches",
@@ -343,7 +622,6 @@ const attractionDataEn = [
     bgColor: "bg-indigo-500",
   },
 ];
-
 const Attraction = () => {
   const { language } = useLanguageContext();
   const attractionData =
@@ -360,8 +638,8 @@ const Attraction = () => {
       <div className="container relative mx-auto px-6">
         <h2 className="mb-16 text-center text-3xl font-bold text-white">
           {language === "fr"
-            ? "3. Attraction des Talents Locaux et Internationaux"
-            : "3. Attraction of Local and International Talents"}
+            ? "4. Attraction des Talents Locaux et Internationaux"
+            : ". Attraction of Local and International Talents"}
         </h2>
         <div className="grid gap-12 md:grid-cols-2">
           {attractionData.map((item, index) => (
@@ -391,6 +669,7 @@ const Attraction = () => {
     </section>
   );
 };
+
 const engagementEcoresponsableDataFr = {
   title: "4. Engagement Écoresponsable",
   description:
