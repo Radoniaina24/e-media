@@ -4,6 +4,7 @@ import Image from "next/image";
 import HeroBanner from "../Partenariats/HeroBaner";
 import { useLanguageContext } from "@/lib/context/LanguageContext";
 import SectionImageCity from "./SectionImageCity";
+import { FaFlask, FaUsers } from "react-icons/fa";
 export default function VillageNumerique() {
   const { language } = useLanguageContext();
   const grandTitre =
@@ -29,6 +30,8 @@ export default function VillageNumerique() {
         <Attraction />
         {/* <!-- Sport --> */}
         <Sport />
+        {/* <!-- Innovatio --> */}
+        <Innovation />
         {/* <!-- Engagement Écoresponsable --> */}
         {/* <Engagement /> */}
       </main>
@@ -739,5 +742,171 @@ const Engagement = () => {
         </div>
       </div>
     </section>
+  );
+};
+const researchAndStartupHubFr = [
+  {
+    title: "Grand Laboratoire Interdisciplinaire",
+    icon: <FaFlask className="text-3xl text-red-600" />,
+    details: [
+      {
+        text: "Domaines de recherche ",
+        subItems: [
+          "Intelligence artificielle et data science.",
+          "Robotique et automatisation.",
+          "Énergies renouvelables et technologies durables.",
+          "Biotechnologie et sciences de la santé.",
+        ],
+      },
+      {
+        text: "Infrastructures de pointe ",
+        subItems: [
+          "Espaces de prototypage et ateliers collaboratifs.",
+          "Équipements pour la recherche expérimentale, y compris en réalité augmentée et virtuelle.",
+        ],
+      },
+      {
+        text: "Collaboration internationale ",
+        subItems: [
+          "Accueil de chercheurs, projets communs avec universités et entreprises.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Hub Technologique pour Startups",
+    icon: <FaUsers className="text-3xl text-green-500" />,
+    details: [
+      {
+        text: "Capacité d’accueil",
+        subItems: ["Jusqu’à 100 startups en incubation ou accélération."],
+      },
+      {
+        text: "Espaces collaboratifs",
+        subItems: [
+          "Bureaux partagés, laboratoires, et plateformes de test pour les innovations technologiques.",
+        ],
+      },
+      {
+        text: "Programmes de mentorat",
+        subItems: [
+          " Accompagnement par des experts en finance, innovation et entrepreneuriat.",
+        ],
+      },
+    ],
+  },
+];
+const researchAndStartupHubEn = [
+  {
+    title: "Large Interdisciplinary Laboratory",
+    icon: <FaFlask className="text-3xl text-red-600" />,
+    details: [
+      {
+        text: "Research Areas",
+        subItems: [
+          "Artificial Intelligence and Data Science.",
+          "Robotics and Automation.",
+          "Renewable Energy and Sustainable Technologies.",
+          "Biotechnology and Health Sciences.",
+        ],
+      },
+      {
+        text: "State-of-the-art Infrastructure",
+        subItems: [
+          "Prototyping spaces and collaborative workshops.",
+          "Experimental research equipment, including augmented and virtual reality.",
+        ],
+      },
+      {
+        text: "International Collaboration",
+        subItems: [
+          "Hosting researchers, joint projects with universities and companies.",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Technology Hub for Startups",
+    icon: <FaUsers className="text-3xl text-green-500" />,
+    details: [
+      {
+        text: "Capacity",
+        subItems: ["Up to 100 startups in incubation or acceleration."],
+      },
+      {
+        text: "Collaborative Spaces",
+        subItems: [
+          "Shared offices, laboratories, and testing platforms for technological innovations.",
+        ],
+      },
+      {
+        text: "Mentorship Programs",
+        subItems: [
+          "Support from experts in finance, innovation, and entrepreneurship.",
+        ],
+      },
+    ],
+  },
+];
+
+const Innovation = () => {
+  const { language } = useLanguageContext();
+  const researchAndStartupHub =
+    language === "fr" ? researchAndStartupHubFr : researchAndStartupHubEn;
+  return (
+    <div
+      className="bg-gradient-to-r from-blue-50 to-teal-50 py-16"
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520958/Indian_4_paxrcg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <h2 className="mb-12 text-center text-4xl font-bold text-red-600">
+        {language === "fr"
+          ? "5. Centres de Recherche et Innovation"
+          : "5. Research and Innovation Centers."}
+      </h2>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {researchAndStartupHub.map((section, index) => (
+          <div key={index} className="mb-12 rounded-2xl  p-8 ">
+            {/* Card Header with Icon */}
+            <div className="flex flex-col items-center space-y-6">
+              <div className="rounded-full bg-gray-400 p-8 shadow-xl">
+                <div className="text-5xl text-white">{section.icon}</div>
+              </div>
+              <h2 className="text-center text-3xl font-semibold text-white">
+                {section.title}
+              </h2>
+            </div>
+
+            {/* Card Details */}
+            <div className="mt-6 space-y-6">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
+                {section.details.map((detail, index) => (
+                  <div
+                    key={index}
+                    className="rounded-lg bg-gray-50 p-6 shadow-lg transition duration-300 hover:shadow-xl"
+                  >
+                    <h3 className="mb-4 text-center text-lg font-semibold text-primary">
+                      {detail.text}
+                    </h3>
+                    <ul className="list-disc space-y-2 pl-6 text-gray-600">
+                      {detail.subItems &&
+                        detail.subItems.map((item, idx) => (
+                          <li key={idx} className="text-base">
+                            {item}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };

@@ -1,5 +1,6 @@
 "use client";
-
+import { FaRobot, FaRecycle, FaFlask, FaUsers } from "react-icons/fa";
+import { GiArtificialIntelligence } from "react-icons/gi";
 import Section from "./Section";
 import Card from "./Card";
 import Header from "./Header";
