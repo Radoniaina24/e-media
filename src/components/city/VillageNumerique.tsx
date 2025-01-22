@@ -32,6 +32,8 @@ export default function VillageNumerique() {
         <Sport />
         {/* <!-- Innovatio --> */}
         <Innovation />
+        {/* <!-- Health --> */}
+        <Health />
         {/* <!-- Engagement Écoresponsable --> */}
         {/* <Engagement /> */}
       </main>
@@ -863,14 +865,14 @@ const Innovation = () => {
         backgroundPosition: "center",
       }}
     >
-      <h2 className="mb-12 text-center text-4xl font-bold text-red-600">
+      <h2 className="mb-5 text-center text-4xl font-bold text-red-600">
         {language === "fr"
           ? "5. Centres de Recherche et Innovation"
           : "5. Research and Innovation Centers."}
       </h2>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {researchAndStartupHub.map((section, index) => (
-          <div key={index} className="mb-12 rounded-2xl  p-8 ">
+          <div key={index} className="mb-5 rounded-2xl  p-8 ">
             {/* Card Header with Icon */}
             <div className="flex flex-col items-center space-y-6">
               <div className="rounded-full bg-gray-400 p-8 shadow-xl">
@@ -883,7 +885,7 @@ const Innovation = () => {
 
             {/* Card Details */}
             <div className="mt-6 space-y-6">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {section.details.map((detail, index) => (
                   <div
                     key={index}
@@ -908,5 +910,118 @@ const Innovation = () => {
         ))}
       </div>
     </div>
+  );
+};
+const medicalInnovationCenterFr = [
+  {
+    title: "Capacité",
+    description:
+      "Une infrastructure capable de prendre en charge jusqu’à 500 consultations quotidiennes.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520952/Indian_6_psujmg.png", // Replace with the actual image URL
+    bgColor: "bg-blue-600", // Choose a suitable background color class
+  },
+  {
+    title: "Services médicaux avancés",
+    description:
+      "Soins spécialisés, diagnostics modernes, et consultations pour les résidents.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520953/Indian_5_tzafqw.png", // Replace with the actual image URL
+    bgColor: "bg-green-600", // Choose a suitable background color class
+  },
+  {
+    title: "Innovation médicale",
+    description:
+      "Développement de technologies telles que : Dispositifs connectés pour la santé et olutions numériques pour la gestion des patients et diagnostics à distance.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
+    bgColor: "bg-yellow-600", // Choose a suitable background color class
+  },
+  {
+    title: "Centre de formation",
+    description:
+      "Programmes pour former les professionnels de santé à l’utilisation des nouvelles technologies médicales.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
+    bgColor: "bg-red-600", // Choose a suitable background color class
+  },
+];
+const medicalInnovationCenterEn = [
+  {
+    title: "Capacity",
+    description:
+      "An infrastructure capable of handling up to 500 daily consultations.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520952/Indian_6_psujmg.png", // Replace with the actual image URL
+    bgColor: "bg-blue-600", // Choose a suitable background color class
+  },
+  {
+    title: "Advanced Medical Services",
+    description:
+      "Specialized care, modern diagnostics, and consultations for residents.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520953/Indian_5_tzafqw.png", // Replace with the actual image URL
+    bgColor: "bg-green-600", // Choose a suitable background color class
+  },
+  {
+    title: "Medical Innovation",
+    description:
+      "Development of technologies such as: Connected health devices and digital solutions for patient management and remote diagnostics.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
+    bgColor: "bg-yellow-600", // Choose a suitable background color class
+  },
+  {
+    title: "Training Center",
+    description:
+      "Programs to train healthcare professionals in the use of new medical technologies.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
+    bgColor: "bg-red-600", // Choose a suitable background color class
+  },
+];
+
+const Health = () => {
+  const { language } = useLanguageContext();
+  const medicalInnovationCenter =
+    language === "fr" ? medicalInnovationCenterFr : medicalInnovationCenterEn;
+  return (
+    <section className="relative bg-gray-50 py-16">
+      <div className="absolute inset-0   opacity-30"></div>
+      <div className="container relative mx-auto px-4">
+        <h2 className="mb-12 text-center text-3xl font-bold text-gray-dark ">
+          {language === "fr"
+            ? "6. Santé et Médecine Innovante"
+            : "6. Health and Innovative Medicine"}
+        </h2>
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+          {medicalInnovationCenter.map((data, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-lg shadow-xl transition-transform duration-300 hover:scale-105"
+            >
+              <div
+                className={`absolute inset-0 ${data.bgColor} opacity-40`}
+              ></div>
+              <div className="relative z-10 p-6 text-center">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 group-hover:text-dark">
+                  {data.title}
+                </h3>
+                <p className="mb-4 text-gray-700 group-hover:text-dark">
+                  {data.description}
+                </p>
+                <Image
+                  width={500}
+                  height={500}
+                  src={data.imageUrl}
+                  alt={data.title}
+                  className="w-full rounded-lg shadow-lg transition-shadow duration-300 group-hover:shadow-2xl"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
