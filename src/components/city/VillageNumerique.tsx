@@ -867,8 +867,8 @@ const Innovation = () => {
     >
       <h2 className="mb-5 text-center text-4xl font-bold text-red-600">
         {language === "fr"
-          ? "5. Centres de Recherche et Innovation"
-          : "5. Research and Innovation Centers."}
+          ? "6. Centres de Recherche et Innovation"
+          : "6. Research and Innovation Centers."}
       </h2>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {researchAndStartupHub.map((section, index) => (
@@ -929,14 +929,7 @@ const medicalInnovationCenterFr = [
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520953/Indian_5_tzafqw.png", // Replace with the actual image URL
     bgColor: "bg-green-600", // Choose a suitable background color class
   },
-  {
-    title: "Innovation médicale",
-    description:
-      "Développement de technologies telles que : Dispositifs connectés pour la santé et olutions numériques pour la gestion des patients et diagnostics à distance.",
-    imageUrl:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
-    bgColor: "bg-yellow-600", // Choose a suitable background color class
-  },
+
   {
     title: "Centre de formation",
     description:
@@ -944,6 +937,14 @@ const medicalInnovationCenterFr = [
     imageUrl:
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
     bgColor: "bg-red-600", // Choose a suitable background color class
+  },
+  {
+    title: "Innovation médicale",
+    description:
+      "Développement de technologies telles que : Dispositifs connectés pour la santé et solutions numériques pour la gestion des patients et diagnostics à distance.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
+    bgColor: "bg-yellow-600", // Choose a suitable background color class
   },
 ];
 const medicalInnovationCenterEn = [
@@ -963,14 +964,7 @@ const medicalInnovationCenterEn = [
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520953/Indian_5_tzafqw.png", // Replace with the actual image URL
     bgColor: "bg-green-600", // Choose a suitable background color class
   },
-  {
-    title: "Medical Innovation",
-    description:
-      "Development of technologies such as: Connected health devices and digital solutions for patient management and remote diagnostics.",
-    imageUrl:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
-    bgColor: "bg-yellow-600", // Choose a suitable background color class
-  },
+
   {
     title: "Training Center",
     description:
@@ -978,6 +972,14 @@ const medicalInnovationCenterEn = [
     imageUrl:
       "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
     bgColor: "bg-red-600", // Choose a suitable background color class
+  },
+  {
+    title: "Medical Innovation",
+    description:
+      "Development of technologies such as: Connected health devices and digital solutions for patient management and remote diagnostics.",
+    imageUrl:
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737520956/Indian_9_pnvlbl.png", // Replace with the actual image URL
+    bgColor: "bg-yellow-600", // Choose a suitable background color class
   },
 ];
 
@@ -989,16 +991,16 @@ const Health = () => {
     <section className="relative bg-gray-50 py-16">
       <div className="absolute inset-0   opacity-30"></div>
       <div className="container relative mx-auto px-4">
-        <h2 className="mb-12 text-center text-3xl font-bold text-gray-dark ">
+        <h2 className=" mx-auto mb-12  max-w-3xl  text-center text-3xl font-bold leading-relaxed text-gray-dark ">
           {language === "fr"
-            ? "6. Santé et Médecine Innovante"
-            : "6. Health and Innovative Medicine"}
+            ? "7. Santé et Médecine Innovante : Polyclinique Technologique et Médicale"
+            : "7. Health and Innovative Medicine : Technological and Medical Polyclinic"}
         </h2>
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid  grid-cols-1 gap-12 justify-self-center md:grid-cols-2 lg:grid-cols-3">
           {medicalInnovationCenter.map((data, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-xl transition-transform duration-300 hover:scale-105"
+              className="group relative  overflow-hidden rounded-lg shadow-xl transition-transform duration-300 hover:scale-105"
             >
               <div
                 className={`absolute inset-0 ${data.bgColor} opacity-40`}
