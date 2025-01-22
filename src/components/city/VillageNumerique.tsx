@@ -1,10 +1,19 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import HeroBanner from "../Partenariats/HeroBaner";
+
 import { useLanguageContext } from "@/lib/context/LanguageContext";
 import SectionImageCity from "./SectionImageCity";
-import { FaFlask, FaUsers } from "react-icons/fa";
+import {
+  FaCoffee,
+  FaFlask,
+  FaHeart,
+  FaShoppingBag,
+  FaShoppingCart,
+  FaStore,
+  FaUsers,
+  FaUtensils,
+} from "react-icons/fa";
 export default function VillageNumerique() {
   const { language } = useLanguageContext();
   const grandTitre =
@@ -34,8 +43,10 @@ export default function VillageNumerique() {
         <Innovation />
         {/* <!-- Health --> */}
         <Health />
+        {/* <!-- DiningAndShoppingSpaces --> */}
+        <DiningAndShoppingSpaces />
         {/* <!-- Engagement Écoresponsable --> */}
-        {/* <Engagement /> */}
+        <Engagement />
       </main>
     </div>
   );
@@ -676,7 +687,7 @@ const Attraction = () => {
 };
 
 const engagementEcoresponsableDataFr = {
-  title: "4. Engagement Écoresponsable",
+  title: "9. Engagement Écoresponsable",
   description:
     "Le Village Numérique intègre des pratiques durables : énergies renouvelables, gestion écologique des déchets et utilisation de matériaux locaux pour réduire l'impact environnemental.",
   image:
@@ -689,7 +700,7 @@ const engagementEcoresponsableDataFr = {
   ],
 };
 const engagementEcoresponsableDataEn = {
-  title: "4. Eco-Responsibility Commitment",
+  title: "9. Eco-Responsibility Commitment",
   description:
     "The Digital Village incorporates sustainable practices: renewable energy, ecological waste management, and the use of local materials to reduce environmental impact.",
   image:
@@ -1025,5 +1036,137 @@ const Health = () => {
         </div>
       </div>
     </section>
+  );
+};
+const diningAndShoppingSpacesFr = [
+  {
+    title: "Options de Restauration Variées",
+    details: [
+      {
+        title: "Restaurant principal",
+        description:
+          "Cuisine variée avec une capacité de service pour 1 000 repas quotidiens.",
+        icon: <FaUtensils className="text-4xl text-blue-500" />, // Icône pour le restaurant principal
+      },
+      {
+        title: "Zones de restauration rapide",
+        description:
+          "Cafétérias et fast-foods pour répondre aux besoins des étudiants et professionnels.",
+        icon: <FaStore className="text-4xl text-green-500" />, // Icône pour les zones de restauration rapide
+      },
+      {
+        title: "Coffee shop",
+        description:
+          "Espaces calmes pour les rencontres informelles et le travail individuel.",
+        icon: <FaCoffee className=" text-4xl  text-amber-800" />, // Icône pour le coffee shop
+      },
+    ],
+  },
+  {
+    title: "Espaces Commerciaux",
+    details: [
+      {
+        title: "Minimarket",
+        description: "Pour les besoins essentiels des résidents.",
+        icon: <FaShoppingBag className="text-yellow-500 text-4xl" />, // Icône pour le minimarket
+      },
+      {
+        title: "Boutiques spécialisées",
+        description:
+          "Pharmacie, papeterie, et commerces dédiés à la vie quotidienne.",
+        icon: <FaHeart className="text-4xl text-red-500" />, // Icône pour la pharmacie
+      },
+    ],
+  },
+];
+
+const diningAndShoppingSpacesEn = [
+  {
+    title: "Varied Dining Options",
+    details: [
+      {
+        title: "Main Restaurant",
+        description:
+          "Varied cuisine with a service capacity for 1,000 meals daily.",
+        icon: <FaUtensils className="text-4xl text-blue-500" />, // Icon for the main restaurant
+      },
+      {
+        title: "Fast Food Areas",
+        description:
+          "Cafeterias and fast food outlets catering to the needs of students and professionals.",
+        icon: <FaStore className="text-4xl text-green-500" />, // Icon for fast food areas
+      },
+      {
+        title: "Coffee Shop",
+        description: "Quiet spaces for informal meetings and individual work.",
+        icon: <FaCoffee className="text-4xl text-amber-800" />, // Icon for coffee shop
+      },
+    ],
+  },
+  {
+    title: "Commercial Spaces",
+    details: [
+      {
+        title: "Minimarket",
+        description: "For the essential needs of residents.",
+        icon: <FaShoppingBag className="text-yellow-500 text-4xl" />, // Icon for minimarket
+      },
+      {
+        title: "Specialized Shops",
+        description:
+          "Pharmacy, stationery, and shops dedicated to everyday life.",
+        icon: <FaHeart className="text-4xl text-red-500" />, // Icon for pharmacy
+      },
+    ],
+  },
+];
+
+const DiningAndShoppingSpaces = () => {
+  const { language } = useLanguageContext();
+  const data =
+    language === "fr" ? diningAndShoppingSpacesFr : diningAndShoppingSpacesEn;
+  return (
+    <div
+      className="py-16"
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1737537780/67_fvjofq.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <h2 className="mb-12 text-center text-4xl font-bold text-white">
+        {language === "fr"
+          ? "8. Espaces de Restauration et Commerces"
+          : "8. Dining and Commercial Spaces"}
+      </h2>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {data.map((section, index) => (
+          <div key={index} className="mb-12">
+            <div className="mb-6">
+              <h3 className="text-center text-2xl font-semibold text-primary">
+                {section.title}
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+              {section.details.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-lg bg-white p-6 shadow-xl transition-transform duration-300 hover:scale-105"
+                >
+                  <div className="mb-4 flex items-center justify-center">
+                    <div className="text-4xl text-blue-500">{item.icon}</div>
+                  </div>
+                  <h4 className=" mt-4 text-center text-lg font-bold  text-gray-800">
+                    {item.title}
+                  </h4>
+                  <p className="mt-2 text-gray-600">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
