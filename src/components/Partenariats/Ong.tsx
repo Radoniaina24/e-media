@@ -32,7 +32,7 @@ export default function Ong() {
           text: "Formations adaptées aux besoins locaux : En combinant des compétences technologiques, audiovisuelles et culturelles, nos programmes aident les jeunes à acquérir des compétences directement applicables sur le marché du travail.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?education,youth",
+      imageSrc: "/images/why/online.jpg",
       imageAlt: "Éducation accessible",
       imageOnRight: true,
     },
@@ -49,7 +49,8 @@ export default function Ong() {
           text: "Diffusion massive : Ces contenus sont partagés à travers les réseaux d’E-media, les médias locaux, et les plateformes internationales, sensibilisant un large public et attirant l’attention sur ces causes.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?social,impact",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736658994/CAN_zy58fw.jpg",
       imageAlt: "Sensibilisation sociale",
       imageOnRight: false,
     },
@@ -63,7 +64,8 @@ export default function Ong() {
           text: "Mise en avant des cultures locales : En soutenant des projets créatifs qui célèbrent les traditions malagasy tout en les combinant avec des approches modernes, E-media contribue à la valorisation culturelle tout en offrant des opportunités professionnelles aux jeunes artistes.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?creativity,culture",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737620728/124168_kmpias.jpg",
       imageAlt: "Valorisation culturelle",
       imageOnRight: true,
     },
@@ -77,7 +79,8 @@ export default function Ong() {
           text: "Impact local renforcé : Grâce à nos plateformes et infrastructures modernes, nous aidons à maximiser l’impact des initiatives gouvernementales et humanitaires en les connectant directement aux communautés malagasy.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?ngo,government",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737620837/2150246584_edzcb7.jpg",
       imageAlt: "Outil pour ONG",
       imageOnRight: false,
     },
@@ -96,7 +99,7 @@ export default function Ong() {
           text: "Training adapted to local needs: By combining technological, audiovisual, and cultural skills, our programs help youth acquire skills directly applicable in the job market.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?education,youth",
+      imageSrc: "/images/why/online.jpg",
       imageAlt: "Accessible Education",
       imageOnRight: true,
     },
@@ -113,7 +116,8 @@ export default function Ong() {
           text: "Mass distribution: These contents are shared through E-media's networks, local media, and international platforms, raising awareness among a large audience and drawing attention to these causes.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?social,impact",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736658994/CAN_zy58fw.jpg",
       imageAlt: "Social Awareness",
       imageOnRight: false,
     },
@@ -127,7 +131,8 @@ export default function Ong() {
           text: "Promoting local cultures: By supporting creative projects that celebrate Malagasy traditions while combining them with modern approaches, E-media contributes to cultural valorization while providing professional opportunities for young artists.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?creativity,culture",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737620728/124168_kmpias.jpg",
       imageAlt: "Cultural Valorization",
       imageOnRight: true,
     },
@@ -141,7 +146,8 @@ export default function Ong() {
           text: "Enhanced local impact: With our modern platforms and infrastructures, we help maximize the impact of government and humanitarian initiatives by connecting them directly with Malagasy communities.",
         },
       ],
-      imageSrc: "https://source.unsplash.com/1600x900/?ngo,government",
+      imageSrc:
+        "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737620837/2150246584_edzcb7.jpg",
       imageAlt: "Tool for NGOs",
       imageOnRight: false,
     },
@@ -365,7 +371,7 @@ const PartnershipInitiative = () => {
       className="relative bg-cover bg-center bg-no-repeat px-6 py-16"
       style={{
         backgroundImage:
-          "url('https://source.unsplash.com/1600x900/?technology,education')", // Lien d'une image de fond
+          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1737621075/94721_iy2rje.jpg')", // Lien d'une image de fond
       }}
     >
       {/* Overlay pour assombrir l'image */}

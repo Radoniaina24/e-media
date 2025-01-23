@@ -134,7 +134,7 @@ const partnershipsEn = [
     id: "#5",
   },
   {
-    title: "With NGOs and Governments",
+    title: "With ONG and Governments",
     description: "Educational and cultural initiatives, awareness content.",
     icon: FaHandsHelping,
     bgColor: "bg-red-500",

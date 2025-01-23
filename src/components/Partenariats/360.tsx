@@ -98,7 +98,7 @@ const educationHighlightsFr = [
       },
     ],
     imageSrc:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737621360/2150697558_gbn1vn.jpg",
     imageAlt: "Formation sur mesure",
     imageOnRight: false,
   },
@@ -116,7 +116,7 @@ const educationHighlightsFr = [
       },
     ],
     imageSrc:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737624345/2147847455_kvst1x.jpg",
     imageAlt: "Formation modulaire",
     imageOnRight: true,
   },
@@ -134,7 +134,7 @@ const educationHighlightsFr = [
       },
     ],
     imageSrc:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737621705/491_q3npsl.jpg",
     imageAlt: "Expertise et innovation",
     imageOnRight: false,
   },
@@ -154,7 +154,7 @@ const educationHighlightsEn = [
       },
     ],
     imageSrc:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737621360/2150697558_gbn1vn.jpg",
     imageAlt: "Custom training",
     imageOnRight: false,
   },
@@ -172,7 +172,7 @@ const educationHighlightsEn = [
       },
     ],
     imageSrc:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737624345/2147847455_kvst1x.jpg",
     imageAlt: "Modular training",
     imageOnRight: true,
   },
@@ -190,7 +190,7 @@ const educationHighlightsEn = [
       },
     ],
     imageSrc:
-      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1736083737/socio_ezfas1.jpg",
+      "https://res.cloudinary.com/dx3xhdaym/image/upload/v1737621705/491_q3npsl.jpg",
     imageAlt: "Expertise and innovation",
     imageOnRight: false,
   },

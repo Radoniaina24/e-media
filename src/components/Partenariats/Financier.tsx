@@ -110,7 +110,7 @@ const WhyCollaborateSection = () => {
       className="relative bg-cover bg-center bg-no-repeat px-6 py-16"
       style={{
         backgroundImage:
-          "url('https://source.unsplash.com/1600x900/?technology,education')", // Lien d'une image de fond
+          "url('https://res.cloudinary.com/dx3xhdaym/image/upload/v1737619971/fs_mfhvnc.jpg')", // Lien d'une image de fond
       }}
     >
       {/* Overlay pour assombrir l'image */}
