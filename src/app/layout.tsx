@@ -33,14 +33,16 @@ export default function RootLayout({
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <StoreProvider>
-          <Providers>
-            <LanguageProvider>
-              <Header />
-              {children}
-              <Footer />
-              <ScrollToTop />
-            </LanguageProvider>
-          </Providers>
+          <SnackbarProvider>
+            <Providers>
+              <LanguageProvider>
+                <Header />
+                {children}
+                <Footer />
+                <ScrollToTop />
+              </LanguageProvider>
+            </Providers>
+          </SnackbarProvider>
         </StoreProvider>
       </body>
     </html>
@@ -50,3 +52,4 @@ import { Providers } from "./providers";
 import { Metadata } from "next";
 import { LanguageProvider } from "@/lib/context/LanguageContext";
 import { StoreProvider } from "./StoreProvider";
+import SnackbarProvider from "@/lib/context/SnackbarContext";

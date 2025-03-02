@@ -10,7 +10,11 @@ export const metadata: Metadata = {
 };
 
 const SignupPage = () => {
-  return <SignUp />;
+  return (
+    <div className="mt-36">
+      <SignUp />
+    </div>
+  );
 };
 
 export default SignupPage;

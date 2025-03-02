@@ -1,155 +1,324 @@
 "use client";
-import { useLanguageContext } from "@/lib/context/LanguageContext";
-import Link from "next/link";
 import React from "react";
-export default function SignUp() {
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useAddPanelistMutation } from "@/lib/api/panelistApi";
+import { useSnackbar } from "@/lib/context/SnackbarContext";
+import { Loader2 } from "lucide-react";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
+import InputFormik from "./Componnents/InputFormik";
+import InputFile from "./Componnents/InputFile";
+import DatePickerOne from "./Componnents/DatePicker";
+import InputSelect from "./Componnents/InputSelect";
+import InputFilePdf from "./Componnents/InputFilePdf";
+import InputPhoneNumber from "./Componnents/InputPhoneNumber";
+
+export default function FormPanelist() {
+  const { showSnackbar } = useSnackbar();
   const { language } = useLanguageContext();
+  const [addPanelist] = useAddPanelistMutation();
+
+  const initialvalues = {
+    profilePhoto: "",
+    last_name: "",
+    first_name: "",
+    date_of_birth: "",
+    current_address: "",
+    email: "",
+    phone_number: "",
+    classe: "",
+    course: "",
+    last_degree: "",
+    residence_certificate: "",
+    transcript: "",
+  };
+
+  const formik = useFormik({
+    initialValues: initialvalues,
+    validationSchema: Yup.object({
+      last_name: Yup.string().required(
+        language === "fr" ? "Le nom est requis" : "Last name is required",
+      ),
+      first_name: Yup.string().required(
+        language === "fr" ? "Le nom est requis" : "First name is required",
+      ),
+
+      date_of_birth: Yup.string().required(
+        language === "fr"
+          ? "La date de naissance  est requis"
+          : "Date of birth is required",
+      ),
+      current_address: Yup.string().required(
+        language === "fr"
+          ? "L'adresse actuelle est   est requis"
+          : "Current address  is required",
+      ),
+      email: Yup.string()
+        .email(language === "fr" ? "Email invalide" : "Invalid email")
+        .required(
+          language === "fr" ? "L'email est requis" : "Email is required",
+        ),
+      phone_number: Yup.string().required(
+        language === "fr"
+          ? "Le numéro de téléphone est requis"
+          : "Phone number is required",
+      ),
+      classe: Yup.string().required(
+        language === "fr"
+          ? "Cette classe est requis"
+          : " iThis class is required",
+      ),
+      course: Yup.string().required(
+        language === "fr"
+          ? "Cette cours est requis"
+          : "This course is required",
+      ),
+      profilePhoto: Yup.string().required(
+        language === "fr" ? "Ce photo est requis" : "This photo is required",
+      ),
+      last_degree: Yup.string().required(
+        language === "fr"
+          ? "Ce dernier diplôme est requis"
+          : "This last degree is required",
+      ),
+      residence_certificate: Yup.string().required(
+        language === "fr"
+          ? "Ce certificat de résidence est requis"
+          : "This residence certificate is required",
+      ),
+    }),
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      console.log(values);
+      // const formData = new FormData();
+      // Object.entries(values).forEach(([key, value]: any) => {
+      //   if (value !== undefined && value !== "") {
+      //     formData.append(key, value instanceof File ? value : String(value));
+      //   }
+      // });
+
+      // setSubmitting(true);
+
+      // try {
+      //   const response = await addPanelist(formData).unwrap();
+      //   showSnackbar(response?.message, "success"); // message, type(error, success)
+      //   resetForm();
+      // } catch (error: any) {
+      //   if (error?.data?.message) {
+      //     showSnackbar(error?.data?.message, "error");
+      //   } else {
+      //     showSnackbar("Verifier votre connexion internet", "error");
+      //   }
+      // } finally {
+      //   setSubmitting(false);
+      // }
+    },
+  });
+  // console.log(formik.values);
+  const optionsClasse = [
+    { key: "L1", value: "L1" },
+    { key: "L2", value: "L2" },
+    { key: "L3", value: "L3" },
+  ];
+  const course = [
+    { key: "Communication audiovisuelle et numérique", value: "CAN" },
+    { key: "Marketing Digital et Journalisme", value: "MPJ" },
+    {
+      key: "Technologie de l'informatique et de la télécommunication",
+      value: "TIC",
+    },
+    { key: "Droit", value: "DRT" },
+    { key: "Management", value: "MGT" },
+  ];
 
   return (
-    <>
-      <section className="relative z-10 overflow-hidden pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto max-w-[500px] rounded bg-white px-6 py-10 shadow-three sm:p-[60px] dark:bg-dark">
-                <h3 className="mb-6 text-center text-xl font-bold text-black sm:text-lg dark:text-white">
-                  {language === "fr"
-                    ? "Créer votre compte"
-                    : "Create your account"}
-                </h3>
-                <form>
-                  <div className="mb-8">
-                    <label
-                      htmlFor="name"
-                      className="mb-3 block text-sm text-dark dark:text-white"
-                    >
-                      {" "}
-                      {language === "fr" ? "Nom complet" : "Full name"}{" "}
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder={
-                        language === "fr"
-                          ? "Merci de saisir votre complet"
-                          : "Please enter your full name"
-                      }
-                      className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                    />
-                  </div>
-                  <div className="mb-8">
-                    <label
-                      htmlFor="email"
-                      className="mb-3 block text-sm text-dark dark:text-white"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder={
-                        language === "fr"
-                          ? "Merci de saisir votre email"
-                          : "Please enter your email"
-                      }
-                      className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                    />
-                  </div>
-                  <div className="mb-8">
-                    <label
-                      htmlFor="password"
-                      className="mb-3 block text-sm text-dark dark:text-white"
-                    >
-                      {language === "fr" ? "Mot de passe" : "Password"}
-                    </label>
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder={
-                        language === "fr"
-                          ? "Merci de saisir votre mot de passe"
-                          : "Please enter your password"
-                      }
-                      className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                    />
-                  </div>
+    <section className=" bg-white pb-10">
+      <div className="mx-auto max-w-5xl px-10 md:px-5">
+        <form
+          onSubmit={formik.handleSubmit}
+          className="space-y-4"
+          autoComplete="off"
+        >
+          <h2 className=" text-xl  text-black">
+            {language === "fr"
+              ? "Informations Personnelles "
+              : " Personal Information "}
+          </h2>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <InputFormik
+              label={language === "fr" ? "Nom" : "Last name"}
+              type="text"
+              id="last_name"
+              placeholder={language === "fr" ? "Nom" : "Last name"}
+              value={formik.values.last_name}
+              onChange={formik.handleChange}
+              error={formik.errors.last_name}
+              touched={formik.touched.last_name}
+            />
+            <InputFormik
+              label={language === "fr" ? "Prénom " : "First name"}
+              type="text"
+              id="first_name"
+              placeholder={language === "fr" ? "Prénom " : "First Name"}
+              value={formik.values.first_name}
+              onChange={formik.handleChange}
+              error={formik.errors.first_name}
+              touched={formik.touched.first_name}
+            />
 
-                  <div className="mb-6">
-                    <button className="flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
-                      {language === "fr" ? "S'incrire" : "Sign up"}
-                    </button>
-                  </div>
-                </form>
-                <p className="text-center text-base font-medium text-body-color">
-                  {language === "fr"
-                    ? "Vous avez déjà un compte?"
-                    : "Already have an account?"}
-                  <Link href="/signin" className="text-primary hover:underline">
-                    {language === "fr" ? " Se connecter" : " Sign in"}
-                  </Link>
-                </p>
-              </div>
-            </div>
+            <InputFormik
+              label={
+                language === "fr" ? "Adresse actuelle" : "Current Address "
+              }
+              type="text"
+              id="current_address"
+              placeholder={
+                language === "fr" ? "Adresse actuelle" : "Current Address "
+              }
+              value={formik.values.current_address}
+              onChange={formik.handleChange}
+              error={formik.errors.current_address}
+              touched={formik.touched.current_address}
+            />
+            <InputFormik
+              label={language === "fr" ? "Date de naissance" : "Date of birth "}
+              type="date"
+              id="date_of_birth"
+              placeholder={
+                language === "fr" ? "Date de naissance" : "Date of birth "
+              }
+              value={formik.values.date_of_birth}
+              onChange={formik.handleChange}
+              error={formik.errors.date_of_birth}
+              touched={formik.touched.date_of_birth}
+            />
+
+            <InputFormik
+              label="Email"
+              type="text"
+              id="email"
+              placeholder="Email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.errors.email}
+              touched={formik.touched.email}
+            />
+            <InputFormik
+              label={language === "fr" ? "Numéro de téléphone" : "Phone number"}
+              type="text"
+              id="phone_number"
+              placeholder={
+                language === "fr" ? "Numéro de téléphone" : "Phone number"
+              }
+              value={formik.values.phone_number}
+              onChange={formik.handleChange}
+              error={formik.errors.phone_number}
+              touched={formik.touched.phone_number}
+            />
+            {/* <InputPhoneNumber
+              name="phone_number"
+              label={language === "fr" ? "Numéro de téléphone" : "Phone number"}
+              value={formik.values.phone_number}
+              onChange={formik.setFieldValue}
+              error={formik.errors.phone_number}
+              touched={formik.touched.phone_number}
+            /> */}
+
+            <InputSelect
+              label={language === "fr" ? "Classe" : "Class"}
+              id="classe"
+              value={formik.values.classe}
+              onChange={formik.handleChange}
+              options={optionsClasse}
+              error={formik.errors.classe}
+              touched={formik.touched.classe}
+              placeholder={
+                language === "fr"
+                  ? "Seletionnez votre classe"
+                  : "Select your class"
+              }
+            />
+            <InputSelect
+              label={language === "fr" ? "Cours" : "Course"}
+              id="course"
+              value={formik.values.course}
+              onChange={formik.handleChange}
+              options={course}
+              error={formik.errors.course}
+              touched={formik.touched.course}
+              placeholder={
+                language === "fr"
+                  ? "Seletionnez votre cours"
+                  : "Select your course"
+              }
+            />
           </div>
-        </div>
-        <div className="absolute left-0 top-0 z-[-1]">
-          <svg
-            width="1440"
-            height="969"
-            viewBox="0 0 1440 969"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <mask
-              id="mask0_95:1005"
-              style={{ maskType: "alpha" }}
-              maskUnits="userSpaceOnUse"
-              x="0"
-              y="0"
-              width="1440"
-              height="969"
+
+          <h2 className=" text-xl  text-black">
+            {language === "fr"
+              ? "Documents à soumettre "
+              : "Documents to Submit "}
+          </h2>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <InputFile
+              label={language === "fr" ? "Photo recent" : "Recent photo"}
+              setFieldValue={formik.setFieldValue}
+              name="profilePhoto"
+              error={formik.errors.profilePhoto}
+              touched={formik.touched.profilePhoto}
+            />
+            <InputFilePdf
+              label={language === "fr" ? "Dernier diplôme" : "Last degree"}
+              setFieldValue={formik.setFieldValue}
+              name="last_degree"
+              error={formik.errors.last_degree}
+              touched={formik.touched.last_degree}
+            />
+            <InputFilePdf
+              label={
+                language === "fr"
+                  ? "Certificat de résidence"
+                  : "Residence certificate"
+              }
+              setFieldValue={formik.setFieldValue}
+              name="residence_certificate"
+              error={formik.errors.residence_certificate}
+              touched={formik.touched.residence_certificate}
+            />
+            <InputFilePdf
+              label={
+                language === "fr"
+                  ? "Copie des relevés de notes"
+                  : "Copy of transcripts"
+              }
+              setFieldValue={formik.setFieldValue}
+              name="transcript"
+              error={formik.errors.transcript}
+              touched={formik.touched.transcript}
+            />
+          </div>
+
+          <div className="grid grid-cols-1">
+            <button
+              disabled={formik.isSubmitting}
+              type="submit"
+              className={`relative mt-5 flex items-center justify-center gap-2 rounded px-6 py-2 text-sm font-medium text-white 
+      transition-all duration-300 ease-in-out 
+      ${formik.isSubmitting ? "cursor-not-allowed bg-gray-400" : "bg-primary"}`}
             >
-              <rect width="1440" height="969" fill="#090E34" />
-            </mask>
-            <g mask="url(#mask0_95:1005)">
-              <path
-                opacity="0.1"
-                d="M1086.96 297.978L632.959 554.978L935.625 535.926L1086.96 297.978Z"
-                fill="url(#paint0_linear_95:1005)"
-              />
-              <path
-                opacity="0.1"
-                d="M1324.5 755.5L1450 687V886.5L1324.5 967.5L-10 288L1324.5 755.5Z"
-                fill="url(#paint1_linear_95:1005)"
-              />
-            </g>
-            <defs>
-              <linearGradient
-                id="paint0_linear_95:1005"
-                x1="1178.4"
-                y1="151.853"
-                x2="780.959"
-                y2="453.581"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_95:1005"
-                x1="160.5"
-                y1="220"
-                x2="1099.45"
-                y2="1192.04"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </section>
-    </>
+              {formik.isSubmitting ? (
+                <>
+                  {language === "fr" ? "Traitement..." : "Processing..."}
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                </>
+              ) : language === "fr" ? (
+                "Soumettre"
+              ) : (
+                "Submit"
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 }
