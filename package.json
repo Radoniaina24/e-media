@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@reduxjs/toolkit": "^2.6.0",
     "aos": "^2.3.4",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.1.0",
@@ -30,6 +31,7 @@
     "react-modal-video": "^2.0.1",
     "react-multi-carousel": "^2.8.5",
     "react-phone-number-input": "^3.4.10",
+    "react-redux": "^9.2.0",
     "react-slick": "^0.30.3",
     "react-world-flags": "^1.6.0",
     "swiper": "^11.1.15",

@@ -32,19 +32,21 @@ export default function RootLayout({
       <head />
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
-        <Providers>
-          <LanguageProvider>
-            <Header />
-            {children}
-            <Footer />
-            <ScrollToTop />
-          </LanguageProvider>
-        </Providers>
+        <StoreProvider>
+          <Providers>
+            <LanguageProvider>
+              <Header />
+              {children}
+              <Footer />
+              <ScrollToTop />
+            </LanguageProvider>
+          </Providers>
+        </StoreProvider>
       </body>
     </html>
   );
 }
-
 import { Providers } from "./providers";
 import { Metadata } from "next";
 import { LanguageProvider } from "@/lib/context/LanguageContext";
+import { StoreProvider } from "./StoreProvider";
