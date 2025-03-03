@@ -29,7 +29,7 @@ const DropdownUser = () => {
       await logoutUser("").unwrap();
       // Si la déconnexion réussit, effacer l'état d'authentification de Redux
       dispatch(logout());
-      navigation.push("/login");
+      navigation.push("/admin/login");
     } catch (err) {
       console.error("Logout failed", err);
     }

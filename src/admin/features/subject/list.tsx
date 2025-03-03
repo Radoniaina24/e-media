@@ -5,9 +5,9 @@ import {
   useDeleteSubjectMutation,
   useGetAllSubjectQuery,
 } from "@/lib/api/subjectApi";
-import Loader from "@/components/Admin/common/Loader";
 import DeleteButton from "@/components/Admin/Button/DeleteButton";
 import Subject from "@/admin/interface/Subject";
+import Loader from "@/components/Admin/common/Loader";
 
 export default function ListSubject() {
   const { data, isLoading, error } = useGetAllSubjectQuery("");

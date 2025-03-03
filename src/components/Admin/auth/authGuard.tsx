@@ -11,15 +11,15 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const [tokenStorage, setTokenStorage] = useState(
     localStorage.getItem("token") || null,
   );
-  // useEffect(() => {
-  //   if (tokenStorage === undefined) {
-  //     return; // Attente de la résolution de l'état
-  //   }
-  //   if (!tokenStorage && pathname !== "/login") {
-  //     // Redirige les utilisateurs non authentifiés vers la page de connexion
-  //     router.replace("/login");
-  //   }
-  // }, [tokenStorage, pathname, router]);
-  // if (!tokenStorage) return;
+  useEffect(() => {
+    if (tokenStorage === undefined) {
+      return; // Attente de la résolution de l'état
+    }
+    if (!tokenStorage && pathname !== "/admin/login") {
+      // Redirige les utilisateurs non authentifiés vers la page de connexion
+      router.replace("/admin/login");
+    }
+  }, [tokenStorage, pathname, router]);
+  if (!tokenStorage) return;
   return <>{children}</>;
 }

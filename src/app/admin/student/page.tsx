@@ -3,7 +3,7 @@ import DefaultLayout from "@/components/Admin/Layouts/DefaultLayout";
 import { Metadata } from "next";
 import React from "react";
 export const metadata: Metadata = {
-  title: "Students",
+  title: "Students | E-media",
 };
 export default function page() {
   return (

@@ -2,7 +2,7 @@ import Calendar from "@/components/Admin/Calender";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Calender",
+  title: "Calender | E-media",
 };
 
 const CalendarPage = () => {

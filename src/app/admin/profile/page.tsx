@@ -4,7 +4,7 @@ import Link from "next/link";
 import Breadcrumb from "@/components/Admin/Breadcrumbs/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Profile",
+  title: "Profile | E-media",
 };
 const Profile = () => {
   return (

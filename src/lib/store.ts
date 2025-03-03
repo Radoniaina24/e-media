@@ -26,6 +26,8 @@ export const makeStore = () => {
       [authAPI.reducerPath]: authAPI.reducer,
       [studentAPI.reducerPath]: studentAPI.reducer,
       [panelistsAPI.reducerPath]: panelistsAPI.reducer,
+      [classeAPI.reducerPath]: classeAPI.reducer,
+      [subjectAPI.reducerPath]: subjectAPI.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
@@ -34,6 +36,8 @@ export const makeStore = () => {
         authAPI.middleware,
         studentAPI.middleware,
         panelistsAPI.middleware,
+        classeAPI.middleware,
+        subjectAPI.middleware,
       );
     },
   });
