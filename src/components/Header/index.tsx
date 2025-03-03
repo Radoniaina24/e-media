@@ -171,7 +171,7 @@ const Header = () => {
                 </Link> */}
                 <Link
                   href="/signup"
-                  className="ease-in-up hidden rounded-full bg-primary px-8 py-3 text-base font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-6 xl:px-9"
+                  className="ease-in-up hidden rounded-full bg-primary px-2 py-2 text-sm font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-6 xl:px-9"
                 >
                   {language === "fr" ? "S'inscrire" : "Sign up"}
                 </Link>
