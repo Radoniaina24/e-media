@@ -81,14 +81,14 @@ const App = () => {
       : "Explore Our Albums and Discover Our Photos";
   const engagements = language === "fr" ? "Notre Engagement" : "Our Commitment";
   return (
-    <div className="bg-gray-100 px-6 py-20" id="why">
+    <div className="bg-gray-100  pb-20" id="why">
       {/* Header Section */}
       <section
-        className="relative rounded-lg bg-cover bg-center shadow-lg"
+        className="relative  bg-cover bg-center shadow-lg"
         style={{ backgroundImage: "url('/images/banniere/p3.png')" }}
         data-aos="fade-up"
       >
-        <div className="absolute inset-0 rounded-lg bg-black opacity-50"></div>
+        <div className="absolute inset-0  bg-black opacity-50"></div>
         <div className="relative z-10 py-20 text-center text-white">
           <h1 className="mb-4 text-4xl font-extrabold md:text-5xl">{who}</h1>
           <p className="mx-auto max-w-3xl text-xl font-light md:text-2xl">

@@ -160,11 +160,11 @@ export default function FormPanelist() {
           className="space-y-4"
           autoComplete="off"
         >
-          <h2 className=" text-xl  text-black">
+          {/* <h2 className=" text-center text-xl  text-black">
             {language === "fr"
               ? "Informations Personnelles "
               : " Personal Information "}
-          </h2>
+          </h2> */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <InputFormik
               label={language === "fr" ? "Nom" : "Last name"}
@@ -275,7 +275,7 @@ export default function FormPanelist() {
             />
           </div>
 
-          <h2 className=" text-xl  text-black">
+          <h2 className="text-xl  text-black">
             {language === "fr"
               ? "Documents à soumettre "
               : "Documents to Submit "}
