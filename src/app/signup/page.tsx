@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { Metadata } from "next";
 import SignUp from "@/components/Signup/SignUp";
+import HeaderContact from "@/components/Contact/HeaderContact";
+import HeaderSignup from "@/components/Signup/HeaderSinup";
 
 export const metadata: Metadata = {
   title: "Inscription",
@@ -11,7 +13,8 @@ export const metadata: Metadata = {
 
 const SignupPage = () => {
   return (
-    <div className="mt-36">
+    <div className="">
+      <HeaderSignup />
       <SignUp />
     </div>
   );

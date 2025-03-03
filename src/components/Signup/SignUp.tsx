@@ -14,10 +14,7 @@ import InputFilePdf from "./Componnents/InputFilePdf";
 import InputPhoneNumber from "./Componnents/InputPhoneNumber";
 
 export default function FormPanelist() {
-  const { showSnackbar } = useSnackbar();
   const { language } = useLanguageContext();
-  const [addPanelist] = useAddPanelistMutation();
-
   const initialvalues = {
     profilePhoto: "",
     last_name: "",
@@ -131,7 +128,7 @@ export default function FormPanelist() {
   ];
 
   return (
-    <section className=" bg-white pb-10">
+    <section className="  bg-white py-10">
       <div className="mx-auto max-w-5xl px-10 md:px-5">
         <form
           onSubmit={formik.handleSubmit}

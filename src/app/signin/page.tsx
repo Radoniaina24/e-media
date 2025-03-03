@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 };
 
 const SigninPage = () => {
-  return <Signin />;
+  return (
+    <div>
+      <Signin />
+    </div>
+  );
 };
 
 export default SigninPage;
