@@ -37,8 +37,8 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ id, onDelete }) => {
 
       {isModalOpen && (
         <Modal open={isModalOpen} onClose={closeModal}>
-          <div className="w-56 text-center">
-            <div className="mx-auto my-4 w-48">
+          <div className=" text-center">
+            <div className=" my-4 ">
               <h3 className="text-lg font-semibold text-gray-800">
                 Confirmer la suppression
               </h3>
