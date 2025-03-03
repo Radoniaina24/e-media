@@ -1,6 +1,4 @@
-import { Brand } from "@/types/brand";
-
-const brandsData: Brand[] = [
+const brandsData = [
   {
     id: 6,
     name: "Formbold",
