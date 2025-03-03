@@ -42,25 +42,22 @@ const DropdownUser = () => {
         className="flex items-center gap-4"
         href="#"
       >
-        <span className="hidden text-right lg:block">
-          <span className="block text-sm font-medium text-black dark:text-white">
+        <div className="hidden text-right lg:block">
+          <span className="block text-sm font-medium text-black ">
             {user?.username || ""}
           </span>
           <span className="block text-xs"> {user?.role || ""}</span>
-        </span>
+        </div>
 
-        <span className="h-12 w-12 rounded-full">
+        <div className=" rounded-full">
           <Image
-            width={112}
-            height={112}
+            width={40}
+            height={40}
             src={"/images/user/user-01.png"}
-            style={{
-              width: "auto",
-              height: "auto",
-            }}
+            className=""
             alt="User"
           />
-        </span>
+        </div>
 
         <svg
           className="hidden fill-current sm:block"
