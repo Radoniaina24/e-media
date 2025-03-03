@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useAddPanelistMutation } from "@/lib/api/panelistApi";
@@ -12,9 +12,33 @@ import DatePickerOne from "./Componnents/DatePicker";
 import InputSelect from "./Componnents/InputSelect";
 import InputFilePdf from "./Componnents/InputFilePdf";
 import InputPhoneNumber from "./Componnents/InputPhoneNumber";
+import { useAddStudentMutation } from "@/lib/api/studentApi";
 
 export default function FormPanelist() {
   const { language } = useLanguageContext();
+  const [addStudent] = useAddStudentMutation();
+  const { showSnackbar } = useSnackbar();
+
+  const inputFileRef = useRef<HTMLInputElement>(null);
+  const inputFilePdfRef_last_degree = useRef<HTMLInputElement>(null);
+  const inputFilePdfRef_residence_certificate = useRef<HTMLInputElement>(null);
+  const inputFilePdfRef_transcript = useRef<HTMLInputElement>(null);
+  const resetFileInputPhoto = () => {
+    if (inputFileRef.current) {
+      inputFileRef.current.value = "";
+    }
+  };
+  const resetFilePdfInput = () => {
+    if (
+      inputFilePdfRef_last_degree.current &&
+      inputFilePdfRef_residence_certificate
+    ) {
+      inputFilePdfRef_last_degree.current.value = "";
+      inputFilePdfRef_residence_certificate.current.value = "";
+      inputFilePdfRef_transcript.current.value = "";
+    }
+  };
+
   const initialvalues = {
     profilePhoto: "",
     last_name: "",
@@ -85,32 +109,33 @@ export default function FormPanelist() {
       ),
     }),
     onSubmit: async (values, { setSubmitting, resetForm }) => {
-      console.log(values);
-      // const formData = new FormData();
-      // Object.entries(values).forEach(([key, value]: any) => {
-      //   if (value !== undefined && value !== "") {
-      //     formData.append(key, value instanceof File ? value : String(value));
-      //   }
-      // });
+      const formData = new FormData();
+      Object.entries(values).forEach(([key, value]: any) => {
+        if (value !== undefined && value !== "") {
+          formData.append(key, value instanceof File ? value : String(value));
+        }
+      });
 
-      // setSubmitting(true);
+      setSubmitting(true);
 
-      // try {
-      //   const response = await addPanelist(formData).unwrap();
-      //   showSnackbar(response?.message, "success"); // message, type(error, success)
-      //   resetForm();
-      // } catch (error: any) {
-      //   if (error?.data?.message) {
-      //     showSnackbar(error?.data?.message, "error");
-      //   } else {
-      //     showSnackbar("Verifier votre connexion internet", "error");
-      //   }
-      // } finally {
-      //   setSubmitting(false);
-      // }
+      try {
+        const response = await addStudent(formData).unwrap();
+        showSnackbar(response?.message, "success"); // message, type(error, success)
+        resetForm();
+        resetFileInputPhoto();
+        resetFilePdfInput();
+      } catch (error: any) {
+        if (error?.data?.message) {
+          showSnackbar(error?.data?.message, "error");
+        } else {
+          showSnackbar("Verifier votre connexion internet", "error");
+        }
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
-  // console.log(formik.values);
+
   const optionsClasse = [
     { key: "L1", value: "L1" },
     { key: "L2", value: "L2" },
@@ -257,6 +282,7 @@ export default function FormPanelist() {
           </h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <InputFile
+              inputRef={inputFileRef}
               label={language === "fr" ? "Photo recent" : "Recent photo"}
               setFieldValue={formik.setFieldValue}
               name="profilePhoto"
@@ -264,6 +290,7 @@ export default function FormPanelist() {
               touched={formik.touched.profilePhoto}
             />
             <InputFilePdf
+              inputRef={inputFilePdfRef_last_degree}
               label={language === "fr" ? "Dernier diplôme" : "Last degree"}
               setFieldValue={formik.setFieldValue}
               name="last_degree"
@@ -271,6 +298,7 @@ export default function FormPanelist() {
               touched={formik.touched.last_degree}
             />
             <InputFilePdf
+              inputRef={inputFilePdfRef_residence_certificate}
               label={
                 language === "fr"
                   ? "Certificat de résidence"
@@ -282,6 +310,7 @@ export default function FormPanelist() {
               touched={formik.touched.residence_certificate}
             />
             <InputFilePdf
+              inputRef={inputFilePdfRef_transcript}
               label={
                 language === "fr"
                   ? "Copie des relevés de notes"

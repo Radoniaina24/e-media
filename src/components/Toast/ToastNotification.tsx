@@ -21,7 +21,7 @@ export function ToastNotification({
 
   if (type === "error") {
     return (
-      <Toast className=" fixed right-4 top-4 z-99999 w-80 bg-red-100 p-2 dark:bg-red-800 dark:text-white">
+      <Toast className=" z-99999 fixed right-4 top-4 w-80 bg-red-100 p-2 dark:bg-red-800 dark:text-white">
         <div className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-500 dark:bg-red-800 dark:text-red-200">
           <svg
             className="h-5 w-5"
@@ -43,7 +43,7 @@ export function ToastNotification({
     );
   }
   return (
-    <Toast className="fixed right-4 top-4 z-99999 w-80 bg-green-100 p-2 dark:bg-green-800 dark:text-white">
+    <Toast className="z-99999 fixed right-4 top-4 w-80 bg-green-100 p-2 dark:bg-green-800 dark:text-white">
       <div className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
         <svg
           className="h-5 w-5"

@@ -6,6 +6,7 @@ interface InputFileProps {
   setFieldValue: (field: string, value: File | null) => void;
   error?: string;
   touched?: boolean;
+  inputRef: React.RefObject<HTMLInputElement>;
 }
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024; // 5 Mo
@@ -17,6 +18,7 @@ const InputFilePdf: React.FC<InputFileProps> = ({
   setFieldValue,
   error,
   touched,
+  inputRef,
 }) => {
   const [fileError, setFileError] = useState<string | null>(null);
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,6 +47,7 @@ const InputFilePdf: React.FC<InputFileProps> = ({
         {label}
       </label>
       <input
+        ref={inputRef}
         name={name}
         type="file"
         accept="application/pdf"

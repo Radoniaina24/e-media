@@ -82,6 +82,15 @@ module.exports = {
         "btn-hover": "0px 1px 2px rgba(0, 0, 0, 0.15)",
         "btn-light": "0px 1px 2px rgba(0, 0, 0, 0.1)",
       },
+      zIndex: {
+        999999: "999999",
+        99999: "99999",
+        9999: "9999",
+        999: "999",
+        99: "99",
+        9: "9",
+        1: "1",
+      },
       dropShadow: {
         three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
       },
