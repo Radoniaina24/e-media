@@ -3,7 +3,7 @@ import DefaultLayout from "@/components/Admin/Layouts/DefaultLayout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Intello",
+  title: "Dashboard | E-media",
 };
 
 export default function Home() {

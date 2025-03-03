@@ -90,8 +90,8 @@ export default function ListStudent() {
                 <tr className="">
                   <td
                     rowSpan={8}
-                    colSpan={4}
-                    className="text-center"
+                    colSpan={5}
+                    className="text-md text-center font-bold"
                     style={{ height: "250px" }}
                   >
                     Not Found

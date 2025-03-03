@@ -4,28 +4,28 @@ import * as yup from "yup";
 import React from "react";
 import { useFormik } from "formik";
 import { useSnackbar } from "@/lib/context/SnackbarContext";
-import { useAddClasseMutation } from "@/lib/api/classeApi";
-import Classe from "@/admin/interface/Classe";
+import { useAddCourseMutation } from "@/lib/api/courseApi";
+import Course from "@/admin/interface/Course";
 // Validation Schema
-const classeSchema = yup.object({
-  level: yup.string().required("Le nom de la classe est obligatoire"),
+const courseSchema = yup.object({
+  level: yup.string().required("Le nom du cours est obligatoire"),
 });
 // Initial Values
-const initialValues: Omit<Classe, "_id"> = {
+const initialValues: Omit<Course, "_id"> = {
   level: "",
 };
-export default function FormClasse() {
+export default function FormCourse() {
   //Notification
   const { showSnackbar } = useSnackbar();
   //RTK query
-  const [addClasse, responseAddClasse] = useAddClasseMutation();
+  const [addCourse, responseAddCourse] = useAddCourseMutation();
   // Formik
   const formik = useFormik({
     initialValues: initialValues,
-    validationSchema: classeSchema,
+    validationSchema: courseSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        const response = await addClasse(values).unwrap();
+        const response = await addCourse(values).unwrap();
         showSnackbar(response?.message, "success");
         resetForm();
       } catch (error: any) {
@@ -42,7 +42,7 @@ export default function FormClasse() {
     <form
       onSubmit={handleSubmit}
       autoComplete="off"
-      className="flex  items-center gap-2"
+      className=" flex  items-center  gap-2"
     >
       <label htmlFor="voice-search" className="sr-only">
         Search
@@ -54,7 +54,7 @@ export default function FormClasse() {
           value={values.level}
           onChange={handleChange}
           className={`dark:border-form-strokedark dark:bg-form-input  rounded border-[1.5px] bg-transparent px-5 py-2 font-normal outline-none transition focus:border-primary active:border-primary dark:focus:border-primary ${errors.level && touched.level ? "border-red-500" : "border-stroke"}`}
-          placeholder="Nom de la classe..."
+          placeholder="Nom du cours..."
         />
       </div>
       <button
