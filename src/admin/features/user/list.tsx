@@ -58,7 +58,7 @@ export default function UsersList() {
           type="submit"
           className="mb-3 cursor-pointer rounded border  border-stroke bg-primary px-4 py-1 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
         >
-          <Link href="/student/add">Add</Link>
+          <Link href="/admin/users/add">Add</Link>
         </button>
         <div className="mb-3 flex flex-wrap items-center justify-between">
           <SearchBar query={search} onQuery={setSearch} />

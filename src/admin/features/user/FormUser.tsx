@@ -29,7 +29,6 @@ const initialValues: Omit<User, "_id"> = {
   password: "",
 };
 export default function FormUser({ userEdit }: { userEdit?: User }) {
-  console.log(userEdit);
   const navigation = useRouter();
   const { showSnackbar } = useSnackbar();
   const [addUser, { isLoading: isAdding }] = useAddUserMutation();
@@ -65,14 +64,12 @@ export default function FormUser({ userEdit }: { userEdit?: User }) {
     user: Omit<User, "_id">;
   }) {
     if (!userEdit) return;
+
     try {
-      const response = await updateUser({
-        updateStudent: user,
-        id: id,
-      }).unwrap();
+      const response = await updateUser({ user, id: id }).unwrap();
       resetForm();
       showSnackbar(response?.message, "success"); // message, type(error, success)
-      navigation.push("/admin/user");
+      navigation.push("/admin/users");
     } catch (error: any) {
       if (error?.data?.message) {
         showSnackbar(error?.data?.message, "error");
@@ -85,8 +82,7 @@ export default function FormUser({ userEdit }: { userEdit?: User }) {
   const formik = useFormik({
     initialValues: userEdit || initialValues,
     validationSchema: UserSchema,
-    onSubmit: async (values, { setSubmitting, resetForm }) => {
-      console.log(values);
+    onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true);
       try {
         userEdit
@@ -105,8 +101,6 @@ export default function FormUser({ userEdit }: { userEdit?: User }) {
   });
   const { values, handleChange, handleSubmit, errors, touched, resetForm } =
     formik;
-
-  // console.log(values);
   return (
     <>
       <form onSubmit={handleSubmit} autoComplete="off">
@@ -155,19 +149,19 @@ export default function FormUser({ userEdit }: { userEdit?: User }) {
         {isAdding || isUpdating ? (
           <Spinner />
         ) : userEdit ? (
-          <div className="mt-5 flex justify-center gap-5">
+          <div className="mt-5 flex justify-end gap-5">
             <button
               type="submit"
               className="cursor-pointer rounded-lg border border-stroke  bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
             >
-              Modifier
+              Edit
             </button>
             <button
               type="button"
               className="cursor-pointer rounded-lg border border-stroke  bg-warning px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
               onClick={() => navigation.push("/admin/users")}
             >
-              Annuler
+              Cancel
             </button>
           </div>
         ) : (

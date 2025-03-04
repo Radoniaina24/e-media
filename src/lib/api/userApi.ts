@@ -56,11 +56,11 @@ export const usersAPI = createApi({
       invalidatesTags: ["user"],
     }),
     updateUser: builder.mutation({
-      query: ({ updateUser, id }) => {
+      query: ({ user, id }) => {
         return {
           url: `/users/update/${id}`,
           method: "PUT",
-          body: updateUser,
+          body: user,
         };
       },
       invalidatesTags: ["user"],
