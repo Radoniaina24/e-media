@@ -26,7 +26,7 @@ export default function ListItem({ user }: { user: User }) {
             <ViewStudent />
           </button>
           <DeleteButton id={user._id} />
-          <Link href={`/user/edit/${user._id}`}>
+          <Link href={`/admin/users/edit/${user._id}`}>
             <Edit />
           </Link>
         </div>

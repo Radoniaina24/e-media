@@ -13,20 +13,22 @@ export default function Dashboard() {
   const coutStudent = data?.allStudents ? data?.allStudents : 0;
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-      <Link href={"/student"}>
+      <Link href={"/admin/users"}>
+        <CardDataStats title="Users" total="10">
+          <Parents_Svg />
+        </CardDataStats>
+      </Link>
+
+      <Link href={"/admin"}>
         <CardDataStats title="Students" total={coutStudent}>
           <Students_Svg />
         </CardDataStats>
       </Link>
-      <Link href={"/teacher"}>
+      <Link href={"/admin"}>
         <CardDataStats title="Teachers" total="1500">
           <Teachers_Svg />
         </CardDataStats>
       </Link>
-
-      <CardDataStats title="Parents" total="6000">
-        <Parents_Svg />
-      </CardDataStats>
       <CardDataStats title="Earnings" total="30000">
         <Earnings_Svg />
       </CardDataStats>

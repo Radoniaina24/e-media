@@ -70,7 +70,7 @@ const menuGroups = [
           {
             icon: <IoPersonAddSharp size={18} />,
             label: "Add user",
-            route: "/admin/student/add",
+            route: "/admin/users/add",
           },
         ],
       },

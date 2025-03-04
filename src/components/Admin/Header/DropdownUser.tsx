@@ -12,6 +12,7 @@ const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();
   const { data } = useGetUserQuery("");
+  // console.log(data);
   const [logoutUser] = useLogoutMutation();
   const navigation = useRouter();
   async function handleLogout() {

@@ -6,6 +6,7 @@ import { Metadata } from "next/types";
 import { StoreProvider } from "@/app/StoreProvider";
 import Loading from "../Admin/Loading/Loading";
 import { ThemeProvider } from "next-themes";
+import { LanguageProvider } from "@/lib/context/LanguageContext";
 export const metadata: Metadata = {
   title: {
     absolute: "",
@@ -29,9 +30,11 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="light"
           >
-            <SnackbarProvider>
-              <Loading>{children}</Loading>
-            </SnackbarProvider>
+            <LanguageProvider>
+              <SnackbarProvider>
+                <Loading>{children}</Loading>
+              </SnackbarProvider>
+            </LanguageProvider>
           </ThemeProvider>
         </body>
       </html>
