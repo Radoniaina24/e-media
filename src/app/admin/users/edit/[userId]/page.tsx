@@ -15,7 +15,7 @@ export default function Page({ params }: { params: { userId: string } }) {
   //   role: data?.user.role,
   //   password: "",
   // };
-  // console.log(data);
+  console.log(data);
   if (isLoading)
     return (
       <DefaultLayout>
