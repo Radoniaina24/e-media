@@ -11,16 +11,7 @@ import ClickOutside from "../ClickOutside";
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();
-  // const { data } = useGetUserQuery("");
-  const [user, setUser] = useState(() => {
-    try {
-      const storedUser = localStorage.getItem("user");
-      return storedUser ? JSON.parse(storedUser) : null;
-    } catch (error) {
-      console.error("Erreur lors de l'analyse du JSON :", error);
-      return null;
-    }
-  });
+  const { data } = useGetUserQuery("");
   const [logoutUser] = useLogoutMutation();
   const navigation = useRouter();
   async function handleLogout() {
@@ -44,9 +35,9 @@ const DropdownUser = () => {
       >
         <div className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black ">
-            {user?.username || ""}
+            {data?.username || ""}
           </span>
-          <span className="block text-xs"> {user?.role || ""}</span>
+          <span className="block text-xs"> {data?.role || ""}</span>
         </div>
 
         <div className=" rounded-full">
@@ -79,9 +70,9 @@ const DropdownUser = () => {
       {/* <!-- Dropdown Start --> */}
       {dropdownOpen && (
         <div
-          className={`w-62.5 border-stroke shadow-default dark:border-strokedark dark:bg-boxdark absolute right-0 mt-4 flex flex-col rounded-sm border bg-white`}
+          className={`absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark`}
         >
-          <ul className="border-stroke py-7.5 dark:border-strokedark flex flex-col gap-5 border-b px-6">
+          <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
             <li>
               <Link
                 href="/profile"
