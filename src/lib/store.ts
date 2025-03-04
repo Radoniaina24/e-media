@@ -9,6 +9,7 @@ import { authAPI } from "./api/authApi";
 import { authReducer, authSlice } from "./features/auth/authSlice";
 import { panelistsAPI } from "./api/panelistApi";
 import { courseAPI } from "./api/courseApi";
+import { usersAPI } from "./api/userApi";
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
@@ -30,6 +31,7 @@ export const makeStore = () => {
       [classeAPI.reducerPath]: classeAPI.reducer,
       [subjectAPI.reducerPath]: subjectAPI.reducer,
       [courseAPI.reducerPath]: courseAPI.reducer,
+      [usersAPI.reducerPath]: usersAPI.reducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
@@ -41,6 +43,7 @@ export const makeStore = () => {
         classeAPI.middleware,
         subjectAPI.middleware,
         courseAPI.middleware,
+        usersAPI.middleware,
       );
     },
   });
