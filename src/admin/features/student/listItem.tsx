@@ -8,45 +8,42 @@ import Link from "next/link";
 import Student from "@/admin/interface/Student";
 
 export default function ListItem({ student }: { student: Student }) {
-  const photo = student.photo ? (
-    <Image
-      src={"http://localhost:8080/img/students/" + student.photo}
+  const photo = student.profilePhoto.url ? (
+    <img
+      src={student.profilePhoto.url}
       alt={"photo"}
-      width={50}
-      height={50}
-      className="rounded-full"
-      unoptimized
+      className="h-15 w-15 rounded-full border-4 border-gray-200 object-cover "
     />
   ) : (
     ""
   );
   return (
-    <tr className="hover:bg-gray dark:bg-boxdark cursor-pointer bg-white  dark:text-white dark:hover:bg-gray-600">
+    <tr className="cursor-pointer bg-white hover:bg-gray">
       <th
         scope="row"
-        className="dark:border-strokedark whitespace-nowrap border-b border-[#eee] px-6 py-4 font-medium text-gray-900 dark:text-white"
+        className="whitespace-nowrap border-b border-[#eee] px-6 py-1 font-medium text-gray-900"
       >
         {photo}
       </th>
       <th
         scope="row"
-        className="dark:border-strokedark whitespace-nowrap border-b border-[#eee] px-6 py-4 font-medium text-gray-900 dark:text-white"
+        className="whitespace-nowrap border-b border-[#eee] px-6 py-1 font-medium text-gray-900 "
       >
-        {student.name} {student.first_name}
+        {student.last_name} {student.first_name}
       </th>
-      <td className="dark:border-strokedark border-b border-[#eee] px-6 py-4">
+      <td className="border-b border-[#eee] px-6 py-1 ">
         {student.date_of_birth}
       </td>
-      <td className="dark:border-strokedark border-b border-[#eee] px-6 py-4">
-        {student?.classe?.level ? student?.classe?.level : "-"}
+      <td className="border-b border-[#eee] px-6 py-1 ">
+        {student.classe.level}
       </td>
-      <td className=" dark:border-strokedark border-b border-[#eee] px-4 py-5">
+      <td className=" border-b border-[#eee] px-4 py-1 ">
         <div className="flex items-center space-x-3.5">
           <button className="hover:text-primary">
             <ViewStudent />
           </button>
           <DeleteButton id={student._id} />
-          <Link href={`/student/edit/${student._id}`}>
+          <Link href={`/admin/student/edit/${student._id}`}>
             <Edit />
           </Link>
         </div>

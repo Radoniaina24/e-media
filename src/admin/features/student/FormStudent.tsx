@@ -1,360 +1,429 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
 import { useFormik } from "formik";
-import * as yup from "yup";
+import * as Yup from "yup";
+import { useSnackbar } from "@/lib/context/SnackbarContext";
+import { Loader2 } from "lucide-react";
+import { useLanguageContext } from "@/lib/context/LanguageContext";
 
 import {
   useAddStudentMutation,
   useUpdateStudentMutation,
 } from "@/lib/api/studentApi";
-import { useSnackbar } from "@/lib/context/SnackbarContext";
-
+import InputFormik from "@/components/Signup/Componnents/InputFormik";
+import InputSelect from "@/components/Signup/Componnents/InputSelect";
+import InputFile from "@/components/Signup/Componnents/InputFile";
+import InputFilePdf from "@/components/Signup/Componnents/InputFilePdf";
+import Student from "@/admin/interface/Student";
 import { useRouter } from "next/navigation";
 
-import SelectClasse from "./selectedClasse";
-import Student from "@/admin/interface/Student";
-import Input from "@/components/Admin/Form/Input";
-import DatePickerOne from "@/components/Admin/FormElements/DatePicker/DatePickerOne";
-import SelectGender from "@/components/Admin/SelectGroup/SelectGender";
-import InputFile from "@/components/Admin/Form/InputFile";
-import Spinner from "@/components/Admin/spinner/Spinner";
-
-// Validation Schema
-const StudentSchema = yup.object({
-  name: yup.string().required("Ce champ est requis"),
-  first_name: yup.string().required("Ce champ est requis"),
-  gender: yup.string().required("Ce champ est requis"),
-  address: yup.string().required("Ce champ est requis"),
-  date_of_birth: yup.string().required("Ce champ est requis"),
-  submission: yup.string().required("Ce champ est requis"),
-  phone: yup.number().typeError("Vous devez entrez un numéro téléphone valide"),
-  mother_name: yup.string().required("Ce champ est requis"),
-  mother_occupation: yup.string().required("Ce champ est requis"),
-  mother_phone: yup
-    .number()
-    .typeError("Vous devez entrez un numéro téléphone valide")
-    .required("Ce champ est requis"),
-
-  father_name: yup.string().required("Ce champ est requis"),
-  father_occupation: yup.string().required("Ce champ est requis"),
-  father_phone: yup
-    .number()
-    .typeError("Vous devez entrez un numéro téléphone valide")
-    .required("Ce champ est requis"),
-
-  mail: yup.string().email("Assurez-vous que le courriel est valide."),
-  classe: yup
-    .mixed()
-    .test("classe", "Ce champ est requis", (value) => {
-      // Vérifiez si la valeur est un objet ou une chaîne non vide
-      if (typeof value === "object" && value !== null) {
-        return true; // L'objet est valide
-      } else if (typeof value === "string" && value.trim() !== "") {
-        return true; // La chaîne non vide est valide
-      }
-      return false; // Si la valeur n'est ni un objet valide ni une chaîne non vide, la validation échoue
-    })
-    .required("Ce champ est requis"),
-  photo: yup
-    .mixed()
-    .nullable()
-    .test("fileFormat", "Seules les images sont acceptées", (value: any) => {
-      // Accepte une valeur vide (non obligatoire)
-      if (!value) return true;
-
-      // Vérifie le type de fichier s'il y a une valeur
-      return ["image/jpeg", "image/png", "image/jpg"].includes(value.type);
-    }),
-});
-
-// Initial Values
-const initialValues: Omit<Student, "_id"> = {
-  photo: "",
-  name: "",
-  first_name: "",
-  gender: "Garçon",
-  date_of_birth: new Date().toLocaleDateString(),
-  classe: "",
-  address: "",
-  phone: "",
-  mail: "",
-  mother_name: "",
-  mother_occupation: "",
-  mother_phone: "",
-  father_name: "",
-  father_occupation: "",
-  father_phone: "",
-  submission: new Date().toLocaleDateString(),
-};
 export default function FormStudent({
   studentEdit,
 }: {
   studentEdit?: Student;
 }) {
-  const navigation = useRouter();
+  const initialvalues = studentEdit
+    ? {
+        profilePhoto: "",
+        last_name: studentEdit.last_name,
+        first_name: studentEdit.first_name,
+        date_of_birth: studentEdit.date_of_birth,
+        current_address: studentEdit.current_address,
+        email: studentEdit.email,
+        phone_number: studentEdit.phone_number,
+        classe: studentEdit.classe.level,
+        course: studentEdit.course.level,
+        last_degree: "",
+        residence_certificate: "",
+        transcript: "",
+      }
+    : {
+        profilePhoto: "",
+        last_name: "",
+        first_name: "",
+        date_of_birth: "",
+        current_address: "",
+        email: "",
+        phone_number: "",
+        classe: "",
+        course: "",
+        last_degree: "",
+        residence_certificate: "",
+        transcript: "",
+      };
+
+  const { language } = useLanguageContext();
+  const [addStudent] = useAddStudentMutation();
+  const [updateStudent] = useUpdateStudentMutation();
   const { showSnackbar } = useSnackbar();
-  const [addStudent, { isLoading: isAdding }] = useAddStudentMutation();
-  const [updateStudent, { isLoading: isUpdating }] = useUpdateStudentMutation();
-
-  // Handlers
-  async function handleRegisterStudent(newStudent: FormData) {
-    try {
-      const response = await addStudent(newStudent).unwrap();
-      showSnackbar(response?.message, "success"); // message, type(error, success)
-      resetForm();
-      navigation.push("/student");
-    } catch (error: any) {
-      if (error?.data?.message) {
-        showSnackbar(error?.data?.message, "error");
-      } else {
-        showSnackbar("Verifier votre connexion internet", "error");
-      }
+  const navigation = useRouter();
+  const inputFileRef = useRef<HTMLInputElement>(null);
+  const inputFilePdfRef_last_degree = useRef<HTMLInputElement>(null);
+  const inputFilePdfRef_residence_certificate = useRef<HTMLInputElement>(null);
+  const inputFilePdfRef_transcript = useRef<HTMLInputElement>(null);
+  const resetFileInputPhoto = () => {
+    if (inputFileRef.current) {
+      inputFileRef.current.value = "";
     }
-  }
-  async function handleUpdateStudent({
-    id,
-    student,
-  }: {
-    id: string;
-    student: FormData;
-  }) {
-    if (!studentEdit) return;
-    try {
-      const response = await updateStudent({
-        updateStudent: student,
-        id: id,
-      }).unwrap();
-      resetForm();
-      showSnackbar(response?.message, "success"); // message, type(error, success)
-      navigation.push("/student");
-    } catch (error: any) {
-      if (error?.data?.message) {
-        showSnackbar(error?.data?.message, "error");
-      } else {
-        showSnackbar("Verifier votre connexion internet", "error");
-      }
+  };
+  const resetFilePdfInput = () => {
+    if (
+      inputFilePdfRef_last_degree.current &&
+      inputFilePdfRef_residence_certificate
+    ) {
+      inputFilePdfRef_last_degree.current.value = "";
+      inputFilePdfRef_residence_certificate.current.value = "";
+      inputFilePdfRef_transcript.current.value = "";
     }
-  }
+  };
 
-  // Formik
+  //   profilePhoto: "",
+  //   last_name: "",
+  //   first_name: "",
+  //   date_of_birth: "",
+  //   current_address: "",
+  //   email: "",
+  //   phone_number: "",
+  //   classe: "",
+  //   course: "",
+  //   last_degree: "",
+  //   residence_certificate: "",
+  //   transcript: "",
+  // };
+
   const formik = useFormik({
-    initialValues: studentEdit || initialValues,
-    validationSchema: StudentSchema,
-    onSubmit,
-  });
-  const {
-    values,
-    handleChange,
-    handleSubmit,
-    errors,
-    touched,
-    resetForm,
-    setFieldValue,
-  } = formik;
-  async function onSubmit(value: Omit<Student, "_id">) {
-    const formData = new FormData();
-    Object.entries(values).forEach(([key, value]) => {
-      if (key === "classe" && typeof value === "object" && value.level) {
-        formData.append("classe", value.level);
-      } else {
-        formData.append(key, value as string | Blob);
+    initialValues: initialvalues,
+    validationSchema: Yup.object({
+      last_name: Yup.string().required(
+        language === "fr" ? "Le nom est requis" : "Last name is required",
+      ),
+      first_name: Yup.string().required(
+        language === "fr" ? "Le nom est requis" : "First name is required",
+      ),
+
+      date_of_birth: Yup.string().required(
+        language === "fr"
+          ? "La date de naissance  est requis"
+          : "Date of birth is required",
+      ),
+      current_address: Yup.string().required(
+        language === "fr"
+          ? "L'adresse actuelle est   est requis"
+          : "Current address  is required",
+      ),
+      email: Yup.string()
+        .email(language === "fr" ? "Email invalide" : "Invalid email")
+        .required(
+          language === "fr" ? "L'email est requis" : "Email is required",
+        ),
+      phone_number: Yup.string().required(
+        language === "fr"
+          ? "Le numéro de téléphone est requis"
+          : "Phone number is required",
+      ),
+      classe: Yup.string().required(
+        language === "fr"
+          ? "Cette classe est requis"
+          : " iThis class is required",
+      ),
+      course: Yup.string().required(
+        language === "fr"
+          ? "Cette cours est requis"
+          : "This course is required",
+      ),
+      profilePhoto: Yup.string().required(
+        language === "fr" ? "Ce photo est requis" : "This photo is required",
+      ),
+      last_degree: Yup.string().required(
+        language === "fr"
+          ? "Ce dernier diplôme est requis"
+          : "This last degree is required",
+      ),
+      residence_certificate: Yup.string().required(
+        language === "fr"
+          ? "Ce certificat de résidence est requis"
+          : "This residence certificate is required",
+      ),
+    }),
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      console.log(values);
+      const formData = new FormData();
+      Object.entries(values).forEach(([key, value]: any) => {
+        if (value !== undefined && value !== "") {
+          formData.append(key, value instanceof File ? value : String(value));
+        }
+      });
+      console.log(studentEdit._id);
+      setSubmitting(true);
+
+      try {
+        const response = studentEdit
+          ? await updateStudent({
+              id: studentEdit._id,
+              updateStudent: formData,
+            }).unwrap()
+          : await addStudent(formData).unwrap();
+        showSnackbar(response?.message, "success");
+        // message, type(error, success)
+        // resetForm();
+        // resetFileInputPhoto();
+        // resetFilePdfInput();
+      } catch (error: any) {
+        if (error?.data?.message) {
+          showSnackbar(error?.data?.message, "error");
+        } else {
+          showSnackbar("Verifier votre connexion internet", "error");
+        }
+      } finally {
+        setSubmitting(false);
       }
-    });
+    },
+  });
 
-    studentEdit
-      ? handleUpdateStudent({ id: studentEdit._id, student: formData })
-      : handleRegisterStudent(formData);
-  }
+  const optionsClasse = [
+    { key: "L1", value: "L1" },
+    { key: "L2", value: "L2" },
+    { key: "L3", value: "L3" },
+    { key: "M1", value: "M1" },
+    { key: "M2", value: "M2" },
+  ];
+  const course = [
+    { key: "Communication audiovisuelle et numérique", value: "CAN" },
+    { key: "Marketing Digital et Journalisme", value: "MPJ" },
+    {
+      key: "Technologie de l'informatique et de la télécommunication",
+      value: "TIC",
+    },
+    { key: "Droit", value: "DRT" },
+    { key: "Management", value: "MGT" },
+  ];
 
-  useEffect(() => {
-    if (studentEdit?.photo) {
-      setFieldValue("photo", "");
-    }
-  }, [setFieldValue, studentEdit]);
   return (
-    <>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <Input
-            type="text"
-            label="Nom"
-            id="name"
-            value={values.name}
-            onChange={handleChange}
-            error={errors.name}
-            touched={touched.name}
-            placeholder="Nom de  famille"
-          />
-          <Input
-            type="text"
-            label="Prénom"
-            id="first_name"
-            value={values.first_name}
-            onChange={handleChange}
-            error={errors.first_name}
-            touched={touched.first_name}
-            placeholder="Prénom"
-          />
-          <DatePickerOne
-            label="Date de naissance"
-            id="date_of_birth"
-            value={values.date_of_birth}
-            setFieldValue={setFieldValue}
-            touched={errors.date_of_birth}
-            error={errors.date_of_birth}
-          />
+    <section className="  bg-white py-10">
+      <div className="mx-auto max-w-5xl px-10 md:px-5">
+        <form
+          onSubmit={formik.handleSubmit}
+          className="space-y-4"
+          autoComplete="off"
+        >
+          {/* <h2 className=" text-center text-xl  text-black">
+            {language === "fr"
+              ? "Informations Personnelles "
+              : " Personal Information "}
+          </h2> */}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <InputFormik
+              label={language === "fr" ? "Nom" : "Last name"}
+              type="text"
+              id="last_name"
+              placeholder={language === "fr" ? "Nom" : "Last name"}
+              value={formik.values.last_name}
+              onChange={formik.handleChange}
+              error={formik.errors.last_name}
+              touched={formik.touched.last_name}
+            />
+            <InputFormik
+              label={language === "fr" ? "Prénom " : "First name"}
+              type="text"
+              id="first_name"
+              placeholder={language === "fr" ? "Prénom " : "First Name"}
+              value={formik.values.first_name}
+              onChange={formik.handleChange}
+              error={formik.errors.first_name}
+              touched={formik.touched.first_name}
+            />
 
-          <Input
-            type="text"
-            label="Adresse"
-            id="address"
-            value={values.address}
-            onChange={handleChange}
-            error={errors.address}
-            touched={touched.address}
-            placeholder="Antananarivo 101"
-          />
-          <SelectClasse
-            label="Classe"
-            onChange={handleChange}
-            value={values.classe}
-            error={errors.classe}
-            touched={touched.classe}
-            id="classe"
-          />
-          <SelectGender
-            label="Sexe"
-            onChange={handleChange}
-            value={values.gender}
-            id="gender"
-          />
-          <Input
-            type="text"
-            label="Email"
-            id="mail"
-            value={values.mail}
-            onChange={handleChange}
-            error={errors.mail}
-            touched={touched.mail}
-            placeholder="Adresse email"
-          />
-          <Input
-            type="text"
-            label="Téléphone"
-            id="phone"
-            value={values.phone}
-            onChange={handleChange}
-            error={errors.phone}
-            touched={touched.phone}
-            placeholder="Numéro téléphone"
-          />
-          <Input
-            type="text"
-            label="Nom du mère"
-            id="mother_name"
-            value={values.mother_name}
-            onChange={handleChange}
-            error={errors.mother_name}
-            touched={touched.mother_name}
-            placeholder="Nom complet"
-          />
-          <Input
-            type="text"
-            label="Profession"
-            id="mother_occupation"
-            value={values.mother_occupation}
-            onChange={handleChange}
-            error={errors.mother_occupation}
-            touched={touched.mother_occupation}
-            placeholder="Profession du mère"
-          />
-          <Input
-            type="text"
-            label="Téléphone"
-            id="mother_phone"
-            value={values.mother_phone}
-            onChange={handleChange}
-            error={errors.mother_phone}
-            touched={touched.mother_phone}
-            placeholder="Numéro téléphone du mère"
-          />
-          <Input
-            type="text"
-            label="Nom du père"
-            id="father_name"
-            value={values.father_name}
-            onChange={handleChange}
-            error={errors.father_name}
-            touched={touched.father_name}
-            placeholder="Nom complet"
-          />
-          <Input
-            type="text"
-            label="Profession"
-            id="father_occupation"
-            value={values.father_occupation}
-            onChange={handleChange}
-            error={errors.father_occupation}
-            touched={touched.father_occupation}
-            placeholder="Profession du père"
-          />
-          <Input
-            type="text"
-            label="Téléphone"
-            id="father_phone"
-            value={values.father_phone}
-            onChange={handleChange}
-            error={errors.father_phone}
-            touched={touched.father_phone}
-            placeholder="Numéro téléphone du père"
-          />
-        </div>
-        <div className="mb-4 mt-4">
-          <DatePickerOne
-            label="Date de soumission"
-            id="submission"
-            value={values.submission}
-            setFieldValue={setFieldValue}
-            touched={errors.submission}
-            error={errors.submission}
-          />
-        </div>
-        <InputFile
-          label="Telecharger un photo"
-          setFieldValue={setFieldValue}
-          name="photo"
-          error={errors.photo}
-          touched={touched.photo}
-        />
-        {isAdding || isUpdating ? (
-          <Spinner />
-        ) : studentEdit ? (
-          <div className="mt-5 flex justify-center gap-5">
-            <button
-              type="submit"
-              className="cursor-pointer rounded-lg border border-stroke  bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
-            >
-              Modifier
-            </button>
-            <button
-              type="button"
-              className="cursor-pointer rounded-lg border border-stroke  bg-warning px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
-              onClick={() => navigation.push("/student")}
-            >
-              Annuler
-            </button>
+            <InputFormik
+              label={
+                language === "fr" ? "Adresse actuelle" : "Current Address "
+              }
+              type="text"
+              id="current_address"
+              placeholder={
+                language === "fr" ? "Adresse actuelle" : "Current Address "
+              }
+              value={formik.values.current_address}
+              onChange={formik.handleChange}
+              error={formik.errors.current_address}
+              touched={formik.touched.current_address}
+            />
+            <InputFormik
+              label={language === "fr" ? "Date de naissance" : "Date of birth "}
+              type="date"
+              id="date_of_birth"
+              placeholder={
+                language === "fr" ? "Date de naissance" : "Date of birth "
+              }
+              value={formik.values.date_of_birth}
+              onChange={formik.handleChange}
+              error={formik.errors.date_of_birth}
+              touched={formik.touched.date_of_birth}
+            />
+
+            <InputFormik
+              label="Email"
+              type="text"
+              id="email"
+              placeholder="Email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.errors.email}
+              touched={formik.touched.email}
+            />
+            <InputFormik
+              label={language === "fr" ? "Numéro de téléphone" : "Phone number"}
+              type="text"
+              id="phone_number"
+              placeholder={
+                language === "fr" ? "Numéro de téléphone" : "Phone number"
+              }
+              value={formik.values.phone_number}
+              onChange={formik.handleChange}
+              error={formik.errors.phone_number}
+              touched={formik.touched.phone_number}
+            />
+            {/* <InputPhoneNumber
+              name="phone_number"
+              label={language === "fr" ? "Numéro de téléphone" : "Phone number"}
+              value={formik.values.phone_number}
+              onChange={formik.setFieldValue}
+              error={formik.errors.phone_number}
+              touched={formik.touched.phone_number}
+            /> */}
+
+            <InputSelect
+              label={language === "fr" ? "Classe" : "Class"}
+              id="classe"
+              value={formik.values.classe}
+              onChange={formik.handleChange}
+              options={optionsClasse}
+              error={formik.errors.classe}
+              touched={formik.touched.classe}
+              placeholder={
+                language === "fr"
+                  ? "Seletionnez votre classe"
+                  : "Select your class"
+              }
+            />
+            <InputSelect
+              label={language === "fr" ? "Cours" : "Course"}
+              id="course"
+              value={formik.values.course}
+              onChange={formik.handleChange}
+              options={course}
+              error={formik.errors.course}
+              touched={formik.touched.course}
+              placeholder={
+                language === "fr"
+                  ? "Seletionnez votre cours"
+                  : "Select your course"
+              }
+            />
           </div>
-        ) : (
-          <div className="mt-5 grid">
-            <button
-              type="submit"
-              className="cursor-pointer rounded-lg border border-stroke  bg-success px-4 py-2 text-white outline-none transition hover:bg-opacity-90 dark:border-form-strokedark"
-            >
-              Enregistrer
-            </button>
+
+          <h2 className="text-xl  text-black">
+            {language === "fr"
+              ? "Documents à soumettre "
+              : "Documents to Submit "}
+          </h2>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <InputFile
+              inputRef={inputFileRef}
+              label={language === "fr" ? "Photo recent" : "Recent photo"}
+              setFieldValue={formik.setFieldValue}
+              name="profilePhoto"
+              error={formik.errors.profilePhoto}
+              touched={formik.touched.profilePhoto}
+            />
+            <InputFilePdf
+              inputRef={inputFilePdfRef_last_degree}
+              label={language === "fr" ? "Dernier diplôme" : "Last degree"}
+              setFieldValue={formik.setFieldValue}
+              name="last_degree"
+              error={formik.errors.last_degree}
+              touched={formik.touched.last_degree}
+            />
+            <InputFilePdf
+              inputRef={inputFilePdfRef_residence_certificate}
+              label={
+                language === "fr"
+                  ? "Certificat de résidence"
+                  : "Residence certificate"
+              }
+              setFieldValue={formik.setFieldValue}
+              name="residence_certificate"
+              error={formik.errors.residence_certificate}
+              touched={formik.touched.residence_certificate}
+            />
+            <InputFilePdf
+              inputRef={inputFilePdfRef_transcript}
+              label={
+                language === "fr"
+                  ? "Copie des relevés de notes"
+                  : "Copy of transcripts"
+              }
+              setFieldValue={formik.setFieldValue}
+              name="transcript"
+              error={formik.errors.transcript}
+              touched={formik.touched.transcript}
+            />
           </div>
-        )}
-      </form>
-    </>
+
+          {studentEdit ? (
+            <div className="grid grid-cols-2 gap-3">
+              {" "}
+              <button
+                disabled={formik.isSubmitting}
+                type="submit"
+                className={`relative mt-5 flex items-center justify-center gap-2 rounded px-6 py-2 text-sm font-medium text-white 
+    transition-all duration-300 ease-in-out 
+    ${formik.isSubmitting ? "cursor-not-allowed bg-gray-400" : "bg-primary"}`}
+              >
+                {formik.isSubmitting ? (
+                  <>
+                    {language === "fr" ? "Traitement..." : "Processing..."}
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  </>
+                ) : language === "fr" ? (
+                  "Modifier"
+                ) : (
+                  "Edit"
+                )}
+              </button>
+              <button
+                onClick={() => navigation.push("/admin/student")}
+                type="button"
+                className={`relative mt-5 flex items-center justify-center gap-2 rounded px-6 py-2 text-sm font-medium text-white 
+    transition-all duration-300 ease-in-out 
+    ${formik.isSubmitting ? "cursor-not-allowed bg-gray-400" : "bg-red-400"}`}
+              >
+                {language === "fr" ? "Annuler" : "Cancel"}
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1">
+              <button
+                disabled={formik.isSubmitting}
+                type="submit"
+                className={`relative mt-5 flex items-center justify-center gap-2 rounded px-6 py-2 text-sm font-medium text-white 
+      transition-all duration-300 ease-in-out 
+      ${formik.isSubmitting ? "cursor-not-allowed bg-gray-400" : "bg-primary"}`}
+              >
+                {formik.isSubmitting ? (
+                  <>
+                    {language === "fr" ? "Traitement..." : "Processing..."}
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  </>
+                ) : language === "fr" ? (
+                  "Soumettre"
+                ) : (
+                  "Submit"
+                )}
+              </button>
+            </div>
+          )}
+        </form>
+      </div>
+    </section>
   );
 }

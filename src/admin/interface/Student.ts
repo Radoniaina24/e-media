@@ -1,23 +1,25 @@
-type Classe = {
+type Files = {
+  _id: string;
+  url: string;
+  publicId: string;
+};
+type Class = {
   _id: string;
   level: string;
 };
+
 export default interface Student {
-  photo: File | string;
   _id: string;
-  name: string;
+  last_name: string;
   first_name: string;
-  gender: string;
   date_of_birth: string;
-  classe: any;
-  address: string;
-  phone: string;
-  mail: string;
-  mother_name: string;
-  mother_occupation: string;
-  mother_phone: string;
-  father_name: string;
-  father_occupation: string;
-  father_phone: string;
-  submission: string;
+  current_address: string;
+  phone_number: string;
+  email: string;
+  classe: any | Class;
+  course: any | Class;
+  profilePhoto: any; //Files | string;
+  last_degree: any; // Files | string;
+  residence_certificate: any; // Files | string;
+  transcript: any; // Files | string;
 }

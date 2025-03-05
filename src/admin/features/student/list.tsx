@@ -8,18 +8,19 @@ import Pagination from "./Pagination";
 import Breadcrumb from "@/components/Admin/Breadcrumbs/Breadcrumb";
 import Loader from "@/components/Admin/common/Loader";
 import Student from "@/admin/interface/Student";
-import { useGetAllUserQuery } from "@/lib/api/userApi";
+import { useGetAllStudentQuery } from "@/lib/api/studentApi";
 
 export default function ListStudent() {
   const [search, setSearch] = useState<string>("");
   const [limit, setLimit] = useState<number>(10);
   const [page, setPage] = useState<number>(1);
-  const { data, isLoading, error } = useGetAllUserQuery({
+  const { data, isLoading, error } = useGetAllStudentQuery({
     search,
     limit,
     page,
   });
   const students = data?.students;
+  console.log(students);
   const totalePages = data?.totalPages;
   if (isLoading) return <Loader />;
   if (error) {
@@ -50,7 +51,7 @@ export default function ListStudent() {
   }
   return (
     <div>
-      <Breadcrumb pageName={"List students"} />
+      <Breadcrumb pageName={" Students List "} />
       <div className=" rounded-sm border border-stroke bg-white px-5 py-5  shadow-default dark:border-strokedark dark:bg-boxdark">
         <button
           type="submit"
@@ -70,13 +71,13 @@ export default function ListStudent() {
                   Photo
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Nom complet
+                  Fullname
                 </th>
                 <th scope="col" className="px-6 py-4">
-                  Date de naissance
+                  Date of birth
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Classe
+                  Class
                 </th>
                 <th scope="col" className="px-6 py-4">
                   Action
