@@ -334,7 +334,7 @@ export default function SectionM4() {
                 "Rejoignez E-Media dès aujourd’hui et devenez un leader dans votre domaine !"
               }
               buttonText={"Préinscriptions ouvertes ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
               heading={""}
             />
           ) : (
@@ -343,7 +343,7 @@ export default function SectionM4() {
                 "Join E-Media today and become a leader in your field!"
               }
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
+              buttonLink={"/signup"}
               heading={""}
             />
           )}

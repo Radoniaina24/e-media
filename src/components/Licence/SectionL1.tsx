@@ -317,14 +317,14 @@ export default function SectionL1() {
               heading={" Rejoignez-nous dès aujourd'hui !"}
               description={"Transformez vos ambitions en succès."}
               buttonText={" Préinscription ouverte ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           ) : (
             <CallToAction
               heading={"Join us today!"}
               description={"Turn your ambitions into success."}
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
+              buttonLink="/signup"
             />
           )}
         </Section>

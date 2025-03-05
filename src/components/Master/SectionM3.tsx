@@ -367,7 +367,7 @@ export default function SectionM3() {
                 "Rejoignez-nous dès maintenant pour devenir un leader dans le marketing et les médias numériques !"
               }
               buttonText={"Préinscriptions ouvertes ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
               heading={""}
             />
           ) : (
@@ -376,7 +376,7 @@ export default function SectionM3() {
                 "Join us now to become a leader in digital marketing and media!"
               }
               buttonText={"Pre-enroll here"}
-              buttonLink={""}
+              buttonLink={"/signup"}
               heading={""}
             />
           )}

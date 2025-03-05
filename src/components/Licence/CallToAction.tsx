@@ -11,7 +11,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
   heading,
   description,
   buttonText,
-  buttonLink,
+  buttonLink = "/signup",
 }) => {
   return (
     <div className="text-center">

@@ -371,7 +371,7 @@ export default function SectionL5() {
                 "Lancez votre carrière dans le domaine juridique et diplomatique !"
               }
               buttonText={"Préinscriptions ouvertes ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           ) : (
             <CallToAction
@@ -380,7 +380,7 @@ export default function SectionL5() {
                 "Kickstart your career in the legal and diplomatic field!"
               }
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           )}
         </Section>

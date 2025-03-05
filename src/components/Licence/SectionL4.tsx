@@ -300,7 +300,7 @@ export default function SectionL4() {
                 " Préparez-vous à devenir un acteur clé dans le monde des affaires !"
               }
               buttonText={"Préinscriptions ouvertes ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           ) : (
             <CallToAction
@@ -309,7 +309,7 @@ export default function SectionL4() {
                 "Get ready to become a key player in the business world!"
               }
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           )}
         </Section>

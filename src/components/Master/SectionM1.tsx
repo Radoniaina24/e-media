@@ -322,14 +322,14 @@ export default function SectionM1() {
                 "bâtissez une carrière dans les technologies de pointe !"
               }
               buttonText={"Préinscriptions ouvertes ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           ) : (
             <CallToAction
               heading={"Join us today"}
               description={"Build a career in cutting-edge technologies!"}
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           )}
         </Section>

@@ -10,6 +10,7 @@ import MasterCard from "../Master/MasterCard";
 import ProgramCard from "../Master/ProgramCard";
 import ScrollComponent from "../Scroll/ScrollComponent";
 import { useLanguageContext } from "@/lib/context/LanguageContext";
+import CallToAction from "./CallToAction";
 export default function SectionL3() {
   const { language } = useLanguageContext();
   const currentWorldFr = [
@@ -339,6 +340,28 @@ export default function SectionL3() {
                 : "With this degree, graduates become professionals ready to innovate in the ever-evolving sectors of marketing and digital media."}
             </p>
           </div>
+        </Section>
+
+        <Section bgColor="bg-gradient-to-r from-blue-500 to-teal-400 text-white">
+          {language === "fr" ? (
+            <CallToAction
+              heading={"Rejoignez E-Media dès aujourd’hui"}
+              description={
+                "Lancez votre carrière dans le domaine juridique et diplomatique !"
+              }
+              buttonText={"Préinscriptions ouvertes ici"}
+              buttonLink={"/signup"}
+            />
+          ) : (
+            <CallToAction
+              heading={"Join E-Media today"}
+              description={
+                "Kickstart your career in the legal and diplomatic field!"
+              }
+              buttonText={"Pre-registration open here"}
+              buttonLink={"/signup"}
+            />
+          )}
         </Section>
       </div>
     </div>

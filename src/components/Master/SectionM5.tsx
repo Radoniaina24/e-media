@@ -326,7 +326,7 @@ export default function SectionM5() {
                 "Rejoignez E-Media dès aujourd’hui et devenez un leader dans le domaine juridique et diplomatique !"
               }
               buttonText={"Préinscriptions ouvertes ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
               heading={""}
             />
           ) : (
@@ -335,7 +335,7 @@ export default function SectionM5() {
                 "Join E-Media today and become a leader in the legal and diplomatic field!"
               }
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
+              buttonLink={"/signup"}
               heading={""}
             />
           )}

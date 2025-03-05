@@ -322,21 +322,19 @@ export default function SectionM2() {
         <Section bgColor="bg-primary">
           {language === "fr" ? (
             <CallToAction
+              heading={"Rejoignez-nous dès aujourd’hui"}
               description={
-                "Rejoignez-nous dès maintenant pour bâtir votre avenir dans le cinéma et l’audiovisuel !"
+                "bâtissez une carrière dans les technologies de pointe !"
               }
               buttonText={"Préinscriptions ouvertes ici"}
-              buttonLink={""}
-              heading={""}
+              buttonLink={"/signup"}
             />
           ) : (
             <CallToAction
-              description={
-                "Join us now to build your future in cinema and audiovisual!"
-              }
+              heading={"Join us today"}
+              description={"Build a career in cutting-edge technologies!"}
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
-              heading={""}
+              buttonLink={"/signup"}
             />
           )}
         </Section>

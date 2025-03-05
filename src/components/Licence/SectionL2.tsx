@@ -337,14 +337,14 @@ export default function SectionL2() {
                 " façonnez votre avenir dans un secteur en plein essor !"
               }
               buttonText={" Préinscription ouverte ici"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           ) : (
             <CallToAction
               heading={"Apply today and"}
               description={"shape your future in a rapidly growing industry!"}
               buttonText={"Pre-registration open here"}
-              buttonLink={""}
+              buttonLink={"/signup"}
             />
           )}
         </Section>
