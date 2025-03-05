@@ -2,9 +2,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useGetUserQuery, useLogoutMutation } from "@/lib/api/authApi";
-import { logout, selectToken } from "@/lib/features/auth/authSlice";
+import { logout } from "@/lib/features/auth/authSlice";
 import { useRouter } from "next/navigation";
 import ClickOutside from "../ClickOutside";
 

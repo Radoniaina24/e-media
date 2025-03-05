@@ -1,6 +1,5 @@
 "use client";
 import { useLoginMutation } from "@/lib/api/authApi";
-import { setCredentials } from "@/lib/features/auth/authSlice";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -10,6 +9,7 @@ import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 import Auth from "@/admin/interface/Auth";
+import { setUser } from "@/lib/features/auth/authSlice";
 
 // Schéma de validation Yup
 const validationSchema = Yup.object({
@@ -37,8 +37,7 @@ export default function Login() {
   const Submit = async (values: { email: string; password: string }) => {
     try {
       const userData = await login(values).unwrap();
-      dispatch(setCredentials({ token: userData?.token })); // Sauvegarder token  dans Redux et user dans redux
-      localStorage.setItem("user", JSON.stringify(userData?.user));
+      setUser(userData);
       navigation.push("/admin");
     } catch (err) {
       showSnackbar("Mots de passe ou email incorrecte", "error");
@@ -105,7 +104,7 @@ export default function Login() {
           />
         </div>
 
-        <div className="w-100 mx-5">
+        <div className="mx-5 w-100">
           <div className="mb-4">
             <label className="mb-2.5 block font-medium text-black ">
               Email
@@ -114,7 +113,7 @@ export default function Login() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="border-stroke w-full rounded-lg border bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none    "
+                className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none    "
                 id="email"
                 value={values.email}
                 onChange={handleChange}
@@ -155,7 +154,7 @@ export default function Login() {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="6+ Characters, 1 Capital letter"
-                className="  border-stroke w-full rounded-lg border bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none "
+                className="  w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none "
                 id="password"
                 value={values.password}
                 onChange={handleChange}

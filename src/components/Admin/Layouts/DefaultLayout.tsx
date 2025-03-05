@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 
-import AuthGuard from "../auth/authGuard";
 import Sidebar from "../Sidebar";
 import Header from "../Header";
+import { AuthGuard } from "../auth/authGuard";
 
 export default function DefaultLayout({
   children,
@@ -20,7 +20,7 @@ export default function DefaultLayout({
         {/* <!-- ===== Sidebar End ===== --> */}
 
         {/* <!-- ===== Content Area Start ===== --> */}
-        <div className="lg:ml-72.5 relative flex flex-1 flex-col">
+        <div className="relative flex flex-1 flex-col lg:ml-72.5">
           {/* <!-- ===== Header Start ===== --> */}
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           {/* <!-- ===== Header End ===== --> */}
