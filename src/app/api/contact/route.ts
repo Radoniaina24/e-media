@@ -6,9 +6,10 @@ export async function POST(req: NextRequest) {
     const { fullname, email, subject, phone, message } = await req.json();
     // Configurer le transporteur Nodemailer
     const transporter = nodemailer.createTransport({
-      host: process.env.NEXT_PUBLIC_EMAIL_HOST,
-      port: parseInt(process.env.NEXT_PUBLIC_EMAIL_PORT || "587"),
-      secure: process.env.NEXT_PUBLIC_EMAIL_SECURE === "true",
+      // host: process.env.NEXT_PUBLIC_EMAIL_HOST,
+      // port: parseInt(process.env.NEXT_PUBLIC_EMAIL_PORT || "587"),
+      // secure: process.env.NEXT_PUBLIC_EMAIL_SECURE === "true",
+      service: "gmail",
       auth: {
         user: process.env.NEXT_PUBLIC_EMAIL_USER, // Ton email
         pass: process.env.NEXT_PUBLIC_EMAIL_PASS, // Ton mot de passe ou App Password
