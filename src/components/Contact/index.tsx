@@ -54,7 +54,7 @@ const Contact = () => {
               popup: "rounded-xl shadow-lg",
             },
           });
-          // resetForm();
+          resetForm();
         } else {
           Swal.fire({
             title: "Error!",
