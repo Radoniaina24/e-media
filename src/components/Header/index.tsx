@@ -162,19 +162,23 @@ const Header = () => {
                   </ul>
                 </nav>
               </div>
-              <div className="flex items-center justify-end pr-16 lg:pr-0">
-                {/* <Link
-                  href="/signin"
-                  className="hidden rounded-full px-7 py-3 text-base  font-medium text-customeRed hover:opacity-70 md:block dark:text-white"
+              <div className="flex items-center justify-end gap-2 pr-16 lg:pr-0">
+                <a
+                  href="http://e-media-madagascar.com/universite/Register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ease-in-up hidden rounded-full bg-primary px-2 py-2 text-sm font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-4 xl:px-4"
                 >
-                  Se connecter
-                </Link> */}
-                <Link
-                  href="/signup"
-                  className="ease-in-up hidden rounded-full bg-primary px-2 py-2 text-sm font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-6 xl:px-9"
+                  {language === "fr" ? "S'inscrire " : "Sign up"}
+                </a>
+                <a
+                  href="http://e-media-madagascar.com/universite/Connecter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ease-in-up hidden rounded-full bg-green-500 px-2 py-2 text-sm font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-4 xl:px-4"
                 >
-                  {language === "fr" ? "S'inscrire" : "Sign up"}
-                </Link>
+                  {language === "fr" ? "Se connecter " : "Sign in"}
+                </a>
                 <div>
                   {/* <ThemeToggler /> */}
                   <LanguageSelect sticky={sticky} />
