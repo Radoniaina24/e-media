@@ -13,7 +13,7 @@ const Fr = () => {
         📞 Pour mieux vous accompagner
       </h2>
       <p className="mb-8 text-center text-gray-600">
-        L'Université{" "}
+        L&apos;Université{" "}
         <span className="font-semibold text-blue-600">E-MEDIA</span> met en
         place des lignes dédiées :
       </p>
