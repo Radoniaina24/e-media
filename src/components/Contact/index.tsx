@@ -5,6 +5,7 @@ import React from "react";
 import * as yup from "yup";
 import Swal from "sweetalert2";
 import { Loader2 } from "lucide-react";
+import Phone from "./Phone";
 const initialValues = {
   fullname: "",
   email: "",
@@ -89,6 +90,7 @@ const Contact = () => {
   });
   const { values, handleChange, touched, errors, handleSubmit, resetForm } =
     formik;
+
   return (
     <div id="contact" className="">
       {" "}
@@ -97,13 +99,14 @@ const Contact = () => {
           {/* Form Section */}
           <div className="m-auto mb-12 w-full px-4 lg:mb-0 lg:w-8/12 xl:w-8/12">
             <div className="rounded-lg bg-white p-8 shadow-lg sm:p-12 dark:bg-gray-800">
-              <h2 className="mb-6 text-3xl font-semibold text-gray-800 dark:text-white">
+              {/* <h2 className="mb-6 text-3xl font-semibold text-gray-800 dark:text-white">
                 {contact}
-              </h2>
+              </h2> */}
+
+              <Phone language={language} />
               <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
                 {descritption}
               </p>
-
               <form onSubmit={handleSubmit} autoComplete="off">
                 <div className="-mx-4 flex flex-wrap">
                   {/* Name Field */}
@@ -241,3 +244,10 @@ const Contact = () => {
 };
 
 export default Contact;
+// pour miuex vous accompagner L'Université E-MEDIA met en place des ligne dédiées:
+/*
+ - Présentiel: +261 38 08 777 37 
+ - En ligne : +261 38 08 777 37 
+ - Modulaire & professionnel : +261 38 78 777 37 
+ - ile Maurice : +230 5 488-4377
+*/

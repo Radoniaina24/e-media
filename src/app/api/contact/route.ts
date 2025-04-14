@@ -11,8 +11,8 @@ export async function POST(req: NextRequest) {
       // secure: process.env.NEXT_PUBLIC_EMAIL_SECURE === "true",
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Ton email
-        pass: process.env.EMAIL_PASS, // Ton mot de passe ou App Password
+        user: process.env.NEXT_PUBLIC_EMAIL_USER, // Ton email
+        pass: process.env.NEXT_PUBLIC_EMAIL_PASS, // Ton mot de passe ou App Password
       },
     });
 
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
       message: "Email sent successfully!",
     });
   } catch (error) {
-    console.error("Erreur détaillée:", error);
+    // console.error("Erreur détaillée:", error);
     return NextResponse.json(
       { success: false, message: "Failed to send email." },
       { status: 500 },
