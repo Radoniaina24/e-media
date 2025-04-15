@@ -92,7 +92,9 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/signin"
+                    href="http://e-media-madagascar.com/universite/Connecter"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     {language === "fr" ? "Se connecter" : "Log in"}
@@ -100,7 +102,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/signin"
+                    href="http://e-media-madagascar.com/universite/Connecter"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     {language === "fr" ? " Emplois du temps" : "Timetables"}
@@ -125,7 +129,9 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/signup"
+                    href="http://e-media-madagascar.com/universite/Register"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   >
                     {language === "fr" ? "S'inscrire" : "Sign up"}
