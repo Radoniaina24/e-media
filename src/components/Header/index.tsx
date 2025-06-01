@@ -164,7 +164,7 @@ const Header = () => {
               </div>
               <div className="flex items-center justify-end gap-2 pr-16 lg:pr-0">
                 <a
-                  href="http://e-media-madagascar.com/universite/Register"
+                  href=" https://enligne.e-mediauniversity.io/register "
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ease-in-up hidden rounded-full bg-primary px-2 py-2 text-sm font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-4 xl:px-4"
@@ -172,7 +172,7 @@ const Header = () => {
                   {language === "fr" ? "S'inscrire " : "Sign up"}
                 </a>
                 <a
-                  href="http://e-media-madagascar.com/universite/Connecter"
+                  href="https://enligne.e-mediauniversity.io/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ease-in-up hidden rounded-full bg-green-500 px-2 py-2 text-sm font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-4 xl:px-4"
