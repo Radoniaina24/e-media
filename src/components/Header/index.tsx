@@ -112,16 +112,18 @@ const Header = () => {
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
-                          <Link
-                            href={menuItem.path}
-                            className={`flex py-2 text-lg   lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                              usePathName === menuItem.path
-                                ? `${sticky ? "text-dark" : "text-dark sm:text-dark md:text-white"}`
-                                : `${sticky ? "text-dark" : "text-dark sm:text-dark md:text-white"}`
-                            }`}
-                          >
-                            {menuItem.title}
-                          </Link>
+                          <>
+                            <Link
+                              href={menuItem.path}
+                              className={`flex py-2 text-lg   lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
+                                usePathName === menuItem.path
+                                  ? `${sticky ? "text-dark" : "text-dark sm:text-dark md:text-white"}`
+                                  : `${sticky ? "text-dark" : "text-dark sm:text-dark md:text-white"}`
+                              }`}
+                            >
+                              {menuItem.title}
+                            </Link>
+                          </>
                         ) : (
                           <>
                             <p
@@ -159,6 +161,24 @@ const Header = () => {
                         )}
                       </li>
                     ))}
+                    <div className="mt-6 space-y-2 lg:hidden">
+                      <a
+                        href="https://enligne.e-mediauniversity.io/register"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full rounded bg-primary px-4 py-2 text-center text-sm font-medium text-white shadow hover:bg-opacity-90"
+                      >
+                        {language === "fr" ? "S'inscrire" : "Sign up"}
+                      </a>
+                      <a
+                        href="https://enligne.e-mediauniversity.io/login"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full rounded bg-green-600 px-4 py-2 text-center text-sm font-medium text-white shadow hover:bg-opacity-90"
+                      >
+                        {language === "fr" ? "Se connecter" : "Sign in"}
+                      </a>
+                    </div>
                   </ul>
                 </nav>
               </div>
