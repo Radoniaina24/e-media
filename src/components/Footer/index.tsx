@@ -92,7 +92,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="http://e-media-madagascar.com/universite/Connecter"
+                    href="https://enligne.e-mediauniversity.io/login"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
@@ -102,7 +102,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="http://e-media-madagascar.com/universite/Connecter"
+                    href=" https://enligne.e-mediauniversity.io/register "
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
@@ -129,7 +129,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="http://e-media-madagascar.com/universite/Register"
+                    href=" https://enligne.e-mediauniversity.io/register "
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
