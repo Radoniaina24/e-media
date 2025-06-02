@@ -162,22 +162,22 @@ const Header = () => {
                       </li>
                     ))}
                     <div className="mt-6 space-y-2 lg:hidden">
-                      <a
+                      <Link
                         href="https://enligne.e-mediauniversity.io/register"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block w-full rounded bg-primary px-4 py-2 text-center text-sm font-medium text-white shadow hover:bg-opacity-90"
                       >
                         {language === "fr" ? "S'inscrire" : "Sign up"}
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="https://enligne.e-mediauniversity.io/login"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block w-full rounded bg-green-600 px-4 py-2 text-center text-sm font-medium text-white shadow hover:bg-opacity-90"
                       >
                         {language === "fr" ? "Se connecter" : "Sign in"}
-                      </a>
+                      </Link>
                     </div>
                   </ul>
                 </nav>
