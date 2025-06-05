@@ -22,14 +22,14 @@ const Fr = () => {
           <div className="text-xl text-blue-600">🏫</div>
           <div>
             <p className="font-medium text-gray-800">Présentiel</p>
-            <p className="text-sm text-gray-600">+261 38 08 777 37</p>
+            <p className="text-sm text-gray-600">+261 38 98 777 37</p>
           </div>
         </div>
         <div className="flex items-center gap-4 rounded-lg bg-gray-50 p-4 transition hover:bg-blue-50">
           <div className="text-xl text-blue-600">💻</div>
           <div>
             <p className="font-medium text-gray-800">En ligne</p>
-            <p className="text-sm text-gray-600">+261 38 08 777 37</p>
+            <p className="text-sm text-gray-600">+261 38 98 777 37</p>
           </div>
         </div>
         <div className="flex items-center gap-4 rounded-lg bg-gray-50 p-4 transition hover:bg-blue-50">
