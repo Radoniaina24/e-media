@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from: `"From Africa IT Summit"`,
       to: "scolarite@e-mediauniversity.io",
-      cc: "dir.enligne@e-mediauniversity.io",
+      cc: "emediaenligne2020@gmail.com",
       subject: `📩 Nouvelle contact - Site E-media Madagascar`,
       html: `
    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border-radius: 8px; background: #f4f4f4; color: #333;">
