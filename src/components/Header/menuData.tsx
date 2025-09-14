@@ -41,6 +41,12 @@ export const menuDataFr: Menu[] = [
   },
   {
     id: 5,
+    title: "E-media FM",
+    path: "/",
+    newTab: false,
+  },
+  {
+    id: 6,
     title: "Contact",
     path: "/contact",
     newTab: false,
