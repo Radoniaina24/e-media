@@ -47,7 +47,10 @@ const Footer = () => {
                 <strong>Email :</strong> emediauniv.mada@gmail.com
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                <strong>Téléphone :</strong> +261 34 31 777 47
+                <strong>Téléphone :</strong> +261 38 08 777 37
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                <strong> Whatsapp :</strong> +261 34 57 777 01
               </p>
             </div>
 
